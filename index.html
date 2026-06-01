@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asofix Design System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/docs.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <span class="ds-sidebar__logo">Asofix DS</span>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="components/buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="components/inputs.html" class="ds-nav__link">Inputs</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-hero">
+        <h1 class="ds-hero__title">Asofix Design System</h1>
+        <p class="ds-hero__subtitle">Fuente de verdad para diseño y desarrollo. Tokens, componentes y documentación en un solo lugar.</p>
+      </div>
+
+      <div class="ds-grid">
+        <a href="foundations/colors.html" class="ds-card">
+          <span class="ds-card__icon">🎨</span>
+          <h3 class="ds-card__title">Colors</h3>
+          <p class="ds-card__desc">Paleta primaria, secundaria y neutros con tokens V2.1.</p>
+        </a>
+        <a href="foundations/typography.html" class="ds-card">
+          <span class="ds-card__icon">Aa</span>
+          <h3 class="ds-card__title">Typography</h3>
+          <p class="ds-card__desc">Escala tipográfica Inter. Headings, body, caption y más.</p>
+        </a>
+        <a href="components/buttons.html" class="ds-card">
+          <span class="ds-card__icon">⬡</span>
+          <h3 class="ds-card__title">Buttons</h3>
+          <p class="ds-card__desc">Variantes, tamaños y estados del componente Button.</p>
+        </a>
+        <a href="components/inputs.html" class="ds-card">
+          <span class="ds-card__icon">▭</span>
+          <h3 class="ds-card__title">Inputs</h3>
+          <p class="ds-card__desc">Text fields, selects y datepicker.</p>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
