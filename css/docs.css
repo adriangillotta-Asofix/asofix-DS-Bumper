@@ -227,14 +227,14 @@ body {
 .ds-preview {
   border: 1px solid #E8E3DA;
   border-radius: 8px 8px 0 0;
-  padding: 64px 32px;
+  padding: 80px 32px;
   background-color: #ffffff;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
   justify-content: center;
-  min-height: 160px;
+  min-height: 240px;
 }
 
 /* Bloque de código */
