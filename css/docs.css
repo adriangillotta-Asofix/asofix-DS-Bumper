@@ -317,3 +317,59 @@ body {
 .ds-swatch {
   position: relative;
 }
+
+/* --------------------------------
+   Typography page
+-------------------------------- */
+.ds-type-row {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 20px 0;
+  border-bottom: 1px solid #E8E3DA;
+}
+
+.ds-type-sample {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.ds-type-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ds-type-meta__token {
+  font-size: 12px;
+  font-weight: 600;
+  color: #5B3DD3;
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+.ds-type-meta__value {
+  font-size: 12px;
+  font-weight: 400;
+  color: #898298;
+}
+
+.ds-type-meta__usage {
+  font-size: 12px;
+  font-weight: 400;
+  color: #3F3A4C;
+}
+
+/* Type samples */
+.ds-type-h1 { font-size: var(--font-size-h1); font-weight: var(--font-weight-heading); line-height: var(--line-height-h1); letter-spacing: var(--letter-spacing-h1); color: #161628; }
+.ds-type-h2 { font-size: var(--font-size-h2); font-weight: var(--font-weight-heading); line-height: var(--line-height-h2); letter-spacing: var(--letter-spacing-h2); color: #161628; }
+.ds-type-h3 { font-size: var(--font-size-h3); font-weight: var(--font-weight-heading); line-height: var(--line-height-h3); letter-spacing: var(--letter-spacing-h3); color: #161628; }
+.ds-type-h4 { font-size: var(--font-size-h4); font-weight: var(--font-weight-heading); line-height: var(--line-height-h4); letter-spacing: var(--letter-spacing-h4); color: #161628; }
+.ds-type-h5 { font-size: var(--font-size-h5); font-weight: var(--font-weight-heading); line-height: var(--line-height-h5); letter-spacing: var(--letter-spacing-h5); color: #161628; }
+.ds-type-h6 { font-size: var(--font-size-h6); font-weight: var(--font-weight-heading); line-height: var(--line-height-h6); letter-spacing: var(--letter-spacing-h6); color: #161628; }
+
+.ds-type-body { font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: #3F3A4C; }
+.ds-type-body-em { font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: #3F3A4C; }
+.ds-type-body-strike { font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: #898298; text-decoration: line-through; }
+
+.ds-type-caption { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: #898298; }
+.ds-type-caption-em { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption-emphasized); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: #898298; }
