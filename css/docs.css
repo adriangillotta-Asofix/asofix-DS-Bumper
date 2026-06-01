@@ -227,13 +227,14 @@ body {
 .ds-preview {
   border: 1px solid #E8E3DA;
   border-radius: 8px 8px 0 0;
-  padding: 48px 32px;
+  padding: 64px 32px;
   background-color: #ffffff;
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
   align-items: center;
   justify-content: center;
+  min-height: 160px;
 }
 
 /* Bloque de código */
@@ -243,7 +244,7 @@ body {
   border-top: none;
   border-radius: 0 0 8px 8px;
   padding: 20px 24px;
-  overflow-x: auto;
+  overflow: hidden;
   position: relative;
 }
 
@@ -253,6 +254,8 @@ body {
   font-size: 13px;
   color: #3F3A4C;
   line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-all;
 }
 
 /* Botón copiar código */
