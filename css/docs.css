@@ -389,9 +389,6 @@ body {
 .ds-type-caption-em { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption-emphasized); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: #898298; }
 
 /* Números de línea en código */
-.ds-code pre code {
-  display: block;
-}
 
 .ds-code pre code {
   display: block;
@@ -426,16 +423,4 @@ body {
   white-space: pre-wrap;
   word-break: break-word;
   line-height: 1.6;
-}
-
-.ds-code__line > span:last-child {
-  display: table-cell;
-  white-space: pre-wrap;
-  word-break: break-word;
-  vertical-align: top;
-}
-
-.ds-code pre code {
-  display: table;
-  width: 100%;
 }
