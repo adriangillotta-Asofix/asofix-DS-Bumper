@@ -32,11 +32,10 @@
 
 /* Secondary */
 .btn--secondary { background-color: transparent; color: var(--color-primary-500); border-color: var(--color-primary-500); }
-.btn--secondary:hover, .btn--secondary.btn--hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); color: var(--color-primary-600); }
-.btn--secondary:active, .btn--secondary.btn--active { background-color: var(--color-primary-100); border-color: var(--color-primary-700); color: var(--color-primary-700); }
+.btn--secondary:hover, .btn--secondary.btn--hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); }
+.btn--secondary:active, .btn--secondary.btn--active { background-color: var(--color-primary-100); border-color: var(--color-primary-700); }
 .btn--secondary:focus-visible, .btn--secondary.btn--focus { background-color: var(--color-primary-50); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
 .btn--secondary:disabled { background-color: transparent; border-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
-
 /* Tertiary */
 .btn--tertiary { background-color: transparent; color: var(--color-primary-500); border-color: transparent; }
 .btn--tertiary:hover, .btn--tertiary.btn--hover { background-color: var(--color-primary-50); }
