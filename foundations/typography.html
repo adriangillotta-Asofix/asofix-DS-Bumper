@@ -1,1 +1,189 @@
-<!-- Asofix DS — colors -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Typography — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="typography.html" class="ds-nav__link active">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="../components/buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="../components/inputs.html" class="ds-nav__link">Inputs</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Typography</h1>
+        <p class="ds-page-header__desc">Escala tipográfica V2.1 usando Inter. Los tokens están disponibles en <code>css/tokens.css</code>.</p>
+      </div>
+
+      <!-- HEADINGS -->
+      <div class="ds-section">
+        <h2 class="ds-section__title">Headings</h2>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-h1">Headline 1</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-h1</span>
+            <span class="ds-type-meta__value">36px · SemiBold · LH 1.55 · LS -0.02em</span>
+            <span class="ds-type-meta__usage">Números de dashboard.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-h2">Headline 2</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-h2</span>
+            <span class="ds-type-meta__value">28px · SemiBold · LH 1.58 · LS -0.02em</span>
+            <span class="ds-type-meta__usage">Título principal (usar 1 vez por página).</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-h3">Headline 3</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-h3</span>
+            <span class="ds-type-meta__value">25px · SemiBold · LH 1.60 · LS -0.02em</span>
+            <span class="ds-type-meta__usage">Precios destacados. Cards de catálogo.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-h4">Headline 4</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-h4</span>
+            <span class="ds-type-meta__value">22px · SemiBold · LH 1.46 · LS -0.01em</span>
+            <span class="ds-type-meta__usage">Títulos de bloques que agrupan otros títulos.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-h5">Headline 5</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-h5</span>
+            <span class="ds-type-meta__value">20px · SemiBold · LH 1.40 · LS -0.01em</span>
+            <span class="ds-type-meta__usage">Títulos de empty states. Nombre de cliente.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-h6">Headline 6</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-h6</span>
+            <span class="ds-type-meta__value">18px · SemiBold · LH 1.36 · LS 0em</span>
+            <span class="ds-type-meta__usage">Títulos de modales. Títulos de bloques.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BODY -->
+      <div class="ds-section">
+        <h2 class="ds-section__title">Body</h2>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-body">Body</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-body</span>
+            <span class="ds-type-meta__value">14px · Regular · LH 1.45 · LS 0em</span>
+            <span class="ds-type-meta__usage">Texto base. Versión de un auto.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-body-em">Body emphasized</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-weight-body-emphasized</span>
+            <span class="ds-type-meta__value">14px · SemiBold · LH 1.45 · LS 0em</span>
+            <span class="ds-type-meta__usage">Texto base destacado. Encabezados de tabla.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-body-strike">Body strikethrough</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-body</span>
+            <span class="ds-type-meta__value">14px · SemiBold · LH 1.45 · Strikethrough</span>
+            <span class="ds-type-meta__usage">Precios con descuento.</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CAPTION -->
+      <div class="ds-section">
+        <h2 class="ds-section__title">Caption</h2>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-caption">Caption</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-caption</span>
+            <span class="ds-type-meta__value">12px · Regular · LH 1.36 · LS 0.02em</span>
+            <span class="ds-type-meta__usage">Texto auxiliar.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-caption-em">Caption emphasized</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-weight-caption-emphasized</span>
+            <span class="ds-type-meta__value">12px · SemiBold · LH 1.36 · LS 0.02em</span>
+            <span class="ds-type-meta__usage">Texto auxiliar destacado.</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
