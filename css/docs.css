@@ -237,6 +237,10 @@ body {
   min-height: 240px;
 }
 
+.ds-preview * {
+  pointer-events: none;
+}
+
 /* Bloque de código */
 .ds-code {
   background-color: #F5F5F5;
@@ -263,15 +267,18 @@ body {
   position: absolute;
   top: 12px;
   right: 12px;
-  font-size: 12px;
-  font-weight: 500;
   color: #898298;
   background: #ffffff;
   border: 1px solid #E8E3DA;
   border-radius: 4px;
-  padding: 4px 10px;
+  padding: 6px;
   cursor: pointer;
   transition: color 0.15s ease, border-color 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
 }
 
 .ds-copy-btn:hover {
