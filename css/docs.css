@@ -436,5 +436,5 @@ body {
 .ds-section--color {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  gap: 24px;
 }
