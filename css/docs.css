@@ -393,20 +393,39 @@ body {
   display: block;
 }
 
+.ds-code pre code {
+  display: block;
+  max-height: 320px;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.ds-code pre code::-webkit-scrollbar {
+  display: none;
+}
+
 .ds-code__line {
-  display: table-row;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  min-height: 1.6em;
 }
 
 .ds-code__num {
-  display: table-cell;
-  padding-right: 16px;
+  min-width: 20px;
   color: #B4AD9E;
   font-size: 12px;
   user-select: none;
   text-align: right;
-  white-space: nowrap;
-  vertical-align: top;
-  min-width: 24px;
+  flex-shrink: 0;
+  line-height: 1.6;
+}
+
+.ds-code__text {
+  flex: 1;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.6;
 }
 
 .ds-code__line > span:last-child {
