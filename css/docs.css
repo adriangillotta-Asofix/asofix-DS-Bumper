@@ -293,6 +293,7 @@ body {
 .ds-color-scale {
   display: flex;
   gap: 4px;
+  width: 100%;
 }
 
 .ds-swatch {
@@ -429,4 +430,11 @@ body {
 .ds-code--standalone {
   border-top: 1px solid #E8E3DA;
   border-radius: 8px;
+}
+
+/* Color section layout */
+.ds-section--color {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
