@@ -395,7 +395,7 @@ body {
 
 .ds-code pre code {
   display: block;
-  max-height: 320px;
+  max-height: 180px;
   overflow-y: auto;
   scrollbar-width: none;
 }
