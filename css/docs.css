@@ -271,3 +271,33 @@ body {
   color: #5B3DD3;
   border-color: #5B3DD3;
 }
+
+/* --------------------------------
+   Color swatches
+-------------------------------- */
+.ds-color-scale {
+  display: flex;
+  gap: 4px;
+}
+
+.ds-swatch {
+  flex: 1;
+  height: 72px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 6px 8px;
+}
+
+.ds-swatch__stop {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.ds-swatch__hex {
+  font-size: 10px;
+  font-weight: 400;
+  opacity: 0.85;
+}
