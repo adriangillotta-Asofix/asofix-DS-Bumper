@@ -3,4 +3,45 @@
    V2.1
    ================================ */
 
-/* Colors — coming soon */
+:root {
+
+  /* --------------------------------
+     Primario — Violeta
+  -------------------------------- */
+  --color-primary-50:  #F5F1FC;
+  --color-primary-100: #E8E0F8;
+  --color-primary-200: #DACFF4;
+  --color-primary-300: #B99EE6;
+  --color-primary-400: #5B3DD3;
+  --color-primary-500: #4D33B4;
+  --color-primary-600: #3F2994;
+  --color-primary-700: #2E1B6E;
+  --color-primary-800: #241559;
+  --color-primary-900: #1A0F4A;
+
+  /* --------------------------------
+     Secundario — Teal
+  -------------------------------- */
+  --color-secondary-50:  #E3F8EF;
+  --color-secondary-100: #AEECD6;
+  --color-secondary-200: #79E0BC;
+  --color-secondary-300: #3FE3B5;
+  --color-secondary-400: #29C99C;
+  --color-secondary-500: #18B086;
+  --color-secondary-600: #0E9970;
+
+  /* --------------------------------
+     Neutros
+  -------------------------------- */
+  --color-neutral-50:  #FBF9F5;
+  --color-neutral-100: #F3F0EA;
+  --color-neutral-200: #E8E3DA;
+  --color-neutral-300: #CEC8BC;
+  --color-neutral-400: #B4AD9E;
+  --color-neutral-500: #898298;
+  --color-neutral-600: #6B6478;
+  --color-neutral-700: #544E62;
+  --color-neutral-800: #3F3A4C;
+  --color-neutral-900: #161628;
+
+}
