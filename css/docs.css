@@ -238,29 +238,32 @@ body {
 
 /* Bloque de código */
 .ds-code {
-  background-color: #161628;
+  background-color: #F5F5F5;
+  border: 1px solid #E8E3DA;
+  border-top: none;
   border-radius: 0 0 8px 8px;
   padding: 20px 24px;
   overflow-x: auto;
+  position: relative;
 }
 
 .ds-code pre {
   margin: 0;
   font-family: 'Fira Code', 'Courier New', monospace;
   font-size: 13px;
-  color: #e8e3da;
+  color: #3F3A4C;
   line-height: 1.6;
 }
 
 /* Botón copiar código */
 .ds-copy-btn {
-  display: block;
-  margin-left: auto;
-  margin-bottom: 8px;
+  position: absolute;
+  top: 12px;
+  right: 12px;
   font-size: 12px;
   font-weight: 500;
   color: #898298;
-  background: none;
+  background: #ffffff;
   border: 1px solid #E8E3DA;
   border-radius: 4px;
   padding: 4px 10px;
