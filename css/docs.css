@@ -1,1 +1,273 @@
-/* Asofix DS — docs styles */
+/* ================================
+   Asofix DS — Docs Styles
+   Estilos del sitio de documentación
+   ================================ */
+
+/* Reset básico */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #1a1a1a;
+  background-color: #ffffff;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* --------------------------------
+   Sidebar
+-------------------------------- */
+.ds-sidebar {
+  width: 240px;
+  min-height: 100vh;
+  border-right: 1px solid #e8e3da;
+  padding: 24px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  background-color: #ffffff;
+}
+
+.ds-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  padding: 0 8px;
+}
+
+.ds-sidebar__logo {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.ds-sidebar__version {
+  font-size: 11px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #5B3DD3;
+  padding: 2px 7px;
+  border-radius: 20px;
+}
+
+/* --------------------------------
+   Nav
+-------------------------------- */
+.ds-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.ds-nav__label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #898298;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 16px 8px 6px;
+}
+
+.ds-nav__list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ds-nav__link {
+  display: block;
+  padding: 6px 8px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3F3A4C;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.ds-nav__link:hover {
+  background-color: #F5F1FC;
+  color: #5B3DD3;
+}
+
+.ds-nav__link.active {
+  background-color: #F5F1FC;
+  color: #5B3DD3;
+  font-weight: 500;
+}
+
+/* --------------------------------
+   Main content
+-------------------------------- */
+.ds-main {
+  margin-left: 240px;
+  flex: 1;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.ds-content {
+  max-width: 860px;
+  padding: 64px 48px;
+}
+
+/* --------------------------------
+   Hero
+-------------------------------- */
+.ds-hero {
+  margin-bottom: 48px;
+}
+
+.ds-hero__title {
+  font-size: 30px;
+  font-weight: 600;
+  color: #161628;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.ds-hero__subtitle {
+  font-size: 15px;
+  font-weight: 400;
+  color: #898298;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+/* --------------------------------
+   Cards grid (home)
+-------------------------------- */
+.ds-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.ds-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid #E8E3DA;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ds-card:hover {
+  border-color: #5B3DD3;
+  box-shadow: 0 2px 8px rgba(91, 61, 211, 0.08);
+}
+
+.ds-card__icon {
+  font-size: 20px;
+}
+
+.ds-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #161628;
+}
+
+.ds-card__desc {
+  font-size: 13px;
+  font-weight: 400;
+  color: #898298;
+  line-height: 1.5;
+}
+
+/* --------------------------------
+   Page header (páginas internas)
+-------------------------------- */
+.ds-page-header {
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #E8E3DA;
+}
+
+.ds-page-header__title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #161628;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+
+.ds-page-header__desc {
+  font-size: 14px;
+  color: #898298;
+  line-height: 1.6;
+}
+
+/* --------------------------------
+   Sección de componente
+-------------------------------- */
+.ds-section {
+  margin-bottom: 48px;
+}
+
+.ds-section__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #161628;
+  margin-bottom: 16px;
+}
+
+/* Preview container — aísla los componentes Asofix */
+.ds-preview {
+  border: 1px solid #E8E3DA;
+  border-radius: 8px 8px 0 0;
+  padding: 32px;
+  background-color: #FBF9F5;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+/* Bloque de código */
+.ds-code {
+  background-color: #161628;
+  border-radius: 0 0 8px 8px;
+  padding: 20px 24px;
+  overflow-x: auto;
+}
+
+.ds-code pre {
+  margin: 0;
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 13px;
+  color: #e8e3da;
+  line-height: 1.6;
+}
+
+/* Botón copiar código */
+.ds-copy-btn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #898298;
+  background: none;
+  border: 1px solid #E8E3DA;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.ds-copy-btn:hover {
+  color: #5B3DD3;
+  border-color: #5B3DD3;
+}
