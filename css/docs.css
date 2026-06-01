@@ -115,7 +115,7 @@ body {
 }
 
 .ds-content {
-  max-width: 860px;
+  max-width: 1080px;
   padding: 64px 48px;
 }
 
@@ -230,11 +230,12 @@ body {
   padding: 80px 32px;
   background-color: #ffffff;
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-wrap: nowrap;
+  gap: 12px;
   align-items: center;
   justify-content: center;
   min-height: 240px;
+  overflow-x: auto;
 }
 
 .ds-preview * {
