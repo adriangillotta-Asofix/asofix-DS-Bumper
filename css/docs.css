@@ -394,15 +394,25 @@ body {
 }
 
 .ds-code__line {
-  display: block;
+  display: flex;
+  align-items: flex-start;
   line-height: 1.6;
+  gap: 12px;
 }
 
 .ds-code__num {
   display: inline-block;
-  width: 28px;
+  min-width: 20px;
   color: #B4AD9E;
   font-size: 12px;
   user-select: none;
   flex-shrink: 0;
+  text-align: right;
+  padding-top: 0;
+}
+
+.ds-code__line span:last-child {
+  flex: 1;
+  word-break: break-all;
+  white-space: pre-wrap;
 }
