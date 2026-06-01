@@ -33,9 +33,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.ds-code pre code').forEach(block => {
     const lines = block.innerText.split('\n');
     const numbered = lines.map((line, i) => {
-      const num = String(i + 1).padStart(2, ' ');
-      return `<span class="ds-code__line"><span class="ds-code__num">${num}</span>${line}</span>`;
-    }).join('\n');
+      return `<span class="ds-code__line"><span class="ds-code__num">${i + 1}</span><span class="ds-code__text">${line}</span></span>`;
+    }).join('');
     block.innerHTML = numbered;
   });
 
