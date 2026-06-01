@@ -394,25 +394,29 @@ body {
 }
 
 .ds-code__line {
-  display: flex;
-  align-items: flex-start;
-  line-height: 1.6;
-  gap: 12px;
+  display: table-row;
 }
 
 .ds-code__num {
-  display: inline-block;
-  min-width: 20px;
+  display: table-cell;
+  padding-right: 16px;
   color: #B4AD9E;
   font-size: 12px;
   user-select: none;
-  flex-shrink: 0;
   text-align: right;
-  padding-top: 0;
+  white-space: nowrap;
+  vertical-align: top;
+  min-width: 24px;
 }
 
-.ds-code__line span:last-child {
-  flex: 1;
-  word-break: break-all;
+.ds-code__line > span:last-child {
+  display: table-cell;
   white-space: pre-wrap;
+  word-break: break-word;
+  vertical-align: top;
+}
+
+.ds-code pre code {
+  display: table;
+  width: 100%;
 }
