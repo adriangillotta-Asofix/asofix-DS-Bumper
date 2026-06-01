@@ -387,3 +387,22 @@ body {
 
 .ds-type-caption { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: #898298; }
 .ds-type-caption-em { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption-emphasized); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: #898298; }
+
+/* Números de línea en código */
+.ds-code pre code {
+  display: block;
+}
+
+.ds-code__line {
+  display: block;
+  line-height: 1.6;
+}
+
+.ds-code__num {
+  display: inline-block;
+  width: 28px;
+  color: #B4AD9E;
+  font-size: 12px;
+  user-select: none;
+  flex-shrink: 0;
+}
