@@ -425,3 +425,8 @@ body {
   word-break: break-word;
   line-height: 1.6;
 }
+
+.ds-code--standalone {
+  border-top: 1px solid #E8E3DA;
+  border-radius: 8px;
+}
