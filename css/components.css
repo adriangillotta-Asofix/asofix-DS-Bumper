@@ -109,3 +109,84 @@
   cursor: not-allowed;
   text-decoration: none;
 }
+
+/* --------------------------------
+   Switch
+-------------------------------- */
+.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  width: 44px;
+  height: 24px;
+}
+
+.switch__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.switch__track {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-neutral-400);
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.switch__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-neutral-50);
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+/* Activo */
+.switch__input:checked ~ .switch__track {
+  background-color: var(--color-primary-500);
+}
+
+.switch__input:checked ~ .switch__thumb {
+  transform: translateX(20px);
+}
+
+/* Hover */
+.switch:hover .switch__track {
+  background-color: var(--color-neutral-500);
+}
+
+.switch:hover .switch__input:checked ~ .switch__track {
+  background-color: var(--color-primary-600);
+}
+
+/* Focus */
+.switch__input:focus-visible ~ .switch__track {
+  outline: 3px solid var(--color-primary-100);
+  outline-offset: 2px;
+}
+
+/* Disabled */
+.switch--disabled {
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+.switch--disabled .switch__track {
+  background-color: var(--color-neutral-200);
+}
+
+.switch--disabled .switch__input:checked ~ .switch__track {
+  background-color: var(--color-neutral-300);
+}
+
+.switch--disabled .switch__thumb {
+  background-color: var(--color-neutral-50);
+}
