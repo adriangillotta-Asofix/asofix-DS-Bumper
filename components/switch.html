@@ -60,6 +60,11 @@
             <span class="switch__track" style="background-color: var(--color-neutral-500);"></span>
             <span class="switch__thumb"></span>
           </label>
+          <label class="switch switch--focus">
+            <input class="switch__input" type="checkbox" />
+            <span class="switch__track"></span>
+            <span class="switch__thumb"></span>
+          </label>
           <label class="switch switch--disabled">
             <input class="switch__input" type="checkbox" disabled />
             <span class="switch__track"></span>
@@ -120,6 +125,11 @@
             <span class="switch__track" style="background-color: var(--color-primary-600);"></span>
             <span class="switch__thumb"></span>
           </label>
+          <label class="switch switch--focus">
+            <input class="switch__input" type="checkbox" checked />
+            <span class="switch__track"></span>
+            <span class="switch__thumb"></span>
+          </label>
           <label class="switch switch--disabled">
             <input class="switch__input" type="checkbox" checked disabled />
             <span class="switch__track"></span>
@@ -144,7 +154,8 @@
   background-color: var(--color-primary-600);
 }
 
-.switch__input:focus-visible ~ .switch__track {
+.switch__input:focus-visible ~ .switch__track,
+.switch--focus .switch__track {
   outline: 3px solid var(--color-primary-100);
   outline-offset: 2px;
 }
