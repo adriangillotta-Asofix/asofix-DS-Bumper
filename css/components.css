@@ -67,6 +67,10 @@
   text-decoration: none;
 }
 
+.btn--link .material-icons-outlined {
+  text-decoration: none !important;
+}
+
 .btn--link:hover, .btn--link.btn--hover {
   color: var(--color-primary-400);
   text-decoration: underline;
