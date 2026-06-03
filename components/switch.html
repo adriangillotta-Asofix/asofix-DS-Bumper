@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Switch — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="../foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="../foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="switch.html" class="ds-nav__link active">Switch</a></li>
+        <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Switch</h1>
+        <p class="ds-page-header__desc">Componente de alternancia con dos estados (activo/inactivo) y cuatro variantes de estado: Default, Hover, Focus y Disabled.</p>
+      </div>
+
+      <!-- INACTIVO -->
+      <div class="ds-section">
+        <h2 class="ds-section__title">Inactivo</h2>
+        <div class="ds-preview">
+          <label class="switch">
+            <input class="switch__input" type="checkbox" />
+            <span class="switch__track"></span>
+            <span class="switch__thumb"></span>
+          </label>
+          <label class="switch">
+            <input class="switch__input" type="checkbox" />
+            <span class="switch__track" style="background-color: var(--color-neutral-500);"></span>
+            <span class="switch__thumb"></span>
+          </label>
+          <label class="switch switch--disabled">
+            <input class="switch__input" type="checkbox" disabled />
+            <span class="switch__track"></span>
+            <span class="switch__thumb"></span>
+          </label>
+        </div>
+        <div class="ds-code">
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>.switch {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  width: 44px;
+  height: 24px;
+}
+
+.switch__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+.switch__track {
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-neutral-400);
+  border-radius: 999px;
+  transition: background-color 0.2s ease;
+}
+
+.switch__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-neutral-50);
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- ACTIVO -->
+      <div class="ds-section">
+        <h2 class="ds-section__title">Activo</h2>
+        <div class="ds-preview">
+          <label class="switch">
+            <input class="switch__input" type="checkbox" checked />
+            <span class="switch__track"></span>
+            <span class="switch__thumb"></span>
+          </label>
+          <label class="switch">
+            <input class="switch__input" type="checkbox" checked />
+            <span class="switch__track" style="background-color: var(--color-primary-600);"></span>
+            <span class="switch__thumb"></span>
+          </label>
+          <label class="switch switch--disabled">
+            <input class="switch__input" type="checkbox" checked disabled />
+            <span class="switch__track"></span>
+            <span class="switch__thumb"></span>
+          </label>
+        </div>
+        <div class="ds-code">
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>.switch__input:checked ~ .switch__track {
+  background-color: var(--color-primary-500);
+}
+
+.switch__input:checked ~ .switch__thumb {
+  transform: translateX(20px);
+}
+
+.switch:hover .switch__track {
+  background-color: var(--color-neutral-500);
+}
+
+.switch:hover .switch__input:checked ~ .switch__track {
+  background-color: var(--color-primary-600);
+}
+
+.switch__input:focus-visible ~ .switch__track {
+  outline: 3px solid var(--color-primary-100);
+  outline-offset: 2px;
+}
+
+.switch--disabled {
+  cursor: not-allowed;
+}
+
+.switch--disabled .switch__track {
+  background-color: var(--color-neutral-200);
+}
+
+.switch--disabled .switch__input:checked ~ .switch__track {
+  background-color: var(--color-neutral-300);
+}</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
