@@ -77,6 +77,10 @@
   text-decoration: underline;
 }
 
+.btn--link .material-icons-outlined {
+  text-decoration: none;
+}
+
 .btn--link:focus-visible, .btn--link.btn--focus {
   color: var(--color-primary-500);
   border-color: var(--color-primary-500);
