@@ -53,3 +53,41 @@
   line-height: 1;
   flex-shrink: 0;
 }
+
+/* Link */
+.btn--link {
+  background-color: transparent;
+  color: var(--color-primary-500);
+  border-color: transparent;
+  height: auto;
+  padding: 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.btn--link:hover, .btn--link.btn--hover {
+  color: var(--color-primary-400);
+  text-decoration: underline;
+}
+
+.btn--link:active, .btn--link.btn--active {
+  color: var(--color-primary-500);
+  text-decoration: underline;
+}
+
+.btn--link:focus-visible, .btn--link.btn--focus {
+  color: var(--color-primary-500);
+  border-color: var(--color-primary-500);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  outline: none;
+}
+
+.btn--link:disabled {
+  color: var(--color-neutral-400);
+  cursor: not-allowed;
+  text-decoration: none;
+}
