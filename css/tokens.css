@@ -42,6 +42,62 @@
   --color-neutral-800: #3A3740;
   --color-neutral-900: #252327;
 
+   /* --------------------------------
+     Error — Rojo
+  -------------------------------- */
+  --color-error-50:  #FFF5F5;
+  --color-error-100: #FFE6E6;
+  --color-error-200: #FFC2C2;
+  --color-error-300: #FF8F8F;
+  --color-error-400: #FF4D4D;
+  --color-error-500: #E01B1B;
+  --color-error-600: #C02020;
+  --color-error-700: #911818;
+  --color-error-800: #611010;
+  --color-error-900: #3D0A0A;
+
+  /* --------------------------------
+     Success — Verde
+  -------------------------------- */
+  --color-success-50:  #F6FEF6;
+  --color-success-100: #ECF9EC;
+  --color-success-200: #D1F2D1;
+  --color-success-300: #A8E7A8;
+  --color-success-400: #74D674;
+  --color-success-500: #40C040;
+  --color-success-600: #36A436;
+  --color-success-700: #2C872C;
+  --color-success-800: #216621;
+  --color-success-900: #164416;
+
+  /* --------------------------------
+     Info — Celeste
+  -------------------------------- */
+  --color-info-50:  #F5FDFF;
+  --color-info-100: #EBFAFF;
+  --color-info-200: #CCF1FF;
+  --color-info-300: #99E3FF;
+  --color-info-400: #66D1F5;
+  --color-info-500: #40A0C0;
+  --color-info-600: #3A91AD;
+  --color-info-700: #368099;
+  --color-info-800: #2B667A;
+  --color-info-900: #1B404D;
+
+  /* --------------------------------
+     Warning — Amarillo
+  -------------------------------- */
+  --color-warning-50:  #FFFCF2;
+  --color-warning-100: #FFF8E6;
+  --color-warning-200: #FFEDCC;
+  --color-warning-300: #FFDB99;
+  --color-warning-400: #FFCE66;
+  --color-warning-500: #FFC020;
+  --color-warning-600: #FFAD00;
+  --color-warning-700: #FF9900;
+  --color-warning-800: #CC7A00;
+  --color-warning-900: #804C00;
+
   /* --------------------------------
      Tipografía — Inter
      (Reemplaza Open Sans)
