@@ -168,7 +168,8 @@
 }
 
 /* Focus */
-.switch__input:focus-visible ~ .switch__track {
+.switch__input:focus-visible ~ .switch__track,
+.switch--focus .switch__track {
   outline: 3px solid var(--color-primary-100);
   outline-offset: 2px;
 }
