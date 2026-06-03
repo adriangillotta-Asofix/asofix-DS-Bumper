@@ -228,6 +228,53 @@
         </div>
       </div>
 
+      <!-- LINK -->
+      <div class="ds-section">
+        <h2 class="ds-section__title">Link</h2>
+        <div class="ds-preview">
+          <button class="btn btn--link"><span class="material-icons-outlined">info</span>Default<span class="material-icons-outlined">expand_more</span></button>
+          <button class="btn btn--link btn--hover"><span class="material-icons-outlined">info</span>Hover<span class="material-icons-outlined">expand_more</span></button>
+          <button class="btn btn--link btn--active"><span class="material-icons-outlined">info</span>Active<span class="material-icons-outlined">expand_more</span></button>
+          <button class="btn btn--link btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
+          <button class="btn btn--link" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <div class="ds-code">
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>.btn--link {
+  background-color: transparent;
+  color: var(--color-primary-500);
+  border-color: transparent;
+  height: auto;
+  padding: 0;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  gap: 6px;
+  text-decoration: none;
+}
+
+.btn--link:hover {
+  color: var(--color-primary-400);
+  text-decoration: underline;
+}
+
+.btn--link:active {
+  color: var(--color-primary-500);
+  text-decoration: underline;
+}
+
+.btn--link:focus-visible {
+  border: 1px solid var(--color-primary-500);
+  border-radius: 4px;
+  outline: none;
+}
+
+.btn--link:disabled {
+  color: var(--color-neutral-400);
+  cursor: not-allowed;
+}</code></pre>
+        </div>
+      </div>
+
     </div>
   </main>
 
