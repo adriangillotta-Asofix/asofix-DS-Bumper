@@ -79,11 +79,19 @@
 
 .btn--link:hover, .btn--link.btn--hover {
   color: var(--color-primary-400);
+}
+
+.btn--link:hover span:not(.material-icons-outlined),
+.btn--link.btn--hover span:not(.material-icons-outlined) {
   text-decoration: underline;
 }
 
 .btn--link:active, .btn--link.btn--active {
   color: var(--color-primary-500);
+}
+
+.btn--link:active span:not(.material-icons-outlined),
+.btn--link.btn--active span:not(.material-icons-outlined) {
   text-decoration: underline;
 }
 
