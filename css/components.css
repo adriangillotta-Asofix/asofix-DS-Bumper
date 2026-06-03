@@ -54,6 +54,14 @@
   line-height: 1;
   flex-shrink: 0;
   text-decoration: none !important;
+  display: inline-flex;
+}
+
+.btn--link .material-icons-outlined {
+  text-decoration: none !important;
+  text-underline-position: under;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 /* Link */
