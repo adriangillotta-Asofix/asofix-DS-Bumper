@@ -10,6 +10,10 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
@@ -118,7 +122,7 @@ body {
 
 .ds-content {
   flex: 1;
-  max-width: 800px;
+  max-width: 960px;
   padding: 64px 48px;
 }
 
@@ -581,9 +585,9 @@ body {
 }
 
 .ds-toc__link.active {
+  background-color: #F5F1FC;
   color: #5B3DD3;
   font-weight: 500;
-  border-left-color: #5B3DD3;
 }
 
 @media (max-width: 1200px) {
