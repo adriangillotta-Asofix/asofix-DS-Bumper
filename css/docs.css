@@ -304,6 +304,7 @@ body {
   flex-direction: column;
   justify-content: flex-end;
   padding: 6px 8px;
+  position: relative;
 }
 
 .ds-swatch__stop {
@@ -316,22 +317,6 @@ body {
   font-size: 10px;
   font-weight: 400;
   opacity: 0.85;
-}
-
-/* Ancla de color brand */
-.ds-swatch--anchor::after {
-  content: '';
-  position: absolute;
-  top: 6px;
-  right: 6px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.9);
-}
-
-.ds-swatch {
-  position: relative;
 }
 
 /* --------------------------------
