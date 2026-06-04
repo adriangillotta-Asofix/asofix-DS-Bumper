@@ -252,6 +252,10 @@ body {
   pointer-events: none;
 }
 
+.ds-preview--interactive {
+  border-radius: 8px;
+}
+
 .ds-preview--interactive * {
   pointer-events: auto;
 }
