@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+  <title>Asofix - Bumper Design System</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/docs.css" />
 </head>
@@ -15,22 +16,22 @@
   <!-- SIDEBAR -->
   <aside class="ds-sidebar">
     <div class="ds-sidebar__brand">
-      <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      <a href="index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
       <span class="ds-sidebar__version">v2.1</span>
     </div>
-
     <nav class="ds-nav">
       <p class="ds-nav__label">Foundations</p>
       <ul class="ds-nav__list">
         <li><a href="foundations/colors.html" class="ds-nav__link">Colors</a></li>
         <li><a href="foundations/typography.html" class="ds-nav__link">Typography</a></li>
       </ul>
-
       <p class="ds-nav__label">Components</p>
       <ul class="ds-nav__list">
         <li><a href="components/buttons.html" class="ds-nav__link">Buttons</a></li>
-        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
-        <li><a href="components/inputs.html" class="ds-nav__link">Inputs</a></li>        
+        <li><a href="components/switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="components/inputs.html" class="ds-nav__link">Inputs</a></li>
       </ul>
     </nav>
   </aside>
@@ -39,32 +40,227 @@
   <main class="ds-main">
     <div class="ds-content">
 
-      <div class="ds-hero">
-        <h1 class="ds-hero__title">Asofix - Bumper Design System</h1>
-        <p class="ds-hero__subtitle">Fuente de verdad para diseño y desarrollo. Tokens, componentes y documentación en un solo lugar.</p>
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Asofix - Bumper Design System</h1>
+        <p class="ds-page-header__desc">Fuente de verdad para diseño y desarrollo. Tokens, componentes y documentación en un solo lugar.</p>
       </div>
 
-      <div class="ds-grid">
-        <a href="foundations/colors.html" class="ds-card">
-          <span class="ds-card__icon">🎨</span>
-          <h3 class="ds-card__title">Colors</h3>
-          <p class="ds-card__desc">Paleta primaria, secundaria y neutros con tokens V2.1.</p>
-        </a>
-        <a href="foundations/typography.html" class="ds-card">
-          <span class="ds-card__icon">Aa</span>
-          <h3 class="ds-card__title">Typography</h3>
-          <p class="ds-card__desc">Escala tipográfica Inter. Headings, body, caption y más.</p>
-        </a>
-        <a href="components/buttons.html" class="ds-card">
-          <span class="ds-card__icon">⬡</span>
-          <h3 class="ds-card__title">Buttons</h3>
-          <p class="ds-card__desc">Variantes, tamaños y estados del componente Button.</p>
-        </a>
-        <a href="components/inputs.html" class="ds-card">
-          <span class="ds-card__icon">▭</span>
-          <h3 class="ds-card__title">Inputs</h3>
-          <p class="ds-card__desc">Text fields, selects y datepicker.</p>
-        </a>
+      <!-- FOUNDATIONS -->
+      <div class="ds-overview-group">
+        <h2 class="ds-overview-group__title">Foundations</h2>
+        <div class="ds-overview-grid">
+
+          <a href="foundations/colors.html" class="ds-overview-card">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; gap:6px; align-items:center;">
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--color-primary-500);"></div>
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--color-secondary-400);"></div>
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--color-neutral-500);"></div>
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--color-error-500);"></div>
+                <div style="width:32px; height:32px; border-radius:50%; background:var(--color-warning-500);"></div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Colors</span>
+              <span class="ds-overview-card__desc">Paleta primaria, secundaria, neutros y semánticos.</span>
+            </div>
+          </a>
+
+          <a href="foundations/typography.html" class="ds-overview-card">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; flex-direction:column; gap:4px;">
+                <span style="font-size:22px; font-weight:600; color:var(--color-neutral-900); line-height:1.2;">Aa</span>
+                <span style="font-size:13px; font-weight:400; color:var(--color-neutral-500);">Inter — H1 a Caption</span>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Typography</span>
+              <span class="ds-overview-card__desc">Escala tipográfica Inter. Headings, body y caption.</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- COMPONENTS -->
+      <div class="ds-overview-group">
+        <h2 class="ds-overview-group__title">Components</h2>
+        <div class="ds-overview-grid">
+
+          <a href="components/buttons.html" class="ds-overview-card">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                <button style="display:inline-flex; align-items:center; gap:6px; background:var(--color-primary-500); color:#fff; border:none; border-radius:8px; padding:8px 14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; cursor:default;">Button</button>
+                <button style="display:inline-flex; align-items:center; gap:6px; background:transparent; color:var(--color-primary-500); border:1px solid var(--color-primary-500); border-radius:8px; padding:8px 14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; cursor:default;">Button</button>
+                <button style="display:inline-flex; align-items:center; gap:6px; background:transparent; color:var(--color-primary-500); border:none; border-radius:8px; padding:8px 14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; cursor:default;">Button</button>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Buttons</span>
+              <span class="ds-overview-card__desc">Primary, Secondary, Tertiary y Link. Medium y Small.</span>
+            </div>
+          </a>
+
+          <a href="components/switch.html" class="ds-overview-card">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; gap:12px; align-items:center;">
+                <div style="position:relative; width:44px; height:24px;">
+                  <div style="position:absolute; inset:0; background:var(--color-neutral-400); border-radius:999px;"></div>
+                  <div style="position:absolute; top:3px; left:3px; width:18px; height:18px; background:#fff; border-radius:50%; box-shadow:0 1px 3px rgba(0,0,0,0.2);"></div>
+                </div>
+                <div style="position:relative; width:44px; height:24px;">
+                  <div style="position:absolute; inset:0; background:var(--color-primary-500); border-radius:999px;"></div>
+                  <div style="position:absolute; top:3px; left:23px; width:18px; height:18px; background:#fff; border-radius:50%; box-shadow:0 1px 3px rgba(0,0,0,0.2);"></div>
+                </div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Switch</span>
+              <span class="ds-overview-card__desc">Alternancia on/off con 4 estados de interacción.</span>
+            </div>
+          </a>
+
+          <div class="ds-overview-card ds-overview-card--soon">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; gap:8px; align-items:center;">
+                <div style="height:36px; width:160px; border:1px solid var(--color-neutral-200); border-radius:8px; background:var(--color-neutral-50);"></div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Inputs <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__desc">Text fields, selects, textarea y datepicker.</span>
+            </div>
+          </div>
+
+          <div class="ds-overview-card ds-overview-card--soon">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; gap:6px;">
+                <div style="padding:4px 12px; background:var(--color-primary-50); border-radius:999px; font-size:12px; font-weight:600; color:var(--color-primary-500); font-family:'Inter',sans-serif;">Label</div>
+                <div style="padding:4px 12px; background:var(--color-neutral-100); border-radius:999px; font-size:12px; font-weight:600; color:var(--color-neutral-600); font-family:'Inter',sans-serif;">Label</div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Pills <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__desc">Etiquetas y filtros con variantes de color y estado.</span>
+            </div>
+          </div>
+
+          <div class="ds-overview-card ds-overview-card--soon">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; gap:0; border-bottom:2px solid var(--color-neutral-200);">
+                <div style="padding:8px 16px; font-size:13px; font-weight:600; color:var(--color-primary-500); border-bottom:2px solid var(--color-primary-500); margin-bottom:-2px; font-family:'Inter',sans-serif;">Tab 1</div>
+                <div style="padding:8px 16px; font-size:13px; font-weight:400; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Tab 2</div>
+                <div style="padding:8px 16px; font-size:13px; font-weight:400; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Tab 3</div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Tabs <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__desc">Navegación por pestañas con estados activo e inactivo.</span>
+            </div>
+          </div>
+
+          <div class="ds-overview-card ds-overview-card--soon">
+            <div class="ds-overview-card__preview">
+              <div style="display:inline-block; background:var(--color-neutral-900); color:#fff; padding:6px 10px; border-radius:6px; font-size:12px; font-family:'Inter',sans-serif;">Tooltip text</div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Tooltip <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__desc">Información contextual al hacer hover.</span>
+            </div>
+          </div>
+
+          <div class="ds-overview-card ds-overview-card--soon">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; align-items:center; gap:10px; background:var(--color-success-50); border-left:3px solid var(--color-success-500); padding:10px 12px; border-radius:6px; width:100%;">
+                <span style="font-size:13px; color:var(--color-success-700); font-family:'Inter',sans-serif;">Cambios guardados correctamente.</span>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Notification / Toast <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__desc">Mensajes de feedback con variantes semánticas.</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- GLOBALS -->
+      <div class="ds-overview-group">
+        <h2 class="ds-overview-group__title">Globals</h2>
+        <div class="ds-overview-grid">
+
+          <div class="ds-overview-card ds-overview-card--soon">
+            <div class="ds-overview-card__preview ds-overview-card__preview--dark">
+              <div style="display:flex; flex-direction:column; gap:8px; width:100%;">
+                <div style="height:8px; width:60%; background:var(--color-neutral-700); border-radius:4px;"></div>
+                <div style="height:8px; width:80%; background:var(--color-neutral-700); border-radius:4px;"></div>
+                <div style="height:8px; width:50%; background:var(--color-neutral-700); border-radius:4px;"></div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Navigation Drawer <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__desc">Menú lateral de navegación principal.</span>
+            </div>
+          </div>
+
+          <div class="ds-overview-card ds-overview-card--soon">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; align-items:center; justify-content:space-between; width:100%; border-bottom:1px solid var(--color-neutral-200); padding-bottom:8px;">
+                <span style="font-size:13px; font-weight:600; color:var(--color-neutral-900); font-family:'Inter',sans-serif;">Asofix</span>
+                <div style="width:28px; height:28px; border-radius:50%; background:var(--color-neutral-200);"></div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Navbar / Header <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__desc">Barra de navegación superior global.</span>
+            </div>
+          </div>
+
+          <div class="ds-overview-card ds-overview-card--soon">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; gap:8px; align-items:center; width:100%;">
+                <div style="height:32px; flex:1; border:1px solid var(--color-neutral-200); border-radius:8px; background:var(--color-neutral-50);"></div>
+                <div style="height:32px; flex:1; border:1px solid var(--color-neutral-200); border-radius:8px; background:var(--color-neutral-50);"></div>
+                <div style="height:32px; flex:1; border:1px solid var(--color-neutral-200); border-radius:8px; background:var(--color-neutral-50);"></div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Header de filtros <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__desc">Barra de filtros para listados y tablas.</span>
+            </div>
+          </div>
+
+          <div class="ds-overview-card ds-overview-card--soon">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; justify-content:flex-end; width:100%;">
+                <div style="width:55%; height:80px; border-left:1px solid var(--color-neutral-200); background:var(--color-neutral-50); border-radius:4px; padding:10px;">
+                  <div style="height:8px; width:70%; background:var(--color-neutral-200); border-radius:4px; margin-bottom:6px;"></div>
+                  <div style="height:8px; width:50%; background:var(--color-neutral-200); border-radius:4px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Sidesheet <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__desc">Panel lateral deslizante para acciones secundarias.</span>
+            </div>
+          </div>
+
+          <div class="ds-overview-card ds-overview-card--soon">
+            <div class="ds-overview-card__preview">
+              <div style="position:relative; width:100%; height:80px; display:flex; align-items:center; justify-content:center;">
+                <div style="background:#fff; border:1px solid var(--color-neutral-200); border-radius:8px; padding:12px 16px; box-shadow:0 4px 16px rgba(0,0,0,0.08); width:80%;">
+                  <div style="height:8px; width:60%; background:var(--color-neutral-200); border-radius:4px; margin-bottom:6px;"></div>
+                  <div style="height:8px; width:80%; background:var(--color-neutral-200); border-radius:4px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Modal <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__desc">Ventana de diálogo para acciones críticas.</span>
+            </div>
+          </div>
+
+        </div>
       </div>
 
     </div>
