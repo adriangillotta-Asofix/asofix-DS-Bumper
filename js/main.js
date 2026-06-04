@@ -21,7 +21,57 @@ function copyCode(btn) {
   });
 }
 
-// Números de línea en bloques de código
+// Construir TOC automáticamente desde secciones con id
+function buildTOC() {
+  const sections = document.querySelectorAll('.ds-section[id]');
+  if (sections.length === 0) return;
+
+  const toc = document.createElement('nav');
+  toc.className = 'ds-toc';
+
+  const title = document.createElement('p');
+  title.className = 'ds-toc__title';
+  title.textContent = 'En esta página';
+  toc.appendChild(title);
+
+  const list = document.createElement('ul');
+  list.className = 'ds-toc__list';
+
+  sections.forEach(section => {
+    const heading = section.querySelector('.ds-section__title');
+    if (!heading) return;
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.href = '#' + section.id;
+    a.className = 'ds-toc__link';
+    a.textContent = heading.textContent;
+    li.appendChild(a);
+    list.appendChild(li);
+  });
+
+  toc.appendChild(list);
+  document.querySelector('.ds-main').appendChild(toc);
+}
+
+// Scroll spy con IntersectionObserver
+function initScrollSpy() {
+  const links = document.querySelectorAll('.ds-toc__link');
+  if (links.length === 0) return;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.ds-toc__link[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-10% 0px -80% 0px' });
+
+  document.querySelectorAll('.ds-section[id]').forEach(s => observer.observe(s));
+}
+
+// Init
 document.addEventListener('DOMContentLoaded', () => {
 
   // Inicializar botones copiar con ícono
@@ -37,5 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }).join('');
     block.innerHTML = numbered;
   });
+
+  // TOC
+  buildTOC();
+  initScrollSpy();
 
 });
