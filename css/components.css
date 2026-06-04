@@ -30,6 +30,14 @@
 .btn--primary:focus-visible, .btn--primary.btn--focus { background-color: var(--color-primary-600); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
 .btn--primary:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
+/* Danger */
+.btn--danger { background-color: var(--color-error-500); color: #fff; }
+.btn--danger:hover, .btn--danger.btn--hover { background-color: var(--color-error-600); }
+.btn--danger:active, .btn--danger.btn--active { background-color: var(--color-error-700); }
+.btn--danger:focus-visible, .btn--danger.btn--focus { background-color: var(--color-error-600); outline: 2px solid var(--color-error-300); outline-offset: 0; }
+.btn--danger:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+
 /* Secondary */
 .btn--secondary { background-color: transparent; color: var(--color-primary-500); border-color: var(--color-primary-500); }
 .btn--secondary:hover, .btn--secondary.btn--hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); }
