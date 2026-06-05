@@ -345,8 +345,7 @@
   color: var(--color-neutral-600);
   padding: 9px 12px;
   resize: none;
-  min-height: 57px;
-  max-height: 115px;
+  height: 120px;
   overflow-y: auto;
 }
 
