@@ -14,10 +14,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.ds-main {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
@@ -102,12 +98,12 @@ body {
 }
 
 .ds-nav__link:hover {
-  background-color: #F5F1FC;
+  background-color: #EEECED;
   color: #5B3DD3;
 }
 
 .ds-nav__link.active {
-  background-color: #F5F1FC;
+  background-color: #DCDADB;
   color: #5B3DD3;
   font-weight: 500;
 }
@@ -128,7 +124,10 @@ body {
   background-color: #ffffff;
   border-radius: 12px;
   scrollbar-width: none;
+  scroll-behavior: smooth;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
 }
+
 
 .ds-main::-webkit-scrollbar {
   display: none;
