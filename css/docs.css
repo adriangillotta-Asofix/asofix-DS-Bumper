@@ -29,13 +29,12 @@ body {
 .ds-sidebar {
   width: 240px;
   min-height: 100vh;
-  border-right: 1px solid #e8e3da;
   padding: 24px 16px;
   position: fixed;
   top: 0;
   left: 0;
   overflow-y: auto;
-  background-color: #ffffff;
+  background-color: #F5F5F5;
 }
 
 .ds-sidebar__brand {
@@ -112,20 +111,22 @@ body {
    Main content
 -------------------------------- */
 .ds-main {
-  margin-left: 240px;
+  margin-left: 256px;
+  margin-top: 24px;
+  margin-right: 24px;
+  margin-bottom: 24px;
   flex: 1;
-  min-height: 100vh;
+  min-height: calc(100vh - 48px);
   display: flex;
   align-items: flex-start;
+  background-color: #ffffff;
+  border-radius: 12px;
 }
 
 .ds-content {
   flex: 1;
   max-width: 960px;
   padding: 64px 48px;
-  background-color: #ffffff;
-  border-radius: 12px;
-  margin: 24px 24px 24px 0;
 }
 
 /* --------------------------------
