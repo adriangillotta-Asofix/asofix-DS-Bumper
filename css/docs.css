@@ -18,7 +18,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 14px;
   color: #1a1a1a;
-  background-color: #ffffff;
+  background-color: #F5F5F5;
   display: flex;
   min-height: 100vh;
 }
@@ -124,6 +124,9 @@ body {
   flex: 1;
   max-width: 960px;
   padding: 64px 48px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  margin: 24px 24px 24px 0;
 }
 
 /* --------------------------------
