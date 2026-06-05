@@ -303,11 +303,20 @@
 
 /* States */
 .input__container:hover { border-color: var(--color-neutral-600); }
-.input__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 5px rgba(76,27,155,0.45); }
+.input__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .input__container--hover { border-color: var(--color-neutral-600); }
-.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 5px rgba(76,27,155,0.45); }
+.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .input__container--error { border-color: var(--color-error-500); }
 .input__container--disabled { background-color: var(--color-neutral-50); pointer-events: none; }
+
+.input__label-icon {
+  font-size: 12px;
+  color: var(--color-neutral-500);
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  user-select: none;
+}
 
 /* --------------------------------
    Text Area
@@ -344,7 +353,7 @@
 .textarea__field::placeholder { color: var(--color-neutral-400); }
 
 .textarea__container:hover { border-color: var(--color-neutral-600); }
-.textarea__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 5px rgba(76,27,155,0.45); }
+.textarea__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 
 /* --------------------------------
    Select
