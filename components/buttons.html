@@ -201,11 +201,29 @@
         </div>
         <div class="ds-code">
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn--sm {
-  height: 36px;
-  padding: 8px 12px;
-  font-size: 13px;
-}</code></pre>
+          <pre><code>.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn--primary { background-color: var(--color-primary-500); color: #fff; }
+.btn--primary:hover { background-color: var(--color-primary-600); }
+.btn--primary:active { background-color: var(--color-primary-700); }
+.btn--primary:focus-visible { background-color: var(--color-primary-600); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
+.btn--primary:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }</code></pre>
         </div>
       </div>
 
@@ -251,11 +269,29 @@
         </div>
         <div class="ds-code">
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn--sm {
-  height: 36px;
-  padding: 8px 12px;
-  font-size: 13px;
-}</code></pre>
+          <pre><code>.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn--danger { background-color: var(--color-error-500); color: #fff; }
+.btn--danger:hover { background-color: var(--color-error-600); }
+.btn--danger:active { background-color: var(--color-error-700); }
+.btn--danger:focus-visible { background-color: var(--color-error-600); outline: 2px solid var(--color-error-300); outline-offset: 0; }
+.btn--danger:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }</code></pre>
         </div>
       </div>
 
@@ -276,11 +312,29 @@
         </div>
         <div class="ds-code">
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn--sm {
-  height: 36px;
-  padding: 8px 12px;
-  font-size: 13px;
-}</code></pre>
+          <pre><code>.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn--secondary { background-color: transparent; color: var(--color-primary-500); border-color: var(--color-primary-500); }
+.btn--secondary:hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); color: var(--color-primary-600); }
+.btn--secondary:active { background-color: var(--color-primary-100); border-color: var(--color-primary-700); color: var(--color-primary-700); }
+.btn--secondary:focus-visible { background-color: var(--color-primary-50); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
+.btn--secondary:disabled { background-color: transparent; border-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }</code></pre>
         </div>
       </div>
 
@@ -301,11 +355,29 @@
         </div>
         <div class="ds-code">
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn--sm {
-  height: 36px;
-  padding: 8px 12px;
-  font-size: 13px;
-}</code></pre>
+          <pre><code>.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn--tertiary { background-color: transparent; color: var(--color-primary-500); border-color: transparent; }
+.btn--tertiary:hover { background-color: var(--color-primary-50); }
+.btn--tertiary:active { background-color: var(--color-primary-100); }
+.btn--tertiary:focus-visible { background-color: var(--color-primary-50); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
+.btn--tertiary:disabled { color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }</code></pre>
         </div>
       </div>
 
