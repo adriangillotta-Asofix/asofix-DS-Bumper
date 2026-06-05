@@ -89,6 +89,49 @@
         </div>
       </div>
 
+      <!-- DANGER MEDIUM -->
+      <div class="ds-section" id="danger-md">
+        <h2 class="ds-section__title">Danger — Medium</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="btn btn--danger btn--md"><span class="material-icons-outlined">info</span>Label<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="btn btn--danger btn--md"><span class="material-icons-outlined">info</span>Default<span class="material-icons-outlined">expand_more</span></button>
+          <button class="btn btn--danger btn--md btn--hover"><span class="material-icons-outlined">info</span>Hover<span class="material-icons-outlined">expand_more</span></button>
+          <button class="btn btn--danger btn--md btn--active"><span class="material-icons-outlined">info</span>Active<span class="material-icons-outlined">expand_more</span></button>
+          <button class="btn btn--danger btn--md btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
+          <button class="btn btn--danger btn--md" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <div class="ds-code">
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.45;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn--danger { background-color: var(--color-error-500); color: #fff; }
+.btn--danger:hover { background-color: var(--color-error-600); }
+.btn--danger:active { background-color: var(--color-error-700); }
+.btn--danger:focus-visible { background-color: var(--color-error-600); outline: 2px solid var(--color-error-300); outline-offset: 0; }
+.btn--danger:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--md { height: 44px; padding: 12px 16px; }</code></pre>
+        </div>
+      </div>
+
       <!-- SECONDARY MEDIUM -->
       <div class="ds-section" id="secondary-md">
         <h2 class="ds-section__title">Secondary — Medium</h2>
@@ -215,49 +258,6 @@
 .btn--primary:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }</code></pre>
-        </div>
-      </div>
-
-      <!-- DANGER MEDIUM -->
-      <div class="ds-section" id="danger-md">
-        <h2 class="ds-section__title">Danger — Medium</h2>
-        <p class="ds-preview__label">Preview</p>
-        <div class="ds-preview ds-preview--interactive">
-          <button class="btn btn--danger btn--md"><span class="material-icons-outlined">info</span>Label<span class="material-icons-outlined">expand_more</span></button>
-        </div>
-        <p class="ds-preview__label">Estados</p>
-        <div class="ds-preview">
-          <button class="btn btn--danger btn--md"><span class="material-icons-outlined">info</span>Default<span class="material-icons-outlined">expand_more</span></button>
-          <button class="btn btn--danger btn--md btn--hover"><span class="material-icons-outlined">info</span>Hover<span class="material-icons-outlined">expand_more</span></button>
-          <button class="btn btn--danger btn--md btn--active"><span class="material-icons-outlined">info</span>Active<span class="material-icons-outlined">expand_more</span></button>
-          <button class="btn btn--danger btn--md btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
-          <button class="btn btn--danger btn--md" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
-        </div>
-        <div class="ds-code">
-          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
-  white-space: nowrap;
-}
-
-.btn--danger { background-color: var(--color-error-500); color: #fff; }
-.btn--danger:hover { background-color: var(--color-error-600); }
-.btn--danger:active { background-color: var(--color-error-700); }
-.btn--danger:focus-visible { background-color: var(--color-error-600); outline: 2px solid var(--color-error-300); outline-offset: 0; }
-.btn--danger:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
-
-.btn--md { height: 44px; padding: 12px 16px; }</code></pre>
         </div>
       </div>
 
