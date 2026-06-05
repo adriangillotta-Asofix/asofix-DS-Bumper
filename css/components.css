@@ -186,6 +186,7 @@
 .switch--disabled {
   cursor: not-allowed;
   opacity: 1;
+  pointer-events: none;
 }
 
 .switch--disabled .switch__track {
