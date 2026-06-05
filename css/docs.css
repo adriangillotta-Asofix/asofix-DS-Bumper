@@ -595,3 +595,31 @@ body {
     display: none;
   }
 }
+
+/* --------------------------------
+   Inputs preview
+-------------------------------- */
+.ds-preview--inputs {
+  flex-wrap: wrap;
+  gap: 24px 32px;
+  padding: 32px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: auto;
+}
+
+.ds-state-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 180px;
+  flex: 1;
+}
+
+.ds-state-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-neutral-500);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
