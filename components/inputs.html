@@ -231,9 +231,25 @@
         </div>
         <div class="ds-code">
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.input__label-text--sm { font-size: 12px; line-height: 1.36; letter-spacing: 0.02em; }
+          <pre><code>.input { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.input__label { display: flex; align-items: center; gap: 4px; }
+.input__label-text { font-family: 'Inter'; font-weight: 600; color: var(--color-neutral-600); }
+.input__label-text--sm { font-size: 12px; line-height: 1.36; letter-spacing: 0.02em; }
+.input__label-icon { font-size: 12px; color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; }
+.input__label-optional { font-family: 'Inter'; font-size: 12px; font-weight: 400; line-height: 1.36; letter-spacing: 0.02em; color: var(--color-neutral-500); }
+.input__container { display: flex; align-items: center; width: 100%; background: #fff; border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
 .input__container--sm { height: 38px; padding: 0 13px; }
-.input__field--sm { font-size: 12px; }</code></pre>
+.input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: 'Inter'; font-weight: 400; color: var(--color-neutral-600); }
+.input__field--sm { font-size: 12px; }
+.input__field::placeholder { color: var(--color-neutral-400); }
+.input__assistive { font-family: 'Inter'; font-size: 12px; font-weight: 400; line-height: 1.36; letter-spacing: 0.02em; color: var(--color-neutral-500); }
+
+/* States */
+.input__container:hover { border-color: var(--color-neutral-600); }
+.input__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
+.input__container--error { border-color: var(--color-error-500); }
+.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
+.input__container--disabled { background-color: var(--color-neutral-50); pointer-events: none; }</code></pre>
         </div>
       </div>
 
@@ -323,9 +339,11 @@
 .textarea__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: 'Inter'; font-size: 14px; font-weight: 400; line-height: 1.45; color: var(--color-neutral-600); padding: 9px 12px; resize: none; min-height: 57px; max-height: 115px; overflow-y: auto; }
 .textarea__field::placeholder { color: var(--color-neutral-400); }
 
-/* States — mismas clases que input__container */
+/* States */
 .textarea__container:hover { border-color: var(--color-neutral-600); }
-.textarea__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }</code></pre>
+.textarea__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
+.textarea__container.input__container--error { border-color: var(--color-error-500); }
+.textarea__container.input__container--disabled { background-color: var(--color-neutral-50); pointer-events: none; }</code></pre>
         </div>
       </div>
 
@@ -454,6 +472,7 @@
 
 /* States */
 .select__container:hover { border-color: var(--color-neutral-600); }
+.select__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .select__container--disabled { pointer-events: none; }
 .select__container--lg.select__container--disabled { background-color: var(--color-neutral-100); }</code></pre>
         </div>
@@ -571,9 +590,21 @@
         </div>
         <div class="ds-code">
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.select__container--sm { height: 38px; padding: 0 13px; }
+          <pre><code>.select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.select__container { display: flex; align-items: center; width: 100%; background: #fff; border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
+.select__container--sm { height: 38px; padding: 0 13px; }
+.select__text { flex: 1; min-width: 0; font-family: 'Inter'; font-size: 14px; font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-neutral-400); }
+.select__text--filled { color: var(--color-neutral-600); }
+.select__icons { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
+.select__divider { width: 1px; background-color: var(--color-neutral-300); flex-shrink: 0; }
 .select__container--sm .select__divider { height: 20px; }
+.select__icon { color: var(--color-neutral-500); display: flex; align-items: center; }
 .select__icon--sm { font-size: 16px; }
+
+/* States */
+.select__container:hover { border-color: var(--color-neutral-600); }
+.select__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
+.select__container--disabled { pointer-events: none; }
 .select__container--sm.select__container--disabled { background-color: var(--color-neutral-50); }</code></pre>
         </div>
       </div>
