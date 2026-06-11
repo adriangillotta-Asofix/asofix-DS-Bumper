@@ -447,12 +447,11 @@
   gap: 16px;
   padding: 16px 20px;
   border-radius: 8px;
-  border: 1px solid var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-200);
   background-color: var(--color-neutral-white);
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
 }
 
 .card-metric__header {
@@ -537,13 +536,14 @@
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
-  transition: background-color 0.15s ease, border-color 0.15s ease;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
   cursor: default;
 }
 
 .card-tile:hover,
 .card-tile--hover {
   background-color: var(--color-error-100);
+  transform: translateY(-4px);
 }
 
 .card-tile__header {
@@ -551,6 +551,7 @@
   align-items: center;
   gap: 8px;
   width: 100%;
+  min-height: 31px;
 }
 
 .card-tile__title {
