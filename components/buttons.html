@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -30,9 +30,20 @@
       </ul>
       <p class="ds-nav__label">Components</p>
       <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
         <li><a href="buttons.html" class="ds-nav__link active">Buttons</a></li>
-        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
         <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
     </nav>
   </aside>
@@ -61,31 +72,41 @@
           <button class="btn btn--primary btn--md btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
           <button class="btn btn--primary btn--md" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
-.btn--primary { background-color: var(--color-primary-500); color: #fff; }
+.btn--primary { background-color: var(--color-primary-500); color: var(--color-neutral-white); }
 .btn--primary:hover { background-color: var(--color-primary-600); }
 .btn--primary:active { background-color: var(--color-primary-700); }
 .btn--primary:focus-visible { background-color: var(--color-primary-600); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
 .btn--primary:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--md { height: 44px; padding: 12px 16px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--primary btn--md"&gt;
+  &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
         </div>
       </div>
 
@@ -104,31 +125,41 @@
           <button class="btn btn--danger btn--md btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
           <button class="btn btn--danger btn--md" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
-.btn--danger { background-color: var(--color-error-500); color: #fff; }
+.btn--danger { background-color: var(--color-error-500); color: var(--color-neutral-white); }
 .btn--danger:hover { background-color: var(--color-error-600); }
 .btn--danger:active { background-color: var(--color-error-700); }
 .btn--danger:focus-visible { background-color: var(--color-error-600); outline: 2px solid var(--color-error-300); outline-offset: 0; }
 .btn--danger:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--md { height: 44px; padding: 12px 16px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--danger btn--md"&gt;
+  &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
         </div>
       </div>
 
@@ -147,31 +178,41 @@
           <button class="btn btn--secondary btn--md btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
           <button class="btn btn--secondary btn--md" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn--secondary { background-color: transparent; color: var(--color-primary-500); border-color: var(--color-primary-500); }
-.btn--secondary:hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); color: var(--color-primary-600); }
-.btn--secondary:active { background-color: var(--color-primary-100); border-color: var(--color-primary-700); color: var(--color-primary-700); }
+.btn--secondary:hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); }
+.btn--secondary:active { background-color: var(--color-primary-100); border-color: var(--color-primary-700); }
 .btn--secondary:focus-visible { background-color: var(--color-primary-50); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
 .btn--secondary:disabled { background-color: transparent; border-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--md { height: 44px; padding: 12px 16px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--secondary btn--md"&gt;
+  &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
         </div>
       </div>
 
@@ -190,22 +231,27 @@
           <button class="btn btn--tertiary btn--md btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
           <button class="btn btn--tertiary btn--md" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn--tertiary { background-color: transparent; color: var(--color-primary-500); border-color: transparent; }
@@ -215,6 +261,11 @@
 .btn--tertiary:disabled { color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--md { height: 44px; padding: 12px 16px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--tertiary btn--md"&gt;
+  &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
         </div>
       </div>
 
@@ -233,31 +284,41 @@
           <button class="btn btn--primary btn--sm btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
           <button class="btn btn--primary btn--sm" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
-.btn--primary { background-color: var(--color-primary-500); color: #fff; }
+.btn--primary { background-color: var(--color-primary-500); color: var(--color-neutral-white); }
 .btn--primary:hover { background-color: var(--color-primary-600); }
 .btn--primary:active { background-color: var(--color-primary-700); }
 .btn--primary:focus-visible { background-color: var(--color-primary-600); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
 .btn--primary:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--primary btn--sm"&gt;
+  &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
         </div>
       </div>
 
@@ -276,31 +337,41 @@
           <button class="btn btn--danger btn--sm btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
           <button class="btn btn--danger btn--sm" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
-.btn--danger { background-color: var(--color-error-500); color: #fff; }
+.btn--danger { background-color: var(--color-error-500); color: var(--color-neutral-white); }
 .btn--danger:hover { background-color: var(--color-error-600); }
 .btn--danger:active { background-color: var(--color-error-700); }
 .btn--danger:focus-visible { background-color: var(--color-error-600); outline: 2px solid var(--color-error-300); outline-offset: 0; }
 .btn--danger:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--danger btn--sm"&gt;
+  &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
         </div>
       </div>
 
@@ -319,31 +390,41 @@
           <button class="btn btn--secondary btn--sm btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
           <button class="btn btn--secondary btn--sm" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn--secondary { background-color: transparent; color: var(--color-primary-500); border-color: var(--color-primary-500); }
-.btn--secondary:hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); color: var(--color-primary-600); }
-.btn--secondary:active { background-color: var(--color-primary-100); border-color: var(--color-primary-700); color: var(--color-primary-700); }
+.btn--secondary:hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); }
+.btn--secondary:active { background-color: var(--color-primary-100); border-color: var(--color-primary-700); }
 .btn--secondary:focus-visible { background-color: var(--color-primary-50); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
 .btn--secondary:disabled { background-color: transparent; border-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--secondary btn--sm"&gt;
+  &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
         </div>
       </div>
 
@@ -362,22 +443,27 @@
           <button class="btn btn--tertiary btn--sm btn--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
           <button class="btn btn--tertiary btn--sm" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn--tertiary { background-color: transparent; color: var(--color-primary-500); border-color: transparent; }
@@ -387,6 +473,11 @@
 .btn--tertiary:disabled { color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--tertiary btn--sm"&gt;
+  &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
         </div>
       </div>
 
@@ -405,22 +496,27 @@
           <button class="btn btn--link btn--focus"><span class="material-icons-outlined">info</span><span>Focus</span><span class="material-icons-outlined">expand_more</span></button>
           <button class="btn btn--link" disabled><span class="material-icons-outlined">info</span><span>Disabled</span><span class="material-icons-outlined">expand_more</span></button>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.btn {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 1.45;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
   white-space: nowrap;
+  text-decoration: none;
 }
 
 .btn--link {
@@ -429,16 +525,23 @@
   border-color: transparent;
   height: auto;
   padding: 0;
-  font-size: 12px;
-  letter-spacing: 0.02em;
+  font-size: var(--font-size-caption);
+  letter-spacing: var(--letter-spacing-caption);
   gap: 6px;
   text-decoration: none;
 }
 
-.btn--link:hover { color: var(--color-primary-400); text-decoration: underline; }
-.btn--link:active { color: var(--color-primary-500); text-decoration: underline; }
+.btn--link:hover { color: var(--color-primary-400); }
+.btn--link:hover span:not(.material-icons-outlined) { text-decoration: underline; }
+.btn--link:active { color: var(--color-primary-500); }
+.btn--link:active span:not(.material-icons-outlined) { text-decoration: underline; }
 .btn--link:focus-visible { border: 1px solid var(--color-primary-500); border-radius: 4px; outline: none; }
-.btn--link:disabled { color: var(--color-neutral-400); cursor: not-allowed; }</code></pre>
+.btn--link:disabled { color: var(--color-neutral-400); cursor: not-allowed; text-decoration: none; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--link"&gt;
+  &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
+  &lt;span&gt;Label&lt;/span&gt;
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
         </div>
       </div>
 

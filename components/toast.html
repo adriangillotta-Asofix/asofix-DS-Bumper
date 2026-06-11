@@ -1,0 +1,385 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toast — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    /* Stack fijo en esquina superior derecha (solo para el demo) */
+    .toast-stack {
+      position: fixed;
+      top: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="../foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="../foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
+        <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link active">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Toast / Notification</h1>
+        <p class="ds-page-header__desc">Mensaje de feedback contextual con 4 variantes semánticas: Success, Error, Info y Alert. Incluye barra de progreso de tiempo (track time) y animaciones de entrada y salida.</p>
+      </div>
+
+      <!-- DEMO INTERACTIVO -->
+      <div class="ds-section" id="demo">
+        <h2 class="ds-section__title">Demo interactivo</h2>
+        <p class="ds-preview__label">Hacé clic para disparar cada tipo — aparecen en la esquina superior derecha</p>
+        <div class="ds-preview ds-preview--interactive" style="justify-content: center; align-items: center; gap: 12px; min-height: 120px; flex-wrap: wrap;">
+          <button class="btn btn--secondary btn--sm" onclick="showToast('success')">
+            <span class="material-icons-outlined">check_circle</span> Success
+          </button>
+          <button class="btn btn--secondary btn--sm" onclick="showToast('error')">
+            <span class="material-icons-outlined">error_outline</span> Error
+          </button>
+          <button class="btn btn--secondary btn--sm" onclick="showToast('info')">
+            <span class="material-icons-outlined">info</span> Info
+          </button>
+          <button class="btn btn--secondary btn--sm" onclick="showToast('alert')">
+            <span class="material-icons-outlined">report_problem</span> Alert
+          </button>
+        </div>
+      </div>
+
+      <!-- Stack donde aparecen los toasts del demo -->
+      <div id="toast-stack" class="toast-stack" aria-live="polite" aria-atomic="false"></div>
+
+      <!-- VARIANTES -->
+      <div class="ds-section" id="variantes">
+        <h2 class="ds-section__title">Variantes</h2>
+        <p class="ds-preview__label">Las 4 variantes semánticas con track time</p>
+        <div class="ds-preview" style="flex-direction: column; align-items: center; gap: 20px; padding: 32px; border-radius: 8px;">
+
+          <!-- Success -->
+          <div class="toast toast--success">
+            <div class="toast__content">
+              <span class="toast__icon"><span class="material-icons-outlined">check_circle</span></span>
+              <div class="toast__body">
+                <span class="toast__title">Cambios guardados</span>
+                <span class="toast__desc">La información se actualizó correctamente.</span>
+              </div>
+              <button class="toast__close"><span class="material-icons-outlined">close</span></button>
+            </div>
+            <div class="toast__track"></div>
+          </div>
+
+          <!-- Error -->
+          <div class="toast toast--error">
+            <div class="toast__content">
+              <span class="toast__icon"><span class="material-icons-outlined">error_outline</span></span>
+              <div class="toast__body">
+                <span class="toast__title">Error al guardar</span>
+                <span class="toast__desc">No se pudieron guardar los cambios. Intentá de nuevo.</span>
+              </div>
+              <button class="toast__close"><span class="material-icons-outlined">close</span></button>
+            </div>
+            <div class="toast__track"></div>
+          </div>
+
+          <!-- Info -->
+          <div class="toast toast--info">
+            <div class="toast__content">
+              <span class="toast__icon"><span class="material-icons-outlined">info</span></span>
+              <div class="toast__body">
+                <span class="toast__title">Novedad disponible</span>
+                <span class="toast__desc">Hay una actualización de la plataforma lista para aplicar.</span>
+              </div>
+              <button class="toast__close"><span class="material-icons-outlined">close</span></button>
+            </div>
+            <div class="toast__track"></div>
+          </div>
+
+          <!-- Alert -->
+          <div class="toast toast--alert">
+            <div class="toast__content">
+              <span class="toast__icon"><span class="material-icons-outlined">report_problem</span></span>
+              <div class="toast__body">
+                <span class="toast__title">Atención</span>
+                <span class="toast__desc">Este vehículo tiene reservas pendientes de confirmar.</span>
+              </div>
+              <button class="toast__close"><span class="material-icons-outlined">close</span></button>
+            </div>
+            <div class="toast__track"></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ESTADOS -->
+      <div class="ds-section" id="estados">
+        <h2 class="ds-section__title">Estados</h2>
+
+        <!-- Con track time -->
+        <p class="ds-preview__label">Con track time (default)</p>
+        <div class="ds-preview" style="justify-content: center; align-items: center; padding: 32px;">
+          <div class="toast toast--success">
+            <div class="toast__content">
+              <span class="toast__icon"><span class="material-icons-outlined">check_circle</span></span>
+              <div class="toast__body">
+                <span class="toast__title">Cambios guardados</span>
+                <span class="toast__desc">La información se actualizó correctamente.</span>
+              </div>
+              <button class="toast__close"><span class="material-icons-outlined">close</span></button>
+            </div>
+            <div class="toast__track"></div>
+          </div>
+        </div>
+        <div class="ds-code ds-code--tabbed ds-code--standalone" style="border-top: none; border-radius: 0 0 8px 8px;">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-track')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html-track')">HTML</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'js-track')">JS</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-track"><code>/* Track time estático (posición fija, sin animación) */
+.toast__track { position: absolute; bottom: 0; left: 0; height: 5px; border-radius: 0 0 0 4px; width: 75%; }
+.toast--success .toast__track { background-color: var(--color-success-500); }
+.toast--error   .toast__track { background-color: var(--color-error-500); }
+.toast--info    .toast__track { background-color: var(--color-info-500); }
+.toast--alert   .toast__track { background-color: var(--color-warning-500); }
+
+/* Track time animado (auto-dismiss) */
+.toast__track--anim { width: 100%; animation: toast-progress var(--toast-duration, 4000ms) linear forwards; }
+@keyframes toast-progress { from { width: 100%; } to { width: 0%; } }
+
+/* Pausa la barra al hacer hover sobre el toast */
+.toast:hover .toast__track--anim { animation-play-state: paused; }</code></pre>
+
+          <pre class="ds-code__panel" data-tab="html-track"><code>&lt;!-- Con track time estático --&gt;
+&lt;div class="toast toast--success"&gt;
+  &lt;div class="toast__content"&gt;
+    &lt;span class="toast__icon"&gt;&lt;span class="material-icons-outlined"&gt;check_circle&lt;/span&gt;&lt;/span&gt;
+    &lt;div class="toast__body"&gt;
+      &lt;span class="toast__title"&gt;Cambios guardados&lt;/span&gt;
+      &lt;span class="toast__desc"&gt;La información se actualizó correctamente.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;button class="toast__close"&gt;&lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="toast__track"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Con track time animado (auto-dismiss en 4s) --&gt;
+&lt;div class="toast toast--success toast--in"&gt;
+  &lt;div class="toast__content"&gt;
+    &lt;span class="toast__icon"&gt;&lt;span class="material-icons-outlined"&gt;check_circle&lt;/span&gt;&lt;/span&gt;
+    &lt;div class="toast__body"&gt;
+      &lt;span class="toast__title"&gt;Cambios guardados&lt;/span&gt;
+      &lt;span class="toast__desc"&gt;La información se actualizó correctamente.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;button class="toast__close"&gt;&lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="toast__track toast__track--anim" style="--toast-duration: 4000ms"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+          <pre class="ds-code__panel" data-tab="js-track"><code>const DURATION = 4000;
+
+function showToast(type) {
+  const toast = document.createElement('div');
+  toast.className = `toast toast--${type} toast--in`;
+  toast.innerHTML = `...`; // ver tab HTML
+
+  // Timer con pausa en hover
+  let remaining = DURATION;
+  let startTime = Date.now();
+  let timerId   = setTimeout(() => dismissToast(toast), DURATION);
+
+  toast.addEventListener('mouseenter', () => {
+    clearTimeout(timerId);
+    remaining -= Date.now() - startTime;
+  });
+
+  toast.addEventListener('mouseleave', () => {
+    startTime = Date.now();
+    timerId   = setTimeout(() => dismissToast(toast), remaining);
+  });
+
+  document.getElementById('toast-stack').insertBefore(toast, stack.firstChild);
+}
+
+function dismissToast(toast) {
+  if (!toast || toast.classList.contains('toast--out')) return;
+  toast.classList.remove('toast--in');
+  toast.classList.add('toast--out');
+  setTimeout(() => toast.remove(), 250);
+}</code></pre>
+        </div>
+
+        <!-- Sin track time -->
+        <p class="ds-preview__label" style="margin-top: 24px;">Sin track time</p>
+        <div class="ds-preview" style="justify-content: center; align-items: center; padding: 32px;">
+          <div class="toast toast--success">
+            <div class="toast__content">
+              <span class="toast__icon"><span class="material-icons-outlined">check_circle</span></span>
+              <div class="toast__body">
+                <span class="toast__title">Cambios guardados</span>
+                <span class="toast__desc">La información se actualizó correctamente.</span>
+              </div>
+              <button class="toast__close"><span class="material-icons-outlined">close</span></button>
+            </div>
+          </div>
+        </div>
+        <div class="ds-code ds-code--tabbed ds-code--standalone" style="border-top: none; border-radius: 0 0 8px 8px;">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-notrack')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html-notrack')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-notrack"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: 8px; overflow: hidden; box-shadow: 0px 4px 12px -2px rgba(0,0,0,0.12); box-sizing: border-box; }
+
+/* Variantes */
+.toast--success { background-color: var(--color-success-100); border-color: var(--color-success-400); }
+.toast--error   { background-color: var(--color-error-100);   border-color: var(--color-error-400); }
+.toast--info    { background-color: var(--color-info-100);    border-color: var(--color-info-400); }
+.toast--alert   { background-color: var(--color-warning-100); border-color: var(--color-warning-400); }
+
+/* Layout interno */
+.toast__content { display: flex; align-items: flex-start; gap: 8px; padding-bottom: 8px; width: 100%; }
+.toast__icon { display: flex; align-items: flex-start; flex-shrink: 0; }
+.toast__icon .material-icons-outlined { font-size: 16px; line-height: 1; }
+.toast__body { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.toast__title { font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); display: block; }
+.toast__desc  { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); display: block; }
+.toast__close { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: flex-start; flex-shrink: 0; }
+.toast__close .material-icons-outlined { font-size: 16px; line-height: 1; }
+
+/* Colores por variante */
+.toast--success .toast__icon, .toast--success .toast__title, .toast--success .toast__desc, .toast--success .toast__close { color: var(--color-success-700); }
+.toast--error   .toast__icon, .toast--error   .toast__title, .toast--error   .toast__desc, .toast--error   .toast__close { color: var(--color-error-700); }
+.toast--info    .toast__icon, .toast--info    .toast__title, .toast--info    .toast__desc, .toast--info    .toast__close { color: var(--color-info-700); }
+.toast--alert   .toast__icon, .toast--alert   .toast__title, .toast--alert   .toast__desc, .toast--alert   .toast__close { color: var(--color-warning-900); }
+
+/* Animaciones de entrada (desde la derecha) y salida (hacia la derecha) */
+.toast--in  { animation: toast-in  0.25s ease forwards; }
+.toast--out { animation: toast-out 0.25s ease forwards; }
+@keyframes toast-in  { from { opacity: 0; transform: translateX(calc(100% + 24px)); } to { opacity: 1; transform: translateX(0); } }
+@keyframes toast-out { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(calc(100% + 24px)); } }</code></pre>
+
+          <pre class="ds-code__panel" data-tab="html-notrack"><code>&lt;!-- Sin track time — omitir el div.toast__track --&gt;
+&lt;div class="toast toast--success"&gt;
+  &lt;div class="toast__content"&gt;
+    &lt;span class="toast__icon"&gt;&lt;span class="material-icons-outlined"&gt;check_circle&lt;/span&gt;&lt;/span&gt;
+    &lt;div class="toast__body"&gt;
+      &lt;span class="toast__title"&gt;Cambios guardados&lt;/span&gt;
+      &lt;span class="toast__desc"&gt;La información se actualizó correctamente.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;button class="toast__close"&gt;&lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- JS del DS (switchTab, copyCode) -->
+  <script src="../js/main.js"></script>
+
+  <!-- JS del demo interactivo -->
+  <script>
+    const TOAST_CONFIG = {
+      success: { icon: 'check_circle',   title: 'Cambios guardados',    desc: 'La información se actualizó correctamente.' },
+      error:   { icon: 'error_outline',  title: 'Error al guardar',     desc: 'No se pudieron guardar los cambios. Intentá de nuevo.' },
+      info:    { icon: 'info',           title: 'Novedad disponible',   desc: 'Hay una actualización de la plataforma lista para aplicar.' },
+      alert:   { icon: 'report_problem', title: 'Atención',             desc: 'Este vehículo tiene reservas pendientes de confirmar.' }
+    };
+
+    const DURATION = 4000;
+
+    function showToast(type) {
+      const cfg   = TOAST_CONFIG[type];
+      const stack = document.getElementById('toast-stack');
+
+      const toast = document.createElement('div');
+      toast.className = `toast toast--${type} toast--in`;
+      toast.innerHTML = `
+        <div class="toast__content">
+          <span class="toast__icon"><span class="material-icons-outlined">${cfg.icon}</span></span>
+          <div class="toast__body">
+            <span class="toast__title">${cfg.title}</span>
+            <span class="toast__desc">${cfg.desc}</span>
+          </div>
+          <button class="toast__close" onclick="dismissToast(this.closest('.toast'))">
+            <span class="material-icons-outlined">close</span>
+          </button>
+        </div>
+        <div class="toast__track toast__track--anim" style="--toast-duration:${DURATION}ms"></div>
+      `;
+
+      let remaining = DURATION;
+      let startTime = Date.now();
+      let timerId   = setTimeout(() => dismissToast(toast), DURATION);
+
+      toast.addEventListener('mouseenter', () => {
+        clearTimeout(timerId);
+        remaining -= Date.now() - startTime;
+      });
+
+      toast.addEventListener('mouseleave', () => {
+        startTime = Date.now();
+        timerId   = setTimeout(() => dismissToast(toast), remaining);
+      });
+
+      stack.insertBefore(toast, stack.firstChild);
+    }
+
+    function dismissToast(toast) {
+      if (!toast || toast.classList.contains('toast--out')) return;
+      toast.classList.remove('toast--in');
+      toast.classList.add('toast--out');
+      setTimeout(() => toast.remove(), 250);
+    }
+  </script>
+
+</body>
+</html>

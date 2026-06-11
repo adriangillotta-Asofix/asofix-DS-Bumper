@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dropdown — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="../foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="../foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
+        <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link active">Dropdown</a></li>
+        <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Dropdown</h1>
+        <p class="ds-page-header__desc">Lista desplegable para selección simple o múltiple. Soporta distintos tipos de ítems, scroll y acciones en el footer.</p>
+      </div>
+
+      <!-- =============================================
+           1. DEMO INTERACTIVO
+      ============================================== -->
+      <div class="ds-section" id="demo">
+        <h2 class="ds-section__title">Demo interactivo</h2>
+        <div class="ds-preview ds-preview--interactive" style="min-height:660px; padding:24px; overflow:visible; align-items:flex-start; justify-content:center;">
+          <div style="position:relative; display:inline-block;">
+            <button
+              id="trigger-demo"
+              class="btn btn--secondary btn--md"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+              aria-controls="dropdown-demo"
+              onclick="toggleDropdown('trigger-demo', 'dropdown-demo')"
+            >
+              <span class="material-icons-outlined">filter_list</span>
+              Filtrar vendedor
+            </button>
+
+            <div class="dropdown" id="dropdown-demo" hidden role="listbox" aria-label="Filtrar vendedor"
+              style="position:absolute; top:calc(100% + 8px); left:calc(50% - 190px); z-index:100;">
+              <div class="dropdown__list">
+
+                <button class="dropdown-item dropdown-item--active" role="option" onclick="selectDropdownItem(this)">
+                  <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box</span></span>
+                  <div class="dropdown-item__content">
+                    <span class="dropdown-item__title">Martín García</span>
+                  </div>
+                </button>
+
+                <button class="dropdown-item" role="option" onclick="selectDropdownItem(this)">
+                  <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                  <div class="dropdown-item__content">
+                    <span class="dropdown-item__title">Laura Romero</span>
+                  </div>
+                </button>
+
+                <button class="dropdown-item" role="option" onclick="selectDropdownItem(this)">
+                  <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                  <div class="dropdown-item__content">
+                    <span class="dropdown-item__title">Carlos Méndez</span>
+                  </div>
+                </button>
+
+                <button class="dropdown-item" role="option" onclick="selectDropdownItem(this)">
+                  <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                  <div class="dropdown-item__content">
+                    <span class="dropdown-item__title">Diego Peralta</span>
+                  </div>
+                </button>
+
+                <button class="dropdown-item" role="option" onclick="selectDropdownItem(this)">
+                  <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                  <div class="dropdown-item__content">
+                    <span class="dropdown-item__title">Valeria Torres</span>
+                  </div>
+                </button>
+
+                <button class="dropdown-item" role="option" onclick="selectDropdownItem(this)">
+                  <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                  <div class="dropdown-item__content">
+                    <span class="dropdown-item__title">Ana Suárez</span>
+                  </div>
+                </button>
+
+                <button class="dropdown-item" role="option" onclick="selectDropdownItem(this)">
+                  <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                  <div class="dropdown-item__content">
+                    <span class="dropdown-item__title">Sofía Herrera</span>
+                  </div>
+                </button>
+
+                <button class="dropdown-item" role="option" onclick="selectDropdownItem(this)">
+                  <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                  <div class="dropdown-item__content">
+                    <span class="dropdown-item__title">Roberto Campos</span>
+                  </div>
+                </button>
+
+                <button class="dropdown-item" role="option" onclick="selectDropdownItem(this)">
+                  <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                  <div class="dropdown-item__content">
+                    <span class="dropdown-item__title">Lucía Fernández</span>
+                  </div>
+                </button>
+
+                <button class="dropdown-item" role="option" onclick="selectDropdownItem(this)">
+                  <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                  <div class="dropdown-item__content">
+                    <span class="dropdown-item__title">Nicolás Vargas</span>
+                  </div>
+                </button>
+
+                <div class="dropdown__footer">
+                  <button class="btn btn--secondary btn--md" onclick="toggleDropdown('trigger-demo', 'dropdown-demo')">Cancelar</button>
+                  <button class="btn btn--primary btn--md" onclick="toggleDropdown('trigger-demo', 'dropdown-demo')">Aplicar</button>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =============================================
+           2. DROPDOWN COMPLETO
+      ============================================== -->
+      <div class="ds-section" id="dropdown-completo">
+        <h2 class="ds-section__title">Dropdown completo</h2>
+        <p style="font-size:13px; color:var(--color-neutral-500); line-height:1.6; margin-bottom:16px;">
+          Base del componente. Copiá el CSS, HTML y JS. Luego reemplazá los ítems del <code style="font-size:12px; background:var(--color-neutral-100); padding:1px 5px; border-radius:4px;">.dropdown__list</code> con la variante que necesitás — ver <a href="#list-options" style="color:var(--color-primary-500); text-decoration:none; font-weight:600;">List options ↓</a>
+        </p>
+
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview" style="border-radius:8px 8px 0 0; padding:40px 32px;">
+          <div class="dropdown">
+            <div class="dropdown__list" style="max-height:none; overflow-y:visible;">
+              <button class="dropdown-item dropdown-item--active">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Martín García</span>
+                </div>
+              </button>
+              <button class="dropdown-item">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Laura Romero</span>
+                </div>
+              </button>
+              <button class="dropdown-item">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Carlos Méndez</span>
+                </div>
+              </button>
+              <button class="dropdown-item">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Ana Suárez</span>
+                </div>
+              </button>
+              <button class="dropdown-item">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Diego Peralta</span>
+                </div>
+              </button>
+              <button class="dropdown-item">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Sofía Herrera</span>
+                </div>
+              </button>
+              <button class="dropdown-item">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Valeria Torres</span>
+                </div>
+              </button>
+              <div class="dropdown__footer">
+                <button class="btn btn--secondary btn--md">Cancelar</button>
+                <button class="btn btn--primary btn--md">Aplicar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-dd')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html-dd')">HTML</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'js-dd')">JS</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-dd"><code>/* Contenedor */
+.dropdown { display: inline-flex; background-color: var(--color-neutral-white); border-radius: 8px; box-shadow: 0px 4px 8px 0px rgba(51,51,51,0.22); width: 380px; overflow: hidden; animation: dropdown-in 0.15s ease forwards; }
+.dropdown[hidden] { display: none; }
+@keyframes dropdown-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Lista */
+.dropdown__list { flex: 1; display: flex; flex-direction: column; padding: 8px 4px; overflow-y: auto; max-height: 408px; }
+.dropdown__list::-webkit-scrollbar { width: 6px; }
+.dropdown__list::-webkit-scrollbar-track { background: var(--color-neutral-white); }
+.dropdown__list::-webkit-scrollbar-thumb { background-color: var(--color-neutral-300); border-radius: 50px; }
+
+/* Ítem base */
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
+.dropdown-item:hover,
+.dropdown-item--active         { background-color: var(--color-primary-50); }
+.dropdown-item--disabled       { cursor: default; pointer-events: none; }
+
+/* Checkbox */
+.dropdown-item__checkbox { display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 6px; color: var(--color-neutral-400); line-height: 1; }
+.dropdown-item__checkbox .material-icons-outlined { font-size: 20px; line-height: 1; }
+.dropdown-item--active   .dropdown-item__checkbox { color: var(--color-primary-500); }
+.dropdown-item--disabled .dropdown-item__checkbox { color: var(--color-neutral-300); }
+
+/* Contenido */
+.dropdown-item__content { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
+.dropdown-item--disabled .dropdown-item__content { color: var(--color-neutral-400); }
+.dropdown-item__title-row { display: flex; align-items: flex-start; gap: 12px; width: 100%; }
+.dropdown-item__title  { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
+.dropdown-item__number { flex-shrink: 0; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); text-align: right; color: inherit; }
+.dropdown-item__desc   { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: var(--font-size-caption); font-weight: 400; line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: inherit; }
+
+.dropdown-item--loading:hover, .dropdown-item--no-matches:hover { background-color: transparent; }
+
+.dropdown-item__status { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: var(--color-neutral-700); }
+
+/* Pill en ítem deshabilitado */
+.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-neutral-200); color: var(--color-neutral-400); }
+
+/* Footer */
+.dropdown__footer { display: flex; align-items: center; justify-content: flex-end; gap: 16px; padding: 12px 12px 8px; flex-shrink: 0; }</code></pre>
+
+          <pre class="ds-code__panel" data-tab="html-dd"><code>&lt;!-- Trigger --&gt;
+&lt;button
+  id="mi-trigger"
+  class="btn btn--secondary btn--md"
+  aria-haspopup="listbox"
+  aria-expanded="false"
+  aria-controls="mi-dropdown"
+  onclick="toggleDropdown('mi-trigger', 'mi-dropdown')"
+&gt;
+  &lt;span class="material-icons-outlined"&gt;filter_list&lt;/span&gt;
+  Filtrar
+&lt;/button&gt;
+
+&lt;!-- Dropdown --&gt;
+&lt;div class="dropdown" id="mi-dropdown" hidden role="listbox"&gt;
+  &lt;div class="dropdown__list"&gt;
+
+    &lt;!-- Pegá acá los ítems de la variante que necesitás (ver List options ↓) --&gt;
+
+    &lt;!-- Footer con acciones (opcional) --&gt;
+    &lt;div class="dropdown__footer"&gt;
+      &lt;button class="btn btn--secondary btn--md" onclick="toggleDropdown('mi-trigger', 'mi-dropdown')"&gt;Cancelar&lt;/button&gt;
+      &lt;button class="btn btn--primary btn--md" onclick="toggleDropdown('mi-trigger', 'mi-dropdown')"&gt;Aplicar&lt;/button&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+          <pre class="ds-code__panel" data-tab="js-dd"><code>// Abrir / cerrar el dropdown
+function toggleDropdown(triggerId, dropdownId) {
+  const dropdown = document.getElementById(dropdownId);
+  const trigger  = document.getElementById(triggerId);
+  if (!dropdown) return;
+  const isOpen = !dropdown.hidden;
+  dropdown.hidden = isOpen;
+  if (trigger) trigger.setAttribute('aria-expanded', String(!isOpen));
+}
+
+// Seleccionar / deseleccionar un ítem
+function selectDropdownItem(el) {
+  if (el.classList.contains('dropdown-item--disabled')) return;
+  const isActive = el.classList.contains('dropdown-item--active');
+  const icon = el.querySelector('.dropdown-item__checkbox .material-icons-outlined');
+  if (isActive) {
+    el.classList.remove('dropdown-item--active');
+    if (icon) icon.textContent = 'check_box_outline_blank';
+  } else {
+    el.classList.add('dropdown-item--active');
+    if (icon) icon.textContent = 'check_box';
+  }
+}
+
+// Cerrar al hacer clic fuera
+document.addEventListener('click', e => {
+  document.querySelectorAll('.dropdown:not([hidden])').forEach(dropdown => {
+    const trigger = document.querySelector(`[aria-controls="${dropdown.id}"]`);
+    if (!dropdown.contains(e.target) && (!trigger || !trigger.contains(e.target))) {
+      dropdown.hidden = true;
+      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+});</code></pre>
+        </div>
+      </div>
+
+      <!-- =============================================
+           3. LIST OPTIONS
+      ============================================== -->
+      <div class="ds-section" id="list-options">
+        <h2 class="ds-section__title">List options</h2>
+        <p style="font-size:13px; color:var(--color-neutral-500); line-height:1.6; margin-bottom:16px;">
+          Cada variante es independiente. Copiá el snippet que necesitás y pegalo dentro del <code style="font-size:12px; background:var(--color-neutral-100); padding:1px 5px; border-radius:4px;">.dropdown__list</code>. Podés mezclar variantes en el mismo dropdown.
+        </p>
+
+        <div style="display:flex; flex-direction:column; gap:40px;">
+
+          <!-- Default -->
+          <div id="lo-default">
+            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Default</p>
+            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Ítem simple sin checkbox ni adornos extra.</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <button class="dropdown-item" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+              </button>
+              <button class="dropdown-item dropdown-item--active" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+              </button>
+              <button class="dropdown-item dropdown-item--disabled" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+              </button>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-default')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-default')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-default"><code>/* Ítem base */
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
+.dropdown-item:hover,
+.dropdown-item--active   { background-color: var(--color-primary-50); }
+.dropdown-item--disabled { cursor: default; pointer-events: none; }
+
+/* Contenido */
+.dropdown-item__content  { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
+.dropdown-item--disabled .dropdown-item__content { color: var(--color-neutral-400); }
+.dropdown-item__title    { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-default"><code>&lt;!-- Default --&gt;
+&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
+  &lt;div class="dropdown-item__content"&gt;
+    &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/button&gt;
+
+&lt;!-- Active (JS agrega esta clase al seleccionar) --&gt;
+&lt;button class="dropdown-item dropdown-item--active" onclick="selectDropdownItem(this)"&gt; ... &lt;/button&gt;
+
+&lt;!-- Disabled --&gt;
+&lt;button class="dropdown-item dropdown-item--disabled"&gt; ... &lt;/button&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Default + Number -->
+          <div id="lo-number">
+            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Default + Number</p>
+            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Número a la derecha, útil para mostrar cantidades.</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <button class="dropdown-item" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <div class="dropdown-item__title-row"><span class="dropdown-item__title">Título del ítem</span><span class="dropdown-item__number">5</span></div>
+                </div>
+              </button>
+              <button class="dropdown-item dropdown-item--active" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <div class="dropdown-item__title-row"><span class="dropdown-item__title">Título del ítem</span><span class="dropdown-item__number">5</span></div>
+                </div>
+              </button>
+              <button class="dropdown-item dropdown-item--disabled" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <div class="dropdown-item__title-row"><span class="dropdown-item__title">Título del ítem</span><span class="dropdown-item__number">0</span></div>
+                </div>
+              </button>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-number')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-number')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-number"><code>/* Ítem base */
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
+.dropdown-item:hover,
+.dropdown-item--active   { background-color: var(--color-primary-50); }
+.dropdown-item--disabled { cursor: default; pointer-events: none; }
+
+/* Contenido */
+.dropdown-item__content   { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
+.dropdown-item--disabled .dropdown-item__content { color: var(--color-neutral-400); }
+.dropdown-item__title-row { display: flex; align-items: flex-start; gap: 12px; width: 100%; }
+.dropdown-item__title     { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
+.dropdown-item__number    { flex-shrink: 0; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); text-align: right; color: inherit; }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-number"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
+  &lt;div class="dropdown-item__content"&gt;
+    &lt;div class="dropdown-item__title-row"&gt;
+      &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
+      &lt;span class="dropdown-item__number"&gt;5&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Default + Pill -->
+          <div id="lo-pill">
+            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Default + Pill</p>
+            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Pill de estado a la derecha, siempre read-only.</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <button class="dropdown-item" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+                <span class="pill pill--sm pill--default">Activo</span>
+              </button>
+              <button class="dropdown-item dropdown-item--active" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+                <span class="pill pill--sm pill--default">Activo</span>
+              </button>
+              <button class="dropdown-item dropdown-item--disabled" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+                <span class="pill pill--sm pill--default">Activo</span>
+              </button>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-pill')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-pill')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-pill"><code>/* Ítem base */
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
+.dropdown-item:hover,
+.dropdown-item--active   { background-color: var(--color-primary-50); }
+.dropdown-item--disabled { cursor: default; pointer-events: none; }
+
+/* Contenido */
+.dropdown-item__content  { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
+.dropdown-item--disabled .dropdown-item__content { color: var(--color-neutral-400); }
+.dropdown-item__title    { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
+
+/* Pill en ítem deshabilitado */
+.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-neutral-200); color: var(--color-neutral-400); }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-pill"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
+  &lt;div class="dropdown-item__content"&gt;
+    &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;!-- Podés usar cualquier color de pill del DS --&gt;
+  &lt;span class="pill pill--sm pill--default"&gt;Activo&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Check + Default -->
+          <div id="lo-check-default">
+            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Check + Default</p>
+            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Checkbox para selección múltiple.</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <button class="dropdown-item" style="width:100%;">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+              </button>
+              <button class="dropdown-item dropdown-item--active" style="width:100%;">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+              </button>
+              <button class="dropdown-item dropdown-item--disabled" style="width:100%;">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+              </button>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-check')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-check')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-check"><code>/* Ítem base */
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
+.dropdown-item:hover,
+.dropdown-item--active   { background-color: var(--color-primary-50); }
+.dropdown-item--disabled { cursor: default; pointer-events: none; }
+
+/* Checkbox */
+.dropdown-item__checkbox { display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 6px; color: var(--color-neutral-400); line-height: 1; }
+.dropdown-item__checkbox .material-icons-outlined { font-size: 20px; line-height: 1; }
+.dropdown-item--active   .dropdown-item__checkbox { color: var(--color-primary-500); }
+.dropdown-item--disabled .dropdown-item__checkbox { color: var(--color-neutral-300); }
+
+/* Contenido */
+.dropdown-item__content  { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
+.dropdown-item--disabled .dropdown-item__content { color: var(--color-neutral-400); }
+.dropdown-item__title    { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-check"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
+  &lt;span class="dropdown-item__checkbox"&gt;
+    &lt;span class="material-icons-outlined"&gt;check_box_outline_blank&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;div class="dropdown-item__content"&gt;
+    &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Check + Default + Number -->
+          <div id="lo-check-number">
+            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Check + Default + Number</p>
+            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Checkbox con número a la derecha.</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <button class="dropdown-item" style="width:100%;">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <div class="dropdown-item__title-row"><span class="dropdown-item__title">Título del ítem</span><span class="dropdown-item__number">5</span></div>
+                </div>
+              </button>
+              <button class="dropdown-item dropdown-item--active" style="width:100%;">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box</span></span>
+                <div class="dropdown-item__content">
+                  <div class="dropdown-item__title-row"><span class="dropdown-item__title">Título del ítem</span><span class="dropdown-item__number">5</span></div>
+                </div>
+              </button>
+              <button class="dropdown-item dropdown-item--disabled" style="width:100%;">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <div class="dropdown-item__title-row"><span class="dropdown-item__title">Título del ítem</span><span class="dropdown-item__number">0</span></div>
+                </div>
+              </button>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-check-num')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-check-num')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-check-num"><code>/* Ítem base */
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
+.dropdown-item:hover,
+.dropdown-item--active   { background-color: var(--color-primary-50); }
+.dropdown-item--disabled { cursor: default; pointer-events: none; }
+
+/* Checkbox */
+.dropdown-item__checkbox { display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 6px; color: var(--color-neutral-400); line-height: 1; }
+.dropdown-item__checkbox .material-icons-outlined { font-size: 20px; line-height: 1; }
+.dropdown-item--active   .dropdown-item__checkbox { color: var(--color-primary-500); }
+.dropdown-item--disabled .dropdown-item__checkbox { color: var(--color-neutral-300); }
+
+/* Contenido */
+.dropdown-item__content   { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
+.dropdown-item--disabled .dropdown-item__content { color: var(--color-neutral-400); }
+.dropdown-item__title-row { display: flex; align-items: flex-start; gap: 12px; width: 100%; }
+.dropdown-item__title     { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
+.dropdown-item__number    { flex-shrink: 0; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); text-align: right; color: inherit; }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-check-num"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
+  &lt;span class="dropdown-item__checkbox"&gt;
+    &lt;span class="material-icons-outlined"&gt;check_box_outline_blank&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;div class="dropdown-item__content"&gt;
+    &lt;div class="dropdown-item__title-row"&gt;
+      &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
+      &lt;span class="dropdown-item__number"&gt;5&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Check + Default + Pill -->
+          <div id="lo-check-pill">
+            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Check + Default + Pill</p>
+            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Checkbox con pill de estado a la derecha.</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <button class="dropdown-item" style="width:100%;">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+                <span class="pill pill--sm pill--default">Activo</span>
+              </button>
+              <button class="dropdown-item dropdown-item--active" style="width:100%;">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+                <span class="pill pill--sm pill--default">Activo</span>
+              </button>
+              <button class="dropdown-item dropdown-item--disabled" style="width:100%;">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                </div>
+                <span class="pill pill--sm pill--default">Activo</span>
+              </button>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-check-pill')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-check-pill')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-check-pill"><code>/* Ítem base */
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
+.dropdown-item:hover,
+.dropdown-item--active   { background-color: var(--color-primary-50); }
+.dropdown-item--disabled { cursor: default; pointer-events: none; }
+
+/* Checkbox */
+.dropdown-item__checkbox { display: flex; align-items: center; justify-content: center; flex-shrink: 0; padding: 6px; color: var(--color-neutral-400); line-height: 1; }
+.dropdown-item__checkbox .material-icons-outlined { font-size: 20px; line-height: 1; }
+.dropdown-item--active   .dropdown-item__checkbox { color: var(--color-primary-500); }
+.dropdown-item--disabled .dropdown-item__checkbox { color: var(--color-neutral-300); }
+
+/* Contenido */
+.dropdown-item__content  { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
+.dropdown-item--disabled .dropdown-item__content { color: var(--color-neutral-400); }
+.dropdown-item__title    { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
+
+/* Pill en ítem deshabilitado */
+.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-neutral-200); color: var(--color-neutral-400); }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-check-pill"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
+  &lt;span class="dropdown-item__checkbox"&gt;
+    &lt;span class="material-icons-outlined"&gt;check_box_outline_blank&lt;/span&gt;
+  &lt;/span&gt;
+  &lt;div class="dropdown-item__content"&gt;
+    &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;span class="pill pill--sm pill--default"&gt;Activo&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Loading -->
+          <div id="lo-loading">
+            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Loading</p>
+            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Reemplazá todos los ítems mientras se cargan los resultados.</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <div class="dropdown-item dropdown-item--loading" style="width:100%;">
+                <span class="dropdown-item__status">Cargando...</span>
+              </div>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-loading')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-loading')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-loading"><code>/* Ítem base */
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
+.dropdown-item--loading:hover { background-color: transparent; }
+
+/* Estado */
+.dropdown-item__status { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: var(--color-neutral-700); }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-loading"><code>&lt;div class="dropdown-item dropdown-item--loading"&gt;
+  &lt;span class="dropdown-item__status"&gt;Cargando...&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- 0 Matches -->
+          <div id="lo-matches">
+            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">0 Matches</p>
+            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Reemplazá todos los ítems cuando la búsqueda no tiene resultados.</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <div class="dropdown-item dropdown-item--no-matches" style="width:100%;">
+                <span class="dropdown-item__status">No hay coincidencias</span>
+              </div>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-matches')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-matches')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-matches"><code>/* Ítem base */
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
+.dropdown-item--no-matches:hover { background-color: transparent; }
+
+/* Estado */
+.dropdown-item__status { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: var(--color-neutral-700); }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-matches"><code>&lt;div class="dropdown-item dropdown-item--no-matches"&gt;
+  &lt;span class="dropdown-item__status"&gt;No hay coincidencias&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

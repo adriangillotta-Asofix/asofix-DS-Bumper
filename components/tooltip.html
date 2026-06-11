@@ -1,0 +1,463 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tooltip — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    /* Fix overflow para que los tooltips no queden clipeados */
+    .ds-preview--interactive {
+      overflow: visible;
+    }
+
+    /* Trigger interactivo — solo para documentación */
+    .tooltip-trigger {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+    .tooltip-icon {
+      cursor: pointer;
+      font-size: 24px;
+      color: var(--color-neutral-500);
+    }
+    .tooltip-trigger .tooltip {
+      position: absolute;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s ease 0.2s;
+      z-index: 999;
+      width: 220px;
+    }
+    /* Puente invisible que cubre el gap de 8px entre el ícono y el tooltip */
+    .tooltip-trigger::after {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      right: -8px;
+      bottom: -8px;
+    }
+    /* El trigger hovered sube por encima de los demás y muestra el tooltip */
+    .tooltip-trigger:hover {
+      z-index: 10000;
+    }
+    .tooltip-trigger:hover .tooltip {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s ease 0s;
+    }
+    /* Estado oculto: centrado + leve offset en la dirección de entrada */
+    .tooltip-trigger .tooltip--left   { left: calc(100% + 8px); top: 50%; transform: translateY(-50%) translateX(4px); }
+    .tooltip-trigger .tooltip--right  { right: calc(100% + 8px); top: 50%; transform: translateY(-50%) translateX(-4px); }
+    .tooltip-trigger .tooltip--top    { top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(4px); }
+    .tooltip-trigger .tooltip--bottom { bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-4px); }
+    /* Estado visible: solo centrado, sin offset */
+    .tooltip-trigger:hover .tooltip--left   { transform: translateY(-50%) translateX(0); }
+    .tooltip-trigger:hover .tooltip--right  { transform: translateY(-50%) translateX(0); }
+    .tooltip-trigger:hover .tooltip--top    { transform: translateX(-50%) translateY(0); }
+    .tooltip-trigger:hover .tooltip--bottom { transform: translateX(-50%) translateY(0); }
+
+    /* Variantes estáticas */
+    .ds-preview--tooltip-variants {
+      flex-wrap: wrap;
+      gap: 40px 48px;
+      padding: 40px 32px;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: auto;
+    }
+    .ds-tooltip-variant {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    /* Tooltips un poco más anchos en variantes */
+    .ds-preview--tooltip-variants .tooltip {
+      width: 240px;
+      max-width: 240px;
+    }
+    .ds-preview--tooltip-variants .tooltip--top,
+    .ds-preview--tooltip-variants .tooltip--bottom {
+      width: 240px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="../foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="../foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
+        <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link active">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Tooltip</h1>
+        <p class="ds-page-header__desc">Componente de información contextual con flecha en cuatro posiciones. Incluye variantes con título, ícono de cierre, paginador y acción.</p>
+      </div>
+
+      <!-- PREVIEW INTERACTIVO -->
+      <div class="ds-section" id="tooltip">
+        <h2 class="ds-section__title">Tooltip</h2>
+        <p class="ds-preview__label">Preview — hover sobre cada ícono</p>
+        <div class="ds-preview ds-preview--interactive" style="gap: 80px; padding: 80px 48px; min-height: 300px;">
+
+          <!-- Arrow Left: tooltip aparece a la derecha -->
+          <div class="tooltip-trigger">
+            <span class="material-icons-outlined tooltip-icon">info</span>
+            <div class="tooltip tooltip--left">
+              <div class="tooltip__arrow"></div>
+              <div class="tooltip__box">
+                <div class="tooltip__header">
+                  <div class="tooltip__body">
+                    <span class="tooltip__title">Title</span>
+                    <span class="tooltip__desc">Description</span>
+                  </div>
+                  <button class="tooltip__close"><span class="material-icons-outlined">close</span></button>
+                </div>
+                <div class="tooltip__footer">
+                  <span class="tooltip__paginator">1/5</span>
+                  <a class="btn btn--link tooltip__action">Button</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arrow Right: tooltip aparece a la izquierda -->
+          <div class="tooltip-trigger">
+            <span class="material-icons-outlined tooltip-icon">info</span>
+            <div class="tooltip tooltip--right">
+              <div class="tooltip__box">
+                <div class="tooltip__header">
+                  <div class="tooltip__body">
+                    <span class="tooltip__title">Title</span>
+                    <span class="tooltip__desc">Description</span>
+                  </div>
+                  <button class="tooltip__close"><span class="material-icons-outlined">close</span></button>
+                </div>
+                <div class="tooltip__footer">
+                  <span class="tooltip__paginator">1/5</span>
+                  <a class="btn btn--link tooltip__action">Button</a>
+                </div>
+              </div>
+              <div class="tooltip__arrow"></div>
+            </div>
+          </div>
+
+          <!-- Arrow Top: tooltip aparece abajo -->
+          <div class="tooltip-trigger">
+            <span class="material-icons-outlined tooltip-icon">info</span>
+            <div class="tooltip tooltip--top">
+              <div class="tooltip__arrow"></div>
+              <div class="tooltip__box">
+                <div class="tooltip__header">
+                  <div class="tooltip__body">
+                    <span class="tooltip__title">Title</span>
+                    <span class="tooltip__desc">Description</span>
+                  </div>
+                  <button class="tooltip__close"><span class="material-icons-outlined">close</span></button>
+                </div>
+                <div class="tooltip__footer">
+                  <span class="tooltip__paginator">1/5</span>
+                  <a class="btn btn--link tooltip__action">Button</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Arrow Bottom: tooltip aparece arriba -->
+          <div class="tooltip-trigger">
+            <span class="material-icons-outlined tooltip-icon">info</span>
+            <div class="tooltip tooltip--bottom">
+              <div class="tooltip__box">
+                <div class="tooltip__header">
+                  <div class="tooltip__body">
+                    <span class="tooltip__title">Title</span>
+                    <span class="tooltip__desc">Description</span>
+                  </div>
+                  <button class="tooltip__close"><span class="material-icons-outlined">close</span></button>
+                </div>
+                <div class="tooltip__footer">
+                  <span class="tooltip__paginator">1/5</span>
+                  <a class="btn btn--link tooltip__action">Button</a>
+                </div>
+              </div>
+              <div class="tooltip__arrow"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- VARIANTES ESTÁTICAS -->
+        <p class="ds-preview__label">Variantes</p>
+        <div class="ds-preview ds-preview--tooltip-variants">
+
+          <div class="ds-tooltip-variant">
+            <span class="ds-state-label">Arrow Left</span>
+            <div class="tooltip tooltip--left">
+              <div class="tooltip__arrow"></div>
+              <div class="tooltip__box">
+                <div class="tooltip__header">
+                  <div class="tooltip__body">
+                    <span class="tooltip__title">Title</span>
+                    <span class="tooltip__desc">Description</span>
+                  </div>
+                  <button class="tooltip__close"><span class="material-icons-outlined">close</span></button>
+                </div>
+                <div class="tooltip__footer">
+                  <span class="tooltip__paginator">1/5</span>
+                  <a class="btn btn--link tooltip__action">Button</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-tooltip-variant">
+            <span class="ds-state-label">Arrow Right</span>
+            <div class="tooltip tooltip--right">
+              <div class="tooltip__box">
+                <div class="tooltip__header">
+                  <div class="tooltip__body">
+                    <span class="tooltip__title">Title</span>
+                    <span class="tooltip__desc">Description</span>
+                  </div>
+                  <button class="tooltip__close"><span class="material-icons-outlined">close</span></button>
+                </div>
+                <div class="tooltip__footer">
+                  <span class="tooltip__paginator">1/5</span>
+                  <a class="btn btn--link tooltip__action">Button</a>
+                </div>
+              </div>
+              <div class="tooltip__arrow"></div>
+            </div>
+          </div>
+
+          <div class="ds-tooltip-variant">
+            <span class="ds-state-label">Arrow Top</span>
+            <div class="tooltip tooltip--top">
+              <div class="tooltip__arrow"></div>
+              <div class="tooltip__box">
+                <div class="tooltip__header">
+                  <div class="tooltip__body">
+                    <span class="tooltip__title">Title</span>
+                    <span class="tooltip__desc">Description</span>
+                  </div>
+                  <button class="tooltip__close"><span class="material-icons-outlined">close</span></button>
+                </div>
+                <div class="tooltip__footer">
+                  <span class="tooltip__paginator">1/5</span>
+                  <a class="btn btn--link tooltip__action">Button</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="ds-tooltip-variant">
+            <span class="ds-state-label">Arrow Bottom</span>
+            <div class="tooltip tooltip--bottom">
+              <div class="tooltip__box">
+                <div class="tooltip__header">
+                  <div class="tooltip__body">
+                    <span class="tooltip__title">Title</span>
+                    <span class="tooltip__desc">Description</span>
+                  </div>
+                  <button class="tooltip__close"><span class="material-icons-outlined">close</span></button>
+                </div>
+                <div class="tooltip__footer">
+                  <span class="tooltip__paginator">1/5</span>
+                  <a class="btn btn--link tooltip__action">Button</a>
+                </div>
+              </div>
+              <div class="tooltip__arrow"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- CÓDIGO -->
+        <div class="ds-code ds-code--tabbed ds-code--standalone" style="border-top: none; border-radius: 0 0 8px 8px;">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.tooltip { display: inline-flex; align-items: center; max-width: 220px; position: relative; }
+.tooltip--top, .tooltip--bottom { flex-direction: column; align-items: stretch; width: 220px; }
+.tooltip--top .tooltip__arrow,
+.tooltip--bottom .tooltip__arrow { align-self: center; }
+
+.tooltip__box { background-color: var(--color-neutral-700); border-radius: 8px; padding: 10px 12px; display: flex; flex-direction: column; gap: 16px; flex: 1; min-width: 0; }
+.tooltip__header { display: flex; align-items: flex-start; gap: 16px; width: 100%; }
+.tooltip__body { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+
+.tooltip__title { font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: var(--color-neutral-white); display: block; }
+.tooltip__desc { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-white); display: block; }
+
+.tooltip__close { background: none; border: none; cursor: pointer; padding: 0; color: var(--color-neutral-white); display: flex; align-items: center; flex-shrink: 0; line-height: 1; }
+.tooltip__close .material-icons-outlined { font-size: 16px; }
+
+.tooltip__footer { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.tooltip__paginator { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-white); }
+.tooltip__action { font-size: var(--font-size-caption) !important; color: var(--color-neutral-white) !important; letter-spacing: var(--letter-spacing-caption); }
+.tooltip__action:hover { color: rgba(255,255,255,0.75) !important; }
+
+/* Arrow */
+.tooltip__arrow { width: 0; height: 0; flex-shrink: 0; }
+.tooltip--left .tooltip__arrow { border-top: 8.5px solid transparent; border-bottom: 8.5px solid transparent; border-right: 8px solid var(--color-neutral-700); }
+.tooltip--right .tooltip__arrow { border-top: 8.5px solid transparent; border-bottom: 8.5px solid transparent; border-left: 8px solid var(--color-neutral-700); }
+.tooltip--top .tooltip__arrow { border-left: 8.5px solid transparent; border-right: 8.5px solid transparent; border-bottom: 8px solid var(--color-neutral-700); }
+.tooltip--bottom .tooltip__arrow { border-left: 8.5px solid transparent; border-right: 8.5px solid transparent; border-top: 8px solid var(--color-neutral-700); }
+
+/* ------------------------------------------------
+   Trigger positioning — solo para el DS preview.
+   En producción reemplazar con la lógica de JS
+   propia para mostrar/ocultar el tooltip.
+   ------------------------------------------------ */
+.tooltip-trigger { position: relative; display: inline-flex; align-items: center; justify-content: center; z-index: 1; }
+.tooltip-trigger::after { content: ''; position: absolute; top: -8px; left: -8px; right: -8px; bottom: -8px; }
+.tooltip-trigger .tooltip { position: absolute; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s ease 0.2s; z-index: 999; width: 220px; }
+.tooltip-trigger:hover { z-index: 10000; }
+.tooltip-trigger:hover .tooltip { opacity: 1; visibility: visible; pointer-events: auto; transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s ease 0s; }
+.tooltip-trigger .tooltip--left { left: calc(100% + 8px); top: 50%; transform: translateY(-50%) translateX(4px); }
+.tooltip-trigger .tooltip--right { right: calc(100% + 8px); top: 50%; transform: translateY(-50%) translateX(-4px); }
+.tooltip-trigger .tooltip--top { top: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(4px); }
+.tooltip-trigger .tooltip--bottom { bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%) translateY(-4px); }
+.tooltip-trigger:hover .tooltip--left { transform: translateY(-50%) translateX(0); }
+.tooltip-trigger:hover .tooltip--right { transform: translateY(-50%) translateX(0); }
+.tooltip-trigger:hover .tooltip--top { transform: translateX(-50%) translateY(0); }
+.tooltip-trigger:hover .tooltip--bottom { transform: translateX(-50%) translateY(0); }</code></pre>
+
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Arrow Left --&gt;
+&lt;div class="tooltip tooltip--left"&gt;
+  &lt;div class="tooltip__arrow"&gt;&lt;/div&gt;
+  &lt;div class="tooltip__box"&gt;
+    &lt;div class="tooltip__header"&gt;
+      &lt;div class="tooltip__body"&gt;
+        &lt;span class="tooltip__title"&gt;Title&lt;/span&gt;
+        &lt;span class="tooltip__desc"&gt;Description&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;button class="tooltip__close"&gt;
+        &lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="tooltip__footer"&gt;
+      &lt;span class="tooltip__paginator"&gt;1/5&lt;/span&gt;
+      &lt;a class="btn btn--link tooltip__action"&gt;Button&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Arrow Right --&gt;
+&lt;div class="tooltip tooltip--right"&gt;
+  &lt;div class="tooltip__box"&gt;
+    &lt;div class="tooltip__header"&gt;
+      &lt;div class="tooltip__body"&gt;
+        &lt;span class="tooltip__title"&gt;Title&lt;/span&gt;
+        &lt;span class="tooltip__desc"&gt;Description&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;button class="tooltip__close"&gt;
+        &lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="tooltip__footer"&gt;
+      &lt;span class="tooltip__paginator"&gt;1/5&lt;/span&gt;
+      &lt;a class="btn btn--link tooltip__action"&gt;Button&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="tooltip__arrow"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Arrow Top --&gt;
+&lt;div class="tooltip tooltip--top"&gt;
+  &lt;div class="tooltip__arrow"&gt;&lt;/div&gt;
+  &lt;div class="tooltip__box"&gt;
+    &lt;div class="tooltip__header"&gt;
+      &lt;div class="tooltip__body"&gt;
+        &lt;span class="tooltip__title"&gt;Title&lt;/span&gt;
+        &lt;span class="tooltip__desc"&gt;Description&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;button class="tooltip__close"&gt;
+        &lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="tooltip__footer"&gt;
+      &lt;span class="tooltip__paginator"&gt;1/5&lt;/span&gt;
+      &lt;a class="btn btn--link tooltip__action"&gt;Button&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Arrow Bottom --&gt;
+&lt;div class="tooltip tooltip--bottom"&gt;
+  &lt;div class="tooltip__box"&gt;
+    &lt;div class="tooltip__header"&gt;
+      &lt;div class="tooltip__body"&gt;
+        &lt;span class="tooltip__title"&gt;Title&lt;/span&gt;
+        &lt;span class="tooltip__desc"&gt;Description&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;button class="tooltip__close"&gt;
+        &lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="tooltip__footer"&gt;
+      &lt;span class="tooltip__paginator"&gt;1/5&lt;/span&gt;
+      &lt;a class="btn btn--link tooltip__action"&gt;Button&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="tooltip__arrow"&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

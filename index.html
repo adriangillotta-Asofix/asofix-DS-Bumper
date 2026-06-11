@@ -29,9 +29,20 @@
       </ul>
       <p class="ds-nav__label">Components</p>
       <ul class="ds-nav__list">
+        <li><a href="components/avatar.html" class="ds-nav__link">Avatar</a></li>
         <li><a href="components/buttons.html" class="ds-nav__link">Buttons</a></li>
-        <li><a href="components/switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="components/cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="components/dropdown.html" class="ds-nav__link">Dropdown</a></li>
         <li><a href="components/inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="components/pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="components/switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="components/tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="components/toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="components/tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="components/modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
     </nav>
   </aside>
@@ -87,6 +98,26 @@
         <h2 class="ds-overview-group__title">Components</h2>
         <div class="ds-overview-grid">
 
+          <a href="components/avatar.html" class="ds-overview-card">
+            <div class="ds-overview-card__preview">
+              <div style="display:flex; gap:10px; align-items:center;">
+                <div style="width:40px; height:40px; border-radius:50%; background:var(--color-neutral-100); border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,0.08); display:flex; align-items:center; justify-content:center;">
+                  <span style="font-family:'Material Icons Outlined'; font-size:20px; color:var(--color-neutral-500);">person</span>
+                </div>
+                <div style="width:40px; height:40px; border-radius:50%; background:var(--color-primary-500); border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,0.08); display:flex; align-items:center; justify-content:center;">
+                  <span style="font-family:'Inter',sans-serif; font-size:18px; font-weight:500; color:#fff;">A</span>
+                </div>
+                <div style="width:40px; height:40px; border-radius:50%; background:var(--color-neutral-100); border:2px solid #fff; box-shadow:0 1px 3px rgba(0,0,0,0.08); overflow:hidden;">
+                  <img src="https://i.pravatar.cc/40?img=11" style="width:100%; height:100%; object-fit:cover;" />
+                </div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Avatar</span>
+              <span class="ds-overview-card__desc">Empty, Initial y Photo. 5 tamaños disponibles.</span>
+            </div>
+          </a>
+
           <a href="components/buttons.html" class="ds-overview-card">
             <div class="ds-overview-card__preview">
               <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
@@ -98,6 +129,45 @@
             <div class="ds-overview-card__body">
               <span class="ds-overview-card__name">Buttons</span>
               <span class="ds-overview-card__desc">Primary, Secondary, Tertiary y Link. Medium y Small.</span>
+            </div>
+          </a>
+
+          <a href="components/cards.html" class="ds-overview-card">
+            <div class="ds-overview-card__preview">
+              <div style="background:#fff; border:1px solid var(--color-neutral-200); border-radius:8px; padding:10px 12px; width:100%; box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+                <div style="height:8px; width:55%; background:var(--color-neutral-200); border-radius:4px; margin-bottom:6px;"></div>
+                <div style="height:8px; width:80%; background:var(--color-neutral-100); border-radius:4px;"></div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Cards</span>
+              <span class="ds-overview-card__desc">Contenedores con variantes de elevación y estructura.</span>
+            </div>
+          </a>
+
+          <a href="components/dropdown.html" class="ds-overview-card">
+            <div class="ds-overview-card__preview">
+              <div style="display:inline-flex; flex-direction:column; background:#fff; border-radius:8px; box-shadow:0 2px 8px rgba(51,51,51,0.18); overflow:hidden; width:100%;">
+                <div style="display:flex; align-items:center; gap:8px; padding:8px 12px; border-bottom:1px solid var(--color-neutral-100);">
+                  <div style="width:12px; height:12px; background:var(--color-primary-100); border-radius:2px; flex-shrink:0;"></div>
+                  <div style="height:7px; flex:1; background:var(--color-neutral-100); border-radius:4px;"></div>
+                  <div style="height:7px; width:16px; background:var(--color-neutral-200); border-radius:4px;"></div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; padding:8px 12px; background:var(--color-primary-50);">
+                  <div style="width:12px; height:12px; background:var(--color-primary-500); border-radius:2px; flex-shrink:0;"></div>
+                  <div style="height:7px; flex:1; background:var(--color-neutral-200); border-radius:4px;"></div>
+                  <div style="height:7px; width:16px; background:var(--color-neutral-200); border-radius:4px;"></div>
+                </div>
+                <div style="display:flex; align-items:center; gap:8px; padding:8px 12px;">
+                  <div style="width:12px; height:12px; background:var(--color-neutral-200); border-radius:2px; flex-shrink:0;"></div>
+                  <div style="height:7px; flex:1; background:var(--color-neutral-100); border-radius:4px;"></div>
+                  <div style="height:7px; width:16px; background:var(--color-neutral-200); border-radius:4px;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="ds-overview-card__body">
+              <span class="ds-overview-card__name">Dropdown</span>
+              <span class="ds-overview-card__desc">Lista desplegable con selección múltiple, títulos de sección y footer opcional.</span>
             </div>
           </a>
 
@@ -120,66 +190,79 @@
             </div>
           </a>
 
-          <div class="ds-overview-card ds-overview-card--soon">
+          <a href="components/inputs.html" class="ds-overview-card">
             <div class="ds-overview-card__preview">
-              <div style="display:flex; gap:8px; align-items:center;">
-                <div style="height:36px; width:160px; border:1px solid var(--color-neutral-200); border-radius:8px; background:var(--color-neutral-50);"></div>
+              <div style="display:flex; flex-direction:column; gap:6px; width:100%;">
+                <div style="height:36px; border:1px solid var(--color-neutral-300); border-radius:8px; background:#fff; padding:0 12px; display:flex; align-items:center;">
+                  <span style="font-size:13px; color:var(--color-neutral-400); font-family:'Inter',sans-serif;">Texto de ejemplo</span>
+                </div>
+                <div style="height:36px; border:1px solid var(--color-primary-500); border-radius:8px; background:#fff; padding:0 12px; display:flex; align-items:center; box-shadow:0 0 0 3px var(--color-primary-100);">
+                  <span style="font-size:13px; color:var(--color-neutral-800); font-family:'Inter',sans-serif;">Focus</span>
+                </div>
               </div>
             </div>
             <div class="ds-overview-card__body">
-              <span class="ds-overview-card__name">Inputs <span class="ds-overview-card__badge">Coming soon</span></span>
-              <span class="ds-overview-card__desc">Text fields, selects, textarea y datepicker.</span>
+              <span class="ds-overview-card__name">Inputs</span>
+              <span class="ds-overview-card__desc">Text field, Text area y Select. Con estados y validaciones.</span>
             </div>
-          </div>
+          </a>
 
-          <div class="ds-overview-card ds-overview-card--soon">
+          <a href="components/pill.html" class="ds-overview-card">
             <div class="ds-overview-card__preview">
-              <div style="display:flex; gap:6px;">
-                <div style="padding:4px 12px; background:var(--color-primary-50); border-radius:999px; font-size:12px; font-weight:600; color:var(--color-primary-500); font-family:'Inter',sans-serif;">Label</div>
-                <div style="padding:4px 12px; background:var(--color-neutral-100); border-radius:999px; font-size:12px; font-weight:600; color:var(--color-neutral-600); font-family:'Inter',sans-serif;">Label</div>
+              <div style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">
+                <div style="padding:4px 12px; background:var(--color-neutral-100); border:1px solid var(--color-neutral-200); border-radius:999px; font-size:12px; color:var(--color-neutral-600); font-family:'Inter',sans-serif;">Default</div>
+                <div style="padding:4px 12px; background:var(--color-error-50); border:1px solid var(--color-error-200); border-radius:999px; font-size:12px; color:var(--color-error-800); font-family:'Inter',sans-serif;">Rojo</div>
+                <div style="padding:4px 12px; background:var(--color-warning-200); border:1px solid var(--color-warning-700); border-radius:999px; font-size:12px; font-weight:600; color:var(--color-warning-900); font-family:'Inter',sans-serif;">★ Highlight</div>
               </div>
             </div>
             <div class="ds-overview-card__body">
-              <span class="ds-overview-card__name">Pills <span class="ds-overview-card__badge">Coming soon</span></span>
-              <span class="ds-overview-card__desc">Etiquetas y filtros con variantes de color y estado.</span>
+              <span class="ds-overview-card__name">Pill</span>
+              <span class="ds-overview-card__desc">Etiquetas y filtros. 5 colores, 3 tamaños y variante Highlight.</span>
             </div>
-          </div>
+          </a>
 
-          <div class="ds-overview-card ds-overview-card--soon">
+          <a href="components/tabs.html" class="ds-overview-card">
             <div class="ds-overview-card__preview">
-              <div style="display:flex; gap:0; border-bottom:2px solid var(--color-neutral-200);">
-                <div style="padding:8px 16px; font-size:13px; font-weight:600; color:var(--color-primary-500); border-bottom:2px solid var(--color-primary-500); margin-bottom:-2px; font-family:'Inter',sans-serif;">Tab 1</div>
-                <div style="padding:8px 16px; font-size:13px; font-weight:400; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Tab 2</div>
-                <div style="padding:8px 16px; font-size:13px; font-weight:400; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Tab 3</div>
+              <div style="display:inline-flex; gap:6px; align-items:center; background:var(--color-neutral-50); border:1px solid var(--color-neutral-200); border-radius:8px; padding:4px;">
+                <div style="padding:4px 12px; background:#fff; border-radius:4px; box-shadow:0 1px 2px rgba(0,0,0,0.08); font-size:12px; font-weight:600; color:var(--color-primary-500); font-family:'Inter',sans-serif;">Tab 1</div>
+                <div style="padding:4px 12px; font-size:12px; font-weight:600; color:var(--color-neutral-400); font-family:'Inter',sans-serif;">Tab 2</div>
+                <div style="padding:4px 12px; font-size:12px; font-weight:600; color:var(--color-neutral-400); font-family:'Inter',sans-serif;">Tab 3</div>
               </div>
             </div>
             <div class="ds-overview-card__body">
-              <span class="ds-overview-card__name">Tabs <span class="ds-overview-card__badge">Coming soon</span></span>
+              <span class="ds-overview-card__name">Tabs</span>
               <span class="ds-overview-card__desc">Navegación por pestañas con estados activo e inactivo.</span>
             </div>
-          </div>
+          </a>
 
-          <div class="ds-overview-card ds-overview-card--soon">
+          <a href="components/tooltip.html" class="ds-overview-card">
             <div class="ds-overview-card__preview">
-              <div style="display:inline-block; background:var(--color-neutral-900); color:#fff; padding:6px 10px; border-radius:6px; font-size:12px; font-family:'Inter',sans-serif;">Tooltip text</div>
+              <div style="display:inline-block; background:var(--color-neutral-700); color:#fff; padding:6px 10px; border-radius:6px; font-size:12px; font-family:'Inter',sans-serif;">Información contextual</div>
             </div>
             <div class="ds-overview-card__body">
-              <span class="ds-overview-card__name">Tooltip <span class="ds-overview-card__badge">Coming soon</span></span>
-              <span class="ds-overview-card__desc">Información contextual al hacer hover.</span>
+              <span class="ds-overview-card__name">Tooltip</span>
+              <span class="ds-overview-card__desc">Información contextual al hacer hover. 4 posiciones.</span>
             </div>
-          </div>
+          </a>
 
-          <div class="ds-overview-card ds-overview-card--soon">
+          <a href="components/toast.html" class="ds-overview-card">
             <div class="ds-overview-card__preview">
-              <div style="display:flex; align-items:center; gap:10px; background:var(--color-success-50); border-left:3px solid var(--color-success-500); padding:10px 12px; border-radius:6px; width:100%;">
-                <span style="font-size:13px; color:var(--color-success-700); font-family:'Inter',sans-serif;">Cambios guardados correctamente.</span>
+              <div style="display:flex; flex-direction:column; gap:6px; width:100%;">
+                <div style="display:flex; align-items:center; gap:6px; background:var(--color-success-100); border:1px solid var(--color-success-400); border-radius:6px; padding:6px 8px;">
+                  <span style="font-family:'Material Icons Outlined'; font-size:14px; color:var(--color-success-700);">check_circle</span>
+                  <span style="font-size:12px; font-weight:600; color:var(--color-success-700); font-family:'Inter',sans-serif;">Cambios guardados</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:6px; background:var(--color-error-100); border:1px solid var(--color-error-400); border-radius:6px; padding:6px 8px;">
+                  <span style="font-family:'Material Icons Outlined'; font-size:14px; color:var(--color-error-700);">error_outline</span>
+                  <span style="font-size:12px; font-weight:600; color:var(--color-error-700); font-family:'Inter',sans-serif;">Error al guardar</span>
+                </div>
               </div>
             </div>
             <div class="ds-overview-card__body">
-              <span class="ds-overview-card__name">Notification / Toast <span class="ds-overview-card__badge">Coming soon</span></span>
-              <span class="ds-overview-card__desc">Mensajes de feedback con variantes semánticas.</span>
+              <span class="ds-overview-card__name">Toast</span>
+              <span class="ds-overview-card__desc">Mensajes de feedback semánticos. 4 variantes y track time.</span>
             </div>
-          </div>
+          </a>
 
         </div>
       </div>
@@ -245,20 +328,24 @@
             </div>
           </div>
 
-          <div class="ds-overview-card ds-overview-card--soon">
+          <a href="components/modal.html" class="ds-overview-card">
             <div class="ds-overview-card__preview">
-              <div style="position:relative; width:100%; height:80px; display:flex; align-items:center; justify-content:center;">
-                <div style="background:#fff; border:1px solid var(--color-neutral-200); border-radius:8px; padding:12px 16px; box-shadow:0 4px 16px rgba(0,0,0,0.08); width:80%;">
-                  <div style="height:8px; width:60%; background:var(--color-neutral-200); border-radius:4px; margin-bottom:6px;"></div>
-                  <div style="height:8px; width:80%; background:var(--color-neutral-200); border-radius:4px;"></div>
+              <div style="position:relative; width:100%; height:80px; display:flex; align-items:center; justify-content:center; background:rgba(37,35,39,0.3); border-radius:6px;">
+                <div style="background:#fff; border-radius:8px; padding:10px 14px; box-shadow:0 8px 24px rgba(0,0,0,0.18); width:82%;">
+                  <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <div style="height:7px; width:50%; background:var(--color-neutral-200); border-radius:4px;"></div>
+                    <span style="font-family:'Material Icons Outlined'; font-size:14px; color:var(--color-neutral-400);">close</span>
+                  </div>
+                  <div style="height:6px; width:80%; background:var(--color-neutral-100); border-radius:4px; margin-bottom:4px;"></div>
+                  <div style="height:6px; width:60%; background:var(--color-neutral-100); border-radius:4px;"></div>
                 </div>
               </div>
             </div>
             <div class="ds-overview-card__body">
-              <span class="ds-overview-card__name">Modal <span class="ds-overview-card__badge">Coming soon</span></span>
-              <span class="ds-overview-card__desc">Ventana de diálogo para acciones críticas.</span>
+              <span class="ds-overview-card__name">Modal</span>
+              <span class="ds-overview-card__desc">Ventana de diálogo para confirmaciones y acciones críticas.</span>
             </div>
-          </div>
+          </a>
 
         </div>
       </div>

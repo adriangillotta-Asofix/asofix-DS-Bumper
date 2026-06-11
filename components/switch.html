@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -30,9 +30,20 @@
       </ul>
       <p class="ds-nav__label">Components</p>
       <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
         <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
-        <li><a href="switch.html" class="ds-nav__link active">Switch</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
         <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link active">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
     </nav>
   </aside>
@@ -81,9 +92,13 @@
             <span class="switch__thumb"></span>
           </label>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.switch {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.switch {
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -118,6 +133,11 @@
   transition: transform 0.2s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;label class="switch"&gt;
+  &lt;input class="switch__input" type="checkbox" /&gt;
+  &lt;span class="switch__track"&gt;&lt;/span&gt;
+  &lt;span class="switch__thumb"&gt;&lt;/span&gt;
+&lt;/label&gt;</code></pre>
         </div>
       </div>
 
@@ -147,9 +167,13 @@
             <span class="switch__thumb"></span>
           </label>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.switch__input:checked ~ .switch__track {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.switch__input:checked ~ .switch__track {
   background-color: var(--color-primary-500);
 }
 
@@ -183,7 +207,16 @@
 
 .switch--disabled .switch__input:checked ~ .switch__track {
   background-color: var(--color-neutral-300);
+}
+
+.switch--disabled .switch__thumb {
+  background-color: var(--color-neutral-50);
 }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;label class="switch"&gt;
+  &lt;input class="switch__input" type="checkbox" checked /&gt;
+  &lt;span class="switch__track"&gt;&lt;/span&gt;
+  &lt;span class="switch__thumb"&gt;&lt;/span&gt;
+&lt;/label&gt;</code></pre>
         </div>
       </div>
 

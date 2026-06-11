@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tabs — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="../foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="../foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
+        <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link active">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Tabs</h1>
+        <p class="ds-page-header__desc">Navegación por pestañas con estados activo e inactivo. Disponible con y sin ícono.</p>
+      </div>
+
+      <!-- SIN ÍCONO -->
+      <div class="ds-section" id="sin-icono">
+        <h2 class="ds-section__title">Sin ícono</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive" style="border-radius: 8px 8px 0 0;">
+          <div class="tabs" role="tablist"><div class="tabs__indicator"></div>
+            <button class="tab tab--active" role="tab" aria-selected="true" onclick="activateTab(this)">Tab 1</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)">Tab 2</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)">Tab 3</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)">Tab 4</button>
+          </div>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.tabs {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  background-color: var(--color-neutral-50);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: 8px;
+  padding: 4px;
+  position: relative;
+}
+
+.tabs__indicator {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  background-color: var(--color-neutral-white);
+  box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 0.25s ease, width 0.25s ease;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: transparent;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-subtitle-1);
+  font-weight: var(--font-weight-subtitle-1);
+  line-height: var(--line-height-subtitle-1);
+  letter-spacing: var(--letter-spacing-subtitle-1);
+  color: var(--color-neutral-400);
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
+.tab--active { color: var(--color-primary-500); }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Agregar o quitar &lt;button class="tab"&gt; según las opciones necesarias --&gt;
+&lt;div class="tabs" role="tablist"&gt;
+  &lt;div class="tabs__indicator"&gt;&lt;/div&gt;
+  &lt;button class="tab tab--active" role="tab" aria-selected="true"&gt;Tab 1&lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false"&gt;Tab 2&lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false"&gt;Tab 3&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- CON ÍCONO -->
+      <div class="ds-section" id="con-icono">
+        <h2 class="ds-section__title">Con ícono</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive" style="border-radius: 8px 8px 0 0;">
+          <div class="tabs" role="tablist"><div class="tabs__indicator"></div>
+            <button class="tab tab--active" role="tab" aria-selected="true" onclick="activateTab(this)"><span class="material-icons-outlined">home</span>Tab 1</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)"><span class="material-icons-outlined">bar_chart</span>Tab 2</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)"><span class="material-icons-outlined">people</span>Tab 3</button>
+            <button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)"><span class="material-icons-outlined">settings</span>Tab 4</button>
+          </div>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.tab .material-icons-outlined {
+  font-size: 20px;
+  line-height: 1;
+}</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Agregar o quitar &lt;button class="tab"&gt; según las opciones necesarias --&gt;
+&lt;div class="tabs" role="tablist"&gt;
+  &lt;div class="tabs__indicator"&gt;&lt;/div&gt;
+  &lt;button class="tab tab--active" role="tab" aria-selected="true"&gt;
+    &lt;span class="material-icons-outlined"&gt;home&lt;/span&gt;
+    Tab 1
+  &lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false"&gt;
+    &lt;span class="material-icons-outlined"&gt;bar_chart&lt;/span&gt;
+    Tab 2
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

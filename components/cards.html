@@ -1,0 +1,365 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cards — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="../foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="../foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
+        <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="cards.html" class="ds-nav__link active">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Cards</h1>
+        <p class="ds-page-header__desc">Componentes de tarjeta para métricas y KPIs. Incluye Metric Card con comparador de variación y Tile Card con valor destacado.</p>
+      </div>
+
+      <!-- METRIC CARD -->
+      <div class="ds-section" id="metric">
+        <h2 class="ds-section__title">Metric Card</h2>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+
+          <!-- Default -->
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+            <span style="font-size:12px; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Default</span>
+            <div class="card-metric" style="width:356px;">
+              <div class="card-metric__header">
+                <span class="card-metric__title">Title header</span>
+              </div>
+              <div class="card-metric__body">
+                <span class="card-metric__value">18</span>
+                <div class="card-metric__comparator">
+                  <div class="card-metric__icon-box">
+                    <span class="material-icons-outlined">arrow_upward</span>
+                  </div>
+                  <span class="card-metric__comparator-text">10%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sin comparador -->
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+            <span style="font-size:12px; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Sin comparador</span>
+            <div class="card-metric" style="width:356px;">
+              <div class="card-metric__header">
+                <span class="card-metric__title">Title header</span>
+              </div>
+              <div class="card-metric__body">
+                <span class="card-metric__value">18</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.card-metric {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--color-neutral-100);
+  background-color: var(--color-neutral-white);
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+}
+
+.card-metric__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.card-metric__title {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-caption-emphasized);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--color-neutral-600);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-metric__body {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  width: 100%;
+}
+
+.card-metric__value {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-h2);
+  letter-spacing: var(--letter-spacing-h2);
+  color: var(--color-neutral-800);
+}
+
+.card-metric__comparator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.card-metric__icon-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-error-100);
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.card-metric__icon-box .material-icons-outlined {
+  font-size: 20px;
+  color: var(--color-error-700);
+  line-height: 1;
+}
+
+.card-metric__comparator-text {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-caption-emphasized);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--color-error-700);
+  white-space: nowrap;
+}</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="card-metric"&gt;
+  &lt;div class="card-metric__header"&gt;
+    &lt;span class="card-metric__title"&gt;Title header&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="card-metric__body"&gt;
+    &lt;span class="card-metric__value"&gt;18&lt;/span&gt;
+    &lt;!-- Comparador opcional --&gt;
+    &lt;div class="card-metric__comparator"&gt;
+      &lt;div class="card-metric__icon-box"&gt;
+        &lt;span class="material-icons-outlined"&gt;arrow_upward&lt;/span&gt;
+      &lt;/div&gt;
+      &lt;span class="card-metric__comparator-text"&gt;10%&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+
+      </div><!-- /ds-section metric -->
+
+      <!-- TILE CARD -->
+      <div class="ds-section" id="tile">
+        <h2 class="ds-section__title">Tile Card</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <div class="card-tile" style="width:252px;">
+            <div class="card-tile__header">
+              <span class="card-tile__title">Leads activos</span>
+              <span class="card-tile__icon material-icons-outlined">open_in_new</span>
+            </div>
+            <div class="card-tile__body">
+              <span class="card-tile__value">8</span>
+              <span class="card-tile__subtitle">2 nuevos hoy</span>
+            </div>
+          </div>
+        </div>
+
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+
+          <!-- Default -->
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+            <span style="font-size:12px; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Default</span>
+            <div class="card-tile" style="width:252px;">
+              <div class="card-tile__header">
+                <span class="card-tile__title">Title header</span>
+                <span class="card-tile__icon material-icons-outlined">open_in_new</span>
+              </div>
+              <div class="card-tile__body">
+                <span class="card-tile__value">8</span>
+                <span class="card-tile__subtitle">2 nuevos hoy</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hover -->
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+            <span style="font-size:12px; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Hover</span>
+            <div class="card-tile card-tile--hover" style="width:252px;">
+              <div class="card-tile__header">
+                <span class="card-tile__title">Title header</span>
+                <span class="card-tile__icon material-icons-outlined">open_in_new</span>
+              </div>
+              <div class="card-tile__body">
+                <span class="card-tile__value">8</span>
+                <span class="card-tile__subtitle">2 nuevos hoy</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.card-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-error-300);
+  background-color: var(--color-error-50);
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  cursor: default;
+}
+
+.card-tile:hover,
+.card-tile--hover { background-color: var(--color-error-100); }
+
+.card-tile__header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.card-tile__title {
+  flex: 1;
+  min-width: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-caption-emphasized);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--color-error-700);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-tile__icon {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--color-error-700);
+  font-size: 16px;
+}
+
+.card-tile__body {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+.card-tile__value {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-heading);
+  line-height: var(--line-height-h1);
+  letter-spacing: var(--letter-spacing-h1);
+  color: var(--color-error-700);
+  flex-shrink: 0;
+}
+
+.card-tile__subtitle {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--color-error-700);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Default --&gt;
+&lt;div class="card-tile"&gt;
+  &lt;div class="card-tile__header"&gt;
+    &lt;span class="card-tile__title"&gt;Title header&lt;/span&gt;
+    &lt;!-- Ícono opcional --&gt;
+    &lt;span class="card-tile__icon material-icons-outlined"&gt;open_in_new&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="card-tile__body"&gt;
+    &lt;span class="card-tile__value"&gt;8&lt;/span&gt;
+    &lt;!-- Subtítulo opcional --&gt;
+    &lt;span class="card-tile__subtitle"&gt;2 nuevos hoy&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Hover --&gt;
+&lt;div class="card-tile card-tile--hover"&gt; ... &lt;/div&gt;</code></pre>
+        </div>
+
+      </div><!-- /ds-section tile -->
+
+    </div>
+  </main>
+
+  <script src="../js/main.js"></script>
+
+</body>
+</html>

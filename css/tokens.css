@@ -31,6 +31,8 @@
   /* --------------------------------
      Neutros
   -------------------------------- */
+  --color-neutral-white: #FFFFFF;
+  --color-neutral-black: #000000;
   --color-neutral-50:  #FAFAFA;
   --color-neutral-100: #EEECED;
   --color-neutral-200: #DCDADB;
@@ -124,6 +126,20 @@
   --letter-spacing-h4: -0.01em;
   --letter-spacing-h5: -0.01em;
   --letter-spacing-h6: 0em;
+
+  /* Subtitle */
+  --font-size-subtitle-1: 1rem;           /* 16px */
+  --font-weight-subtitle-1: 600;
+  --line-height-subtitle-1: 1.5;
+  --letter-spacing-subtitle-1: 0em;
+
+  --font-weight-subtitle-1-emphasized: 700;
+  --letter-spacing-subtitle-1-emphasized: 0.01em;
+
+  --font-size-subtitle-2: 0.875rem;       /* 14px */
+  --font-weight-subtitle-2: 700;
+  --line-height-subtitle-2: 1.45;
+  --letter-spacing-subtitle-2: 0.01em;
 
   /* Body */
   --font-size-body: 0.875rem;       /* 14px */

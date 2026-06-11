@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pill — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="../foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="../foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
+        <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link active">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Pill</h1>
+        <p class="ds-page-header__desc">Dos tipos: Pill general (5 colores, 3 tamaños, 5 estados) y Pill highlight (3 colores, estático). Se usa como filter chip o etiqueta de estado.</p>
+      </div>
+
+      <!-- DEFAULT -->
+      <div class="ds-section" id="default">
+        <h2 class="ds-section__title">Default</h2>
+        <p class="ds-section__desc">Variante neutral. Usa íconos de Material Icons Outlined a 16 px.</p>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="pill pill--md pill--default"><span class="material-icons-outlined">person</span>Default<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="pill pill--md pill--default"><span class="material-icons-outlined">person</span>Default<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--default pill--hover"><span class="material-icons-outlined">person</span>Hover<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--default pill--active"><span class="material-icons-outlined">person</span>Active<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--default pill--focus"><span class="material-icons-outlined">person</span>Focus<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--default pill--disabled" disabled><span class="material-icons-outlined">person</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.pill .material-icons-outlined { font-size: 16px; line-height: 1; }
+
+.pill--default { background-color: var(--color-neutral-100); border-color: var(--color-neutral-200); color: var(--color-neutral-700); }
+.pill--default:hover  { background-color: var(--color-neutral-200); }
+.pill--default:active { background-color: var(--color-neutral-300); }
+.pill--default:focus-visible { background-color: var(--color-neutral-200); border-width: 2px; border-color: var(--color-neutral-700); outline: none; }
+.pill--default:disabled { background-color: var(--color-neutral-100); border-color: var(--color-neutral-200); color: var(--color-neutral-400); cursor: not-allowed; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--default"&gt;
+  &lt;span class="material-icons-outlined"&gt;person&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- ROJO -->
+      <div class="ds-section" id="rojo">
+        <h2 class="ds-section__title">Rojo</h2>
+        <p class="ds-section__desc">Usado para estados de error o alertas críticas.</p>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="pill pill--md pill--rojo"><span class="material-icons-outlined">error_outline</span>Default<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="pill pill--md pill--rojo"><span class="material-icons-outlined">error_outline</span>Default<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--rojo pill--hover"><span class="material-icons-outlined">error_outline</span>Hover<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--rojo pill--active"><span class="material-icons-outlined">error_outline</span>Active<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--rojo pill--focus"><span class="material-icons-outlined">error_outline</span>Focus<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--rojo pill--disabled" disabled><span class="material-icons-outlined">error_outline</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--rojo { background-color: var(--color-error-50); border-color: var(--color-error-200); color: var(--color-error-800); }
+.pill--rojo:hover  { background-color: var(--color-error-100); }
+.pill--rojo:active { background-color: var(--color-error-200); }
+.pill--rojo:focus-visible { background-color: var(--color-error-100); border-width: 2px; border-color: var(--color-error-600); outline: none; }
+.pill--rojo:disabled { background-color: var(--color-error-50); border-color: var(--color-error-200); color: var(--color-error-300); cursor: not-allowed; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--rojo"&gt;
+  &lt;span class="material-icons-outlined"&gt;error_outline&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- VERDE -->
+      <div class="ds-section" id="verde">
+        <h2 class="ds-section__title">Verde</h2>
+        <p class="ds-section__desc">Usado para estados de éxito o confirmación.</p>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="pill pill--md pill--verde"><span class="material-icons-outlined">check_circle_outline</span>Default<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="pill pill--md pill--verde"><span class="material-icons-outlined">check_circle_outline</span>Default<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--verde pill--hover"><span class="material-icons-outlined">check_circle_outline</span>Hover<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--verde pill--active"><span class="material-icons-outlined">check_circle_outline</span>Active<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--verde pill--focus"><span class="material-icons-outlined">check_circle_outline</span>Focus<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--verde pill--disabled" disabled><span class="material-icons-outlined">check_circle_outline</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--verde { background-color: var(--color-success-50); border-color: var(--color-success-200); color: var(--color-success-800); }
+.pill--verde:hover  { background-color: var(--color-success-100); }
+.pill--verde:active { background-color: var(--color-success-200); }
+.pill--verde:focus-visible { background-color: var(--color-success-100); border-width: 2px; border-color: var(--color-success-600); outline: none; }
+.pill--verde:disabled { background-color: var(--color-success-50); border-color: var(--color-success-400); color: var(--color-success-400); cursor: not-allowed; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--verde"&gt;
+  &lt;span class="material-icons-outlined"&gt;check_circle_outline&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- AMARILLO -->
+      <div class="ds-section" id="amarillo">
+        <h2 class="ds-section__title">Amarillo</h2>
+        <p class="ds-section__desc">Usado para advertencias o estados pendientes.</p>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="pill pill--md pill--amarillo"><span class="material-icons-outlined">warning_amber</span>Default<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="pill pill--md pill--amarillo"><span class="material-icons-outlined">warning_amber</span>Default<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--amarillo pill--hover"><span class="material-icons-outlined">warning_amber</span>Hover<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--amarillo pill--active"><span class="material-icons-outlined">warning_amber</span>Active<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--amarillo pill--focus"><span class="material-icons-outlined">warning_amber</span>Focus<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--amarillo pill--disabled" disabled><span class="material-icons-outlined">warning_amber</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--amarillo { background-color: var(--color-warning-50); border-color: var(--color-warning-300); color: var(--color-warning-900); }
+.pill--amarillo:hover  { background-color: var(--color-warning-100); }
+.pill--amarillo:active { background-color: var(--color-warning-200); }
+.pill--amarillo:focus-visible { background-color: var(--color-warning-100); border-width: 2px; border-color: var(--color-warning-700); outline: none; }
+.pill--amarillo:disabled { background-color: var(--color-warning-50); border-color: var(--color-warning-300); color: var(--color-warning-500); cursor: not-allowed; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--amarillo"&gt;
+  &lt;span class="material-icons-outlined"&gt;warning_amber&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- CELESTE -->
+      <div class="ds-section" id="celeste">
+        <h2 class="ds-section__title">Celeste</h2>
+        <p class="ds-section__desc">Usado para información o estados informativos.</p>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="pill pill--md pill--celeste"><span class="material-icons-outlined">info</span>Default<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="pill pill--md pill--celeste"><span class="material-icons-outlined">info</span>Default<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--celeste pill--hover"><span class="material-icons-outlined">info</span>Hover<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--celeste pill--active"><span class="material-icons-outlined">info</span>Active<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--celeste pill--focus"><span class="material-icons-outlined">info</span>Focus<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--celeste pill--disabled" disabled><span class="material-icons-outlined">info</span>Disabled<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--celeste { background-color: var(--color-info-50); border-color: var(--color-info-200); color: var(--color-info-800); }
+.pill--celeste:hover  { background-color: var(--color-info-100); }
+.pill--celeste:active { background-color: var(--color-info-200); }
+.pill--celeste:focus-visible { background-color: var(--color-info-100); border-width: 2px; border-color: var(--color-info-600); outline: none; }
+.pill--celeste:disabled { background-color: var(--color-info-50); border-color: var(--color-info-200); color: var(--color-info-400); cursor: not-allowed; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--celeste"&gt;
+  &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
+  Label
+  &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- TAMAÑOS -->
+      <div class="ds-section" id="tamanios">
+        <h2 class="ds-section__title">Tamaños</h2>
+        <p class="ds-section__desc">Tres tamaños disponibles. Se combinan con cualquier variante de color.</p>
+        <p class="ds-preview__label">Small / Medium / Large</p>
+        <div class="ds-preview" style="gap: 16px; align-items: center;">
+          <button class="pill pill--sm pill--default"><span class="material-icons-outlined">person</span>Small<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--md pill--default"><span class="material-icons-outlined">person</span>Medium<span class="material-icons-outlined">expand_more</span></button>
+          <button class="pill pill--lg pill--default"><span class="material-icons-outlined">person</span>Large<span class="material-icons-outlined">expand_more</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--sm { padding: 4px 8px; }
+.pill--md { padding: 6px 12px; }
+.pill--lg { padding: 8px 12px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--sm pill--default"&gt;Small&lt;/button&gt;
+&lt;button class="pill pill--md pill--default"&gt;Medium&lt;/button&gt;
+&lt;button class="pill pill--lg pill--default"&gt;Large&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- HIGHLIGHT -->
+      <div class="ds-section" id="highlight">
+        <h2 class="ds-section__title">Highlight</h2>
+        <p class="ds-section__desc">Versión estática con mayor énfasis visual. Tres colores disponibles: Amarillo, Menta y Violeta. Sin estados interactivos.</p>
+        <p class="ds-preview__label">Colores</p>
+        <div class="ds-preview" style="gap: 16px; align-items: center;">
+          <span class="pill-highlight pill-highlight--amarillo"><span class="material-icons-outlined">star</span>Amarillo</span>
+          <span class="pill-highlight pill-highlight--menta"><span class="material-icons-outlined">star</span>Menta</span>
+          <span class="pill-highlight pill-highlight--violeta"><span class="material-icons-outlined">schedule</span>Violeta</span>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 4px 6px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+}
+.pill-highlight .material-icons-outlined { font-size: 16px; line-height: 1; }
+
+.pill-highlight--amarillo { background-color: var(--color-warning-200); border-color: var(--color-warning-700); color: var(--color-warning-900); }
+.pill-highlight--menta    { background-color: var(--color-secondary-50); border-color: var(--color-secondary-600); color: var(--color-secondary-600); }
+.pill-highlight--violeta  { background-color: var(--color-primary-50);  border-color: var(--color-primary-500);  color: var(--color-primary-500); }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;span class="pill-highlight pill-highlight--amarillo"&gt;
+  &lt;span class="material-icons-outlined"&gt;star&lt;/span&gt;
+  Label
+&lt;/span&gt;
+
+&lt;span class="pill-highlight pill-highlight--menta"&gt;
+  &lt;span class="material-icons-outlined"&gt;star&lt;/span&gt;
+  Label
+&lt;/span&gt;
+
+&lt;span class="pill-highlight pill-highlight--violeta"&gt;
+  &lt;span class="material-icons-outlined"&gt;schedule&lt;/span&gt;
+  Label
+&lt;/span&gt;</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Avatar — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="../foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="../foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link active">Avatar</a></li>
+        <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Avatar</h1>
+        <p class="ds-page-header__desc">Tres variantes (Empty, Initial, Photo) y cinco tamaños (24, 32, 40, 56, 112 px). Componente estático, no interactivo.</p>
+      </div>
+
+      <!-- EMPTY -->
+      <div class="ds-section" id="empty">
+        <h2 class="ds-section__title">Empty</h2>
+        <p class="ds-section__desc">Placeholder cuando no hay imagen ni inicial disponible. Ícono de persona sobre fondo gris.</p>
+        <p class="ds-preview__label">Tamaños</p>
+        <div class="ds-preview" style="gap: 24px; align-items: flex-end;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--empty avatar--112"></div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">112 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--empty avatar--56"></div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">56 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--empty avatar--40"></div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">40 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--empty avatar--32"></div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">32 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--empty avatar--24"></div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">24 px</span>
+          </div>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 2px solid var(--color-neutral-white);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar--24  { width: 24px;  height: 24px; }
+.avatar--32  { width: 32px;  height: 32px; }
+.avatar--40  { width: 40px;  height: 40px; }
+.avatar--56  { width: 56px;  height: 56px; }
+.avatar--112 { width: 112px; height: 112px; }
+
+.avatar--empty {
+  background-color: var(--color-neutral-100);
+}
+.avatar--empty::before {
+  font-family: 'Material Icons Outlined';
+  font-style: normal;
+  font-weight: normal;
+  color: var(--color-neutral-500);
+  line-height: 1;
+}
+.avatar--24.avatar--empty::before  { content: 'person'; font-size: 14px; }
+.avatar--32.avatar--empty::before  { content: 'person'; font-size: 18px; }
+.avatar--40.avatar--empty::before  { content: 'person'; font-size: 22px; }
+.avatar--56.avatar--empty::before  { content: 'person'; font-size: 32px; }
+.avatar--112.avatar--empty::before { content: 'person'; font-size: 64px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="avatar avatar--empty avatar--40"&gt;&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- INITIAL -->
+      <div class="ds-section" id="initial">
+        <h2 class="ds-section__title">Initial</h2>
+        <p class="ds-section__desc">Muestra la inicial del nombre del usuario sobre fondo violeta.</p>
+        <p class="ds-preview__label">Tamaños</p>
+        <div class="ds-preview" style="gap: 24px; align-items: flex-end;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--initial avatar--112"><span class="avatar__initial">A</span></div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">112 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--initial avatar--56"><span class="avatar__initial">A</span></div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">56 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--initial avatar--40"><span class="avatar__initial">A</span></div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">40 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--initial avatar--32"><span class="avatar__initial">A</span></div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">32 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--initial avatar--24"><span class="avatar__initial">A</span></div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">24 px</span>
+          </div>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.avatar--initial {
+  background-color: var(--color-primary-500);
+}
+
+.avatar__initial {
+  font-family: var(--font-family-base);
+  font-weight: 500;
+  color: var(--color-neutral-white);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+.avatar--24  .avatar__initial { font-size: 12px; }
+.avatar--32  .avatar__initial { font-size: 16px; }
+.avatar--40  .avatar__initial { font-size: 24px; }
+.avatar--56  .avatar__initial { font-size: 32px; }
+.avatar--112 .avatar__initial { font-size: 64px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="avatar avatar--initial avatar--40"&gt;
+  &lt;span class="avatar__initial"&gt;A&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- PHOTO -->
+      <div class="ds-section" id="photo">
+        <h2 class="ds-section__title">Photo</h2>
+        <p class="ds-section__desc">Foto de perfil real del usuario recortada en círculo.</p>
+        <p class="ds-preview__label">Tamaños</p>
+        <div class="ds-preview" style="gap: 24px; align-items: flex-end;">
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--photo avatar--112">
+              <img class="avatar__img" src="https://i.pravatar.cc/112?img=11" alt="Avatar" />
+            </div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">112 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--photo avatar--56">
+              <img class="avatar__img" src="https://i.pravatar.cc/56?img=11" alt="Avatar" />
+            </div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">56 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--photo avatar--40">
+              <img class="avatar__img" src="https://i.pravatar.cc/40?img=11" alt="Avatar" />
+            </div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">40 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--photo avatar--32">
+              <img class="avatar__img" src="https://i.pravatar.cc/32?img=11" alt="Avatar" />
+            </div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">32 px</span>
+          </div>
+          <div style="display:flex;flex-direction:column;align-items:center;gap:8px;">
+            <div class="avatar avatar--photo avatar--24">
+              <img class="avatar__img" src="https://i.pravatar.cc/24?img=11" alt="Avatar" />
+            </div>
+            <span style="font-size:12px;color:var(--color-neutral-500);">24 px</span>
+          </div>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.avatar--photo {
+  background-color: var(--color-neutral-100);
+}
+
+.avatar__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="avatar avatar--photo avatar--40"&gt;
+  &lt;img class="avatar__img" src="foto.jpg" alt="Avatar" /&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modal — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+  <style>
+    /* Preview con fondo oscuro que simula el overlay */
+    .ds-preview--modal {
+      background-color: rgba(37, 35, 39, 0.45);
+      align-items: center;
+      justify-content: center;
+      padding: 40px 32px;
+      min-height: 280px;
+    }
+    /* Slot placeholder para los previews estáticos */
+    .modal-slot-placeholder {
+      height: 72px;
+      border: 1.5px dashed var(--color-neutral-300);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-slot-placeholder span {
+      font-family: var(--font-family-base);
+      font-size: var(--font-size-caption);
+      color: var(--color-neutral-400);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.1</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="../foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="../foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
+        <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link active">Modal</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Modal</h1>
+        <p class="ds-page-header__desc">Ventana de diálogo que interrumpe el flujo para requerir una acción o confirmación del usuario. El body es un slot libre: los devs insertan el contenido según el flujo (formulario, empty state, lista, confirmación, etc.).</p>
+      </div>
+
+      <!-- DEMO INTERACTIVO -->
+      <div class="ds-section" id="demo">
+        <h2 class="ds-section__title">Demo interactivo</h2>
+        <p class="ds-preview__label">Hacé clic para abrir cada variante</p>
+        <div class="ds-preview ds-preview--interactive" style="gap: 12px; min-height: 120px; flex-wrap: wrap;">
+          <button class="btn btn--secondary btn--sm" onclick="openModal('basic')">Básico</button>
+          <button class="btn btn--secondary btn--sm" onclick="openModal('description')">Con descripción</button>
+          <button class="btn btn--secondary btn--sm" onclick="openModal('tertiary')">Con acción terciaria</button>
+        </div>
+      </div>
+
+      <!-- VARIANTES -->
+      <div class="ds-section" id="variantes">
+        <h2 class="ds-section__title">Variantes</h2>
+
+        <p class="ds-preview__label">Con acción terciaria</p>
+        <div class="ds-preview ds-preview--modal" style="border-radius: 8px 8px 0 0;">
+          <div class="modal">
+            <div class="modal__header">
+              <div class="modal__titles">
+                <h2 class="modal__title">Asignar vendedor</h2>
+              </div>
+              <button class="modal__close"><span class="material-icons-outlined">close</span></button>
+            </div>
+            <div class="modal__body">
+              <div class="modal-slot-placeholder"><span>Slot — contenido libre</span></div>
+            </div>
+            <div class="modal__footer">
+              <button class="btn btn--tertiary btn--md">Ver todos</button>
+              <div class="modal__footer-actions">
+                <button class="btn btn--secondary btn--md">Cancelar</button>
+                <button class="btn btn--primary btn--md">Asignar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CÓDIGO (solo bajo la variante más completa) -->
+        <div class="ds-code ds-code--tabbed ds-code--standalone" style="border-top: none; border-radius: 0 0 8px 8px;">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-modal')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html-modal')">HTML</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'js-modal')">JS</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-modal"><code>/* Overlay */
+.modal-overlay { position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 10000; padding: 24px; }
+
+/* Modal */
+.modal { display: flex; flex-direction: column; width: 600px; max-width: 100%; max-height: calc(100vh - 48px); border-radius: 12px; background-color: var(--color-neutral-white); box-shadow: 0px 16px 48px -4px rgba(0,0,0,0.15); }
+
+/* Header */
+.modal__header { display: flex; align-items: center; gap: 32px; padding: 16px 24px; background-color: var(--color-neutral-50); border-radius: 12px 12px 0 0; flex-shrink: 0; }
+.modal__titles { display: flex; flex-direction: column; flex: 1; min-width: 0; }
+.modal__title { font-family: var(--font-family-base); font-size: var(--font-size-h4); font-weight: var(--font-weight-heading); line-height: var(--line-height-h4); letter-spacing: var(--letter-spacing-h4); color: var(--color-neutral-700); }
+.modal__desc  { font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--color-neutral-700); }
+.modal__close { display: flex; align-items: center; justify-content: center; padding: 12px; background: none; border: none; border-radius: 8px; cursor: pointer; color: var(--color-neutral-700); flex-shrink: 0; transition: background-color 0.15s ease; }
+.modal__close:hover { background-color: var(--color-neutral-100); }
+.modal__close .material-icons-outlined { font-size: 20px; line-height: 1; }
+
+/* Body (slot libre) */
+.modal__body { padding: 24px; background-color: var(--color-neutral-white); overflow-y: auto; }
+
+/* Footer */
+.modal__footer { display: flex; align-items: center; padding: 24px; background-color: var(--color-neutral-white); border-top: 1px solid var(--color-neutral-200); border-radius: 0 0 12px 12px; flex-shrink: 0; }
+.modal__footer-actions { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+
+/* Animaciones */
+.modal-overlay--in  { animation: modal-overlay-in  0.2s ease forwards; }
+.modal-overlay--out { animation: modal-overlay-out 0.2s ease forwards; }
+.modal--in          { animation: modal-in  0.2s ease forwards; }
+.modal--out         { animation: modal-out 0.2s ease forwards; }
+@keyframes modal-overlay-in  { from { opacity: 0; } to { opacity: 1; } }
+@keyframes modal-overlay-out { from { opacity: 1; } to { opacity: 0; } }
+@keyframes modal-in  { from { opacity: 0; transform: scale(0.96) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+@keyframes modal-out { from { opacity: 1; transform: scale(1) translateY(0); } to { opacity: 0; transform: scale(0.96) translateY(8px); } }</code></pre>
+
+          <pre class="ds-code__panel" data-tab="html-modal"><code>&lt;!-- Overlay + Modal --&gt;
+&lt;div class="modal-overlay modal-overlay--in" id="modal-overlay" onclick="if(event.target===this)closeModal()"&gt;
+  &lt;div class="modal modal--in" role="dialog" aria-modal="true" aria-labelledby="modal-title"&gt;
+
+    &lt;!-- Header --&gt;
+    &lt;div class="modal__header"&gt;
+      &lt;div class="modal__titles"&gt;
+        &lt;h2 class="modal__title" id="modal-title"&gt;Title&lt;/h2&gt;
+        &lt;!-- Opcional: descripción --&gt;
+        &lt;p class="modal__desc"&gt;Description&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;button class="modal__close" aria-label="Cerrar" onclick="closeModal()"&gt;
+        &lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Body: slot libre --&gt;
+    &lt;div class="modal__body"&gt;
+      &lt;!-- Insertar contenido según el flujo: form, empty state, lista, etc. --&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Footer --&gt;
+    &lt;div class="modal__footer"&gt;
+      &lt;!-- Opcional: acción terciaria --&gt;
+      &lt;button class="btn btn--tertiary btn--md"&gt;Button&lt;/button&gt;
+      &lt;div class="modal__footer-actions"&gt;
+        &lt;button class="btn btn--secondary btn--md"&gt;Cancelar&lt;/button&gt;
+        &lt;button class="btn btn--primary btn--md"&gt;Confirmar&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+          <pre class="ds-code__panel" data-tab="js-modal"><code>function openModal() {
+  const overlay = document.getElementById('modal-overlay');
+  overlay.hidden = false;
+  overlay.classList.remove('modal-overlay--out');
+  overlay.querySelector('.modal').classList.remove('modal--out');
+  overlay.classList.add('modal-overlay--in');
+  overlay.querySelector('.modal').classList.add('modal--in');
+  document.addEventListener('keydown', handleModalEsc);
+}
+
+function closeModal() {
+  const overlay = document.getElementById('modal-overlay');
+  overlay.classList.replace('modal-overlay--in', 'modal-overlay--out');
+  overlay.querySelector('.modal').classList.replace('modal--in', 'modal--out');
+  setTimeout(() => {
+    overlay.hidden = true;
+    overlay.classList.remove('modal-overlay--out');
+    overlay.querySelector('.modal').classList.remove('modal--out');
+  }, 200);
+  document.removeEventListener('keydown', handleModalEsc);
+}
+
+function handleModalEsc(e) {
+  if (e.key === 'Escape') closeModal();
+}</code></pre>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Modal del demo interactivo (hidden por defecto) -->
+  <div class="modal-overlay" id="modal-overlay" hidden onclick="if(event.target===this)closeModal()">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-demo-title">
+      <div class="modal__header">
+        <div class="modal__titles">
+          <h2 class="modal__title" id="modal-demo-title">Title</h2>
+          <p class="modal__desc" hidden></p>
+        </div>
+        <button class="modal__close" aria-label="Cerrar" onclick="closeModal()">
+          <span class="material-icons-outlined">close</span>
+        </button>
+      </div>
+      <div class="modal__body">
+        <div style="height:80px; border:1.5px dashed var(--color-neutral-300); border-radius:8px; display:flex; align-items:center; justify-content:center;">
+          <span style="font-size:12px; color:var(--color-neutral-400); font-family:var(--font-family-base);">Slot — contenido libre</span>
+        </div>
+      </div>
+      <div class="modal__footer">
+        <button class="btn btn--tertiary btn--md modal__tertiary" hidden></button>
+        <div class="modal__footer-actions">
+          <button class="btn btn--secondary btn--md" onclick="closeModal()">Cancelar</button>
+          <button class="btn btn--primary btn--md">Confirmar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/main.js"></script>
+  <script>
+    const MODAL_CONFIGS = {
+      basic: {
+        title: 'Eliminar vehículo',
+        desc: null,
+        tertiary: null
+      },
+      description: {
+        title: 'Editar información',
+        desc: 'Modificá los datos del vehículo seleccionado.',
+        tertiary: null
+      },
+      tertiary: {
+        title: 'Asignar vendedor',
+        desc: null,
+        tertiary: 'Ver todos'
+      }
+    };
+
+    function openModal(variant) {
+      const cfg     = MODAL_CONFIGS[variant];
+      const overlay = document.getElementById('modal-overlay');
+      const modal   = overlay.querySelector('.modal');
+
+      modal.querySelector('.modal__title').textContent = cfg.title;
+
+      const descEl = modal.querySelector('.modal__desc');
+      descEl.textContent = cfg.desc || '';
+      descEl.hidden = !cfg.desc;
+
+      const tertiaryEl = modal.querySelector('.modal__tertiary');
+      tertiaryEl.textContent = cfg.tertiary || '';
+      tertiaryEl.hidden = !cfg.tertiary;
+
+      overlay.hidden = false;
+      requestAnimationFrame(() => {
+        overlay.classList.add('modal-overlay--in');
+        modal.classList.add('modal--in');
+      });
+
+      document.addEventListener('keydown', handleModalEsc);
+    }
+
+    function closeModal() {
+      const overlay = document.getElementById('modal-overlay');
+      const modal   = overlay.querySelector('.modal');
+
+      overlay.classList.replace('modal-overlay--in', 'modal-overlay--out');
+      modal.classList.replace('modal--in', 'modal--out');
+
+      setTimeout(() => {
+        overlay.hidden = true;
+        overlay.classList.remove('modal-overlay--out');
+        modal.classList.remove('modal--out');
+      }, 200);
+
+      document.removeEventListener('keydown', handleModalEsc);
+    }
+
+    function handleModalEsc(e) {
+      if (e.key === 'Escape') closeModal();
+    }
+  </script>
+
+</body>
+</html>

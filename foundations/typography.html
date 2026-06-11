@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -29,9 +29,20 @@
       </ul>
       <p class="ds-nav__label">Components</p>
       <ul class="ds-nav__list">
+        <li><a href="../components/avatar.html" class="ds-nav__link">Avatar</a></li>
         <li><a href="../components/buttons.html" class="ds-nav__link">Buttons</a></li>
-        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
-        <li><a href="../components/inputs.html" class="ds-nav__link">Inputs</a></li>        
+        <li><a href="../components/cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="../components/dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="../components/inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="../components/pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="../components/switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="../components/tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="../components/toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="../components/tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="../components/modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
     </nav>
   </aside>
@@ -117,6 +128,45 @@
 
       </div>
 
+      <!-- SUBTITLE -->
+      <div class="ds-section">
+        <h2 class="ds-section__title">Subtitle</h2>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-subtitle-1">Subtitle 1</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-subtitle-1</span>
+            <span class="ds-type-meta__value">16px · SemiBold · LH 1.5 · LS 0em</span>
+            <span class="ds-type-meta__usage">Subtítulos bajo un H6. Encabezados de acordeones.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-subtitle-1-em">Subtitle 1 emphasized</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-weight-subtitle-1-emphasized</span>
+            <span class="ds-type-meta__value">16px · Bold · LH 1.5 · LS 0.01em</span>
+            <span class="ds-type-meta__usage">Marca y modelo de un auto. Usar con moderación.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-subtitle-2">Subtitle 2</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-subtitle-2</span>
+            <span class="ds-type-meta__value">14px · Bold · LH 1.45 · LS 0.01em</span>
+            <span class="ds-type-meta__usage">Subtítulos bajo un H6. Títulos de notificaciones.</span>
+          </div>
+        </div>
+
+      </div>
+
       <!-- BODY -->
       <div class="ds-section">
         <h2 class="ds-section__title">Body</h2>
@@ -190,42 +240,56 @@
     <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
     <pre><code>--font-family-base: 'Inter', sans-serif;
 
-        --font-size-h1: 2.25rem;
-        --font-size-h2: 1.75rem;
-        --font-size-h3: 1.5625rem;
-        --font-size-h4: 1.375rem;
-        --font-size-h5: 1.25rem;
-        --font-size-h6: 1.125rem;
-        --font-weight-heading: 600;
-        --line-height-h1: 1.55;
-        --line-height-h2: 1.58;
-        --line-height-h3: 1.60;
-        --line-height-h4: 1.46;
-        --line-height-h5: 1.40;
-        --line-height-h6: 1.36;
-        --letter-spacing-h1: -0.02em;
-        --letter-spacing-h2: -0.02em;
-        --letter-spacing-h3: -0.02em;
-        --letter-spacing-h4: -0.01em;
-        --letter-spacing-h5: -0.01em;
-        --letter-spacing-h6: 0em;
-        
-        --font-size-body: 0.875rem;
-        --font-weight-body: 400;
-        --font-weight-body-emphasized: 600;
-        --line-height-body: 1.45;
-        --letter-spacing-body: 0em;
-        
-        --font-size-caption: 0.75rem;
-        --font-weight-caption: 400;
-        --font-weight-caption-emphasized: 600;
-        --line-height-caption: 1.36;
-        --letter-spacing-caption: 0.02em;</code></pre>
+--font-size-h1: 2.25rem;
+--font-size-h2: 1.75rem;
+--font-size-h3: 1.5625rem;
+--font-size-h4: 1.375rem;
+--font-size-h5: 1.25rem;
+--font-size-h6: 1.125rem;
+--font-weight-heading: 600;
+--line-height-h1: 1.55;
+--line-height-h2: 1.58;
+--line-height-h3: 1.60;
+--line-height-h4: 1.46;
+--line-height-h5: 1.40;
+--line-height-h6: 1.36;
+--letter-spacing-h1: -0.02em;
+--letter-spacing-h2: -0.02em;
+--letter-spacing-h3: -0.02em;
+--letter-spacing-h4: -0.01em;
+--letter-spacing-h5: -0.01em;
+--letter-spacing-h6: 0em;
+
+--font-size-subtitle-1: 1rem;
+--font-weight-subtitle-1: 600;
+--line-height-subtitle-1: 1.5;
+--letter-spacing-subtitle-1: 0em;
+
+--font-weight-subtitle-1-emphasized: 700;
+--letter-spacing-subtitle-1-emphasized: 0.01em;
+
+--font-size-subtitle-2: 0.875rem;
+--font-weight-subtitle-2: 700;
+--line-height-subtitle-2: 1.45;
+--letter-spacing-subtitle-2: 0.01em;
+
+--font-size-body: 0.875rem;
+--font-weight-body: 400;
+--font-weight-body-emphasized: 600;
+--line-height-body: 1.45;
+--letter-spacing-body: 0em;
+
+--font-size-caption: 0.75rem;
+--font-weight-caption: 400;
+--font-weight-caption-emphasized: 600;
+--line-height-caption: 1.36;
+--letter-spacing-caption: 0.02em;</code></pre>
           </div>
         </div>
 
     </div>
   </main>
 
+  <script src="../js/main.js"></script>
 </body>
 </html>

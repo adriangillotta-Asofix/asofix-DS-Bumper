@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -30,9 +30,20 @@
       </ul>
       <p class="ds-nav__label">Components</p>
       <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
         <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
-        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
         <li><a href="inputs.html" class="ds-nav__link active">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
     </nav>
   </aside>
@@ -69,9 +80,7 @@
             <span class="ds-state-label">Default</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--lg">
-                <input class="input__field" type="text" placeholder="Placeholder" />
-              </div>
+              <div class="input__container input__container--lg"><input class="input__field" type="text" placeholder="Placeholder" /></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -79,9 +88,7 @@
             <span class="ds-state-label">Hover</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--lg input__container--hover">
-                <input class="input__field" type="text" placeholder="Placeholder" />
-              </div>
+              <div class="input__container input__container--lg input__container--hover"><input class="input__field" type="text" placeholder="Placeholder" /></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -89,9 +96,7 @@
             <span class="ds-state-label">Focus</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--lg input__container--focus">
-                <input class="input__field" type="text" placeholder="Placeholder" />
-              </div>
+              <div class="input__container input__container--lg input__container--focus"><input class="input__field" type="text" placeholder="Placeholder" /></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -99,9 +104,7 @@
             <span class="ds-state-label">Filled</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--lg">
-                <input class="input__field" type="text" value="Texto ingresado" />
-              </div>
+              <div class="input__container input__container--lg"><input class="input__field" type="text" value="Texto ingresado" /></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -109,9 +112,7 @@
             <span class="ds-state-label">Error</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--lg input__container--error">
-                <input class="input__field" type="text" value="Texto ingresado" />
-              </div>
+              <div class="input__container input__container--lg input__container--error"><input class="input__field" type="text" value="Texto ingresado" /></div>
               <span class="input__assistive input__assistive--error"><span class="material-icons-outlined" style="font-size:14px;">error_outline</span>Mensaje de error</span>
             </div>
           </div>
@@ -119,26 +120,28 @@
             <span class="ds-state-label">Disabled</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--lg input__container--disabled">
-                <input class="input__field" type="text" placeholder="Placeholder" disabled />
-              </div>
+              <div class="input__container input__container--lg input__container--disabled"><input class="input__field" type="text" placeholder="Placeholder" disabled /></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.input { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.input { display: flex; flex-direction: column; gap: 4px; width: 100%; }
 .input__label { display: flex; align-items: center; gap: 4px; }
-.input__label-text { font-family: 'Inter'; font-weight: 600; color: var(--color-neutral-600); }
-.input__label-text--lg { font-size: 14px; line-height: 1.45; }
-.input__label-icon { font-size: 12px; color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; }
-.input__label-optional { font-family: 'Inter'; font-size: 12px; font-weight: 400; line-height: 1.36; letter-spacing: 0.02em; color: var(--color-neutral-500); }
-.input__container { display: flex; align-items: center; width: 100%; background: #fff; border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
+.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
+.input__label-text--lg { font-size: var(--font-size-body); line-height: var(--line-height-body); }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; }
+.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.input__container { display: flex; align-items: center; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
 .input__container--lg { height: 50px; padding: 0 12px; }
-.input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: 'Inter'; font-size: 14px; font-weight: 400; color: var(--color-neutral-600); }
+.input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--color-neutral-600); }
 .input__field::placeholder { color: var(--color-neutral-400); }
-.input__assistive { font-family: 'Inter'; font-size: 12px; font-weight: 400; line-height: 1.36; letter-spacing: 0.02em; color: var(--color-neutral-500); }
+.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
 
 /* States */
 .input__container:hover { border-color: var(--color-neutral-600); }
@@ -146,6 +149,28 @@
 .input__container--error { border-color: var(--color-error-500); }
 .input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
 .input__container--disabled { background-color: var(--color-neutral-50); pointer-events: none; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="input"&gt;
+  &lt;div class="input__label"&gt;
+    &lt;span class="input__label-text input__label-text--lg"&gt;Label&lt;/span&gt;
+    &lt;span class="material-icons-outlined input__label-icon"&gt;info&lt;/span&gt;
+    &lt;span class="input__label-optional"&gt;(opcional)&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="input__container input__container--lg"&gt;
+    &lt;input class="input__field" type="text" placeholder="Placeholder" /&gt;
+  &lt;/div&gt;
+  &lt;span class="input__assistive"&gt;Texto de ayuda&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Error --&gt;
+&lt;div class="input__container input__container--lg input__container--error"&gt; ... &lt;/div&gt;
+&lt;span class="input__assistive input__assistive--error"&gt;
+  &lt;span class="material-icons-outlined"&gt;error_outline&lt;/span&gt;Mensaje de error
+&lt;/span&gt;
+
+&lt;!-- Disabled --&gt;
+&lt;div class="input__container input__container--lg input__container--disabled"&gt;
+  &lt;input class="input__field" type="text" placeholder="Placeholder" disabled /&gt;
+&lt;/div&gt;</code></pre>
         </div>
       </div>
 
@@ -172,9 +197,7 @@
             <span class="ds-state-label">Default</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--sm">
-                <input class="input__field input__field--sm" type="text" placeholder="Placeholder" />
-              </div>
+              <div class="input__container input__container--sm"><input class="input__field input__field--sm" type="text" placeholder="Placeholder" /></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -182,9 +205,7 @@
             <span class="ds-state-label">Hover</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--sm input__container--hover">
-                <input class="input__field input__field--sm" type="text" placeholder="Placeholder" />
-              </div>
+              <div class="input__container input__container--sm input__container--hover"><input class="input__field input__field--sm" type="text" placeholder="Placeholder" /></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -192,9 +213,7 @@
             <span class="ds-state-label">Focus</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--sm input__container--focus">
-                <input class="input__field input__field--sm" type="text" placeholder="Placeholder" />
-              </div>
+              <div class="input__container input__container--sm input__container--focus"><input class="input__field input__field--sm" type="text" placeholder="Placeholder" /></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -202,9 +221,7 @@
             <span class="ds-state-label">Filled</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--sm">
-                <input class="input__field input__field--sm" type="text" value="Texto ingresado" />
-              </div>
+              <div class="input__container input__container--sm"><input class="input__field input__field--sm" type="text" value="Texto ingresado" /></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -212,9 +229,7 @@
             <span class="ds-state-label">Error</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--sm input__container--error">
-                <input class="input__field input__field--sm" type="text" value="Texto ingresado" />
-              </div>
+              <div class="input__container input__container--sm input__container--error"><input class="input__field input__field--sm" type="text" value="Texto ingresado" /></div>
               <span class="input__assistive input__assistive--error"><span class="material-icons-outlined" style="font-size:14px;">error_outline</span>Mensaje de error</span>
             </div>
           </div>
@@ -222,27 +237,29 @@
             <span class="ds-state-label">Disabled</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="input__container input__container--sm input__container--disabled">
-                <input class="input__field input__field--sm" type="text" placeholder="Placeholder" disabled />
-              </div>
+              <div class="input__container input__container--sm input__container--disabled"><input class="input__field input__field--sm" type="text" placeholder="Placeholder" disabled /></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.input { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.input { display: flex; flex-direction: column; gap: 4px; width: 100%; }
 .input__label { display: flex; align-items: center; gap: 4px; }
-.input__label-text { font-family: 'Inter'; font-weight: 600; color: var(--color-neutral-600); }
-.input__label-text--sm { font-size: 12px; line-height: 1.36; letter-spacing: 0.02em; }
-.input__label-icon { font-size: 12px; color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; }
-.input__label-optional { font-family: 'Inter'; font-size: 12px; font-weight: 400; line-height: 1.36; letter-spacing: 0.02em; color: var(--color-neutral-500); }
-.input__container { display: flex; align-items: center; width: 100%; background: #fff; border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
+.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
+.input__label-text--sm { font-size: var(--font-size-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; }
+.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.input__container { display: flex; align-items: center; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
 .input__container--sm { height: 38px; padding: 0 13px; }
-.input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: 'Inter'; font-weight: 400; color: var(--color-neutral-600); }
-.input__field--sm { font-size: 12px; }
+.input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--color-neutral-600); }
+.input__field--sm { font-size: var(--font-size-caption); }
 .input__field::placeholder { color: var(--color-neutral-400); }
-.input__assistive { font-family: 'Inter'; font-size: 12px; font-weight: 400; line-height: 1.36; letter-spacing: 0.02em; color: var(--color-neutral-500); }
+.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
 
 /* States */
 .input__container:hover { border-color: var(--color-neutral-600); }
@@ -250,6 +267,17 @@
 .input__container--error { border-color: var(--color-error-500); }
 .input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
 .input__container--disabled { background-color: var(--color-neutral-50); pointer-events: none; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="input"&gt;
+  &lt;div class="input__label"&gt;
+    &lt;span class="input__label-text input__label-text--sm"&gt;Label&lt;/span&gt;
+    &lt;span class="material-icons-outlined input__label-icon"&gt;info&lt;/span&gt;
+    &lt;span class="input__label-optional"&gt;(opcional)&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="input__container input__container--sm"&gt;
+    &lt;input class="input__field input__field--sm" type="text" placeholder="Placeholder" /&gt;
+  &lt;/div&gt;
+  &lt;span class="input__assistive"&gt;Texto de ayuda&lt;/span&gt;
+&lt;/div&gt;</code></pre>
         </div>
       </div>
 
@@ -276,9 +304,7 @@
             <span class="ds-state-label">Default</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container">
-                <textarea class="textarea__field" placeholder="Placeholder"></textarea>
-              </div>
+              <div class="textarea__container"><textarea class="textarea__field" placeholder="Placeholder"></textarea></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -286,9 +312,7 @@
             <span class="ds-state-label">Hover</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container input__container--hover">
-                <textarea class="textarea__field" placeholder="Placeholder"></textarea>
-              </div>
+              <div class="textarea__container input__container--hover"><textarea class="textarea__field" placeholder="Placeholder"></textarea></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -296,9 +320,7 @@
             <span class="ds-state-label">Focus</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container input__container--focus">
-                <textarea class="textarea__field" placeholder="Placeholder"></textarea>
-              </div>
+              <div class="textarea__container input__container--focus"><textarea class="textarea__field" placeholder="Placeholder"></textarea></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -306,9 +328,7 @@
             <span class="ds-state-label">Filled</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container">
-                <textarea class="textarea__field">Texto ingresado en el área de texto con varias líneas de contenido.</textarea>
-              </div>
+              <div class="textarea__container"><textarea class="textarea__field">Texto ingresado en el área de texto con varias líneas de contenido.</textarea></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
@@ -316,9 +336,7 @@
             <span class="ds-state-label">Error</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container input__container--error">
-                <textarea class="textarea__field">Texto ingresado</textarea>
-              </div>
+              <div class="textarea__container input__container--error"><textarea class="textarea__field">Texto ingresado</textarea></div>
               <span class="input__assistive input__assistive--error"><span class="material-icons-outlined" style="font-size:14px;">error_outline</span>Mensaje de error</span>
             </div>
           </div>
@@ -326,17 +344,19 @@
             <span class="ds-state-label">Disabled</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container input__container--disabled">
-                <textarea class="textarea__field" placeholder="Placeholder" disabled></textarea>
-              </div>
+              <div class="textarea__container input__container--disabled"><textarea class="textarea__field" placeholder="Placeholder" disabled></textarea></div>
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.textarea__container { display: flex; align-items: flex-start; width: 100%; background: #fff; border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; }
-.textarea__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: 'Inter'; font-size: 14px; font-weight: 400; line-height: 1.45; color: var(--color-neutral-600); padding: 9px 12px; resize: none; height: 120px; overflow-y: auto; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.textarea__container { display: flex; align-items: flex-start; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; }
+.textarea__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--color-neutral-600); padding: 9px 12px; resize: none; height: 120px; overflow-y: auto; }
 .textarea__field::placeholder { color: var(--color-neutral-400); }
 
 /* States */
@@ -344,6 +364,17 @@
 .textarea__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .textarea__container.input__container--error { border-color: var(--color-error-500); }
 .textarea__container.input__container--disabled { background-color: var(--color-neutral-50); pointer-events: none; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="input"&gt;
+  &lt;div class="input__label"&gt;
+    &lt;span class="input__label-text input__label-text--lg"&gt;Label&lt;/span&gt;
+    &lt;span class="material-icons-outlined input__label-icon"&gt;info&lt;/span&gt;
+    &lt;span class="input__label-optional"&gt;(opcional)&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="textarea__container"&gt;
+    &lt;textarea class="textarea__field" placeholder="Placeholder"&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;span class="input__assistive"&gt;Texto de ayuda&lt;/span&gt;
+&lt;/div&gt;</code></pre>
         </div>
       </div>
 
@@ -351,19 +382,50 @@
       <div class="ds-section" id="select-lg">
         <h2 class="ds-section__title">Select — Large</h2>
         <p class="ds-preview__label">Preview</p>
-        <div class="ds-preview ds-preview--interactive">
-          <div class="select">
+        <div class="ds-preview ds-preview--interactive" style="align-items:flex-start; padding:32px; overflow:visible; min-height:450px;">
+          <div class="select" style="width:320px;">
             <div class="input__label">
               <span class="input__label-text input__label-text--lg">Label</span>
               <span class="material-icons-outlined input__label-icon">info</span>
               <span class="input__label-optional">(opcional)</span>
             </div>
-            <div class="select__container select__container--lg">
-              <span class="select__text">Placeholder</span>
-              <div class="select__icons">
-                <span class="material-icons-outlined select__icon">close</span>
-                <div class="select__divider"></div>
-                <span class="material-icons-outlined select__icon">expand_more</span>
+            <div style="position:relative;">
+              <div
+                class="select__container select__container--lg"
+                id="select-lg-trigger"
+                role="button"
+                tabindex="0"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="select-lg-dropdown"
+                onclick="toggleDropdown('select-lg-trigger','select-lg-dropdown')"
+              >
+                <span class="select__text" id="select-lg-text">Placeholder</span>
+                <div class="select__icons">
+                  <span class="material-icons-outlined select__icon" id="select-lg-clear" style="display:none;cursor:pointer;" onclick="clearSelectDemo(event,'select-lg-trigger','select-lg-text','select-lg-dropdown','select-lg-clear')">close</span>
+                  <div class="select__divider"></div>
+                  <span class="material-icons-outlined select__icon">expand_more</span>
+                </div>
+              </div>
+              <div class="dropdown" id="select-lg-dropdown" hidden role="listbox" aria-label="Opciones"
+                style="position:absolute; top:calc(100% + 4px); left:0; width:100%; z-index:100;">
+                <div class="dropdown__list">
+                  <button class="dropdown-item" role="option" onclick="selectOption(this,'select-lg-trigger','select-lg-dropdown','select-lg-text','select-lg-clear')">
+                    <div class="dropdown-item__content"><span class="dropdown-item__title">Opción 1</span></div>
+                  </button>
+                  <button class="dropdown-item" role="option" onclick="selectOption(this,'select-lg-trigger','select-lg-dropdown','select-lg-text','select-lg-clear')">
+                    <div class="dropdown-item__content"><span class="dropdown-item__title">Opción 2</span></div>
+                  </button>
+                  <button class="dropdown-item" role="option" onclick="selectOption(this,'select-lg-trigger','select-lg-dropdown','select-lg-text','select-lg-clear')">
+                    <div class="dropdown-item__content"><span class="dropdown-item__title">Opción 3</span></div>
+                  </button>
+                  <button class="dropdown-item" role="option" onclick="selectOption(this,'select-lg-trigger','select-lg-dropdown','select-lg-text','select-lg-clear')">
+                    <div class="dropdown-item__content"><span class="dropdown-item__title">Opción 4</span></div>
+                  </button>
+                  <button class="dropdown-item" role="option" onclick="selectOption(this,'select-lg-trigger','select-lg-dropdown','select-lg-text','select-lg-clear')">
+                    <div class="dropdown-item__content"><span class="dropdown-item__title">Opción 5</span></div>
+                  </button>
+                </div>
               </div>
             </div>
             <span class="input__assistive">Texto de ayuda</span>
@@ -375,70 +437,35 @@
             <span class="ds-state-label">Default</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--lg">
-                <span class="select__text">Placeholder</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--lg"><span class="select__text">Placeholder</span><div class="select__icons"><span class="material-icons-outlined select__icon">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon">expand_more</span></div></div>
             </div>
           </div>
           <div class="ds-state-item">
             <span class="ds-state-label">Hover</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--lg input__container--hover">
-                <span class="select__text">Placeholder</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--lg input__container--hover"><span class="select__text">Placeholder</span><div class="select__icons"><span class="material-icons-outlined select__icon">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon">expand_more</span></div></div>
             </div>
           </div>
           <div class="ds-state-item">
             <span class="ds-state-label">Focus</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--lg input__container--focus">
-                <span class="select__text">Placeholder</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--lg input__container--focus"><span class="select__text">Placeholder</span><div class="select__icons"><span class="material-icons-outlined select__icon">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon">expand_more</span></div></div>
             </div>
           </div>
           <div class="ds-state-item">
             <span class="ds-state-label">Filled</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--lg">
-                <span class="select__text select__text--filled">Opción seleccionada</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--lg"><span class="select__text select__text--filled">Opción seleccionada</span><div class="select__icons"><span class="material-icons-outlined select__icon">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon">expand_more</span></div></div>
             </div>
           </div>
           <div class="ds-state-item">
             <span class="ds-state-label">Error</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--lg input__container--error">
-                <span class="select__text select__text--filled">Opción seleccionada</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--lg input__container--error"><span class="select__text select__text--filled">Opción seleccionada</span><div class="select__icons"><span class="material-icons-outlined select__icon">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon">expand_more</span></div></div>
               <span class="input__assistive input__assistive--error"><span class="material-icons-outlined" style="font-size:14px;">error_outline</span>Mensaje de error</span>
             </div>
           </div>
@@ -446,38 +473,99 @@
             <span class="ds-state-label">Disabled</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--lg select__container--disabled">
-                <span class="select__text">Placeholder</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--lg select__container--disabled"><span class="select__text">Placeholder</span><div class="select__icons"><span class="material-icons-outlined select__icon">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon">expand_more</span></div></div>
             </div>
           </div>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'js')">JS</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
-.select__container { display: flex; align-items: center; width: 100%; background: #fff; border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.select__container { display: flex; align-items: center; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
 .select__container--lg { height: 50px; padding: 0 12px; }
-.select__text { flex: 1; min-width: 0; font-family: 'Inter'; font-size: 14px; font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-neutral-400); }
+.select__text { flex: 1; min-width: 0; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-neutral-400); }
 .select__text--filled { color: var(--color-neutral-600); }
 .select__icons { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
 .select__divider { width: 1px; background-color: var(--color-neutral-300); flex-shrink: 0; }
 .select__container--lg .select__divider { height: 30px; }
-.select__icon { color: var(--color-neutral-500); display: flex; align-items: center; }
+.select__icon { color: var(--color-neutral-500); display: flex; align-items: center; font-size: 16px; }
 .select__container--lg .select__icon { font-size: 20px; }
 
 /* States */
-/* States */
 .select__container:hover { border-color: var(--color-neutral-600); }
 .select__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.input__container--error { border-color: var(--color-error-500); }
+.select__container.input__container--error { border-color: var(--color-error-500); }
 .input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
 .select__container--disabled { pointer-events: none; }
-.select__container--lg.select__container--disabled { background-color: var(--color-neutral-100); }</code></pre>
+.select__container--lg.select__container--disabled { background-color: var(--color-neutral-50); }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="select"&gt;
+  &lt;div class="input__label"&gt;
+    &lt;span class="input__label-text input__label-text--lg"&gt;Label&lt;/span&gt;
+    &lt;span class="material-icons-outlined input__label-icon"&gt;info&lt;/span&gt;
+    &lt;span class="input__label-optional"&gt;(opcional)&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div style="position:relative;"&gt;
+    &lt;div
+      class="select__container select__container--lg"
+      id="mi-select"
+      role="button"
+      tabindex="0"
+      aria-haspopup="listbox"
+      aria-expanded="false"
+      aria-controls="mi-select-dropdown"
+      onclick="toggleDropdown('mi-select','mi-select-dropdown')"
+    &gt;
+      &lt;span class="select__text" id="mi-select-text"&gt;Placeholder&lt;/span&gt;
+      &lt;div class="select__icons"&gt;
+        &lt;span class="material-icons-outlined select__icon" id="mi-select-clear" style="display:none;cursor:pointer;"
+          onclick="clearSelectDemo(event,'mi-select','mi-select-text','mi-select-dropdown','mi-select-clear')"&gt;close&lt;/span&gt;
+        &lt;div class="select__divider"&gt;&lt;/div&gt;
+        &lt;span class="material-icons-outlined select__icon"&gt;expand_more&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="dropdown" id="mi-select-dropdown" hidden role="listbox"
+      style="position:absolute; top:calc(100% + 4px); left:0; width:100%; z-index:100;"&gt;
+      &lt;div class="dropdown__list"&gt;
+        &lt;button class="dropdown-item" role="option"
+          onclick="selectOption(this,'mi-select','mi-select-dropdown','mi-select-text','mi-select-clear')"&gt;
+          &lt;div class="dropdown-item__content"&gt;&lt;span class="dropdown-item__title"&gt;Opción 1&lt;/span&gt;&lt;/div&gt;
+        &lt;/button&gt;
+        &lt;!-- más opciones... --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="input__assistive"&gt;Texto de ayuda&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          <pre class="ds-code__panel" data-tab="js"><code>// Seleccionar una opción y cerrar el dropdown
+function selectOption(itemEl, triggerId, dropdownId, textId, clearId) {
+  const title = itemEl.querySelector('.dropdown-item__title').textContent;
+  const textEl = document.getElementById(textId);
+  textEl.textContent = title;
+  textEl.classList.add('select__text--filled');
+  document.getElementById(clearId).style.display = '';
+  itemEl.closest('.dropdown__list').querySelectorAll('.dropdown-item')
+    .forEach(i => i.classList.remove('dropdown-item--active'));
+  itemEl.classList.add('dropdown-item--active');
+  toggleDropdown(triggerId, dropdownId);
+}
+
+// Limpiar la selección
+function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
+  event.stopPropagation();
+  const textEl = document.getElementById(textId);
+  textEl.textContent = 'Placeholder';
+  textEl.classList.remove('select__text--filled');
+  document.getElementById(clearId).style.display = 'none';
+  document.getElementById(dropdownId)
+    ?.querySelectorAll('.dropdown-item')
+    .forEach(i => i.classList.remove('dropdown-item--active'));
+}
+
+// toggleDropdown viene de main.js del DS</code></pre>
         </div>
       </div>
 
@@ -485,19 +573,50 @@
       <div class="ds-section" id="select-sm">
         <h2 class="ds-section__title">Select — Small</h2>
         <p class="ds-preview__label">Preview</p>
-        <div class="ds-preview ds-preview--interactive">
-          <div class="select">
+        <div class="ds-preview ds-preview--interactive" style="align-items:flex-start; padding:32px; overflow:visible; min-height:440px;">
+          <div class="select" style="width:280px;">
             <div class="input__label">
               <span class="input__label-text input__label-text--sm">Label</span>
               <span class="material-icons-outlined input__label-icon">info</span>
               <span class="input__label-optional">(opcional)</span>
             </div>
-            <div class="select__container select__container--sm">
-              <span class="select__text">Placeholder</span>
-              <div class="select__icons">
-                <span class="material-icons-outlined select__icon select__icon--sm">close</span>
-                <div class="select__divider"></div>
-                <span class="material-icons-outlined select__icon select__icon--sm">expand_more</span>
+            <div style="position:relative;">
+              <div
+                class="select__container select__container--sm"
+                id="select-sm-trigger"
+                role="button"
+                tabindex="0"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+                aria-controls="select-sm-dropdown"
+                onclick="toggleDropdown('select-sm-trigger','select-sm-dropdown')"
+              >
+                <span class="select__text" id="select-sm-text">Placeholder</span>
+                <div class="select__icons">
+                  <span class="material-icons-outlined select__icon select__icon--sm" id="select-sm-clear" style="display:none;cursor:pointer;" onclick="clearSelectDemo(event,'select-sm-trigger','select-sm-text','select-sm-dropdown','select-sm-clear')">close</span>
+                  <div class="select__divider"></div>
+                  <span class="material-icons-outlined select__icon select__icon--sm">expand_more</span>
+                </div>
+              </div>
+              <div class="dropdown" id="select-sm-dropdown" hidden role="listbox" aria-label="Opciones"
+                style="position:absolute; top:calc(100% + 4px); left:0; width:100%; z-index:100;">
+                <div class="dropdown__list">
+                  <button class="dropdown-item" role="option" onclick="selectOption(this,'select-sm-trigger','select-sm-dropdown','select-sm-text','select-sm-clear')">
+                    <div class="dropdown-item__content"><span class="dropdown-item__title">Opción 1</span></div>
+                  </button>
+                  <button class="dropdown-item" role="option" onclick="selectOption(this,'select-sm-trigger','select-sm-dropdown','select-sm-text','select-sm-clear')">
+                    <div class="dropdown-item__content"><span class="dropdown-item__title">Opción 2</span></div>
+                  </button>
+                  <button class="dropdown-item" role="option" onclick="selectOption(this,'select-sm-trigger','select-sm-dropdown','select-sm-text','select-sm-clear')">
+                    <div class="dropdown-item__content"><span class="dropdown-item__title">Opción 3</span></div>
+                  </button>
+                  <button class="dropdown-item" role="option" onclick="selectOption(this,'select-sm-trigger','select-sm-dropdown','select-sm-text','select-sm-clear')">
+                    <div class="dropdown-item__content"><span class="dropdown-item__title">Opción 4</span></div>
+                  </button>
+                  <button class="dropdown-item" role="option" onclick="selectOption(this,'select-sm-trigger','select-sm-dropdown','select-sm-text','select-sm-clear')">
+                    <div class="dropdown-item__content"><span class="dropdown-item__title">Opción 5</span></div>
+                  </button>
+                </div>
               </div>
             </div>
             <span class="input__assistive">Texto de ayuda</span>
@@ -509,70 +628,35 @@
             <span class="ds-state-label">Default</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--sm">
-                <span class="select__text">Placeholder</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon select__icon--sm">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon select__icon--sm">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--sm"><span class="select__text">Placeholder</span><div class="select__icons"><span class="material-icons-outlined select__icon select__icon--sm">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon select__icon--sm">expand_more</span></div></div>
             </div>
           </div>
           <div class="ds-state-item">
             <span class="ds-state-label">Hover</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--sm input__container--hover">
-                <span class="select__text">Placeholder</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon select__icon--sm">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon select__icon--sm">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--sm input__container--hover"><span class="select__text">Placeholder</span><div class="select__icons"><span class="material-icons-outlined select__icon select__icon--sm">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon select__icon--sm">expand_more</span></div></div>
             </div>
           </div>
           <div class="ds-state-item">
             <span class="ds-state-label">Focus</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--sm input__container--focus">
-                <span class="select__text">Placeholder</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon select__icon--sm">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon select__icon--sm">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--sm input__container--focus"><span class="select__text">Placeholder</span><div class="select__icons"><span class="material-icons-outlined select__icon select__icon--sm">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon select__icon--sm">expand_more</span></div></div>
             </div>
           </div>
           <div class="ds-state-item">
             <span class="ds-state-label">Filled</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--sm">
-                <span class="select__text select__text--filled">Opción seleccionada</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon select__icon--sm">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon select__icon--sm">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--sm"><span class="select__text select__text--filled">Opción seleccionada</span><div class="select__icons"><span class="material-icons-outlined select__icon select__icon--sm">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon select__icon--sm">expand_more</span></div></div>
             </div>
           </div>
           <div class="ds-state-item">
             <span class="ds-state-label">Error</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--sm input__container--error">
-                <span class="select__text select__text--filled">Opción seleccionada</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon select__icon--sm">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon select__icon--sm">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--sm input__container--error"><span class="select__text select__text--filled">Opción seleccionada</span><div class="select__icons"><span class="material-icons-outlined select__icon select__icon--sm">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon select__icon--sm">expand_more</span></div></div>
               <span class="input__assistive input__assistive--error"><span class="material-icons-outlined" style="font-size:14px;">error_outline</span>Mensaje de error</span>
             </div>
           </div>
@@ -580,37 +664,74 @@
             <span class="ds-state-label">Disabled</span>
             <div class="select">
               <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="select__container select__container--sm select__container--disabled">
-                <span class="select__text">Placeholder</span>
-                <div class="select__icons">
-                  <span class="material-icons-outlined select__icon select__icon--sm">close</span>
-                  <div class="select__divider"></div>
-                  <span class="material-icons-outlined select__icon select__icon--sm">expand_more</span>
-                </div>
-              </div>
+              <div class="select__container select__container--sm select__container--disabled"><span class="select__text">Placeholder</span><div class="select__icons"><span class="material-icons-outlined select__icon select__icon--sm">close</span><div class="select__divider"></div><span class="material-icons-outlined select__icon select__icon--sm">expand_more</span></div></div>
             </div>
           </div>
         </div>
-        <div class="ds-code">
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'js')">JS</button>
+          </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
-.select__container { display: flex; align-items: center; width: 100%; background: #fff; border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.select__container { display: flex; align-items: center; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
 .select__container--sm { height: 38px; padding: 0 13px; }
-.select__text { flex: 1; min-width: 0; font-family: 'Inter'; font-size: 14px; font-weight: 400; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-neutral-400); }
+.select__text { flex: 1; min-width: 0; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-neutral-400); }
 .select__text--filled { color: var(--color-neutral-600); }
 .select__icons { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
 .select__divider { width: 1px; background-color: var(--color-neutral-300); flex-shrink: 0; }
 .select__container--sm .select__divider { height: 20px; }
-.select__icon { color: var(--color-neutral-500); display: flex; align-items: center; }
+.select__icon { color: var(--color-neutral-500); display: flex; align-items: center; font-size: 16px; }
 .select__icon--sm { font-size: 16px; }
 
 /* States */
 .select__container:hover { border-color: var(--color-neutral-600); }
 .select__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.input__container--error { border-color: var(--color-error-500); }
+.select__container.input__container--error { border-color: var(--color-error-500); }
 .input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
 .select__container--disabled { pointer-events: none; }
 .select__container--sm.select__container--disabled { background-color: var(--color-neutral-50); }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="select"&gt;
+  &lt;div class="input__label"&gt;
+    &lt;span class="input__label-text input__label-text--sm"&gt;Label&lt;/span&gt;
+    &lt;span class="material-icons-outlined input__label-icon"&gt;info&lt;/span&gt;
+    &lt;span class="input__label-optional"&gt;(opcional)&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div style="position:relative;"&gt;
+    &lt;div
+      class="select__container select__container--sm"
+      id="mi-select"
+      role="button"
+      tabindex="0"
+      aria-haspopup="listbox"
+      aria-expanded="false"
+      aria-controls="mi-select-dropdown"
+      onclick="toggleDropdown('mi-select','mi-select-dropdown')"
+    &gt;
+      &lt;span class="select__text" id="mi-select-text"&gt;Placeholder&lt;/span&gt;
+      &lt;div class="select__icons"&gt;
+        &lt;span class="material-icons-outlined select__icon select__icon--sm" id="mi-select-clear" style="display:none;cursor:pointer;"
+          onclick="clearSelectDemo(event,'mi-select','mi-select-text','mi-select-dropdown','mi-select-clear')"&gt;close&lt;/span&gt;
+        &lt;div class="select__divider"&gt;&lt;/div&gt;
+        &lt;span class="material-icons-outlined select__icon select__icon--sm"&gt;expand_more&lt;/span&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="dropdown" id="mi-select-dropdown" hidden role="listbox"
+      style="position:absolute; top:calc(100% + 4px); left:0; width:100%; z-index:100;"&gt;
+      &lt;div class="dropdown__list"&gt;
+        &lt;button class="dropdown-item" role="option"
+          onclick="selectOption(this,'mi-select','mi-select-dropdown','mi-select-text','mi-select-clear')"&gt;
+          &lt;div class="dropdown-item__content"&gt;&lt;span class="dropdown-item__title"&gt;Opción 1&lt;/span&gt;&lt;/div&gt;
+        &lt;/button&gt;
+        &lt;!-- más opciones... --&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;span class="input__assistive"&gt;Texto de ayuda&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+          <pre class="ds-code__panel" data-tab="js"><code>// Ver tab JS del Select — Large (mismas funciones)</code></pre>
         </div>
       </div>
 
