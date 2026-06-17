@@ -20,7 +20,7 @@
       <a href="../index.html" style="text-decoration:none;">
         <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
       </a>
-      <span class="ds-sidebar__version">v2.1</span>
+      <span class="ds-sidebar__version">v2.0</span>
     </div>
     <nav class="ds-nav">
       <p class="ds-nav__label">Foundations</p>
@@ -45,6 +45,10 @@
       <ul class="ds-nav__list">
         <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
+      <p class="ds-nav__label">Adoption</p>
+      <ul class="ds-nav__list">
+        <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
+      </ul>
     </nav>
   </aside>
 
@@ -54,11 +58,11 @@
 
       <div class="ds-page-header">
         <h1 class="ds-page-header__title">Buttons</h1>
-        <p class="ds-page-header__desc">Cuatro jerarquías (Primary, Secondary, Tertiary, Link) y dos tamaños (Medium, Small). Cada variante incluye todos sus estados.</p>
+        <p class="ds-page-header__desc">Cuatro jerarquías (Primary, Secondary, Tertiary, Link) con dos tamaños (Medium, Small) y variante Icon Only. Cada combinación incluye todos sus estados.</p>
       </div>
 
       <!-- PRIMARY MEDIUM -->
-      <div class="ds-section" id="primary-md">
+      <div class="ds-section" id="primary-md" data-toc-group="Medium" data-toc-label="Primary">
         <h2 class="ds-section__title">Primary — Medium</h2>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
@@ -111,7 +115,7 @@
       </div>
 
       <!-- DANGER MEDIUM -->
-      <div class="ds-section" id="danger-md">
+      <div class="ds-section" id="danger-md" data-toc-group="Medium" data-toc-label="Danger">
         <h2 class="ds-section__title">Danger — Medium</h2>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
@@ -164,7 +168,7 @@
       </div>
 
       <!-- SECONDARY MEDIUM -->
-      <div class="ds-section" id="secondary-md">
+      <div class="ds-section" id="secondary-md" data-toc-group="Medium" data-toc-label="Secondary">
         <h2 class="ds-section__title">Secondary — Medium</h2>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
@@ -217,7 +221,7 @@
       </div>
 
       <!-- TERTIARY MEDIUM -->
-      <div class="ds-section" id="tertiary-md">
+      <div class="ds-section" id="tertiary-md" data-toc-group="Medium" data-toc-label="Tertiary">
         <h2 class="ds-section__title">Tertiary — Medium</h2>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
@@ -269,8 +273,152 @@
         </div>
       </div>
 
+      <!-- PRIMARY ICON-ONLY MD -->
+      <div class="ds-section" id="primary-icon-md" data-toc-group="Medium" data-toc-label="Primary — Icon">
+        <h2 class="ds-section__title">Primary — Icon Only — Medium</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="btn btn--primary btn--icon btn--md" aria-label="Agregar"><span class="material-icons-outlined">add</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="btn btn--primary btn--icon btn--md" title="Default"><span class="material-icons-outlined">add</span></button>
+          <button class="btn btn--primary btn--icon btn--md btn--hover" title="Hover"><span class="material-icons-outlined">add</span></button>
+          <button class="btn btn--primary btn--icon btn--md btn--active" title="Active"><span class="material-icons-outlined">add</span></button>
+          <button class="btn btn--primary btn--icon btn--md btn--focus" title="Focus"><span class="material-icons-outlined">add</span></button>
+          <button class="btn btn--primary btn--icon btn--md" disabled title="Disabled"><span class="material-icons-outlined">add</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn--primary { background-color: var(--color-primary-500); color: var(--color-neutral-white); }
+.btn--primary:hover { background-color: var(--color-primary-600); }
+.btn--primary:active { background-color: var(--color-primary-700); }
+.btn--primary:focus-visible { background-color: var(--color-primary-600); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
+.btn--primary:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--md { height: 44px; padding: 12px 16px; }
+.btn--icon { padding: 0; }
+.btn--icon.btn--md { width: 44px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--primary btn--icon btn--md" aria-label="Agregar"&gt;
+  &lt;span class="material-icons-outlined"&gt;add&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- DANGER ICON-ONLY MD -->
+      <div class="ds-section" id="danger-icon-md" data-toc-group="Medium" data-toc-label="Danger — Icon">
+        <h2 class="ds-section__title">Danger — Icon Only — Medium</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="btn btn--danger btn--icon btn--md" aria-label="Eliminar"><span class="material-icons-outlined">delete</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="btn btn--danger btn--icon btn--md" title="Default"><span class="material-icons-outlined">delete</span></button>
+          <button class="btn btn--danger btn--icon btn--md btn--hover" title="Hover"><span class="material-icons-outlined">delete</span></button>
+          <button class="btn btn--danger btn--icon btn--md btn--active" title="Active"><span class="material-icons-outlined">delete</span></button>
+          <button class="btn btn--danger btn--icon btn--md btn--focus" title="Focus"><span class="material-icons-outlined">delete</span></button>
+          <button class="btn btn--danger btn--icon btn--md" disabled title="Disabled"><span class="material-icons-outlined">delete</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn--danger { background-color: var(--color-error-500); color: var(--color-neutral-white); }
+.btn--danger:hover { background-color: var(--color-error-600); }
+.btn--danger:active { background-color: var(--color-error-700); }
+.btn--danger:focus-visible { background-color: var(--color-error-600); outline: 2px solid var(--color-error-300); outline-offset: 0; }
+.btn--danger:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--md { height: 44px; padding: 12px 16px; }
+.btn--icon { padding: 0; }
+.btn--icon.btn--md { width: 44px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--danger btn--icon btn--md" aria-label="Eliminar"&gt;
+  &lt;span class="material-icons-outlined"&gt;delete&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- SECONDARY ICON-ONLY MD -->
+      <div class="ds-section" id="secondary-icon-md" data-toc-group="Medium" data-toc-label="Secondary — Icon">
+        <h2 class="ds-section__title">Secondary — Icon Only — Medium</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="btn btn--secondary btn--icon btn--md" aria-label="Editar"><span class="material-icons-outlined">edit</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="btn btn--secondary btn--icon btn--md" title="Default"><span class="material-icons-outlined">edit</span></button>
+          <button class="btn btn--secondary btn--icon btn--md btn--hover" title="Hover"><span class="material-icons-outlined">edit</span></button>
+          <button class="btn btn--secondary btn--icon btn--md btn--active" title="Active"><span class="material-icons-outlined">edit</span></button>
+          <button class="btn btn--secondary btn--icon btn--md btn--focus" title="Focus"><span class="material-icons-outlined">edit</span></button>
+          <button class="btn btn--secondary btn--icon btn--md" disabled title="Disabled"><span class="material-icons-outlined">edit</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn--secondary { background-color: transparent; color: var(--color-primary-500); border-color: var(--color-primary-500); }
+.btn--secondary:hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); }
+.btn--secondary:active { background-color: var(--color-primary-100); border-color: var(--color-primary-700); }
+.btn--secondary:focus-visible { background-color: var(--color-primary-50); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
+.btn--secondary:disabled { background-color: transparent; border-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--md { height: 44px; padding: 12px 16px; }
+.btn--icon { padding: 0; }
+.btn--icon.btn--md { width: 44px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--secondary btn--icon btn--md" aria-label="Editar"&gt;
+  &lt;span class="material-icons-outlined"&gt;edit&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- TERTIARY ICON-ONLY MD -->
+      <div class="ds-section" id="tertiary-icon-md" data-toc-group="Medium" data-toc-label="Tertiary — Icon">
+        <h2 class="ds-section__title">Tertiary — Icon Only — Medium</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="btn btn--tertiary btn--icon btn--md" aria-label="Cerrar"><span class="material-icons-outlined">close</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="btn btn--tertiary btn--icon btn--md" title="Default"><span class="material-icons-outlined">close</span></button>
+          <button class="btn btn--tertiary btn--icon btn--md btn--hover" title="Hover"><span class="material-icons-outlined">close</span></button>
+          <button class="btn btn--tertiary btn--icon btn--md btn--active" title="Active"><span class="material-icons-outlined">close</span></button>
+          <button class="btn btn--tertiary btn--icon btn--md btn--focus" title="Focus"><span class="material-icons-outlined">close</span></button>
+          <button class="btn btn--tertiary btn--icon btn--md" disabled title="Disabled"><span class="material-icons-outlined">close</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn--tertiary { background-color: transparent; color: var(--color-primary-500); border-color: transparent; }
+.btn--tertiary:hover { background-color: var(--color-primary-50); }
+.btn--tertiary:active { background-color: var(--color-primary-100); }
+.btn--tertiary:focus-visible { background-color: var(--color-primary-50); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
+.btn--tertiary:disabled { color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--md { height: 44px; padding: 12px 16px; }
+.btn--icon { padding: 0; }
+.btn--icon.btn--md { width: 44px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--tertiary btn--icon btn--md" aria-label="Cerrar"&gt;
+  &lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
       <!-- PRIMARY SMALL -->
-      <div class="ds-section" id="primary-sm">
+      <div class="ds-section" id="primary-sm" data-toc-group="Small" data-toc-label="Primary">
         <h2 class="ds-section__title">Primary — Small</h2>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
@@ -323,7 +471,7 @@
       </div>
 
       <!-- DANGER SMALL -->
-      <div class="ds-section" id="danger-sm">
+      <div class="ds-section" id="danger-sm" data-toc-group="Small" data-toc-label="Danger">
         <h2 class="ds-section__title">Danger — Small</h2>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
@@ -376,7 +524,7 @@
       </div>
 
       <!-- SECONDARY SMALL -->
-      <div class="ds-section" id="secondary-sm">
+      <div class="ds-section" id="secondary-sm" data-toc-group="Small" data-toc-label="Secondary">
         <h2 class="ds-section__title">Secondary — Small</h2>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
@@ -429,7 +577,7 @@
       </div>
 
       <!-- TERTIARY SMALL -->
-      <div class="ds-section" id="tertiary-sm">
+      <div class="ds-section" id="tertiary-sm" data-toc-group="Small" data-toc-label="Tertiary">
         <h2 class="ds-section__title">Tertiary — Small</h2>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
@@ -477,6 +625,150 @@
   &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
   Label
   &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- PRIMARY ICON-ONLY SM -->
+      <div class="ds-section" id="primary-icon-sm" data-toc-group="Small" data-toc-label="Primary — Icon">
+        <h2 class="ds-section__title">Primary — Icon Only — Small</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="btn btn--primary btn--icon btn--sm" aria-label="Agregar"><span class="material-icons-outlined">add</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="btn btn--primary btn--icon btn--sm" title="Default"><span class="material-icons-outlined">add</span></button>
+          <button class="btn btn--primary btn--icon btn--sm btn--hover" title="Hover"><span class="material-icons-outlined">add</span></button>
+          <button class="btn btn--primary btn--icon btn--sm btn--active" title="Active"><span class="material-icons-outlined">add</span></button>
+          <button class="btn btn--primary btn--icon btn--sm btn--focus" title="Focus"><span class="material-icons-outlined">add</span></button>
+          <button class="btn btn--primary btn--icon btn--sm" disabled title="Disabled"><span class="material-icons-outlined">add</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn--primary { background-color: var(--color-primary-500); color: var(--color-neutral-white); }
+.btn--primary:hover { background-color: var(--color-primary-600); }
+.btn--primary:active { background-color: var(--color-primary-700); }
+.btn--primary:focus-visible { background-color: var(--color-primary-600); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
+.btn--primary:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }
+.btn--icon { padding: 0; }
+.btn--icon.btn--sm { width: 36px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--primary btn--icon btn--sm" aria-label="Agregar"&gt;
+  &lt;span class="material-icons-outlined"&gt;add&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- DANGER ICON-ONLY SM -->
+      <div class="ds-section" id="danger-icon-sm" data-toc-group="Small" data-toc-label="Danger — Icon">
+        <h2 class="ds-section__title">Danger — Icon Only — Small</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="btn btn--danger btn--icon btn--sm" aria-label="Eliminar"><span class="material-icons-outlined">delete</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="btn btn--danger btn--icon btn--sm" title="Default"><span class="material-icons-outlined">delete</span></button>
+          <button class="btn btn--danger btn--icon btn--sm btn--hover" title="Hover"><span class="material-icons-outlined">delete</span></button>
+          <button class="btn btn--danger btn--icon btn--sm btn--active" title="Active"><span class="material-icons-outlined">delete</span></button>
+          <button class="btn btn--danger btn--icon btn--sm btn--focus" title="Focus"><span class="material-icons-outlined">delete</span></button>
+          <button class="btn btn--danger btn--icon btn--sm" disabled title="Disabled"><span class="material-icons-outlined">delete</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn--danger { background-color: var(--color-error-500); color: var(--color-neutral-white); }
+.btn--danger:hover { background-color: var(--color-error-600); }
+.btn--danger:active { background-color: var(--color-error-700); }
+.btn--danger:focus-visible { background-color: var(--color-error-600); outline: 2px solid var(--color-error-300); outline-offset: 0; }
+.btn--danger:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }
+.btn--icon { padding: 0; }
+.btn--icon.btn--sm { width: 36px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--danger btn--icon btn--sm" aria-label="Eliminar"&gt;
+  &lt;span class="material-icons-outlined"&gt;delete&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- SECONDARY ICON-ONLY SM -->
+      <div class="ds-section" id="secondary-icon-sm" data-toc-group="Small" data-toc-label="Secondary — Icon">
+        <h2 class="ds-section__title">Secondary — Icon Only — Small</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="btn btn--secondary btn--icon btn--sm" aria-label="Editar"><span class="material-icons-outlined">edit</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="btn btn--secondary btn--icon btn--sm" title="Default"><span class="material-icons-outlined">edit</span></button>
+          <button class="btn btn--secondary btn--icon btn--sm btn--hover" title="Hover"><span class="material-icons-outlined">edit</span></button>
+          <button class="btn btn--secondary btn--icon btn--sm btn--active" title="Active"><span class="material-icons-outlined">edit</span></button>
+          <button class="btn btn--secondary btn--icon btn--sm btn--focus" title="Focus"><span class="material-icons-outlined">edit</span></button>
+          <button class="btn btn--secondary btn--icon btn--sm" disabled title="Disabled"><span class="material-icons-outlined">edit</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn--secondary { background-color: transparent; color: var(--color-primary-500); border-color: var(--color-primary-500); }
+.btn--secondary:hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); }
+.btn--secondary:active { background-color: var(--color-primary-100); border-color: var(--color-primary-700); }
+.btn--secondary:focus-visible { background-color: var(--color-primary-50); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
+.btn--secondary:disabled { background-color: transparent; border-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }
+.btn--icon { padding: 0; }
+.btn--icon.btn--sm { width: 36px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--secondary btn--icon btn--sm" aria-label="Editar"&gt;
+  &lt;span class="material-icons-outlined"&gt;edit&lt;/span&gt;
+&lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- TERTIARY ICON-ONLY SM -->
+      <div class="ds-section" id="tertiary-icon-sm" data-toc-group="Small" data-toc-label="Tertiary — Icon">
+        <h2 class="ds-section__title">Tertiary — Icon Only — Small</h2>
+        <p class="ds-preview__label">Preview</p>
+        <div class="ds-preview ds-preview--interactive">
+          <button class="btn btn--tertiary btn--icon btn--sm" aria-label="Cerrar"><span class="material-icons-outlined">close</span></button>
+        </div>
+        <p class="ds-preview__label">Estados</p>
+        <div class="ds-preview">
+          <button class="btn btn--tertiary btn--icon btn--sm" title="Default"><span class="material-icons-outlined">close</span></button>
+          <button class="btn btn--tertiary btn--icon btn--sm btn--hover" title="Hover"><span class="material-icons-outlined">close</span></button>
+          <button class="btn btn--tertiary btn--icon btn--sm btn--active" title="Active"><span class="material-icons-outlined">close</span></button>
+          <button class="btn btn--tertiary btn--icon btn--sm btn--focus" title="Focus"><span class="material-icons-outlined">close</span></button>
+          <button class="btn btn--tertiary btn--icon btn--sm" disabled title="Disabled"><span class="material-icons-outlined">close</span></button>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.btn--tertiary { background-color: transparent; color: var(--color-primary-500); border-color: transparent; }
+.btn--tertiary:hover { background-color: var(--color-primary-50); }
+.btn--tertiary:active { background-color: var(--color-primary-100); }
+.btn--tertiary:focus-visible { background-color: var(--color-primary-50); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
+.btn--tertiary:disabled { color: var(--color-neutral-500); cursor: not-allowed; }
+
+.btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }
+.btn--icon { padding: 0; }
+.btn--icon.btn--sm { width: 36px; }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="btn btn--tertiary btn--icon btn--sm" aria-label="Cerrar"&gt;
+  &lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;
 &lt;/button&gt;</code></pre>
         </div>
       </div>

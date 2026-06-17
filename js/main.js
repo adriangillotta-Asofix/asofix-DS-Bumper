@@ -84,6 +84,21 @@ function setActiveLink(link) {
   link.classList.add('active');
 }
 
+function makeTocLink(section, label, isFirst) {
+  const a = document.createElement('a');
+  a.href = '#' + section.id;
+  a.className = 'ds-toc__link';
+  a.textContent = label;
+  if (isFirst) a.classList.add('active');
+  a.addEventListener('click', () => {
+    setActiveLink(a);
+    isScrollingToTarget = true;
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => { isScrollingToTarget = false; }, 800);
+  });
+  return a;
+}
+
 function buildTOC() {
   const sections = document.querySelectorAll('.ds-section[id]');
   if (sections.length === 0) return;
@@ -99,27 +114,55 @@ function buildTOC() {
   const list = document.createElement('ul');
   list.className = 'ds-toc__list';
 
-  sections.forEach((section, index) => {
+  // Pre-group sections preserving intra-group DOM order
+  const groupOrder = ['Medium', 'Small'];
+  const groups = {};
+  groupOrder.forEach(g => { groups[g] = []; });
+  const standalone = [];
+
+  sections.forEach(section => {
     const heading = section.querySelector('.ds-section__title');
     if (!heading) return;
+    const grp = section.dataset.tocGroup;
+    const label = section.dataset.tocLabel || heading.textContent;
+    if (grp && groups[grp]) {
+      groups[grp].push({ section, label });
+    } else {
+      standalone.push({ section, label });
+    }
+  });
 
-    const li = document.createElement('li');
-    const a = document.createElement('a');
-    a.href = '#' + section.id;
-    a.className = 'ds-toc__link';
-    a.textContent = heading.textContent;
+  let isFirst = true;
 
-    a.addEventListener('click', () => {
-      setActiveLink(a);
-      isScrollingToTarget = true;
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(() => { isScrollingToTarget = false; }, 800);
+  groupOrder.forEach(grpName => {
+    const items = groups[grpName];
+    if (!items.length) return;
+
+    const groupLi = document.createElement('li');
+    const groupSpan = document.createElement('span');
+    groupSpan.className = 'ds-toc__group-label';
+    groupSpan.textContent = grpName;
+    groupLi.appendChild(groupSpan);
+
+    const subList = document.createElement('ul');
+    subList.className = 'ds-toc__sublist';
+
+    items.forEach(({ section, label }) => {
+      const li = document.createElement('li');
+      li.appendChild(makeTocLink(section, label, isFirst));
+      subList.appendChild(li);
+      isFirst = false;
     });
 
-    if (index === 0) a.classList.add('active');
+    groupLi.appendChild(subList);
+    list.appendChild(groupLi);
+  });
 
-    li.appendChild(a);
+  standalone.forEach(({ section, label }) => {
+    const li = document.createElement('li');
+    li.appendChild(makeTocLink(section, label, isFirst));
     list.appendChild(li);
+    isFirst = false;
   });
 
   toc.appendChild(list);

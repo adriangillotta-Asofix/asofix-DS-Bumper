@@ -56,6 +56,13 @@
 .btn--md { height: 44px; padding: 12px 16px; }
 .btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }
 
+/* Icon-only */
+.btn--icon { padding: 0; }
+.btn--icon.btn--md { width: 44px; }
+.btn--icon.btn--sm { width: 36px; }
+.btn--icon .material-icons-outlined { font-size: 20px; }
+.btn--icon.btn--sm .material-icons-outlined { font-size: 16px; }
+
 /* Íconos en botones */
 .btn .material-icons-outlined {
   font-size: 18px;

@@ -1,0 +1,825 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Adoption Dashboard — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/docs.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    /* ---- KPI row ---- */
+    .adp-kpi-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    /* ---- Progress bar ---- */
+    .adp-progress-section {
+      margin-bottom: 40px;
+    }
+    .adp-progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 8px;
+    }
+    .adp-progress-label {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-neutral-700);
+    }
+    .adp-progress-pct {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-success-600);
+    }
+    .adp-bar {
+      height: 8px;
+      background: var(--color-neutral-100);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .adp-bar__fill {
+      height: 100%;
+      background: var(--color-success-500);
+      border-radius: 999px;
+      transition: width 0.7s ease;
+    }
+
+    /* ---- Legend ---- */
+    .adp-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 10px 16px;
+      background: var(--color-neutral-50);
+      border: 1px solid var(--color-neutral-200);
+      border-radius: 8px;
+    }
+    .adp-legend__title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-neutral-500);
+    }
+    .adp-legend__item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--color-neutral-600);
+    }
+    .dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .dot--migrated   { background: var(--color-success-500); }
+    .dot--inprogress { background: var(--color-warning-500); }
+    .dot--pending    { background: var(--color-neutral-300); }
+    .dot--na         { background: transparent; border: 1px solid var(--color-neutral-300); }
+
+    /* ---- Module cards ---- */
+    .adp-modules {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .adp-module {
+      background: #fff;
+      border: 1px solid var(--color-neutral-200);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .adp-module__header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 20px;
+      cursor: pointer;
+      user-select: none;
+      transition: background 0.15s ease;
+    }
+    .adp-module__header:hover {
+      background: var(--color-neutral-50);
+    }
+    .adp-module__icon {
+      font-size: 20px;
+      color: var(--color-primary-400);
+      flex-shrink: 0;
+    }
+    .adp-module__name {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--color-neutral-900);
+      flex: 1;
+    }
+    .adp-module__counts {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .adp-module__count {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-neutral-500);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      min-width: 28px;
+    }
+    .adp-module__bar {
+      width: 100px;
+      flex-shrink: 0;
+    }
+    .adp-module__pct {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-neutral-600);
+      width: 32px;
+      text-align: right;
+      flex-shrink: 0;
+    }
+    .adp-module__toggle {
+      font-size: 20px;
+      color: var(--color-neutral-400);
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
+    }
+    .adp-module.is-open .adp-module__toggle {
+      transform: rotate(180deg);
+    }
+    .adp-module__body {
+      display: none;
+      border-top: 1px solid var(--color-neutral-100);
+    }
+    .adp-module.is-open .adp-module__body {
+      display: block;
+    }
+
+    /* ---- Sections ---- */
+    .adp-section {
+      padding: 14px 20px 14px 54px;
+      border-bottom: 1px solid var(--color-neutral-100);
+    }
+    .adp-section:last-child {
+      border-bottom: none;
+    }
+    .adp-section__name {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-neutral-600);
+      margin-bottom: 10px;
+    }
+    .adp-component-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .adp-component-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .adp-row-wrapper {
+      display: grid;
+      grid-template-columns: 180px 100px 100px 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+    .adp-row {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--color-neutral-200);
+      background: var(--color-neutral-50);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-neutral-700);
+      overflow: hidden;
+    }
+    .adp-row__name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .adp-platform-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--color-neutral-600);
+    }
+    .adp-platform-badge__label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--color-neutral-400);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .adp-row__note {
+      font-size: 0.75rem;
+      color: var(--color-neutral-400);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* ---- Qty badge dentro del chip ---- */
+    .adp-chip__qty {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      opacity: 0.65;
+      margin-left: 2px;
+    }
+
+    /* ---- Componente compuesto (chip + hijos) ---- */
+    .adp-composite {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .adp-composite__deps {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 4px;
+      padding-left: 10px;
+    }
+    .adp-composite__deps-label {
+      font-size: 0.6875rem;
+      color: var(--color-neutral-400);
+      white-space: nowrap;
+    }
+    .adp-composite__dep {
+      font-size: 0.6875rem;
+      color: var(--color-neutral-500);
+      background: var(--color-neutral-100);
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+
+    /* ---- Footer meta ---- */
+    .adp-meta {
+      font-size: 0.75rem;
+      color: var(--color-neutral-400);
+      margin-top: 48px;
+    }
+
+    /* ---- DS V2 Backlog section ---- */
+    .ds2-section {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 2px solid var(--color-neutral-200);
+    }
+    .ds2-section__header {
+      margin-bottom: 32px;
+    }
+    .ds2-section__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--color-neutral-800);
+      margin: 0 0 4px;
+    }
+    .ds2-section__desc {
+      font-size: 0.875rem;
+      color: var(--color-neutral-500);
+    }
+    .ds2-categories {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .ds2-category {
+      background: #fff;
+      border: 1px solid var(--color-neutral-200);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .ds2-category__header {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--color-neutral-100);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .ds2-category__name {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--color-neutral-600);
+    }
+    .ds2-category__body {
+      padding: 16px 20px;
+    }
+    .ds2-chip-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .ds2-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--color-neutral-200);
+      background: var(--color-neutral-50);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-neutral-700);
+    }
+    .ds2-chip--ready   { border-color: var(--color-success-300); background: var(--color-success-50); color: var(--color-success-700); }
+    .ds2-chip--in-dev  { border-color: var(--color-warning-300); background: var(--color-warning-50); color: var(--color-warning-900); }
+    .ds2-chip--pending { border-color: var(--color-neutral-200); background: var(--color-neutral-50); color: var(--color-neutral-500); }
+
+  </style>
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <div class="ds-sidebar__brand">
+      <a href="index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Asofix - Bumper DS</span>
+      </a>
+      <span class="ds-sidebar__version">v2.0</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="foundations/typography.html" class="ds-nav__link">Typography</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="components/avatar.html" class="ds-nav__link">Avatar</a></li>
+        <li><a href="components/buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="components/cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="components/dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="components/inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="components/pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="components/switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="components/tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="components/toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="components/tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="components/modal.html" class="ds-nav__link">Modal</a></li>
+      </ul>
+      <p class="ds-nav__label">Adoption</p>
+      <ul class="ds-nav__list">
+        <li><a href="adoption.html" class="ds-nav__link ds-nav__link--active">Adoption Dashboard</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Adoption Dashboard</h1>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tabs" role="tablist" style="margin-bottom:32px;">
+        <div class="tabs__indicator"></div>
+        <button class="tab tab--active" role="tab" aria-selected="true" onclick="switchAdpTab(this,'panel-migracion')">Migración</button>
+        <button class="tab" role="tab" aria-selected="false" onclick="switchAdpTab(this,'panel-roadmap')">Roadmap DS V2</button>
+      </div>
+
+      <!-- Panel: Migración -->
+      <div id="panel-migracion">
+        <p class="ds-page-header__desc" style="margin-bottom:32px;">Estado de migración de componentes V1.0 → V2.0 por módulo y sección del producto.</p>
+        <div class="adp-kpi-row" id="kpi-row"></div>
+        <div class="adp-progress-section">
+          <div class="adp-progress-header">
+            <span class="adp-progress-label">Progreso global de migración</span>
+            <span class="adp-progress-pct" id="global-pct">—</span>
+          </div>
+          <div class="adp-bar">
+            <div class="adp-bar__fill" id="global-bar" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="adp-legend">
+          <span class="adp-legend__title">Estado:</span>
+          <div class="adp-legend__item"><span class="dot dot--migrated"></span>Migrado</div>
+          <div class="adp-legend__item"><span class="dot dot--inprogress"></span>En progreso</div>
+          <div class="adp-legend__item"><span class="dot dot--pending"></span>Pendiente</div>
+        </div>
+        <div class="adp-modules" id="modules-container"></div>
+        <p class="adp-meta" id="adp-meta"></p>
+      </div>
+
+      <!-- Panel: Roadmap DS V2 -->
+      <div id="panel-roadmap" hidden>
+        <div class="adp-kpi-row" id="ds2-kpi-row"></div>
+        <div class="adp-progress-section">
+          <div class="adp-progress-header">
+            <span class="adp-progress-label">Componentes listos en el DS</span>
+            <span class="adp-progress-pct" id="ds2-pct">—</span>
+          </div>
+          <div class="adp-bar">
+            <div class="adp-bar__fill" id="ds2-bar" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="adp-legend">
+          <span class="adp-legend__title">Estado:</span>
+          <div class="adp-legend__item"><span class="dot dot--migrated"></span>Listo en DS</div>
+          <div class="adp-legend__item"><span class="dot dot--inprogress"></span>En desarrollo</div>
+          <div class="adp-legend__item"><span class="dot dot--pending"></span>Pendiente</div>
+        </div>
+        <div class="ds2-categories" id="ds2-categories"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+  // ================================================================
+  // Adoption Dashboard — Data
+  // Editar este objeto para mantener el estado de migración.
+  // Statuses: 'migrated' | 'in-progress' | 'pending' | 'na'
+  // qty: número de instancias del componente en la vista (default 1)
+  // children: array de strings con dependencias internas (solo informativo)
+  // ================================================================
+  const ADOPTION_DATA = {
+    version: { from: 'V1.0', to: 'V2.0' },
+    lastUpdated: '2026-06-12',
+    modules: [
+      {
+        id: 'catalogo',
+        name: 'Catálogo',
+        icon: 'directions_car',
+        sections: [
+          {
+            name: 'Lista de autos',
+            components: [
+              { name: 'Search bar',      desktop: 'pending', mobile: 'pending' },
+              { name: 'Botón terciario', desktop: 'pending', mobile: 'pending' },
+              { name: 'Select',          desktop: 'pending', mobile: 'pending' },
+              { name: 'Switch',          desktop: 'pending', mobile: 'pending' },
+              { name: 'Tabs',            desktop: 'pending', mobile: 'pending' },
+              { name: 'Cards',           desktop: 'pending', mobile: 'pending' },
+              { name: 'Tipografía',      desktop: 'pending', mobile: 'pending' },
+              { name: 'Colores',         desktop: 'pending', mobile: 'pending' },
+            ]
+          },
+          {
+            name: 'Detalle de auto',
+            components: [
+              { name: 'Page header',     desktop: 'pending', mobile: 'pending' },
+              { name: 'Botón primario',  desktop: 'pending', mobile: 'pending' },
+              { name: 'Botón terciario', desktop: 'pending', mobile: 'pending' },
+              { name: 'Tipografía',      desktop: 'pending', mobile: 'pending' },
+              { name: 'Colores',         desktop: 'pending', mobile: 'pending' },
+            ]
+          }
+        ]
+      },
+      {
+        id: 'gestor-leads',
+        name: 'Gestor de leads',
+        icon: 'people',
+        sections: [
+          {
+            name: 'Tablero de gestión',
+            components: [
+              { name: 'Botón link',    desktop: 'in-progress', mobile: 'in-progress' },
+              { name: 'Card tile',     desktop: 'in-progress', mobile: 'in-progress', note: 'Leads sin atender' },
+              { name: 'Card tile',     desktop: 'in-progress', mobile: 'in-progress', note: 'Tareas vencidas' },
+              { name: 'Card tile',     desktop: 'in-progress', mobile: 'in-progress', note: 'Tareas de hoy' },
+              { name: 'Card tile',     desktop: 'in-progress', mobile: 'in-progress', note: 'Leads prioridad alta' },
+              { name: 'Card tile',     desktop: 'in-progress', mobile: 'in-progress', note: 'Leads sin asignar — solo perfil supervisor' },
+              { name: 'Card metric',   desktop: 'in-progress', mobile: 'in-progress', note: 'Cantidad de leads asignados' },
+              { name: 'Card metric',   desktop: 'in-progress', mobile: 'in-progress', note: 'Cantidad de cierres exitosos' },
+              { name: 'Card metric',   desktop: 'in-progress', mobile: 'in-progress', note: 'Leads en gestión' },
+              { name: 'Card metric',   desktop: 'in-progress', mobile: 'in-progress', note: 'Cantidad de cierres perdidos' },
+              { name: 'Card metric',   desktop: 'in-progress', mobile: 'in-progress', note: 'Tasa de conversión' },
+              { name: 'Card metric',   desktop: 'in-progress', mobile: 'in-progress', note: 'Tiempo promedio del primer contacto' },
+              { name: 'Tipografía',    desktop: 'in-progress', mobile: 'in-progress', note: 'General por fuera de componentes' },
+              { name: 'Colores',       desktop: 'in-progress', mobile: 'in-progress', note: 'General por fuera de componentes' },
+            ]
+          }
+        ]
+      }
+    ]
+  };
+
+  // ================================================================
+  // DS V2 Backlog — Data
+  // Statuses: 'ready' | 'in-dev' | 'designed' | 'pending'
+  // ================================================================
+  const DS2_DATA = {
+    lastUpdated: '2026-06-16',
+    categories: [
+      {
+        name: 'Foundations',
+        components: [
+          { name: 'Branding assets',  status: 'pending' },
+          { name: 'Border radius',    status: 'pending' },
+          { name: 'Colors',           status: 'ready' },
+          { name: 'Shadows',          status: 'pending' },
+          { name: 'Spacing',          status: 'pending' },
+          { name: 'Typography',       status: 'ready' },
+        ]
+      },
+      {
+        name: 'Components',
+        components: [
+          { name: 'Avatar',        status: 'ready' },
+          { name: 'Badge',         status: 'pending' },
+          { name: 'Buttons',       status: 'ready' },
+          { name: 'Cards',         status: 'ready' },
+          { name: 'Checkbox',      status: 'pending' },
+          { name: 'Dropdown',      status: 'ready' },
+          { name: 'Inputs',        status: 'ready' },
+          { name: 'Pagination',    status: 'pending' },
+          { name: 'Pill',          status: 'ready' },
+          { name: 'Radio button',  status: 'pending' },
+          { name: 'Skeleton',      status: 'pending' },
+          { name: 'Stepper',       status: 'pending' },
+          { name: 'Switch',        status: 'ready' },
+          { name: 'Tabs',          status: 'ready' },
+          { name: 'Toast',         status: 'ready' },
+          { name: 'Tooltip',       status: 'ready' },
+        ]
+      },
+      {
+        name: 'Patterns',
+        components: [
+          { name: 'Empty state',        status: 'pending' },
+          { name: 'Header global',      status: 'pending' },
+          { name: 'Modal',              status: 'ready' },
+          { name: 'Navigation drawer',  status: 'pending' },
+          { name: 'Notification box',   status: 'pending' },
+          { name: 'Notifications',      status: 'pending' },
+          { name: 'Sidesheet',          status: 'pending' },
+        ]
+      }
+    ]
+  };
+
+  // ================================================================
+  // Render
+  // ================================================================
+
+  const STATUS_ICON = {
+    'migrated':    'check_circle',
+    'in-progress': 'sync',
+    'pending':     'schedule',
+    'na':          'remove',
+  };
+  const STATUS_LABEL = {
+    'migrated':    'Migrado',
+    'in-progress': 'En progreso',
+    'pending':     'Pendiente',
+    'na':          'N/A',
+  };
+  const STATUS_CLASS = {
+    'migrated':    'migrated',
+    'in-progress': 'inprogress',
+    'pending':     'pending',
+    'na':          'na',
+  };
+
+  function pct(numerator, denominator) {
+    return denominator === 0 ? 0 : Math.round((numerator / denominator) * 100);
+  }
+
+  function flatPlatforms(module) {
+    return module.sections
+      .flatMap(s => s.components)
+      .flatMap(c => [c.desktop, c.mobile])
+      .filter(s => s && s !== 'na');
+  }
+
+  function countModule(module) {
+    const statuses = flatPlatforms(module);
+    return {
+      total:      statuses.length,
+      migrated:   statuses.filter(s => s === 'migrated').length,
+      inprogress: statuses.filter(s => s === 'in-progress').length,
+      pending:    statuses.filter(s => s === 'pending').length,
+    };
+  }
+
+  function renderKPIs(totals) {
+    document.getElementById('kpi-row').innerHTML = [
+      { label: 'Total de componentes', value: totals.total,      dot: null },
+      { label: 'Migradas',             value: totals.migrated,   dot: 'migrated' },
+      { label: 'En progreso',          value: totals.inprogress, dot: 'inprogress' },
+      { label: 'Pendientes',           value: totals.pending,    dot: 'pending' },
+    ].map(k => `
+      <div class="card-metric" style="flex:1;">
+        <div class="card-metric__header">
+          <span class="card-metric__title" style="display:flex;align-items:center;gap:6px;">
+            ${k.dot ? `<span class="dot dot--${k.dot}"></span>` : ''}
+            ${k.label}
+          </span>
+        </div>
+        <div class="card-metric__body">
+          <span class="card-metric__value">${k.value}</span>
+        </div>
+      </div>
+    `).join('');
+  }
+
+  function renderGlobalBar(totals) {
+    const p = pct(totals.migrated, totals.total);
+    document.getElementById('global-pct').textContent = p + '%';
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        document.getElementById('global-bar').style.width = p + '%';
+      });
+    });
+  }
+
+  function platformBadge(label, status) {
+    return `
+      <div class="adp-platform-badge">
+        <span class="adp-platform-badge__label">${label}</span>
+        <span class="dot dot--${STATUS_CLASS[status]}"></span>
+        <span>${STATUS_LABEL[status]}</span>
+      </div>`;
+  }
+
+  function renderRow(c) {
+    return `
+      <div class="adp-row-wrapper">
+        <div class="adp-row">
+          <span class="adp-row__name">${c.name}</span>
+        </div>
+        ${platformBadge('D', c.desktop)}
+        ${platformBadge('M', c.mobile)}
+        <span class="adp-row__note">Nota: ${c.note || '—'}</span>
+      </div>`;
+  }
+
+  function renderSection(section) {
+    return `
+      <div class="adp-section">
+        <div class="adp-section__name">${section.name}</div>
+        <div class="adp-component-list">${section.components.map(renderRow).join('')}</div>
+      </div>`;
+  }
+
+  function renderModule(module) {
+    const c = countModule(module);
+    const p = pct(c.migrated, c.total);
+    return `
+      <div class="adp-module" id="adp-module-${module.id}">
+        <div class="adp-module__header" onclick="toggleModule('adp-module-${module.id}')">
+          <span class="adp-module__name">${module.name}</span>
+          <div class="adp-module__counts">
+            <span class="adp-module__count"><span class="dot dot--migrated"></span>${c.migrated}</span>
+            <span class="adp-module__count"><span class="dot dot--inprogress"></span>${c.inprogress}</span>
+            <span class="adp-module__count"><span class="dot dot--pending"></span>${c.pending}</span>
+          </div>
+          <div class="adp-module__bar">
+            <div class="adp-bar" style="height:6px;">
+              <div class="adp-bar__fill" style="width:${p}%;"></div>
+            </div>
+          </div>
+          <span class="adp-module__pct">${p}%</span>
+          <span class="adp-module__toggle material-icons-outlined">expand_more</span>
+        </div>
+        <div class="adp-module__body">
+          ${module.sections.map(renderSection).join('')}
+        </div>
+      </div>`;
+  }
+
+  function toggleModule(id) {
+    document.getElementById(id).classList.toggle('is-open');
+  }
+
+  // ================================================================
+  // DS V2 — Render
+  // ================================================================
+  const DS2_STATUS_CLASS = { 'ready':'migrated', 'in-dev':'inprogress', 'pending':'pending' };
+  const DS2_STATUS_LABEL = { 'ready':'Listo', 'in-dev':'En desarrollo', 'pending':'Pendiente' };
+
+  function countDS2(cat) {
+    const s = cat.components.map(c => c.status);
+    return {
+      total:   s.length,
+      ready:   s.filter(x => x === 'ready').length,
+      indev:   s.filter(x => x === 'in-dev').length,
+      pending: s.filter(x => x === 'pending').length,
+    };
+  }
+
+  function renderDS2Chip(comp) {
+    return `<div class="ds2-chip ds2-chip--${comp.status}">
+      <span class="dot dot--${DS2_STATUS_CLASS[comp.status]}"></span>
+      ${comp.name}
+    </div>`;
+  }
+
+  function renderDS2Category(cat) {
+    const c = countDS2(cat);
+    const counts = [
+      c.ready   ? `<span class="adp-module__count"><span class="dot dot--migrated"></span>${c.ready}</span>`   : '',
+      c.indev   ? `<span class="adp-module__count"><span class="dot dot--inprogress"></span>${c.indev}</span>` : '',
+      c.pending ? `<span class="adp-module__count"><span class="dot dot--pending"></span>${c.pending}</span>`  : '',
+    ].join('');
+
+    return `
+      <div class="ds2-category">
+        <div class="ds2-category__header">
+          <span class="ds2-category__name">${cat.name}</span>
+          <div class="adp-module__counts">${counts}</div>
+        </div>
+        <div class="ds2-category__body">
+          <div class="ds2-chip-grid">${cat.components.map(renderDS2Chip).join('')}</div>
+        </div>
+      </div>`;
+  }
+
+  function renderDS2KPIs(t) {
+    document.getElementById('ds2-kpi-row').innerHTML = [
+      { label: 'Total',          value: t.total,   dot: null },
+      { label: 'Listos en DS',   value: t.ready,   dot: 'migrated' },
+      { label: 'En desarrollo',  value: t.indev,   dot: 'inprogress' },
+      { label: 'Pendientes',     value: t.pending, dot: 'pending' },
+    ].map(k => `
+      <div class="card-metric" style="flex:1;">
+        <div class="card-metric__header">
+          <span class="card-metric__title" style="display:flex;align-items:center;gap:6px;">
+            ${k.dot ? `<span class="dot dot--${k.dot}"></span>` : ''}${k.label}
+          </span>
+        </div>
+        <div class="card-metric__body"><span class="card-metric__value">${k.value}</span></div>
+      </div>`).join('');
+  }
+
+  function switchAdpTab(el, panelId) {
+    activateTab(el);
+    document.querySelectorAll('#panel-migracion, #panel-roadmap').forEach(p => p.hidden = true);
+    document.getElementById(panelId).hidden = false;
+  }
+
+  // ---- Init ----
+  document.addEventListener('DOMContentLoaded', () => {
+    const allStatuses = ADOPTION_DATA.modules
+      .flatMap(m => m.sections.flatMap(s => s.components))
+      .flatMap(c => [c.desktop, c.mobile])
+      .filter(s => s && s !== 'na');
+
+    const totals = {
+      total:      allStatuses.length,
+      migrated:   allStatuses.filter(s => s === 'migrated').length,
+      inprogress: allStatuses.filter(s => s === 'in-progress').length,
+      pending:    allStatuses.filter(s => s === 'pending').length,
+    };
+
+    renderKPIs(totals);
+    renderGlobalBar(totals);
+
+    document.getElementById('modules-container').innerHTML =
+      ADOPTION_DATA.modules.map(renderModule).join('');
+
+    // Abrir el primer módulo por defecto
+    const first = document.querySelector('.adp-module');
+    if (first) first.classList.add('is-open');
+
+    const { version, lastUpdated } = ADOPTION_DATA;
+    document.getElementById('adp-meta').textContent =
+      `Migración ${version.from} → ${version.to} · Actualizado: ${lastUpdated}`;
+
+    // ---- DS2 init ----
+    const allDS2 = DS2_DATA.categories.flatMap(c => c.components);
+    const ds2 = {
+      total:   allDS2.length,
+      ready:   allDS2.filter(c => c.status === 'ready').length,
+      indev:   allDS2.filter(c => c.status === 'in-dev').length,
+      pending: allDS2.filter(c => c.status === 'pending').length,
+    };
+    renderDS2KPIs(ds2);
+    const ds2p = pct(ds2.ready, ds2.total);
+    document.getElementById('ds2-pct').textContent = ds2p + '%';
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      document.getElementById('ds2-bar').style.width = ds2p + '%';
+    }));
+    document.getElementById('ds2-categories').innerHTML =
+      DS2_DATA.categories.map(renderDS2Category).join('');
+  });
+  </script>
+
+</body>
+</html>

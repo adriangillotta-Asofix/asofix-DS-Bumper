@@ -640,6 +640,27 @@ body {
   font-weight: 500;
 }
 
+.ds-toc__group-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  color: #B0AAC0;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 10px 8px 4px;
+}
+
+.ds-toc__sublist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ds-toc__sublist .ds-toc__link {
+  padding-left: 16px;
+}
+
 @media (max-width: 1200px) {
   .ds-toc {
     display: none;
