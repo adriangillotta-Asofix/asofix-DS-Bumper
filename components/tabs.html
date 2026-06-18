@@ -77,6 +77,7 @@
           <div class="ds-code__tabs">
             <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'js')">JS</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.tabs {
@@ -128,10 +129,36 @@
           <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Agregar o quitar &lt;button class="tab"&gt; según las opciones necesarias --&gt;
 &lt;div class="tabs" role="tablist"&gt;
   &lt;div class="tabs__indicator"&gt;&lt;/div&gt;
-  &lt;button class="tab tab--active" role="tab" aria-selected="true"&gt;Tab 1&lt;/button&gt;
-  &lt;button class="tab" role="tab" aria-selected="false"&gt;Tab 2&lt;/button&gt;
-  &lt;button class="tab" role="tab" aria-selected="false"&gt;Tab 3&lt;/button&gt;
+  &lt;button class="tab tab--active" role="tab" aria-selected="true" onclick="activateTab(this)"&gt;Tab 1&lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)"&gt;Tab 2&lt;/button&gt;
+  &lt;button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)"&gt;Tab 3&lt;/button&gt;
 &lt;/div&gt;</code></pre>
+          <pre class="ds-code__panel" data-tab="js"><code>function moveTabIndicator(container, activeTab) {
+  const indicator = container.querySelector('.tabs__indicator');
+  if (!indicator) return;
+  indicator.style.width  = activeTab.offsetWidth  + 'px';
+  indicator.style.height = activeTab.offsetHeight + 'px';
+  indicator.style.transform = `translateX(${activeTab.offsetLeft}px)`;
+}
+
+function activateTab(el) {
+  const container = el.closest('.tabs');
+  container.querySelectorAll('.tab').forEach(t => {
+    t.classList.remove('tab--active');
+    t.setAttribute('aria-selected', 'false');
+  });
+  el.classList.add('tab--active');
+  el.setAttribute('aria-selected', 'true');
+  moveTabIndicator(container, el);
+}
+
+// Inicializar el indicador al cargar
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.tabs').forEach(container => {
+    const active = container.querySelector('.tab--active');
+    if (active) moveTabIndicator(container, active);
+  });
+});</code></pre>
         </div>
       </div>
 

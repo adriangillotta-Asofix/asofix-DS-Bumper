@@ -246,7 +246,8 @@ function showToast(type) {
     timerId   = setTimeout(() => dismissToast(toast), remaining);
   });
 
-  document.getElementById('toast-stack').insertBefore(toast, stack.firstChild);
+  const stack = document.getElementById('toast-stack');
+  stack.insertBefore(toast, stack.firstChild);
 }
 
 function dismissToast(toast) {
