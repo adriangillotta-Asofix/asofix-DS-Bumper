@@ -1,11 +1,11 @@
-{
+﻿{
   "version": "0.0.1",
   "configurations": [
     {
       "name": "asofix-ds",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "3333", "."],
-      "port": 3333
+      "runtimeArgs": ["serve", "-l", "3030", "."],
+      "port": 3030
     }
   ]
 }
