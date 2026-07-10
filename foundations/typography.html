@@ -59,9 +59,16 @@
       <div class="ds-page-header">
         <h1 class="ds-page-header__title">Typography</h1>
         <div class="tabs" role="tablist" style="margin-top: 16px;"><div class="tabs__indicator"></div>
-          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setTypographyMode(this, 'desktop')">Desktop</button>
-          <button class="tab" role="tab" aria-selected="false" onclick="setTypographyMode(this, 'mobile')">Mobile</button>
+          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setPageTab(this, 'component')">Componente</button>
+          <button class="tab" role="tab" aria-selected="false" onclick="setPageTab(this, 'documentation')">Documentación</button>
         </div>
+      </div>
+
+      <div data-page-panel="component">
+
+      <div class="tabs" role="tablist" style="margin-bottom: 24px;"><div class="tabs__indicator"></div>
+        <button class="tab tab--active" role="tab" aria-selected="true" onclick="setTypographyMode(this, 'desktop')">Desktop</button>
+        <button class="tab" role="tab" aria-selected="false" onclick="setTypographyMode(this, 'mobile')">Mobile</button>
       </div>
 
       <div id="ds-typo-demo" data-typography="desktop">
@@ -356,6 +363,14 @@
 --font-size-subtitle-1: 0.938rem;   --line-height-subtitle-1: 1.60;</code></pre>
           </div>
         </div>
+
+      </div>
+
+      <div data-page-panel="documentation" hidden>
+        <div class="ds-section">
+          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para esta sección.</p>
+        </div>
+      </div>
 
     </div>
   </main>

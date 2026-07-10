@@ -59,7 +59,13 @@
       <div class="ds-page-header">
         <h1 class="ds-page-header__title">Inputs</h1>
         <p class="ds-page-header__desc">Text Field, Text Area y Select en dos tamaños (Large, Small). Cada variante incluye todos sus estados.</p>
+        <div class="tabs" role="tablist" style="margin-top: 16px;"><div class="tabs__indicator"></div>
+          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setPageTab(this, 'component')">Componente</button>
+          <button class="tab" role="tab" aria-selected="false" onclick="setPageTab(this, 'documentation')">Documentación</button>
+        </div>
       </div>
+
+      <div data-page-panel="component">
 
       <!-- TEXT FIELD LARGE -->
       <div class="ds-section" id="text-field-lg">
@@ -736,6 +742,14 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
   &lt;span class="input__assistive"&gt;Texto de ayuda&lt;/span&gt;
 &lt;/div&gt;</code></pre>
           <pre class="ds-code__panel" data-tab="js"><code>// Ver tab JS del Select — Large (mismas funciones)</code></pre>
+        </div>
+      </div>
+
+      </div>
+
+      <div data-page-panel="documentation" hidden>
+        <div class="ds-section">
+          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para este componente.</p>
         </div>
       </div>
 

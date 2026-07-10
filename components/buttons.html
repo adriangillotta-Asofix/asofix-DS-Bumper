@@ -59,7 +59,13 @@
       <div class="ds-page-header">
         <h1 class="ds-page-header__title">Buttons</h1>
         <p class="ds-page-header__desc">Cuatro jerarquías (Primary, Secondary, Tertiary, Danger) más Link, en dos tamaños (Medium, Small) y variante Icon Only. Cada combinación incluye todos sus estados, incluyendo Loading.</p>
+        <div class="tabs" role="tablist" style="margin-top: 16px;"><div class="tabs__indicator"></div>
+          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setPageTab(this, 'component')">Componente</button>
+          <button class="tab" role="tab" aria-selected="false" onclick="setPageTab(this, 'documentation')">Documentación</button>
+        </div>
       </div>
+
+      <div data-page-panel="component">
 
       <!-- PRIMARY MEDIUM -->
       <div class="ds-section" id="primary-md" data-toc-group="Medium" data-toc-label="Primary">
@@ -1000,6 +1006,14 @@
   &lt;span&gt;Label&lt;/span&gt;
   &lt;span class="material-icons-outlined"&gt;expand_more&lt;/span&gt;
 &lt;/button&gt;</code></pre>
+        </div>
+      </div>
+
+      </div>
+
+      <div data-page-panel="documentation" hidden>
+        <div class="ds-section">
+          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para este componente.</p>
         </div>
       </div>
 

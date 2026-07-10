@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
   <link rel="stylesheet" href="../css/tokens.css" />
   <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
 </head>
 <body>
 
@@ -57,7 +58,13 @@
 
       <div class="ds-page-header">
         <h1 class="ds-page-header__title">Colors</h1>
+        <div class="tabs" role="tablist" style="margin-top: 16px;"><div class="tabs__indicator"></div>
+          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setPageTab(this, 'component')">Componente</button>
+          <button class="tab" role="tab" aria-selected="false" onclick="setPageTab(this, 'documentation')">Documentación</button>
+        </div>
       </div>
+
+      <div data-page-panel="component">
 
       <!-- PRIMARIO -->
       <div class="ds-section ds-section--color">
@@ -499,6 +506,14 @@
 --color-warning-700: #FF9900;
 --color-warning-800: #CC7A00;
 --color-warning-900: #804C00;</code></pre>
+        </div>
+      </div>
+
+      </div>
+
+      <div data-page-panel="documentation" hidden>
+        <div class="ds-section">
+          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para esta sección.</p>
         </div>
       </div>
 

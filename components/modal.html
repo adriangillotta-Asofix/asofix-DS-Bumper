@@ -83,7 +83,13 @@
       <div class="ds-page-header">
         <h1 class="ds-page-header__title">Modal</h1>
         <p class="ds-page-header__desc">Ventana de diálogo que interrumpe el flujo para requerir una acción o confirmación del usuario. El body es un slot libre: los devs insertan el contenido según el flujo (formulario, empty state, lista, confirmación, etc.).</p>
+        <div class="tabs" role="tablist" style="margin-top: 16px;"><div class="tabs__indicator"></div>
+          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setPageTab(this, 'component')">Componente</button>
+          <button class="tab" role="tab" aria-selected="false" onclick="setPageTab(this, 'documentation')">Documentación</button>
+        </div>
       </div>
+
+      <div data-page-panel="component">
 
       <!-- DEMO INTERACTIVO -->
       <div class="ds-section" id="demo">
@@ -222,6 +228,14 @@ function closeModal() {
 function handleModalEsc(e) {
   if (e.key === 'Escape') closeModal();
 }</code></pre>
+        </div>
+      </div>
+
+      </div>
+
+      <div data-page-panel="documentation" hidden>
+        <div class="ds-section">
+          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para este componente.</p>
         </div>
       </div>
 

@@ -194,6 +194,17 @@ function setTypographyMode(el, mode) {
 }
 
 // --------------------------------
+// Page tabs — Componente / Documentación
+// --------------------------------
+
+function setPageTab(el, tab) {
+  activateTab(el);
+  document.querySelectorAll('[data-page-panel]').forEach(panel => {
+    panel.hidden = panel.dataset.pagePanel !== tab;
+  });
+}
+
+// --------------------------------
 // Dropdown
 // --------------------------------
 

@@ -59,7 +59,13 @@
       <div class="ds-page-header">
         <h1 class="ds-page-header__title">Switch</h1>
         <p class="ds-page-header__desc">Componente de alternancia con dos estados (activo/inactivo) y cuatro variantes de estado: Default, Hover, Focus y Disabled.</p>
+        <div class="tabs" role="tablist" style="margin-top: 16px;"><div class="tabs__indicator"></div>
+          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setPageTab(this, 'component')">Componente</button>
+          <button class="tab" role="tab" aria-selected="false" onclick="setPageTab(this, 'documentation')">Documentación</button>
+        </div>
       </div>
+
+      <div data-page-panel="component">
 
       <p class="ds-preview__label">Preview</p>
       <div class="ds-preview ds-preview--interactive" style="margin-bottom: 40px;">
@@ -221,6 +227,14 @@
   &lt;span class="switch__track"&gt;&lt;/span&gt;
   &lt;span class="switch__thumb"&gt;&lt;/span&gt;
 &lt;/label&gt;</code></pre>
+        </div>
+      </div>
+
+      </div>
+
+      <div data-page-panel="documentation" hidden>
+        <div class="ds-section">
+          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para este componente.</p>
         </div>
       </div>
 

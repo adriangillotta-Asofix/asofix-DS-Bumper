@@ -142,7 +142,13 @@
       <div class="ds-page-header">
         <h1 class="ds-page-header__title">Tooltip</h1>
         <p class="ds-page-header__desc">Componente de información contextual con flecha en cuatro posiciones. Incluye variantes con título, ícono de cierre, paginador y acción.</p>
+        <div class="tabs" role="tablist" style="margin-top: 16px;"><div class="tabs__indicator"></div>
+          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setPageTab(this, 'component')">Componente</button>
+          <button class="tab" role="tab" aria-selected="false" onclick="setPageTab(this, 'documentation')">Documentación</button>
+        </div>
       </div>
+
+      <div data-page-panel="component">
 
       <!-- PREVIEW INTERACTIVO -->
       <div class="ds-section" id="tooltip">
@@ -457,6 +463,14 @@
 &lt;/div&gt;</code></pre>
         </div>
 
+      </div>
+
+      </div>
+
+      <div data-page-panel="documentation" hidden>
+        <div class="ds-section">
+          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para este componente.</p>
+        </div>
       </div>
 
     </div>
