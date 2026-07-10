@@ -271,12 +271,11 @@ body {
   padding: 80px 32px;
   background-color: #ffffff;
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   gap: 12px;
   align-items: center;
   justify-content: center;
   min-height: 240px;
-  overflow-x: auto;
 }
 
 .ds-preview * {
