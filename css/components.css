@@ -75,13 +75,11 @@
 }
 
 /* Sizes */
-.btn--lg { height: 52px; padding: 16px 24px; }
 .btn--md { height: 44px; padding: 12px 16px; }
 .btn--sm { height: 36px; padding: 8px 12px; font-size: 13px; }
 
 /* Icon-only */
 .btn--icon { padding: 0; }
-.btn--icon.btn--lg { width: 52px; }
 .btn--icon.btn--md { width: 44px; }
 .btn--icon.btn--sm { width: 36px; }
 .btn--icon .material-icons-outlined { font-size: 20px; }
