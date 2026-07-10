@@ -417,6 +417,15 @@ body {
 .ds-type-caption { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: #898298; }
 .ds-type-caption-em { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption-emphasized); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: #898298; }
 
+.ds-type-button-1 { font-size: var(--font-size-button-1); font-weight: var(--font-weight-button); line-height: var(--line-height-button-1); letter-spacing: var(--letter-spacing-button-1); color: var(--color-button-text); }
+.ds-type-button-1-underline { font-size: var(--font-size-button-1); font-weight: var(--font-weight-button); line-height: var(--line-height-button-1); letter-spacing: var(--letter-spacing-button-1); color: var(--color-button-text); text-decoration: underline; }
+.ds-type-button-2-underline { font-size: var(--font-size-button-2); font-weight: var(--font-weight-button); line-height: var(--line-height-button-2); letter-spacing: var(--letter-spacing-button-2); color: var(--color-button-text); text-decoration: underline; }
+
+/* Valores Desktop / Mobile en las specs (toggle en la página de Typography) */
+[data-mode="mobile"] { display: none; }
+[data-typography="mobile"] [data-mode="desktop"] { display: none; }
+[data-typography="mobile"] [data-mode="mobile"] { display: inline; }
+
 /* Números de línea en código */
 
 .ds-code pre code {

@@ -184,6 +184,16 @@ function initScrollSpy() {
 }
 
 // --------------------------------
+// Typography — toggle Desktop / Mobile
+// --------------------------------
+
+function setTypographyMode(el, mode) {
+  activateTab(el);
+  const scope = document.getElementById('ds-typo-demo');
+  if (scope) scope.setAttribute('data-typography', mode);
+}
+
+// --------------------------------
 // Dropdown
 // --------------------------------
 

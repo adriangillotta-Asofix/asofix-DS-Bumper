@@ -57,8 +57,14 @@
 
       <div class="ds-page-header">
         <h1 class="ds-page-header__title">Typography</h1>
-        <p class="ds-page-header__desc">Escala tipográfica v2.0 usando Inter. Los tokens están disponibles en <code>css/tokens.css</code>.</p>
+        <p class="ds-page-header__desc">Escala tipográfica v2.1 usando Inter. Los tokens están disponibles en <code>css/tokens.css</code>. Headings y Subtitle 1 cambian de tamaño entre Desktop y Mobile — Subtitle 2, Body, Caption y Button son iguales en ambos.</p>
+        <div class="tabs" role="tablist" style="margin-top: 16px;"><div class="tabs__indicator"></div>
+          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setTypographyMode(this, 'desktop')">Desktop</button>
+          <button class="tab" role="tab" aria-selected="false" onclick="setTypographyMode(this, 'mobile')">Mobile</button>
+        </div>
       </div>
+
+      <div id="ds-typo-demo" data-typography="desktop">
 
       <!-- HEADINGS -->
       <div class="ds-section">
@@ -70,7 +76,7 @@
           </div>
           <div class="ds-type-meta">
             <span class="ds-type-meta__token">--font-size-h1</span>
-            <span class="ds-type-meta__value">36px · SemiBold · LH 1.55 · LS -0.02em</span>
+            <span class="ds-type-meta__value"><span data-mode="desktop">36px · SemiBold · LH 1.55 · LS -0.02em</span><span data-mode="mobile">35px · SemiBold · LH 1.60 · LS -0.01em</span></span>
             <span class="ds-type-meta__usage">Números de dashboard.</span>
           </div>
         </div>
@@ -81,7 +87,7 @@
           </div>
           <div class="ds-type-meta">
             <span class="ds-type-meta__token">--font-size-h2</span>
-            <span class="ds-type-meta__value">28px · SemiBold · LH 1.58 · LS -0.02em</span>
+            <span class="ds-type-meta__value"><span data-mode="desktop">28px · SemiBold · LH 1.58 · LS -0.02em</span><span data-mode="mobile">24px · SemiBold · LH 1.65 · LS 0em</span></span>
             <span class="ds-type-meta__usage">Título principal (usar 1 vez por página).</span>
           </div>
         </div>
@@ -92,7 +98,7 @@
           </div>
           <div class="ds-type-meta">
             <span class="ds-type-meta__token">--font-size-h3</span>
-            <span class="ds-type-meta__value">25px · SemiBold · LH 1.60 · LS -0.02em</span>
+            <span class="ds-type-meta__value"><span data-mode="desktop">25px · SemiBold · LH 1.60 · LS -0.02em</span><span data-mode="mobile">22px · SemiBold · LH 1.45 · LS 0em</span></span>
             <span class="ds-type-meta__usage">Precios destacados. Cards de catálogo.</span>
           </div>
         </div>
@@ -103,7 +109,7 @@
           </div>
           <div class="ds-type-meta">
             <span class="ds-type-meta__token">--font-size-h4</span>
-            <span class="ds-type-meta__value">22px · SemiBold · LH 1.46 · LS -0.01em</span>
+            <span class="ds-type-meta__value"><span data-mode="desktop">22px · SemiBold · LH 1.46 · LS -0.01em</span><span data-mode="mobile">20px · SemiBold · LH 1.42 · LS 0em</span></span>
             <span class="ds-type-meta__usage">Títulos de bloques que agrupan otros títulos.</span>
           </div>
         </div>
@@ -114,7 +120,7 @@
           </div>
           <div class="ds-type-meta">
             <span class="ds-type-meta__token">--font-size-h5</span>
-            <span class="ds-type-meta__value">20px · SemiBold · LH 1.40 · LS -0.01em</span>
+            <span class="ds-type-meta__value"><span data-mode="desktop">20px · SemiBold · LH 1.40 · LS -0.01em</span><span data-mode="mobile">18px · SemiBold · LH 1.35 · LS 0em</span></span>
             <span class="ds-type-meta__usage">Títulos de empty states. Nombre de cliente.</span>
           </div>
         </div>
@@ -125,7 +131,7 @@
           </div>
           <div class="ds-type-meta">
             <span class="ds-type-meta__token">--font-size-h6</span>
-            <span class="ds-type-meta__value">18px · SemiBold · LH 1.36 · LS 0em</span>
+            <span class="ds-type-meta__value"><span data-mode="desktop">18px · SemiBold · LH 1.36 · LS 0em</span><span data-mode="mobile">17px · SemiBold · LH 1.44 · LS 0.01em</span></span>
             <span class="ds-type-meta__usage">Títulos de modales. Títulos de bloques.</span>
           </div>
         </div>
@@ -142,7 +148,7 @@
           </div>
           <div class="ds-type-meta">
             <span class="ds-type-meta__token">--font-size-subtitle-1</span>
-            <span class="ds-type-meta__value">16px · SemiBold · LH 1.5 · LS 0em</span>
+            <span class="ds-type-meta__value"><span data-mode="desktop">16px · SemiBold · LH 1.5 · LS 0em</span><span data-mode="mobile">15px · SemiBold · LH 1.60 · LS 0em</span></span>
             <span class="ds-type-meta__usage">Subtítulos bajo un H6. Encabezados de acordeones.</span>
           </div>
         </div>
@@ -153,7 +159,7 @@
           </div>
           <div class="ds-type-meta">
             <span class="ds-type-meta__token">--font-weight-subtitle-1-emphasized</span>
-            <span class="ds-type-meta__value">16px · Bold · LH 1.5 · LS 0.01em</span>
+            <span class="ds-type-meta__value"><span data-mode="desktop">16px · Bold · LH 1.5 · LS 0.01em</span><span data-mode="mobile">15px · Bold · LH 1.60 · LS 0.01em</span></span>
             <span class="ds-type-meta__usage">Marca y modelo de un auto. Usar con moderación.</span>
           </div>
         </div>
@@ -238,6 +244,47 @@
 
       </div>
 
+      <!-- BUTTON -->
+      <div class="ds-section">
+        <h2 class="ds-section__title">Button</h2>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-button-1">Button</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-button-1</span>
+            <span class="ds-type-meta__value">14px · SemiBold · LH 1.45 · LS 0em</span>
+            <span class="ds-type-meta__usage">Botones primario, secundario y terciario.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-button-1-underline">Button 1 underline</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-button-1</span>
+            <span class="ds-type-meta__value">14px · SemiBold · LH 1.45 · LS 0em · Underline</span>
+            <span class="ds-type-meta__usage">Botones link. Links que acompañan texto con estilo body.</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-button-2-underline">Button 2 underline</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-size-button-2</span>
+            <span class="ds-type-meta__value">12px · SemiBold · LH 1.36 · LS 0.02em · Underline</span>
+            <span class="ds-type-meta__usage">Botones link con menor jerarquía. Links que acompañan texto con estilo caption.</span>
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+
       <div class="ds-section">
   <h2 class="ds-section__title">Tokens</h2>
   <div class="ds-code ds-code--standalone">
@@ -287,7 +334,26 @@
 --font-weight-caption: 400;
 --font-weight-caption-emphasized: 600;
 --line-height-caption: 1.36;
---letter-spacing-caption: 0.02em;</code></pre>
+--letter-spacing-caption: 0.02em;
+
+--font-size-button-1: 0.875rem;
+--font-weight-button: 600;
+--line-height-button-1: 1.45;
+--letter-spacing-button-1: 0em;
+
+--font-size-button-2: 0.75rem;
+--line-height-button-2: 1.36;
+--letter-spacing-button-2: 0.02em;
+
+/* Mobile — overrides sobre [data-typography="mobile"] */
+/* Headings y Subtitle 1 cambian; Subtitle 2, Body, Caption y Button son iguales */
+--font-size-h1: 2.188rem;   --line-height-h1: 1.60;   --letter-spacing-h1: -0.01em;
+--font-size-h2: 1.5rem;     --line-height-h2: 1.65;   --letter-spacing-h2: 0em;
+--font-size-h3: 1.375rem;   --line-height-h3: 1.45;   --letter-spacing-h3: 0em;
+--font-size-h4: 1.25rem;    --line-height-h4: 1.42;   --letter-spacing-h4: 0em;
+--font-size-h5: 1.125rem;   --line-height-h5: 1.35;   --letter-spacing-h5: 0em;
+--font-size-h6: 1.063rem;   --line-height-h6: 1.44;   --letter-spacing-h6: 0.01em;
+--font-size-subtitle-1: 0.938rem;   --line-height-subtitle-1: 1.60;</code></pre>
           </div>
         </div>
 
