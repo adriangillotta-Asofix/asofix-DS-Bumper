@@ -243,11 +243,15 @@ body {
   margin-bottom: 16px;
 }
 
+.ds-section__title:has(+ .ds-section__subtitle) {
+  margin-bottom: 8px;
+}
+
 .ds-section__subtitle {
   font-size: 12px;
   font-weight: 400;
   color: #898298;
-  margin-top: -12px;
+  margin-top: 0;
   margin-bottom: 16px;
 }
 
