@@ -164,7 +164,25 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.avatar--initial {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 2px solid var(--color-neutral-white);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar--24  { width: 24px;  height: 24px; }
+.avatar--32  { width: 32px;  height: 32px; }
+.avatar--40  { width: 40px;  height: 40px; }
+.avatar--56  { width: 56px;  height: 56px; }
+.avatar--112 { width: 112px; height: 112px; }
+
+.avatar--initial {
   background-color: var(--color-primary-500);
 }
 
@@ -230,7 +248,25 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.avatar--photo {
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 2px solid var(--color-neutral-white);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar--24  { width: 24px;  height: 24px; }
+.avatar--32  { width: 32px;  height: 32px; }
+.avatar--40  { width: 40px;  height: 40px; }
+.avatar--56  { width: 56px;  height: 56px; }
+.avatar--112 { width: 112px; height: 112px; }
+
+.avatar--photo {
   background-color: var(--color-neutral-100);
 }
 
