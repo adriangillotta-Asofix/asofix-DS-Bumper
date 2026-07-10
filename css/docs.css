@@ -103,7 +103,7 @@ body {
 }
 
 .ds-nav__link.active {
-  background-color: #DCDADB;
+  background-color: #EEECED;
   color: #5B3DD3;
   font-weight: 500;
 }
