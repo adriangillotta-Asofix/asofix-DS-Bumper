@@ -115,7 +115,7 @@ function buildTOC() {
   list.className = 'ds-toc__list';
 
   // Pre-group sections preserving intra-group DOM order
-  const groupOrder = ['Medium', 'Small'];
+  const groupOrder = ['Large', 'Medium', 'Small'];
   const groups = {};
   groupOrder.forEach(g => { groups[g] = []; });
   const standalone = [];
