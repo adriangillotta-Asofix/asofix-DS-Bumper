@@ -100,8 +100,6 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  border: 2px solid var(--color-neutral-white);
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -165,6 +163,8 @@
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.avatar--initial {
+  border: 2px solid var(--color-neutral-white);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   background-color: var(--color-primary-500);
 }
 
@@ -173,15 +173,14 @@
   font-weight: 500;
   color: var(--color-neutral-white);
   line-height: 1;
-  letter-spacing: -0.02em;
   user-select: none;
 }
 
-.avatar--24  .avatar__initial { font-size: 12px; }
-.avatar--32  .avatar__initial { font-size: 16px; }
-.avatar--40  .avatar__initial { font-size: 24px; }
-.avatar--56  .avatar__initial { font-size: 32px; }
-.avatar--112 .avatar__initial { font-size: 64px; }</code></pre>
+.avatar--24  .avatar__initial { font-size: 12px; letter-spacing: 0em; }
+.avatar--32  .avatar__initial { font-size: 16px; letter-spacing: 0em; }
+.avatar--40  .avatar__initial { font-size: 24px; letter-spacing: -0.02em; }
+.avatar--56  .avatar__initial { font-size: 32px; letter-spacing: -0.02em; }
+.avatar--112 .avatar__initial { font-size: 64px; letter-spacing: -0.02em; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="avatar avatar--initial avatar--40"&gt;
   &lt;span class="avatar__initial"&gt;A&lt;/span&gt;
 &lt;/div&gt;</code></pre>
@@ -232,6 +231,8 @@
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.avatar--photo {
+  border: 2px solid var(--color-neutral-white);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   background-color: var(--color-neutral-100);
 }
 
