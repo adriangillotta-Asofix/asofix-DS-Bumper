@@ -243,7 +243,7 @@ body {
   margin-bottom: 16px;
 }
 
-.ds-section__title:has(+ .ds-section__subtitle) {
+.ds-section__heading .ds-section__title {
   margin-bottom: 8px;
 }
 
@@ -251,8 +251,7 @@ body {
   font-size: 12px;
   font-weight: 400;
   color: #898298;
-  margin-top: 0;
-  margin-bottom: 16px;
+  margin: 0;
 }
 
 .ds-preview__label {
