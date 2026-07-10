@@ -842,10 +842,15 @@
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  border: 2px solid var(--color-neutral-white);
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   flex-shrink: 0;
+}
+
+/* Solo Initial y Photo llevan borde blanco + sombra (Empty no, según Figma) */
+.avatar--initial,
+.avatar--photo {
+  border: 2px solid var(--color-neutral-white);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);
 }
 
 /* Sizes */
@@ -881,14 +886,13 @@
   font-weight: 500;
   color: var(--color-neutral-white);
   line-height: 1;
-  letter-spacing: -0.02em;
   user-select: none;
 }
-.avatar--24  .avatar__initial { font-size: 12px; }
-.avatar--32  .avatar__initial { font-size: 16px; }
-.avatar--40  .avatar__initial { font-size: 24px; }
-.avatar--56  .avatar__initial { font-size: 32px; }
-.avatar--112 .avatar__initial { font-size: 64px; }
+.avatar--24  .avatar__initial { font-size: 12px; letter-spacing: 0em; }
+.avatar--32  .avatar__initial { font-size: 16px; letter-spacing: 0em; }
+.avatar--40  .avatar__initial { font-size: 24px; letter-spacing: -0.02em; }
+.avatar--56  .avatar__initial { font-size: 32px; letter-spacing: -0.02em; }
+.avatar--112 .avatar__initial { font-size: 64px; letter-spacing: -0.02em; }
 
 /* Photo */
 .avatar--photo {
