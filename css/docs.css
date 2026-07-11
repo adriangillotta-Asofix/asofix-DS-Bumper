@@ -243,6 +243,14 @@ body {
   margin-bottom: 16px;
 }
 
+.ds-section__desc {
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--color-neutral-500);
+  margin-top: -8px;
+  margin-bottom: 16px;
+}
+
 .ds-section__heading .ds-section__title {
   margin-bottom: 8px;
 }
