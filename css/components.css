@@ -12,9 +12,10 @@
   justify-content: center;
   gap: 8px;
   font-family: var(--font-family-base);
-  font-size: var(--font-size-body);
-  font-weight: var(--font-weight-body-emphasized);
-  line-height: var(--line-height-body);
+  font-size: var(--font-size-button-1);
+  font-weight: var(--font-weight-button);
+  line-height: var(--line-height-button-1);
+  letter-spacing: var(--letter-spacing-button-1);
   border: 1px solid transparent;
   border-radius: 8px;
   cursor: pointer;
@@ -108,8 +109,9 @@
   border-color: transparent;
   height: auto;
   padding: 0;
-  font-size: var(--font-size-caption);
-  letter-spacing: var(--letter-spacing-caption);
+  font-size: var(--font-size-button-2);
+  line-height: var(--line-height-button-2);
+  letter-spacing: var(--letter-spacing-button-2);
   gap: 6px;
 }
 
