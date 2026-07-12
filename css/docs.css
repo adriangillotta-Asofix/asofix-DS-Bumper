@@ -397,7 +397,8 @@ body {
   border-bottom: 1px solid #E8E3DA;
 }
 
-.ds-type-row:last-of-type {
+.ds-type-row:last-of-type,
+.ds-type-row:has(+ .ds-code) {
   border-bottom: none;
 }
 
