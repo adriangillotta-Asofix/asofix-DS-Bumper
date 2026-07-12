@@ -339,9 +339,10 @@ function selectDropdownItem(el) {
 document.addEventListener('click', e => {
   document.querySelectorAll('.dropdown:not([hidden])').forEach(dropdown => {
     const trigger = document.querySelector(`[aria-controls="${dropdown.id}"]`);
-    if (!dropdown.contains(e.target) && (!trigger || !trigger.contains(e.target))) {
+    if (!trigger) return; // sin trigger = preview estático, no cerrar
+    if (!dropdown.contains(e.target) && !trigger.contains(e.target)) {
       dropdown.hidden = true;
-      if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      trigger.setAttribute('aria-expanded', 'false');
     }
   });
 });</code></pre>
