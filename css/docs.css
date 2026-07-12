@@ -259,7 +259,11 @@ body {
   font-size: 12px;
   font-weight: 400;
   color: #898298;
-  margin: 0;
+  margin: 0 0 16px 0;
+}
+
+.ds-section--color .ds-section__subtitle {
+  margin-bottom: 0;
 }
 
 .ds-preview__label {
