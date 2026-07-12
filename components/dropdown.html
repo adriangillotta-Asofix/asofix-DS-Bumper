@@ -177,11 +177,10 @@
       ============================================== -->
       <div class="ds-section" id="dropdown-completo">
         <h2 class="ds-section__title">Dropdown completo</h2>
-        <p style="font-size:13px; color:var(--color-neutral-500); line-height:1.6; margin-bottom:16px;">
+        <p class="ds-section__desc">
           Base del componente. Copiá el CSS, HTML y JS. Luego reemplazá los ítems del <code style="font-size:12px; background:var(--color-neutral-100); padding:1px 5px; border-radius:4px;">.dropdown__list</code> con la variante que necesitás — ver <a href="#list-options" style="color:var(--color-primary-500); text-decoration:none; font-weight:600;">List options ↓</a>
         </p>
 
-        <p class="ds-preview__label">Preview</p>
         <div class="ds-preview" style="border-radius:8px 8px 0 0; padding:40px 32px;">
           <div class="dropdown">
             <div class="dropdown__list" style="max-height:none; overflow-y:visible;">
@@ -249,7 +248,7 @@
 @keyframes dropdown-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 
 /* Lista */
-.dropdown__list { flex: 1; display: flex; flex-direction: column; padding: 8px 4px; overflow-y: auto; max-height: 408px; }
+.dropdown__list { flex: 1; min-width: 0; display: flex; flex-direction: column; padding: 8px 4px; overflow-y: auto; max-height: 408px; }
 .dropdown__list::-webkit-scrollbar { width: 6px; }
 .dropdown__list::-webkit-scrollbar-track { background: var(--color-neutral-white); }
 .dropdown__list::-webkit-scrollbar-thumb { background-color: var(--color-neutral-300); border-radius: 50px; }
@@ -272,7 +271,7 @@
 .dropdown-item__title-row { display: flex; align-items: flex-start; gap: 12px; width: 100%; }
 .dropdown-item__title  { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
 .dropdown-item__number { flex-shrink: 0; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); text-align: right; color: inherit; }
-.dropdown-item__desc   { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: var(--font-size-caption); font-weight: 400; line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: inherit; }
+.dropdown-item__desc   { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: inherit; }
 
 .dropdown-item--loading:hover, .dropdown-item--no-matches:hover { background-color: transparent; }
 
@@ -354,7 +353,7 @@ document.addEventListener('click', e => {
       ============================================== -->
       <div class="ds-section" id="list-options">
         <h2 class="ds-section__title">List options</h2>
-        <p style="font-size:13px; color:var(--color-neutral-500); line-height:1.6; margin-bottom:16px;">
+        <p class="ds-section__desc">
           Cada variante es independiente. Copiá el snippet que necesitás y pegalo dentro del <code style="font-size:12px; background:var(--color-neutral-100); padding:1px 5px; border-radius:4px;">.dropdown__list</code>. Podés mezclar variantes en el mismo dropdown.
         </p>
 
@@ -362,8 +361,8 @@ document.addEventListener('click', e => {
 
           <!-- Default -->
           <div id="lo-default">
-            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Default</p>
-            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Ítem simple sin checkbox ni adornos extra.</p>
+            <h3 class="ds-section__title" style="margin-bottom:4px;">Default</h3>
+            <p class="ds-section__desc" style="margin-top:0; margin-bottom:12px;">Ítem simple sin checkbox ni adornos extra.</p>
             <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
               <button class="dropdown-item" style="width:100%;">
                 <div class="dropdown-item__content">
@@ -414,8 +413,8 @@ document.addEventListener('click', e => {
 
           <!-- Default + Number -->
           <div id="lo-number">
-            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Default + Number</p>
-            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Número a la derecha, útil para mostrar cantidades.</p>
+            <h3 class="ds-section__title" style="margin-bottom:4px;">Default + Number</h3>
+            <p class="ds-section__desc" style="margin-top:0; margin-bottom:12px;">Número a la derecha, útil para mostrar cantidades.</p>
             <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
               <button class="dropdown-item" style="width:100%;">
                 <div class="dropdown-item__content">
@@ -462,10 +461,60 @@ document.addEventListener('click', e => {
             </div>
           </div>
 
+          <!-- Default + Description -->
+          <div id="lo-description">
+            <h3 class="ds-section__title" style="margin-bottom:4px;">Default + Description</h3>
+            <p class="ds-section__desc" style="margin-top:0; margin-bottom:12px;">Línea de descripción debajo del título, truncada a 2 líneas.</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <button class="dropdown-item" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                  <span class="dropdown-item__desc">Descripción corta que puede ocupar hasta dos líneas antes de truncarse con puntos suspensivos.</span>
+                </div>
+              </button>
+              <button class="dropdown-item dropdown-item--active" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                  <span class="dropdown-item__desc">Descripción corta que puede ocupar hasta dos líneas antes de truncarse con puntos suspensivos.</span>
+                </div>
+              </button>
+              <button class="dropdown-item dropdown-item--disabled" style="width:100%;">
+                <div class="dropdown-item__content">
+                  <span class="dropdown-item__title">Título del ítem</span>
+                  <span class="dropdown-item__desc">Descripción corta que puede ocupar hasta dos líneas antes de truncarse con puntos suspensivos.</span>
+                </div>
+              </button>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-description')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-description')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-description"><code>/* Ítem base */
+.dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
+.dropdown-item:hover,
+.dropdown-item--active   { background-color: var(--color-primary-50); }
+.dropdown-item--disabled { cursor: default; pointer-events: none; }
+
+/* Contenido */
+.dropdown-item__content { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
+.dropdown-item--disabled .dropdown-item__content { color: var(--color-neutral-400); }
+.dropdown-item__title   { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
+.dropdown-item__desc    { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: inherit; }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-description"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
+  &lt;div class="dropdown-item__content"&gt;
+    &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
+    &lt;span class="dropdown-item__desc"&gt;Descripción corta que puede ocupar hasta dos líneas antes de truncarse con puntos suspensivos.&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/button&gt;</code></pre>
+            </div>
+          </div>
+
           <!-- Default + Pill -->
           <div id="lo-pill">
-            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Default + Pill</p>
-            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Pill de estado a la derecha, siempre read-only.</p>
+            <h3 class="ds-section__title" style="margin-bottom:4px;">Default + Pill</h3>
+            <p class="ds-section__desc" style="margin-top:0; margin-bottom:12px;">Pill de estado a la derecha, siempre read-only.</p>
             <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
               <button class="dropdown-item" style="width:100%;">
                 <div class="dropdown-item__content">
@@ -517,8 +566,8 @@ document.addEventListener('click', e => {
 
           <!-- Check + Default -->
           <div id="lo-check-default">
-            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Check + Default</p>
-            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Checkbox para selección múltiple.</p>
+            <h3 class="ds-section__title" style="margin-bottom:4px;">Check + Default</h3>
+            <p class="ds-section__desc" style="margin-top:0; margin-bottom:12px;">Checkbox para selección múltiple.</p>
             <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
               <button class="dropdown-item" style="width:100%;">
                 <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
@@ -574,8 +623,8 @@ document.addEventListener('click', e => {
 
           <!-- Check + Default + Number -->
           <div id="lo-check-number">
-            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Check + Default + Number</p>
-            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Checkbox con número a la derecha.</p>
+            <h3 class="ds-section__title" style="margin-bottom:4px;">Check + Default + Number</h3>
+            <p class="ds-section__desc" style="margin-top:0; margin-bottom:12px;">Checkbox con número a la derecha.</p>
             <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
               <button class="dropdown-item" style="width:100%;">
                 <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
@@ -636,8 +685,8 @@ document.addEventListener('click', e => {
 
           <!-- Check + Default + Pill -->
           <div id="lo-check-pill">
-            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Check + Default + Pill</p>
-            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Checkbox con pill de estado a la derecha.</p>
+            <h3 class="ds-section__title" style="margin-bottom:4px;">Check + Default + Pill</h3>
+            <p class="ds-section__desc" style="margin-top:0; margin-bottom:12px;">Checkbox con pill de estado a la derecha.</p>
             <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
               <button class="dropdown-item" style="width:100%;">
                 <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
@@ -700,8 +749,8 @@ document.addEventListener('click', e => {
 
           <!-- Loading -->
           <div id="lo-loading">
-            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">Loading</p>
-            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Reemplazá todos los ítems mientras se cargan los resultados.</p>
+            <h3 class="ds-section__title" style="margin-bottom:4px;">Loading</h3>
+            <p class="ds-section__desc" style="margin-top:0; margin-bottom:12px;">Reemplazá todos los ítems mientras se cargan los resultados.</p>
             <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
               <div class="dropdown-item dropdown-item--loading" style="width:100%;">
                 <span class="dropdown-item__status">Cargando...</span>
@@ -727,8 +776,8 @@ document.addEventListener('click', e => {
 
           <!-- 0 Matches -->
           <div id="lo-matches">
-            <p style="font-size:14px; font-weight:600; color:var(--color-neutral-800); margin-bottom:4px;">0 Matches</p>
-            <p style="font-size:12px; color:var(--color-neutral-400); margin-bottom:12px;">Reemplazá todos los ítems cuando la búsqueda no tiene resultados.</p>
+            <h3 class="ds-section__title" style="margin-bottom:4px;">0 Matches</h3>
+            <p class="ds-section__desc" style="margin-top:0; margin-bottom:12px;">Reemplazá todos los ítems cuando la búsqueda no tiene resultados.</p>
             <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
               <div class="dropdown-item dropdown-item--no-matches" style="width:100%;">
                 <span class="dropdown-item__status">No hay coincidencias</span>
