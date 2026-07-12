@@ -28,7 +28,7 @@ body {
    Sidebar
 -------------------------------- */
 .ds-sidebar {
-  width: 240px;
+  width: 272px;
   min-height: 100vh;
   padding: 24px 16px;
   position: fixed;
@@ -112,7 +112,7 @@ body {
    Main content
 -------------------------------- */
 .ds-main {
-  margin-left: 248px;
+  margin-left: 280px;
   margin-top: 8px;
   margin-right: 8px;
   margin-bottom: 8px;
@@ -121,6 +121,7 @@ body {
   overflow-y: auto;
   display: flex;
   align-items: flex-start;
+  justify-content: space-between;
   background-color: #ffffff;
   border-radius: 12px;
   scrollbar-width: none;
