@@ -299,6 +299,11 @@ body {
   border-radius: 8px;
 }
 
+/* Gap entre dos previews consecutivos (ej. preview interactivo + estados) */
+.ds-preview + .ds-preview {
+  margin-top: 24px;
+}
+
 .ds-preview--interactive * {
   pointer-events: auto;
 }
