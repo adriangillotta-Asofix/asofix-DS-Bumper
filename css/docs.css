@@ -397,9 +397,17 @@ body {
   border-bottom: 1px solid #E8E3DA;
 }
 
+.ds-type-row:last-of-type {
+  border-bottom: none;
+}
+
 .ds-type-sample {
   width: 280px;
   flex-shrink: 0;
+}
+
+.ds-type-sample--compact {
+  width: 120px;
 }
 
 .ds-type-meta {
