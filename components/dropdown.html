@@ -162,12 +162,13 @@
                   </div>
                 </button>
 
-                <div class="dropdown__footer">
-                  <button class="btn btn--secondary btn--md" onclick="toggleDropdown('trigger-demo', 'dropdown-demo')">Cancelar</button>
-                  <button class="btn btn--primary btn--md" onclick="toggleDropdown('trigger-demo', 'dropdown-demo')">Aplicar</button>
-                </div>
-
               </div>
+
+              <div class="dropdown__footer">
+                <button class="btn btn--secondary btn--md" onclick="toggleDropdown('trigger-demo', 'dropdown-demo')">Cancelar</button>
+                <button class="btn btn--primary btn--md" onclick="toggleDropdown('trigger-demo', 'dropdown-demo')">Aplicar</button>
+              </div>
+
             </div>
           </div>
         </div>
@@ -227,10 +228,10 @@
                   <span class="dropdown-item__title">Valeria Torres</span>
                 </div>
               </button>
-              <div class="dropdown__footer">
-                <button class="btn btn--secondary btn--md">Cancelar</button>
-                <button class="btn btn--primary btn--md">Aplicar</button>
-              </div>
+            </div>
+            <div class="dropdown__footer">
+              <button class="btn btn--secondary btn--md">Cancelar</button>
+              <button class="btn btn--primary btn--md">Aplicar</button>
             </div>
           </div>
         </div>
@@ -244,7 +245,7 @@
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
 
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css-dd"><code>/* Contenedor */
-.dropdown { display: inline-flex; background-color: var(--color-neutral-white); border-radius: 8px; box-shadow: 0px 4px 8px 0px rgba(51,51,51,0.22); width: 380px; overflow: hidden; animation: dropdown-in 0.15s ease forwards; }
+.dropdown { display: inline-flex; flex-direction: column; background-color: var(--color-neutral-white); border-radius: var(--radius-sm); box-shadow: 0px 4px 8px 0px rgba(51,51,51,0.22); width: 380px; overflow: hidden; animation: dropdown-in 0.15s ease forwards; }
 .dropdown[hidden] { display: none; }
 @keyframes dropdown-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -303,13 +304,14 @@
 
     &lt;!-- Pegá acá los ítems de la variante que necesitás (ver List options ↓) --&gt;
 
-    &lt;!-- Footer con acciones (opcional) --&gt;
-    &lt;div class="dropdown__footer"&gt;
-      &lt;button class="btn btn--secondary btn--md" onclick="toggleDropdown('mi-trigger', 'mi-dropdown')"&gt;Cancelar&lt;/button&gt;
-      &lt;button class="btn btn--primary btn--md" onclick="toggleDropdown('mi-trigger', 'mi-dropdown')"&gt;Aplicar&lt;/button&gt;
-    &lt;/div&gt;
-
   &lt;/div&gt;
+
+  &lt;!-- Footer con acciones (opcional, va fuera de .dropdown__list para quedar fijo abajo) --&gt;
+  &lt;div class="dropdown__footer"&gt;
+    &lt;button class="btn btn--secondary btn--md" onclick="toggleDropdown('mi-trigger', 'mi-dropdown')"&gt;Cancelar&lt;/button&gt;
+    &lt;button class="btn btn--primary btn--md" onclick="toggleDropdown('mi-trigger', 'mi-dropdown')"&gt;Aplicar&lt;/button&gt;
+  &lt;/div&gt;
+
 &lt;/div&gt;</code></pre>
 
           <pre class="ds-code__panel" data-tab="js-dd"><code>// Abrir / cerrar el dropdown
