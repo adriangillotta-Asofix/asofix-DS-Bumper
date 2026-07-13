@@ -70,13 +70,50 @@ body {
   gap: 4px;
 }
 
+.ds-nav__group {
+  display: flex;
+  flex-direction: column;
+}
+
+.ds-nav__group-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 16px 8px 6px;
+  font-family: inherit;
+  border-radius: 6px;
+  transition: background-color 0.15s ease;
+}
+
+.ds-nav__group-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
 .ds-nav__label {
   font-size: 10px;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.45);
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  padding: 16px 8px 6px;
+}
+
+.ds-nav__chevron {
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+
+.ds-nav__group.collapsed .ds-nav__chevron {
+  transform: rotate(-90deg);
+}
+
+.ds-nav__group.collapsed .ds-nav__list {
+  display: none;
 }
 
 .ds-nav__list {
@@ -84,6 +121,19 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2px;
+  position: relative;
+  margin-left: 8px;
+  padding-left: 12px;
+}
+
+.ds-nav__list::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .ds-nav__link {
