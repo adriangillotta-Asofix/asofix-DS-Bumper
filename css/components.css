@@ -1345,10 +1345,10 @@
   border: none;
   background-color: transparent;
   font-family: var(--font-family-base);
-  font-size: var(--font-size-subtitle-1);
-  font-weight: var(--font-weight-subtitle-1);
-  line-height: var(--line-height-subtitle-1);
-  letter-spacing: var(--letter-spacing-subtitle-1);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body-emphasized);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
   color: var(--color-neutral-400);
   cursor: pointer;
   white-space: nowrap;
