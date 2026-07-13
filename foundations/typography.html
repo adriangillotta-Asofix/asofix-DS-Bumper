@@ -6,7 +6,7 @@
   <title>Typography — Asofix Bumper DS</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../css/tokens.css" />
   <link rel="stylesheet" href="../css/docs.css" />
   <link rel="stylesheet" href="../css/components.css" />
@@ -74,6 +74,23 @@
       </div>
 
       <div id="ds-typo-demo" data-typography="desktop">
+
+      <!-- DISPLAY -->
+      <div class="ds-section">
+        <h2 class="ds-section__title">Display</h2>
+        <p class="ds-section__desc">IBM Plex Sans — Manual de Marca Mayo 2026 V2.1. Uso puntual en headlines grandes (login, hero de Inicio). No reemplaza la escala de Headings: los componentes (modal, card, tooltip) siguen en Inter.</p>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample">
+            <span class="ds-type-display">Toda tu gestión</span>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--font-family-display</span>
+            <span class="ds-type-meta__value">32px sugerido · Light · IBM Plex Sans</span>
+            <span class="ds-type-meta__usage">Headlines grandes de marca. La página que lo use debe cargar la fuente (Google Fonts: IBM+Plex+Sans, pesos 300/400/500).</span>
+          </div>
+        </div>
+      </div>
 
       <!-- HEADINGS -->
       <div class="ds-section">
@@ -299,6 +316,9 @@
   <div class="ds-code ds-code--standalone">
     <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
     <pre><code>--font-family-base: 'Inter', sans-serif;
+
+--font-family-display: 'IBM Plex Sans', var(--font-family-base);
+--font-weight-display: 300;
 
 --font-size-h1: 2.25rem;
 --font-size-h2: 1.75rem;
