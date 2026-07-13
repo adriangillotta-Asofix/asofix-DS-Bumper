@@ -70,8 +70,10 @@
 
       <!-- TEXT FIELD LARGE -->
       <div class="ds-section" id="text-field-lg">
-        <h2 class="ds-section__title">Text Field — Large</h2>
-        <p class="ds-preview__label">Preview</p>
+        <div class="ds-section__heading">
+          <h2 class="ds-section__title">Text Field</h2>
+          <p class="ds-section__subtitle">Large</p>
+        </div>
         <div class="ds-preview ds-preview--interactive">
           <div class="input">
             <div class="input__label">
@@ -85,7 +87,6 @@
             <span class="input__assistive">Texto de ayuda</span>
           </div>
         </div>
-        <p class="ds-preview__label">Estados</p>
         <div class="ds-preview ds-preview--inputs">
           <div class="ds-state-item">
             <span class="ds-state-label">Default</span>
@@ -146,7 +147,7 @@
 .input__label { display: flex; align-items: center; gap: 4px; }
 .input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
 .input__label-text--lg { font-size: var(--font-size-body); line-height: var(--line-height-body); }
-.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; user-select: none; }
 .input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
 .input__container { display: flex; align-items: center; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
 .input__container--lg { height: 50px; padding: 0 12px; }
@@ -157,6 +158,8 @@
 /* States */
 .input__container:hover { border-color: var(--color-neutral-600); }
 .input__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
+.input__container--hover { border-color: var(--color-neutral-600); }
+.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .input__container--error { border-color: var(--color-error-500); }
 .input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
 .input__container--disabled { background-color: var(--color-neutral-50); pointer-events: none; }</code></pre>
@@ -187,8 +190,10 @@
 
       <!-- TEXT FIELD SMALL -->
       <div class="ds-section" id="text-field-sm">
-        <h2 class="ds-section__title">Text Field — Small</h2>
-        <p class="ds-preview__label">Preview</p>
+        <div class="ds-section__heading">
+          <h2 class="ds-section__title">Text Field</h2>
+          <p class="ds-section__subtitle">Small</p>
+        </div>
         <div class="ds-preview ds-preview--interactive">
           <div class="input">
             <div class="input__label">
@@ -202,7 +207,6 @@
             <span class="input__assistive">Texto de ayuda</span>
           </div>
         </div>
-        <p class="ds-preview__label">Estados</p>
         <div class="ds-preview ds-preview--inputs">
           <div class="ds-state-item">
             <span class="ds-state-label">Default</span>
@@ -263,7 +267,7 @@
 .input__label { display: flex; align-items: center; gap: 4px; }
 .input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
 .input__label-text--sm { font-size: var(--font-size-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); }
-.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; user-select: none; }
 .input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
 .input__container { display: flex; align-items: center; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
 .input__container--sm { height: 38px; padding: 0 13px; }
@@ -275,6 +279,8 @@
 /* States */
 .input__container:hover { border-color: var(--color-neutral-600); }
 .input__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
+.input__container--hover { border-color: var(--color-neutral-600); }
+.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .input__container--error { border-color: var(--color-error-500); }
 .input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
 .input__container--disabled { background-color: var(--color-neutral-50); pointer-events: none; }</code></pre>
@@ -295,7 +301,6 @@
       <!-- TEXT AREA -->
       <div class="ds-section" id="textarea">
         <h2 class="ds-section__title">Text Area</h2>
-        <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
           <div class="input">
             <div class="input__label">
@@ -309,7 +314,6 @@
             <span class="input__assistive">Texto de ayuda</span>
           </div>
         </div>
-        <p class="ds-preview__label">Estados</p>
         <div class="ds-preview ds-preview--inputs">
           <div class="ds-state-item">
             <span class="ds-state-label">Default</span>
@@ -366,11 +370,22 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.textarea__container { display: flex; align-items: flex-start; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.input { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+.input__label { display: flex; align-items: center; gap: 4px; }
+.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
+.input__label-text--lg { font-size: var(--font-size-body); line-height: var(--line-height-body); }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; user-select: none; }
+.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
+
+.textarea__container { display: flex; align-items: flex-start; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; }
 .textarea__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--color-neutral-600); padding: 9px 12px; resize: none; height: 120px; overflow-y: auto; }
 .textarea__field::placeholder { color: var(--color-neutral-400); }
 
 /* States */
+.input__container--hover { border-color: var(--color-neutral-600); }
+.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .textarea__container:hover { border-color: var(--color-neutral-600); }
 .textarea__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .textarea__container.input__container--error { border-color: var(--color-error-500); }
@@ -391,8 +406,10 @@
 
       <!-- SELECT LARGE -->
       <div class="ds-section" id="select-lg">
-        <h2 class="ds-section__title">Select — Large</h2>
-        <p class="ds-preview__label">Preview</p>
+        <div class="ds-section__heading">
+          <h2 class="ds-section__title">Select</h2>
+          <p class="ds-section__subtitle">Large</p>
+        </div>
         <div class="ds-preview ds-preview--interactive" style="align-items:flex-start; padding:32px; overflow:visible; min-height:450px;">
           <div class="select" style="width:320px;">
             <div class="input__label">
@@ -442,7 +459,6 @@
             <span class="input__assistive">Texto de ayuda</span>
           </div>
         </div>
-        <p class="ds-preview__label">Estados</p>
         <div class="ds-preview ds-preview--inputs">
           <div class="ds-state-item">
             <span class="ds-state-label">Default</span>
@@ -495,7 +511,15 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'js')">JS</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.input__label { display: flex; align-items: center; gap: 4px; }
+.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
+.input__label-text--lg { font-size: var(--font-size-body); line-height: var(--line-height-body); }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; user-select: none; }
+.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
+
+.select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
 .select__container { display: flex; align-items: center; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
 .select__container--lg { height: 50px; padding: 0 12px; }
 .select__text { flex: 1; min-width: 0; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-neutral-400); }
@@ -507,10 +531,11 @@
 .select__container--lg .select__icon { font-size: 20px; }
 
 /* States */
+.input__container--hover { border-color: var(--color-neutral-600); }
+.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .select__container:hover { border-color: var(--color-neutral-600); }
 .select__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .select__container.input__container--error { border-color: var(--color-error-500); }
-.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
 .select__container--disabled { pointer-events: none; }
 .select__container--lg.select__container--disabled { background-color: var(--color-neutral-50); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="select"&gt;
@@ -582,8 +607,10 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
 
       <!-- SELECT SMALL -->
       <div class="ds-section" id="select-sm">
-        <h2 class="ds-section__title">Select — Small</h2>
-        <p class="ds-preview__label">Preview</p>
+        <div class="ds-section__heading">
+          <h2 class="ds-section__title">Select</h2>
+          <p class="ds-section__subtitle">Small</p>
+        </div>
         <div class="ds-preview ds-preview--interactive" style="align-items:flex-start; padding:32px; overflow:visible; min-height:440px;">
           <div class="select" style="width:280px;">
             <div class="input__label">
@@ -633,7 +660,6 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
             <span class="input__assistive">Texto de ayuda</span>
           </div>
         </div>
-        <p class="ds-preview__label">Estados</p>
         <div class="ds-preview ds-preview--inputs">
           <div class="ds-state-item">
             <span class="ds-state-label">Default</span>
@@ -686,7 +712,15 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
             <button class="ds-code__tab" onclick="switchTab(this, 'js')">JS</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.input__label { display: flex; align-items: center; gap: 4px; }
+.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
+.input__label-text--sm { font-size: var(--font-size-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; user-select: none; }
+.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
+
+.select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
 .select__container { display: flex; align-items: center; width: 100%; background: var(--color-neutral-white); border: 1px solid var(--color-neutral-300); border-radius: 4px; transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
 .select__container--sm { height: 38px; padding: 0 13px; }
 .select__text { flex: 1; min-width: 0; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-neutral-400); }
@@ -698,10 +732,11 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
 .select__icon--sm { font-size: 16px; }
 
 /* States */
+.input__container--hover { border-color: var(--color-neutral-600); }
+.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .select__container:hover { border-color: var(--color-neutral-600); }
 .select__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .select__container.input__container--error { border-color: var(--color-error-500); }
-.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
 .select__container--disabled { pointer-events: none; }
 .select__container--sm.select__container--disabled { background-color: var(--color-neutral-50); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="select"&gt;
