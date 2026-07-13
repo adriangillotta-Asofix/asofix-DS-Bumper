@@ -14,8 +14,8 @@
   --color-primary-500: #5B3DD3;
   --color-primary-600: #4D33B4;
   --color-primary-700: #3E2990;
-  --color-primary-800: #2F1F6C;
-  --color-primary-900: #251849;
+  --color-primary-800: #2E1B6E;
+  --color-primary-900: #1A0F4A;
 
   /* --------------------------------
      Secundario — Teal
@@ -29,20 +29,21 @@
   --color-secondary-600: #0E9970;
 
   /* --------------------------------
-     Neutros
+     Neutros — re-templados a cálido (Manual de Marca Mayo 2026 V2.1)
   -------------------------------- */
   --color-neutral-white: #FFFFFF;
   --color-neutral-black: #000000;
-  --color-neutral-50:  #FAFAFA;
-  --color-neutral-100: #EEECED;
-  --color-neutral-200: #DCDADB;
-  --color-neutral-300: #C4C1C3;
-  --color-neutral-400: #A8A5AB;
-  --color-neutral-500: #898298;
-  --color-neutral-600: #6E6879;
-  --color-neutral-700: #544F5C;
-  --color-neutral-800: #3A3740;
-  --color-neutral-900: #252327;
+  --color-neutral-50:  #FBFAF7;
+  --color-neutral-100: #F4F1EC;
+  --color-neutral-200: #E8E2DC;
+  --color-neutral-300: #C9C3C6;
+  --color-neutral-400: #A9A3AF;
+  --color-neutral-500: #8A8499;
+  --color-neutral-600: #706B7E;
+  --color-neutral-700: #575164;
+  --color-neutral-800: #3D3849;
+  --color-neutral-900: #282430;
+  --color-neutral-line: #EDE8E1;
 
    /* --------------------------------
      Error — Rojo
@@ -101,10 +102,25 @@
   --color-warning-900: #804C00;
 
   /* --------------------------------
+     Copper — acento (Manual de Marca Mayo 2026 V2.1)
+     Uso: KPIs de alto peso. No tiene escala completa definida.
+  -------------------------------- */
+  --color-copper-500: #C97B4A;
+
+  /* --------------------------------
      Tipografía — Inter
      (Reemplaza Open Sans)
   -------------------------------- */
   --font-family-base: 'Inter', sans-serif;
+
+  /* --------------------------------
+     Tipografía — Display (Manual de Marca Mayo 2026 V2.1)
+     Uso puntual en headlines grandes (ej. login, hero de Inicio).
+     No reemplaza la escala de headings de componentes (h1-h6 siguen en Inter).
+     La página que la use debe cargar la fuente (Google Fonts: IBM+Plex+Sans).
+  -------------------------------- */
+  --font-family-display: 'IBM Plex Sans', var(--font-family-base);
+  --font-weight-display: 300;
 
   /* Headings */
   --font-size-h1: 2.25rem;     /* 36px */
