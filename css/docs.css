@@ -311,7 +311,7 @@ body {
 
 /* Bloque de código */
 .ds-code {
-  background-color: #F5F5F5;
+  background-color: var(--color-neutral-100);
   border: 1px solid #E8E3DA;
   border-top: none;
   border-radius: 0 0 8px 8px;
@@ -337,11 +337,12 @@ body {
   right: 12px;
   color: #898298;
   background: #ffffff;
-  border: 1px solid #E8E3DA;
+  border: none;
   border-radius: 4px;
   padding: 6px;
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  box-shadow: var(--shadow-low);
+  transition: color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,7 +352,11 @@ body {
 
 .ds-copy-btn:hover {
   color: #5B3DD3;
-  border-color: #5B3DD3;
+}
+
+.ds-copy-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.06);
 }
 
 /* --------------------------------
