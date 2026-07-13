@@ -23,13 +23,20 @@ function copyCode(btn) {
   });
 }
 
-// Mover el indicador deslizante al tab activo
-function moveTabIndicator(container, activeTab) {
+// Mover el indicador deslizante al tab activo.
+// skipTransition evita que el posicionamiento inicial (carga de página)
+// se anime desde 0 — la transición solo debe verse al cambiar de tab.
+function moveTabIndicator(container, activeTab, skipTransition) {
   const indicator = container.querySelector('.tabs__indicator');
   if (!indicator) return;
+  if (skipTransition) indicator.style.transition = 'none';
   indicator.style.width = activeTab.offsetWidth + 'px';
   indicator.style.height = activeTab.offsetHeight + 'px';
   indicator.style.transform = `translateX(${activeTab.offsetLeft}px)`;
+  if (skipTransition) {
+    indicator.offsetHeight; // fuerza reflow antes de restaurar la transición
+    indicator.style.transition = '';
+  }
 }
 
 // Activar tab en previews interactivos
@@ -288,7 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Inicializar indicadores deslizantes de tabs
   document.querySelectorAll('.tabs').forEach(container => {
     const activeTab = container.querySelector('.tab--active');
-    if (activeTab) moveTabIndicator(container, activeTab);
+    if (activeTab) moveTabIndicator(container, activeTab, true);
   });
 
   buildTOC();

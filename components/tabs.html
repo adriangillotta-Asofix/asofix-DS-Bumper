@@ -140,12 +140,19 @@
   &lt;button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)"&gt;Tab 2&lt;/button&gt;
   &lt;button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)"&gt;Tab 3&lt;/button&gt;
 &lt;/div&gt;</code></pre>
-          <pre class="ds-code__panel" data-tab="js"><code>function moveTabIndicator(container, activeTab) {
+          <pre class="ds-code__panel" data-tab="js"><code>// skipTransition evita que el posicionamiento inicial (carga de página)
+// se anime desde 0 — la transición solo debe verse al cambiar de tab.
+function moveTabIndicator(container, activeTab, skipTransition) {
   const indicator = container.querySelector('.tabs__indicator');
   if (!indicator) return;
+  if (skipTransition) indicator.style.transition = 'none';
   indicator.style.width  = activeTab.offsetWidth  + 'px';
   indicator.style.height = activeTab.offsetHeight + 'px';
   indicator.style.transform = `translateX(${activeTab.offsetLeft}px)`;
+  if (skipTransition) {
+    indicator.offsetHeight; // fuerza reflow antes de restaurar la transición
+    indicator.style.transition = '';
+  }
 }
 
 function activateTab(el) {
@@ -159,11 +166,11 @@ function activateTab(el) {
   moveTabIndicator(container, el);
 }
 
-// Inicializar el indicador al cargar
+// Inicializar el indicador al cargar, sin animarlo
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.tabs').forEach(container => {
     const active = container.querySelector('.tab--active');
-    if (active) moveTabIndicator(container, active);
+    if (active) moveTabIndicator(container, active, true);
   });
 });</code></pre>
         </div>
