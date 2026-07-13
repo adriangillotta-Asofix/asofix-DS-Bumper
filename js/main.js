@@ -114,11 +114,10 @@ function buildTOC() {
   const list = document.createElement('ul');
   list.className = 'ds-toc__list';
 
-  // Pre-group sections preserving intra-group DOM order.
-  // Los nombres de grupo se descubren dinámicamente (orden de primera
-  // aparición en la página), no están hardcodeados a "Medium"/"Small".
-  const groupOrder = [];
+  // Pre-group sections preserving intra-group DOM order
+  const groupOrder = ['Medium', 'Small'];
   const groups = {};
+  groupOrder.forEach(g => { groups[g] = []; });
   const standalone = [];
 
   sections.forEach(section => {
@@ -126,11 +125,7 @@ function buildTOC() {
     if (!heading) return;
     const grp = section.dataset.tocGroup;
     const label = section.dataset.tocLabel || heading.textContent;
-    if (grp) {
-      if (!groups[grp]) {
-        groups[grp] = [];
-        groupOrder.push(grp);
-      }
+    if (grp && groups[grp]) {
       groups[grp].push({ section, label });
     } else {
       standalone.push({ section, label });
