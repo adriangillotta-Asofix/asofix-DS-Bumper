@@ -35,7 +35,7 @@ body {
   top: 0;
   left: 0;
   overflow-y: auto;
-  background-color: #F5F5F5;
+  background: linear-gradient(180deg, var(--color-primary-800), var(--color-primary-900));
 }
 
 .ds-sidebar__brand {
@@ -49,14 +49,14 @@ body {
 .ds-sidebar__logo {
   font-size: 15px;
   font-weight: 600;
-  color: #1a1a1a;
+  color: #ffffff;
 }
 
 .ds-sidebar__version {
   font-size: 11px;
   font-weight: 500;
-  color: #ffffff;
-  background-color: #5B3DD3;
+  color: var(--color-primary-900);
+  background-color: var(--color-secondary-300);
   padding: 2px 7px;
   border-radius: 20px;
 }
@@ -73,7 +73,7 @@ body {
 .ds-nav__label {
   font-size: 10px;
   font-weight: 600;
-  color: #898298;
+  color: rgba(255, 255, 255, 0.45);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   padding: 16px 8px 6px;
@@ -91,20 +91,20 @@ body {
   padding: 6px 8px;
   font-size: 14px;
   font-weight: 600;
-  color: #3F3A4C;
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   border-radius: 6px;
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 .ds-nav__link:hover {
-  background-color: #EEECED;
-  color: #5B3DD3;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
 }
 
 .ds-nav__link.active {
-  background-color: #EEECED;
-  color: #5B3DD3;
+  background-color: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
   font-weight: 500;
 }
 
