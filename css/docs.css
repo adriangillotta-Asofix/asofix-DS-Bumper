@@ -364,31 +364,43 @@ body {
 -------------------------------- */
 .ds-color-scale {
   display: flex;
-  gap: 4px;
+  flex-wrap: wrap;
+  gap: 8px;
   width: 100%;
 }
 
 .ds-swatch {
   flex: 1;
-  height: 72px;
-  border-radius: 6px;
+  min-width: 84px;
+  background: #fff;
+  border: 1px solid #E8E3DA;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.ds-swatch__color {
+  height: 56px;
+}
+
+.ds-swatch__meta {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding: 6px 8px;
-  position: relative;
+  gap: 2px;
+  padding: 8px 10px 10px;
 }
 
 .ds-swatch__stop {
   font-size: 11px;
   font-weight: 600;
   line-height: 1.4;
+  color: #3F3A4C;
 }
 
 .ds-swatch__hex {
   font-size: 10px;
   font-weight: 400;
-  opacity: 0.85;
+  color: #898298;
+  font-family: 'Fira Code', 'Courier New', monospace;
 }
 
 /* --------------------------------
