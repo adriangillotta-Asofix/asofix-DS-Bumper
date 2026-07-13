@@ -369,6 +369,16 @@ body {
   width: 100%;
 }
 
+/* Fuerza dos filas parejas en escalas largas (10-11 pasos), en vez de
+   depender de cuánto entre en una sola fila. --scale-cols define cuántos
+   swatches por fila (5 para escalas de 10, 6 para Neutros con 11). */
+.ds-color-scale--grid {
+  display: grid;
+  grid-template-columns: repeat(var(--scale-cols, 5), 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
 .ds-swatch {
   flex: 1;
   min-width: 84px;
