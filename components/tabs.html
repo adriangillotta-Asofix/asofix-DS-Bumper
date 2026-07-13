@@ -86,7 +86,7 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
             <button class="ds-code__tab" onclick="switchTab(this, 'js')">JS</button>
           </div>
-          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.tabs {
   display: inline-flex;
   gap: 10px;
@@ -186,8 +186,55 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
           </div>
-          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.tab .material-icons-outlined {
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.tabs {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  background-color: var(--color-neutral-50);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: 8px;
+  padding: 4px;
+  position: relative;
+}
+
+.tabs__indicator {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  background-color: var(--color-neutral-white);
+  box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 0;
+  transition: transform 0.25s ease, width 0.25s ease;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 4px 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: transparent;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-subtitle-1);
+  font-weight: var(--font-weight-subtitle-1);
+  line-height: var(--line-height-subtitle-1);
+  letter-spacing: var(--letter-spacing-subtitle-1);
+  color: var(--color-neutral-400);
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+  transition: color 0.2s ease;
+}
+
+.tab--active { color: var(--color-primary-500); }
+
+.tab .material-icons-outlined {
   font-size: 20px;
   line-height: 1;
 }</code></pre>
