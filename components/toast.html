@@ -191,7 +191,37 @@
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
 
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-track"><code>/* Track time estático (posición fija, sin animación) */
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-track"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
+
+/* Variantes */
+.toast--success { background-color: var(--color-success-100); border-color: var(--color-success-400); }
+.toast--error   { background-color: var(--color-error-100);   border-color: var(--color-error-400); }
+.toast--info    { background-color: var(--color-info-100);    border-color: var(--color-info-400); }
+.toast--alert   { background-color: var(--color-warning-100); border-color: var(--color-warning-400); }
+
+/* Layout interno */
+.toast__content { display: flex; align-items: flex-start; gap: 8px; padding-bottom: 8px; width: 100%; }
+.toast__icon { display: flex; align-items: flex-start; flex-shrink: 0; }
+.toast__icon .material-icons-outlined { font-size: 16px; line-height: 1; }
+.toast__body { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.toast__title { font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); display: block; }
+.toast__desc  { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); display: block; }
+.toast__close { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: flex-start; flex-shrink: 0; }
+.toast__close .material-icons-outlined { font-size: 16px; line-height: 1; }
+
+/* Colores por variante */
+.toast--success .toast__icon, .toast--success .toast__title, .toast--success .toast__desc, .toast--success .toast__close { color: var(--color-success-700); }
+.toast--error   .toast__icon, .toast--error   .toast__title, .toast--error   .toast__desc, .toast--error   .toast__close { color: var(--color-error-700); }
+.toast--info    .toast__icon, .toast--info    .toast__title, .toast--info    .toast__desc, .toast--info    .toast__close { color: var(--color-info-700); }
+.toast--alert   .toast__icon, .toast--alert   .toast__title, .toast--alert   .toast__desc, .toast--alert   .toast__close { color: var(--color-warning-900); }
+
+/* Animaciones de entrada (desde la derecha) y salida (hacia la derecha) */
+.toast--in  { animation: toast-in  0.25s ease forwards; }
+.toast--out { animation: toast-out 0.25s ease forwards; }
+@keyframes toast-in  { from { opacity: 0; transform: translateX(calc(100% + 24px)); } to { opacity: 1; transform: translateX(0); } }
+@keyframes toast-out { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(calc(100% + 24px)); } }
+
+/* Track time estático (posición fija, sin animación) */
 .toast__track { position: absolute; bottom: 0; left: 0; height: 5px; border-radius: 0 0 0 4px; width: 75%; }
 .toast--success .toast__track { background-color: var(--color-success-500); }
 .toast--error   .toast__track { background-color: var(--color-error-500); }
@@ -286,7 +316,7 @@ function dismissToast(toast) {
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
 
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-notrack"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: 8px; overflow: hidden; box-shadow: 0px 4px 12px -2px rgba(0,0,0,0.12); box-sizing: border-box; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-notrack"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
 
 /* Variantes */
 .toast--success { background-color: var(--color-success-100); border-color: var(--color-success-400); }
