@@ -38,6 +38,14 @@ body {
   background: linear-gradient(180deg, var(--color-primary-800), var(--color-primary-900));
 }
 
+.ds-sidebar__logo-img {
+  display: block;
+  height: 24px;
+  width: auto;
+  margin: 4px 0 20px;
+  padding: 0 8px;
+}
+
 .ds-sidebar__brand {
   display: flex;
   align-items: center;
