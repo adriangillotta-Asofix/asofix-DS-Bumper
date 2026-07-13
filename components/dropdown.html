@@ -556,13 +556,18 @@ document.addEventListener('click', e => {
 .dropdown-item--disabled .dropdown-item__content { color: var(--color-neutral-400); }
 .dropdown-item__title    { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
 
+/* Pill anidado (base + tamaño sm + color default — ver componente Pill para el resto de colores) */
+.pill { display: inline-flex; align-items: center; gap: 8px; border-radius: var(--radius-full); border: 1px solid transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); white-space: nowrap; cursor: pointer; transition: background-color 0.15s ease, border-color 0.15s ease; }
+.pill--sm { padding: 4px 8px; }
+.pill--default { background-color: var(--color-neutral-100); border-color: var(--color-neutral-200); color: var(--color-neutral-700); }
+
 /* Pill en ítem deshabilitado */
 .dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-neutral-200); color: var(--color-neutral-400); }</code></pre>
               <pre class="ds-code__panel" data-tab="html-lo-pill"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
   &lt;div class="dropdown-item__content"&gt;
     &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
   &lt;/div&gt;
-  &lt;!-- Podés usar cualquier color de pill del DS --&gt;
+  &lt;!-- Podés usar cualquier color de pill del DS, ver componente Pill --&gt;
   &lt;span class="pill pill--sm pill--default"&gt;Activo&lt;/span&gt;
 &lt;/button&gt;</code></pre>
             </div>
@@ -736,6 +741,11 @@ document.addEventListener('click', e => {
 .dropdown-item__content  { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
 .dropdown-item--disabled .dropdown-item__content { color: var(--color-neutral-400); }
 .dropdown-item__title    { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
+
+/* Pill anidado (base + tamaño sm + color default — ver componente Pill para el resto de colores) */
+.pill { display: inline-flex; align-items: center; gap: 8px; border-radius: var(--radius-full); border: 1px solid transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); white-space: nowrap; cursor: pointer; transition: background-color 0.15s ease, border-color 0.15s ease; }
+.pill--sm { padding: 4px 8px; }
+.pill--default { background-color: var(--color-neutral-100); border-color: var(--color-neutral-200); color: var(--color-neutral-700); }
 
 /* Pill en ítem deshabilitado */
 .dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-neutral-200); color: var(--color-neutral-400); }</code></pre>

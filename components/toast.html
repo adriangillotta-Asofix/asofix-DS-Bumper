@@ -169,7 +169,7 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
 
 /* Variantes */
 .toast--success { background-color: var(--color-success-100); border-color: var(--color-success-400); }
@@ -194,7 +194,7 @@
 .toast--alert   .toast__icon, .toast--alert   .toast__title, .toast--alert   .toast__desc, .toast--alert   .toast__close { color: var(--color-warning-900); }
 
 /* Track time */
-.toast__track { position: absolute; bottom: 0; left: 0; height: 5px; border-radius: 0 0 0 4px; width: 75%; }
+.toast__track { position: absolute; bottom: 0; left: 0; height: 5px; border-radius: 0 0 0 var(--radius-xs); width: 75%; }
 .toast--success .toast__track { background-color: var(--color-success-500); }
 .toast--error   .toast__track { background-color: var(--color-error-500); }
 .toast--info    .toast__track { background-color: var(--color-info-500); }
@@ -243,7 +243,7 @@
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
 
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-track"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-track"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
 
 /* Variantes */
 .toast--success { background-color: var(--color-success-100); border-color: var(--color-success-400); }
@@ -274,7 +274,7 @@
 @keyframes toast-out { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(calc(100% + 24px)); } }
 
 /* Track time estático (posición fija, sin animación) */
-.toast__track { position: absolute; bottom: 0; left: 0; height: 5px; border-radius: 0 0 0 4px; width: 75%; }
+.toast__track { position: absolute; bottom: 0; left: 0; height: 5px; border-radius: 0 0 0 var(--radius-xs); width: 75%; }
 .toast--success .toast__track { background-color: var(--color-success-500); }
 .toast--error   .toast__track { background-color: var(--color-error-500); }
 .toast--info    .toast__track { background-color: var(--color-info-500); }
@@ -368,7 +368,7 @@ function dismissToast(toast) {
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
 
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-notrack"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css-notrack"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
 
 /* Variantes */
 .toast--success { background-color: var(--color-success-100); border-color: var(--color-success-400); }

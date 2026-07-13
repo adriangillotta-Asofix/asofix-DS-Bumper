@@ -130,7 +130,7 @@
   position: absolute;
   inset: 0;
   background-color: var(--color-neutral-400);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   transition: background-color 0.2s ease;
 }
 
@@ -144,6 +144,30 @@
   border-radius: 50%;
   transition: transform 0.2s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.switch:hover .switch__track {
+  background-color: var(--color-neutral-500);
+}
+
+.switch__input:focus-visible ~ .switch__track,
+.switch--focus .switch__track {
+  outline: 3px solid var(--color-primary-100);
+  outline-offset: 2px;
+}
+
+.switch--disabled {
+  cursor: not-allowed;
+  opacity: 1;
+  pointer-events: none;
+}
+
+.switch--disabled .switch__track {
+  background-color: var(--color-neutral-200);
+}
+
+.switch--disabled .switch__thumb {
+  background-color: var(--color-neutral-50);
 }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;label class="switch"&gt;
   &lt;input class="switch__input" type="checkbox" /&gt;
@@ -205,7 +229,7 @@
   position: absolute;
   inset: 0;
   background-color: var(--color-neutral-400);
-  border-radius: 999px;
+  border-radius: var(--radius-full);
   transition: background-color 0.2s ease;
 }
 

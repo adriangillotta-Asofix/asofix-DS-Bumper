@@ -94,7 +94,7 @@
   align-items: center;
   background-color: var(--color-neutral-50);
   border: 1px solid var(--color-neutral-200);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   padding: 4px;
   position: relative;
 }
@@ -105,7 +105,7 @@
   left: 0;
   background-color: var(--color-neutral-white);
   box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   pointer-events: none;
   z-index: 0;
   transition: transform 0.25s ease, width 0.25s ease;
@@ -117,7 +117,7 @@
   justify-content: center;
   gap: 8px;
   padding: 4px 16px;
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   border: none;
   background-color: transparent;
   font-family: var(--font-family-base);
@@ -193,6 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="ds-code__tabs">
             <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'js')">JS</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.tabs {
@@ -201,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
   align-items: center;
   background-color: var(--color-neutral-50);
   border: 1px solid var(--color-neutral-200);
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   padding: 4px;
   position: relative;
 }
@@ -212,7 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
   left: 0;
   background-color: var(--color-neutral-white);
   box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.08);
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   pointer-events: none;
   z-index: 0;
   transition: transform 0.25s ease, width 0.25s ease;
@@ -224,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
   justify-content: center;
   gap: 8px;
   padding: 4px 16px;
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   border: none;
   background-color: transparent;
   font-family: var(--font-family-base);
@@ -254,15 +255,48 @@ document.addEventListener('DOMContentLoaded', () => {
           <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Agregar o quitar &lt;button class="tab"&gt; según las opciones necesarias --&gt;
 &lt;div class="tabs" role="tablist"&gt;
   &lt;div class="tabs__indicator"&gt;&lt;/div&gt;
-  &lt;button class="tab tab--active" role="tab" aria-selected="true"&gt;
+  &lt;button class="tab tab--active" role="tab" aria-selected="true" onclick="activateTab(this)"&gt;
     &lt;span class="material-icons-outlined"&gt;home&lt;/span&gt;
     Tab 1
   &lt;/button&gt;
-  &lt;button class="tab" role="tab" aria-selected="false"&gt;
+  &lt;button class="tab" role="tab" aria-selected="false" onclick="activateTab(this)"&gt;
     &lt;span class="material-icons-outlined"&gt;bar_chart&lt;/span&gt;
     Tab 2
   &lt;/button&gt;
 &lt;/div&gt;</code></pre>
+          <pre class="ds-code__panel" data-tab="js"><code>// skipTransition evita que el posicionamiento inicial (carga de página)
+// se anime desde 0 — la transición solo debe verse al cambiar de tab.
+function moveTabIndicator(container, activeTab, skipTransition) {
+  const indicator = container.querySelector('.tabs__indicator');
+  if (!indicator) return;
+  if (skipTransition) indicator.style.transition = 'none';
+  indicator.style.width  = activeTab.offsetWidth  + 'px';
+  indicator.style.height = activeTab.offsetHeight + 'px';
+  indicator.style.transform = `translateX(${activeTab.offsetLeft}px)`;
+  if (skipTransition) {
+    indicator.offsetHeight; // fuerza reflow antes de restaurar la transición
+    indicator.style.transition = '';
+  }
+}
+
+function activateTab(el) {
+  const container = el.closest('.tabs');
+  container.querySelectorAll('.tab').forEach(t => {
+    t.classList.remove('tab--active');
+    t.setAttribute('aria-selected', 'false');
+  });
+  el.classList.add('tab--active');
+  el.setAttribute('aria-selected', 'true');
+  moveTabIndicator(container, el);
+}
+
+// Inicializar el indicador al cargar, sin animarlo
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.tabs').forEach(container => {
+    const active = container.querySelector('.tab--active');
+    if (active) moveTabIndicator(container, active, true);
+  });
+});</code></pre>
         </div>
       </div>
 
