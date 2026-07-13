@@ -141,7 +141,23 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--rojo { background-color: var(--color-error-50); border-color: var(--color-error-200); color: var(--color-error-800); }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.pill .material-icons-outlined { font-size: 16px; line-height: 1; }
+
+.pill--rojo { background-color: var(--color-error-50); border-color: var(--color-error-200); color: var(--color-error-800); }
 .pill--rojo:hover  { background-color: var(--color-error-100); }
 .pill--rojo:active { background-color: var(--color-error-200); }
 .pill--rojo:focus-visible { background-color: var(--color-error-100); border-width: 2px; border-color: var(--color-error-600); outline: none; }
@@ -176,7 +192,23 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--verde { background-color: var(--color-success-50); border-color: var(--color-success-200); color: var(--color-success-800); }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.pill .material-icons-outlined { font-size: 16px; line-height: 1; }
+
+.pill--verde { background-color: var(--color-success-50); border-color: var(--color-success-200); color: var(--color-success-800); }
 .pill--verde:hover  { background-color: var(--color-success-100); }
 .pill--verde:active { background-color: var(--color-success-200); }
 .pill--verde:focus-visible { background-color: var(--color-success-100); border-width: 2px; border-color: var(--color-success-600); outline: none; }
@@ -211,7 +243,23 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--amarillo { background-color: var(--color-warning-50); border-color: var(--color-warning-300); color: var(--color-warning-900); }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.pill .material-icons-outlined { font-size: 16px; line-height: 1; }
+
+.pill--amarillo { background-color: var(--color-warning-50); border-color: var(--color-warning-300); color: var(--color-warning-900); }
 .pill--amarillo:hover  { background-color: var(--color-warning-100); }
 .pill--amarillo:active { background-color: var(--color-warning-200); }
 .pill--amarillo:focus-visible { background-color: var(--color-warning-100); border-width: 2px; border-color: var(--color-warning-700); outline: none; }
@@ -246,7 +294,23 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--celeste { background-color: var(--color-info-50); border-color: var(--color-info-200); color: var(--color-info-800); }
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+.pill .material-icons-outlined { font-size: 16px; line-height: 1; }
+
+.pill--celeste { background-color: var(--color-info-50); border-color: var(--color-info-200); color: var(--color-info-800); }
 .pill--celeste:hover  { background-color: var(--color-info-100); }
 .pill--celeste:active { background-color: var(--color-info-200); }
 .pill--celeste:focus-visible { background-color: var(--color-info-100); border-width: 2px; border-color: var(--color-info-600); outline: none; }
