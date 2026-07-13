@@ -384,7 +384,7 @@
       </ul>
       <p class="ds-nav__label">Adoption</p>
       <ul class="ds-nav__list">
-        <li><a href="adoption.html" class="ds-nav__link ds-nav__link--active">Adoption Dashboard</a></li>
+        <li><a href="adoption.html" class="ds-nav__link active">Adoption Dashboard</a></li>
       </ul>
     </nav>
   </aside>
@@ -401,6 +401,7 @@
       <div class="tabs" role="tablist" style="margin-bottom:32px;">
         <div class="tabs__indicator"></div>
         <button class="tab tab--active" role="tab" aria-selected="true" onclick="switchAdpTab(this,'panel-migracion')">Migración</button>
+        <button class="tab" role="tab" aria-selected="false" onclick="switchAdpTab(this,'panel-componentes')">Por componente</button>
         <button class="tab" role="tab" aria-selected="false" onclick="switchAdpTab(this,'panel-roadmap')">Roadmap DS V2</button>
       </div>
 
@@ -425,6 +426,19 @@
         </div>
         <div class="adp-modules" id="modules-container"></div>
         <p class="adp-meta" id="adp-meta"></p>
+      </div>
+
+      <!-- Panel: Por componente -->
+      <div id="panel-componentes" hidden>
+        <p class="ds-page-header__desc" style="margin-bottom:32px;">Mismos datos de migración, agrupados por componente en vez de por módulo — para ir uno por uno y reemplazar todas sus apariciones en el producto.</p>
+        <div class="adp-kpi-row" id="comp-kpi-row"></div>
+        <div class="adp-legend">
+          <span class="adp-legend__title">Estado:</span>
+          <div class="adp-legend__item"><span class="dot dot--migrated"></span>Migrado</div>
+          <div class="adp-legend__item"><span class="dot dot--inprogress"></span>En progreso</div>
+          <div class="adp-legend__item"><span class="dot dot--pending"></span>Pendiente</div>
+        </div>
+        <div class="adp-modules" id="components-container"></div>
       </div>
 
       <!-- Panel: Roadmap DS V2 -->
@@ -621,8 +635,8 @@
     };
   }
 
-  function renderKPIs(totals) {
-    document.getElementById('kpi-row').innerHTML = [
+  function renderKPIs(totals, targetId) {
+    document.getElementById(targetId || 'kpi-row').innerHTML = [
       { label: 'Total de componentes', value: totals.total,      dot: null },
       { label: 'Migradas',             value: totals.migrated,   dot: 'migrated' },
       { label: 'En progreso',          value: totals.inprogress, dot: 'inprogress' },
@@ -773,8 +787,83 @@
 
   function switchAdpTab(el, panelId) {
     activateTab(el);
-    document.querySelectorAll('#panel-migracion, #panel-roadmap').forEach(p => p.hidden = true);
+    document.querySelectorAll('#panel-migracion, #panel-componentes, #panel-roadmap').forEach(p => p.hidden = true);
     document.getElementById(panelId).hidden = false;
+  }
+
+  // ================================================================
+  // Por componente — mismos datos de ADOPTION_DATA, agrupados por
+  // nombre de componente en vez de por módulo/sección.
+  // ================================================================
+
+  function buildComponentGroups() {
+    const map = new Map();
+    ADOPTION_DATA.modules.forEach(module => {
+      module.sections.forEach(section => {
+        section.components.forEach(c => {
+          if (!map.has(c.name)) map.set(c.name, []);
+          map.get(c.name).push({
+            moduleName:  module.name,
+            sectionName: section.name,
+            desktop: c.desktop,
+            mobile:  c.mobile,
+            note:    c.note,
+          });
+        });
+      });
+    });
+    return [...map.entries()]
+      .map(([name, usages]) => ({ name, usages }))
+      .sort((a, b) => a.name.localeCompare(b.name, 'es'));
+  }
+
+  function countUsages(usages) {
+    const statuses = usages.flatMap(u => [u.desktop, u.mobile]).filter(s => s && s !== 'na');
+    return {
+      total:      statuses.length,
+      migrated:   statuses.filter(s => s === 'migrated').length,
+      inprogress: statuses.filter(s => s === 'in-progress').length,
+      pending:    statuses.filter(s => s === 'pending').length,
+    };
+  }
+
+  function renderComponentUsageRow(u) {
+    return `
+      <div class="adp-row-wrapper">
+        <div class="adp-row">
+          <span class="adp-row__name">${u.moduleName} › ${u.sectionName}</span>
+        </div>
+        ${platformBadge('D', u.desktop)}
+        ${platformBadge('M', u.mobile)}
+        <span class="adp-row__note">Nota: ${u.note || '—'}</span>
+      </div>`;
+  }
+
+  function renderComponentGroup(group, idx) {
+    const c = countUsages(group.usages);
+    const p = pct(c.migrated, c.total);
+    const id = `adp-comp-${idx}`;
+    return `
+      <div class="adp-module" id="${id}">
+        <div class="adp-module__header" onclick="toggleModule('${id}')">
+          <span class="adp-module__name">${group.name}</span>
+          <div class="adp-module__counts">
+            <span class="adp-module__count"><span class="dot dot--migrated"></span>${c.migrated}</span>
+            <span class="adp-module__count"><span class="dot dot--inprogress"></span>${c.inprogress}</span>
+            <span class="adp-module__count"><span class="dot dot--pending"></span>${c.pending}</span>
+          </div>
+          <div class="adp-module__bar">
+            <div class="adp-bar" style="height:6px;">
+              <div class="adp-bar__fill" style="width:${p}%;"></div>
+            </div>
+          </div>
+          <span class="adp-module__pct">${p}%</span>
+          <span class="adp-module__toggle material-icons-outlined">expand_more</span>
+        </div>
+        <div class="adp-module__body">
+          <div class="adp-component-list">${group.usages.map(renderComponentUsageRow).join('')}</div>
+        </div>
+      </div>`;
   }
 
   // ---- Init ----
@@ -804,6 +893,15 @@
     const { version, lastUpdated } = ADOPTION_DATA;
     document.getElementById('adp-meta').textContent =
       `Migración ${version.from} → ${version.to} · Actualizado: ${lastUpdated}`;
+
+    // ---- Por componente init ----
+    const componentGroups = buildComponentGroups();
+    renderKPIs(totals, 'comp-kpi-row');
+    document.getElementById('components-container').innerHTML =
+      componentGroups.map(renderComponentGroup).join('');
+
+    const firstComp = document.querySelector('#components-container .adp-module');
+    if (firstComp) firstComp.classList.add('is-open');
 
     // ---- DS2 init ----
     const allDS2 = DS2_DATA.categories.flatMap(c => c.components);
