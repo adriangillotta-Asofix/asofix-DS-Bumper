@@ -89,8 +89,10 @@ body {
 .ds-nav__link {
   display: block;
   padding: 6px 8px;
-  font-size: 14px;
-  font-weight: 600;
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
   color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   border-radius: 6px;
@@ -105,7 +107,7 @@ body {
 .ds-nav__link.active {
   background-color: rgba(255, 255, 255, 0.12);
   color: #ffffff;
-  font-weight: 500;
+  font-weight: var(--font-weight-caption-emphasized);
 }
 
 /* --------------------------------
