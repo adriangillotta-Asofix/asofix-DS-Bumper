@@ -162,6 +162,57 @@
           </div>
 
         </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
+          </div>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
+
+/* Variantes */
+.toast--success { background-color: var(--color-success-100); border-color: var(--color-success-400); }
+.toast--error   { background-color: var(--color-error-100);   border-color: var(--color-error-400); }
+.toast--info    { background-color: var(--color-info-100);    border-color: var(--color-info-400); }
+.toast--alert   { background-color: var(--color-warning-100); border-color: var(--color-warning-400); }
+
+/* Layout interno */
+.toast__content { display: flex; align-items: flex-start; gap: 8px; padding-bottom: 8px; width: 100%; }
+.toast__icon { display: flex; align-items: flex-start; flex-shrink: 0; }
+.toast__icon .material-icons-outlined { font-size: 16px; line-height: 1; }
+.toast__body { display: flex; flex-direction: column; gap: 4px; flex: 1; min-width: 0; }
+.toast__title { font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); display: block; }
+.toast__desc  { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); display: block; }
+.toast__close { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: flex-start; flex-shrink: 0; }
+.toast__close .material-icons-outlined { font-size: 16px; line-height: 1; }
+
+/* Colores por variante */
+.toast--success .toast__icon, .toast--success .toast__title, .toast--success .toast__desc, .toast--success .toast__close { color: var(--color-success-700); }
+.toast--error   .toast__icon, .toast--error   .toast__title, .toast--error   .toast__desc, .toast--error   .toast__close { color: var(--color-error-700); }
+.toast--info    .toast__icon, .toast--info    .toast__title, .toast--info    .toast__desc, .toast--info    .toast__close { color: var(--color-info-700); }
+.toast--alert   .toast__icon, .toast--alert   .toast__title, .toast--alert   .toast__desc, .toast--alert   .toast__close { color: var(--color-warning-900); }
+
+/* Track time */
+.toast__track { position: absolute; bottom: 0; left: 0; height: 5px; border-radius: 0 0 0 4px; width: 75%; }
+.toast--success .toast__track { background-color: var(--color-success-500); }
+.toast--error   .toast__track { background-color: var(--color-error-500); }
+.toast--info    .toast__track { background-color: var(--color-info-500); }
+.toast--alert   .toast__track { background-color: var(--color-warning-500); }</code></pre>
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="toast toast--success"&gt;
+  &lt;div class="toast__content"&gt;
+    &lt;span class="toast__icon"&gt;&lt;span class="material-icons-outlined"&gt;check_circle&lt;/span&gt;&lt;/span&gt;
+    &lt;div class="toast__body"&gt;
+      &lt;span class="toast__title"&gt;Cambios guardados&lt;/span&gt;
+      &lt;span class="toast__desc"&gt;La información se actualizó correctamente.&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;button class="toast__close"&gt;&lt;span class="material-icons-outlined"&gt;close&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="toast__track"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Cambiar toast--success por toast--error / toast--info / toast--alert
+     y el ícono correspondiente para las otras variantes --&gt;</code></pre>
+        </div>
       </div>
 
       <!-- ESTADOS -->
