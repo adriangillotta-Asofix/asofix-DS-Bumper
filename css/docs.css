@@ -57,7 +57,7 @@ body {
 .ds-sidebar__logo {
   font-size: 15px;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--color-neutral-white);
 }
 
 .ds-sidebar__version {
@@ -109,12 +109,12 @@ body {
 
 .ds-nav__link:hover {
   background-color: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
+  color: var(--color-neutral-white);
 }
 
 .ds-nav__link.active {
   background-color: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
+  color: var(--color-neutral-white);
   font-weight: var(--font-weight-caption-emphasized);
 }
 
@@ -132,8 +132,8 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: #ffffff;
-  border-radius: 12px;
+  background-color: var(--color-neutral-white);
+  border-radius: var(--radius-md);
   scrollbar-width: none;
   scroll-behavior: smooth;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
@@ -169,7 +169,7 @@ body {
 .ds-hero__subtitle {
   font-size: 15px;
   font-weight: 400;
-  color: #898298;
+  color: var(--color-neutral-500);
   line-height: 1.6;
   max-width: 520px;
 }
@@ -189,14 +189,14 @@ body {
   gap: 10px;
   padding: 20px;
   border: 1px solid #E8E3DA;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   text-decoration: none;
   color: inherit;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .ds-card:hover {
-  border-color: #5B3DD3;
+  border-color: var(--color-primary-500);
   box-shadow: 0 2px 8px rgba(91, 61, 211, 0.08);
 }
 
@@ -213,7 +213,7 @@ body {
 .ds-card__desc {
   font-size: 13px;
   font-weight: 400;
-  color: #898298;
+  color: var(--color-neutral-500);
   line-height: 1.5;
 }
 
@@ -236,7 +236,7 @@ body {
 
 .ds-page-header__desc {
   font-size: 14px;
-  color: #898298;
+  color: var(--color-neutral-500);
   line-height: 1.6;
 }
 
@@ -269,7 +269,7 @@ body {
 .ds-section__subtitle {
   font-size: 12px;
   font-weight: 400;
-  color: #898298;
+  color: var(--color-neutral-500);
   margin: 0 0 16px 0;
 }
 
@@ -290,9 +290,9 @@ body {
 /* Preview container — aísla los componentes Asofix */
 .ds-preview {
   border: 1px solid #E8E3DA;
-  border-radius: 8px 8px 0 0;
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
   padding: 80px 16px;
-  background-color: #ffffff;
+  background-color: var(--color-neutral-white);
   display: flex;
   flex-wrap: nowrap;
   gap: 12px;
@@ -307,7 +307,7 @@ body {
 }
 
 .ds-preview--interactive {
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
 }
 
 /* Gap entre dos previews consecutivos (ej. preview interactivo + estados) */
@@ -324,7 +324,7 @@ body {
   background-color: var(--color-neutral-50);
   border: 1px solid #E8E3DA;
   border-top: none;
-  border-radius: 0 0 8px 8px;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
   padding: 20px 24px;
   overflow: hidden;
   position: relative;
@@ -345,10 +345,10 @@ body {
   position: absolute;
   top: 12px;
   right: 12px;
-  color: #898298;
-  background: #ffffff;
+  color: var(--color-neutral-500);
+  background: var(--color-neutral-white);
   border: none;
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   padding: 6px;
   cursor: pointer;
   box-shadow: var(--shadow-low);
@@ -361,7 +361,7 @@ body {
 }
 
 .ds-copy-btn:hover {
-  color: #5B3DD3;
+  color: var(--color-primary-500);
 }
 
 .ds-copy-btn:active {
@@ -382,7 +382,7 @@ body {
 .ds-swatch {
   flex: 1;
   min-width: 84px;
-  background: #fff;
+  background: var(--color-neutral-white);
   border: 1px solid #E8E3DA;
   border-radius: 10px;
   overflow: hidden;
@@ -409,7 +409,7 @@ body {
 .ds-swatch__hex {
   font-size: 10px;
   font-weight: 400;
-  color: #898298;
+  color: var(--color-neutral-500);
   font-family: 'Fira Code', 'Courier New', monospace;
 }
 
@@ -447,14 +447,14 @@ body {
 .ds-type-meta__token {
   font-size: 12px;
   font-weight: 600;
-  color: #5B3DD3;
+  color: var(--color-primary-500);
   font-family: 'Fira Code', 'Courier New', monospace;
 }
 
 .ds-type-meta__value {
   font-size: 12px;
   font-weight: 400;
-  color: #898298;
+  color: var(--color-neutral-500);
 }
 
 .ds-type-meta__usage {
@@ -479,10 +479,10 @@ body {
 
 .ds-type-body { font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: #3F3A4C; }
 .ds-type-body-em { font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: #3F3A4C; }
-.ds-type-body-strike { font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: #898298; text-decoration: line-through; }
+.ds-type-body-strike { font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: var(--color-neutral-500); text-decoration: line-through; }
 
-.ds-type-caption { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: #898298; }
-.ds-type-caption-em { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption-emphasized); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: #898298; }
+.ds-type-caption { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.ds-type-caption-em { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption-emphasized); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
 
 .ds-type-button-1 { font-size: var(--font-size-button-1); font-weight: var(--font-weight-button); line-height: var(--line-height-button-1); letter-spacing: var(--letter-spacing-button-1); color: var(--color-button-text); }
 .ds-type-button-1-underline { font-size: var(--font-size-button-1); font-weight: var(--font-weight-button); line-height: var(--line-height-button-1); letter-spacing: var(--letter-spacing-button-1); color: var(--color-button-text); text-decoration: underline; }
@@ -532,7 +532,7 @@ body {
 
 .ds-code--standalone {
   border-top: 1px solid #E8E3DA;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
 }
 
 .ds-code__tabs {
@@ -547,7 +547,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-size: 12px;
   font-weight: 600;
-  color: #898298;
+  color: var(--color-neutral-500);
   background: none;
   border: none;
   border-bottom: 2px solid transparent;
@@ -557,11 +557,11 @@ body {
   margin-bottom: -1px;
 }
 
-.ds-code__tab:hover { color: #3a3740; }
+.ds-code__tab:hover { color: var(--color-neutral-800); }
 
 .ds-code__tab--active {
-  color: #5B3DD3;
-  border-bottom-color: #5B3DD3;
+  color: var(--color-primary-500);
+  border-bottom-color: var(--color-primary-500);
 }
 
 .ds-code__panel { display: none; margin: 0; }
@@ -661,7 +661,7 @@ body {
   color: var(--color-neutral-500);
   background: var(--color-neutral-100);
   padding: 2px 7px;
-  border-radius: 999px;
+  border-radius: var(--radius-full);
 }
 
 /* --------------------------------
@@ -681,7 +681,7 @@ body {
 .ds-toc__title {
   font-size: 11px;
   font-weight: 600;
-  color: #898298;
+  color: var(--color-neutral-500);
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 12px;
@@ -698,21 +698,21 @@ body {
   display: block;
   font-size: 13px;
   font-weight: 400;
-  color: #6E6879;
+  color: var(--color-neutral-600);
   text-decoration: none;
   padding: 4px 8px;
-  border-radius: 4px;
+  border-radius: var(--radius-xs);
   border-left: 2px solid transparent;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .ds-toc__link:hover {
-  color: #5B3DD3;
+  color: var(--color-primary-500);
 }
 
 .ds-toc__link.active {
   background-color: #F5F1FC;
-  color: #5B3DD3;
+  color: var(--color-primary-500);
   font-weight: 500;
 }
 
