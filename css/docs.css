@@ -321,7 +321,7 @@ body {
 
 /* Bloque de código */
 .ds-code {
-  background-color: var(--color-paper-50);
+  background-color: var(--color-paper-100);
   border: 1px solid #E8E3DA;
   border-top: none;
   border-radius: 0 0 var(--radius-sm) var(--radius-sm);
