@@ -782,6 +782,194 @@
         </div>
       </div>
 
+      <!-- TOKENS -->
+      <div class="ds-section ds-section--color">
+        <div class="ds-section__heading">
+          <h2 class="ds-section__title">Tokens</h2>
+          <p class="ds-section__subtitle">Export completo — CSS custom properties o JSON (W3C Design Tokens)</p>
+        </div>
+        <div class="ds-code ds-code--tabbed">
+          <div class="ds-code__tabs">
+            <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
+            <button class="ds-code__tab" onclick="switchTab(this, 'json')">JSON</button>
+          </div>
+          <button class="ds-copy-btn ds-download-btn" onclick="downloadCode(this)" title="Descargar archivo"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></button>
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>--color-primary-50:  #F5F1FC;
+--color-primary-100: #DDD4F5;
+--color-primary-200: #C4B5EE;
+--color-primary-300: #A48FE4;
+--color-primary-400: #7F64DB;
+--color-primary-500: #5B3DD3;
+--color-primary-600: #4D33B4;
+--color-primary-700: #3E2990;
+--color-primary-800: #2E1B6E;
+--color-primary-900: #1A0F4A;
+
+--color-secondary-50:  #E3F8EF;
+--color-secondary-100: #AEECD6;
+--color-secondary-200: #79E0BC;
+--color-secondary-300: #3FE3B5;
+--color-secondary-400: #29C99C;
+--color-secondary-500: #18B086;
+--color-secondary-600: #0E9970;
+
+--color-paper-50:  #FBFAF7;
+--color-paper-100: #F4F1EC;
+--color-paper-200: #E8E2DC;
+
+--color-neutral-50:  #F7F7FA;
+--color-neutral-100: #EDEFF4;
+--color-neutral-200: #D4D4DD;
+--color-neutral-300: #BBB9C6;
+--color-neutral-400: #A29DAF;
+--color-neutral-500: #898298;
+--color-neutral-600: #706A7F;
+--color-neutral-700: #585265;
+--color-neutral-800: #3F3A4C;
+--color-neutral-900: #161628;
+--color-neutral-line: #EDE8E1;
+
+--color-surface-dark: #0E073D;
+
+--color-error-50:  #FFF5F5;
+--color-error-100: #FFE6E6;
+--color-error-200: #FFC2C2;
+--color-error-300: #FF8F8F;
+--color-error-400: #FF4D4D;
+--color-error-500: #E01B1B;
+--color-error-600: #C02020;
+--color-error-700: #911818;
+--color-error-800: #611010;
+--color-error-900: #3D0A0A;
+
+--color-success-50:  #F6FEF6;
+--color-success-100: #ECF9EC;
+--color-success-200: #D1F2D1;
+--color-success-300: #A8E7A8;
+--color-success-400: #74D674;
+--color-success-500: #40C040;
+--color-success-600: #36A436;
+--color-success-700: #2C872C;
+--color-success-800: #216621;
+--color-success-900: #164416;
+
+--color-info-50:  #F5FDFF;
+--color-info-100: #EBFAFF;
+--color-info-200: #CCF1FF;
+--color-info-300: #99E3FF;
+--color-info-400: #66D1F5;
+--color-info-500: #40A0C0;
+--color-info-600: #3A91AD;
+--color-info-700: #368099;
+--color-info-800: #2B667A;
+--color-info-900: #1B404D;
+
+--color-warning-50:  #FFFCF2;
+--color-warning-100: #FFF8E6;
+--color-warning-200: #FFEDCC;
+--color-warning-300: #FFDB99;
+--color-warning-400: #FFCE66;
+--color-warning-500: #FFC020;
+--color-warning-600: #FFAD00;
+--color-warning-700: #FF9900;
+--color-warning-800: #CC7A00;
+--color-warning-900: #804C00;
+
+--color-copper-500: #C97B4A;
+
+--color-button-text: var(--color-primary-500);</code></pre>
+          <pre class="ds-code__panel" data-tab="json"><code>{
+  "color": {
+    "primary-50": { "value": "#F5F1FC", "type": "color" },
+    "primary-100": { "value": "#DDD4F5", "type": "color" },
+    "primary-200": { "value": "#C4B5EE", "type": "color" },
+    "primary-300": { "value": "#A48FE4", "type": "color" },
+    "primary-400": { "value": "#7F64DB", "type": "color" },
+    "primary-500": { "value": "#5B3DD3", "type": "color" },
+    "primary-600": { "value": "#4D33B4", "type": "color" },
+    "primary-700": { "value": "#3E2990", "type": "color" },
+    "primary-800": { "value": "#2E1B6E", "type": "color" },
+    "primary-900": { "value": "#1A0F4A", "type": "color" },
+
+    "secondary-50": { "value": "#E3F8EF", "type": "color" },
+    "secondary-100": { "value": "#AEECD6", "type": "color" },
+    "secondary-200": { "value": "#79E0BC", "type": "color" },
+    "secondary-300": { "value": "#3FE3B5", "type": "color" },
+    "secondary-400": { "value": "#29C99C", "type": "color" },
+    "secondary-500": { "value": "#18B086", "type": "color" },
+    "secondary-600": { "value": "#0E9970", "type": "color" },
+
+    "paper-50": { "value": "#FBFAF7", "type": "color" },
+    "paper-100": { "value": "#F4F1EC", "type": "color" },
+    "paper-200": { "value": "#E8E2DC", "type": "color" },
+
+    "neutral-50": { "value": "#F7F7FA", "type": "color" },
+    "neutral-100": { "value": "#EDEFF4", "type": "color" },
+    "neutral-200": { "value": "#D4D4DD", "type": "color" },
+    "neutral-300": { "value": "#BBB9C6", "type": "color" },
+    "neutral-400": { "value": "#A29DAF", "type": "color" },
+    "neutral-500": { "value": "#898298", "type": "color" },
+    "neutral-600": { "value": "#706A7F", "type": "color" },
+    "neutral-700": { "value": "#585265", "type": "color" },
+    "neutral-800": { "value": "#3F3A4C", "type": "color" },
+    "neutral-900": { "value": "#161628", "type": "color" },
+    "neutral-line": { "value": "#EDE8E1", "type": "color" },
+
+    "surface-dark": { "value": "#0E073D", "type": "color" },
+
+    "error-50": { "value": "#FFF5F5", "type": "color" },
+    "error-100": { "value": "#FFE6E6", "type": "color" },
+    "error-200": { "value": "#FFC2C2", "type": "color" },
+    "error-300": { "value": "#FF8F8F", "type": "color" },
+    "error-400": { "value": "#FF4D4D", "type": "color" },
+    "error-500": { "value": "#E01B1B", "type": "color" },
+    "error-600": { "value": "#C02020", "type": "color" },
+    "error-700": { "value": "#911818", "type": "color" },
+    "error-800": { "value": "#611010", "type": "color" },
+    "error-900": { "value": "#3D0A0A", "type": "color" },
+
+    "success-50": { "value": "#F6FEF6", "type": "color" },
+    "success-100": { "value": "#ECF9EC", "type": "color" },
+    "success-200": { "value": "#D1F2D1", "type": "color" },
+    "success-300": { "value": "#A8E7A8", "type": "color" },
+    "success-400": { "value": "#74D674", "type": "color" },
+    "success-500": { "value": "#40C040", "type": "color" },
+    "success-600": { "value": "#36A436", "type": "color" },
+    "success-700": { "value": "#2C872C", "type": "color" },
+    "success-800": { "value": "#216621", "type": "color" },
+    "success-900": { "value": "#164416", "type": "color" },
+
+    "info-50": { "value": "#F5FDFF", "type": "color" },
+    "info-100": { "value": "#EBFAFF", "type": "color" },
+    "info-200": { "value": "#CCF1FF", "type": "color" },
+    "info-300": { "value": "#99E3FF", "type": "color" },
+    "info-400": { "value": "#66D1F5", "type": "color" },
+    "info-500": { "value": "#40A0C0", "type": "color" },
+    "info-600": { "value": "#3A91AD", "type": "color" },
+    "info-700": { "value": "#368099", "type": "color" },
+    "info-800": { "value": "#2B667A", "type": "color" },
+    "info-900": { "value": "#1B404D", "type": "color" },
+
+    "warning-50": { "value": "#FFFCF2", "type": "color" },
+    "warning-100": { "value": "#FFF8E6", "type": "color" },
+    "warning-200": { "value": "#FFEDCC", "type": "color" },
+    "warning-300": { "value": "#FFDB99", "type": "color" },
+    "warning-400": { "value": "#FFCE66", "type": "color" },
+    "warning-500": { "value": "#FFC020", "type": "color" },
+    "warning-600": { "value": "#FFAD00", "type": "color" },
+    "warning-700": { "value": "#FF9900", "type": "color" },
+    "warning-800": { "value": "#CC7A00", "type": "color" },
+    "warning-900": { "value": "#804C00", "type": "color" },
+
+    "copper-500": { "value": "#C97B4A", "type": "color" },
+
+    "button-text": { "value": "{color.primary-500}", "type": "color" }
+  }
+}</code></pre>
+        </div>
+      </div>
+
       </div>
 
       <div data-page-panel="documentation" hidden>

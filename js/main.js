@@ -5,12 +5,20 @@
 // Íconos SVG
 const iconCopy = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>`;
 const iconCheck = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>`;
+const iconDownload = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>`;
+
+// Texto plano del panel de código activo (sin los numeros de linea)
+function getPanelCode(codeBlock) {
+  const activePanel = codeBlock.querySelector('.ds-code__panel--active') || codeBlock;
+  const texts = activePanel.querySelectorAll('.ds-code__text');
+  if (texts.length) return [...texts].map(el => el.innerText).join('\n');
+  return activePanel.querySelector('code')?.innerText || '';
+}
 
 // Copiar código del panel activo al portapapeles
 function copyCode(btn) {
   const codeBlock = btn.closest('.ds-code');
-  const activePanel = codeBlock.querySelector('.ds-code__panel--active') || codeBlock;
-  const code = [...activePanel.querySelectorAll('.ds-code__text')].map(el => el.innerText).join('\n');
+  const code = getPanelCode(codeBlock);
   navigator.clipboard.writeText(code).then(() => {
     btn.innerHTML = iconCheck;
     btn.style.color = '#0E9970';
@@ -21,6 +29,25 @@ function copyCode(btn) {
       btn.style.borderColor = '';
     }, 2000);
   });
+}
+
+// Descargar el código del panel activo como archivo (tokens.css / tokens.json)
+function downloadCode(btn) {
+  const codeBlock = btn.closest('.ds-code');
+  const activePanel = codeBlock.querySelector('.ds-code__panel--active') || codeBlock;
+  const tab = activePanel.dataset.tab || 'txt';
+  const filename = tab === 'json' ? 'tokens.json' : 'tokens.css';
+  const mime = tab === 'json' ? 'application/json' : 'text/css';
+  const code = getPanelCode(codeBlock);
+  const blob = new Blob([code], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
 }
 
 // Mover el indicador deslizante al tab activo.
@@ -282,6 +309,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.querySelectorAll('.ds-copy-btn').forEach(btn => {
     btn.innerHTML = iconCopy;
+  });
+
+  document.querySelectorAll('.ds-download-btn').forEach(btn => {
+    btn.innerHTML = iconDownload;
   });
 
   // Inicializar solo paneles activos (o bloques sin tabs)
