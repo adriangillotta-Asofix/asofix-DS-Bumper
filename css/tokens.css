@@ -29,21 +29,31 @@
   --color-secondary-600: #0E9970;
 
   /* --------------------------------
-     Neutros — re-templados a cálido (Manual de Marca Mayo 2026 V2.1)
+     Paper — fondos cálidos (Manual de Marca V3)
+  -------------------------------- */
+  --color-paper-50:  #FBFAF7;
+  --color-paper-100: #F4F1EC;
+  --color-paper-200: #E8E2DC;
+
+  /* --------------------------------
+     Neutros — escala violeta (Manual de Marca V3)
   -------------------------------- */
   --color-neutral-white: #FFFFFF;
   --color-neutral-black: #000000;
-  --color-neutral-50:  #FBFAF7;
-  --color-neutral-100: #F4F1EC;
-  --color-neutral-200: #E8E2DC;
-  --color-neutral-300: #C9C3C6;
-  --color-neutral-400: #A9A3AF;
-  --color-neutral-500: #8A8499;
-  --color-neutral-600: #706B7E;
-  --color-neutral-700: #575164;
-  --color-neutral-800: #3D3849;
-  --color-neutral-900: #282430;
+  --color-neutral-50:  #F7F7FA;
+  --color-neutral-100: #EDEFF4;
+  --color-neutral-200: #D4D4DD;
+  --color-neutral-300: #BBB9C6;
+  --color-neutral-400: #A29DAF;
+  --color-neutral-500: #898298;
+  --color-neutral-600: #706A7F;
+  --color-neutral-700: #585265;
+  --color-neutral-800: #3F3A4C;
+  --color-neutral-900: #161628;
   --color-neutral-line: #EDE8E1;
+
+  /* Fondo dark — modo oscuro, evitar negro puro (Manual de Marca V3) */
+  --color-surface-dark: #0E073D;
 
    /* --------------------------------
      Error — Rojo

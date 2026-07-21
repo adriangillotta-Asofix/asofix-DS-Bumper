@@ -29,14 +29,14 @@
 .btn--primary:hover, .btn--primary.btn--hover { background-color: var(--color-primary-600); }
 .btn--primary:active, .btn--primary.btn--active { background-color: var(--color-primary-700); }
 .btn--primary:focus-visible, .btn--primary.btn--focus { background-color: var(--color-primary-600); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
-.btn--primary:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+.btn--primary:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 /* Danger */
 .btn--danger { background-color: var(--color-error-500); color: var(--color-neutral-white); }
 .btn--danger:hover, .btn--danger.btn--hover { background-color: var(--color-error-600); }
 .btn--danger:active, .btn--danger.btn--active { background-color: var(--color-error-700); }
 .btn--danger:focus-visible, .btn--danger.btn--focus { background-color: var(--color-error-600); outline: 2px solid var(--color-error-300); outline-offset: 0; }
-.btn--danger:disabled { background-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+.btn--danger:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 
 /* Secondary */
@@ -44,7 +44,7 @@
 .btn--secondary:hover, .btn--secondary.btn--hover { background-color: var(--color-primary-50); border-color: var(--color-primary-600); }
 .btn--secondary:active, .btn--secondary.btn--active { background-color: var(--color-primary-100); border-color: var(--color-primary-700); }
 .btn--secondary:focus-visible, .btn--secondary.btn--focus { background-color: var(--color-primary-50); outline: 2px solid var(--color-primary-300); outline-offset: 0; }
-.btn--secondary:disabled { background-color: transparent; border-color: var(--color-neutral-200); color: var(--color-neutral-500); cursor: not-allowed; }
+.btn--secondary:disabled { background-color: transparent; border-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 /* Tertiary */
 .btn--tertiary { background-color: transparent; color: var(--color-primary-500); border-color: transparent; }
@@ -174,7 +174,7 @@
   left: 3px;
   width: 18px;
   height: 18px;
-  background-color: var(--color-neutral-50);
+  background-color: var(--color-paper-50);
   border-radius: 50%;
   transition: transform 0.2s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -213,7 +213,7 @@
 }
 
 .switch--disabled .switch__track {
-  background-color: var(--color-neutral-200);
+  background-color: var(--color-paper-200);
 }
 
 .switch--disabled .switch__input:checked ~ .switch__track {
@@ -221,7 +221,7 @@
 }
 
 .switch--disabled .switch__thumb {
-  background-color: var(--color-neutral-50);
+  background-color: var(--color-paper-50);
 }
 
 /* --------------------------------
@@ -331,7 +331,7 @@
 .input__container--hover { border-color: var(--color-neutral-600); }
 .input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .input__container--error { border-color: var(--color-error-500); }
-.input__container--disabled { background-color: var(--color-neutral-50); pointer-events: none; }
+.input__container--disabled { background-color: var(--color-paper-50); pointer-events: none; }
 
 .input__label-icon {
   font-size: var(--font-size-caption);
@@ -378,7 +378,7 @@
 .textarea__container:hover { border-color: var(--color-neutral-600); }
 .textarea__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .textarea__container.input__container--error { border-color: var(--color-error-500); }
-.textarea__container.input__container--disabled { background-color: var(--color-neutral-50); pointer-events: none; }
+.textarea__container.input__container--disabled { background-color: var(--color-paper-50); pointer-events: none; }
 
 /* --------------------------------
    Select
@@ -458,8 +458,8 @@
 .select__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
 .select__container.input__container--error { border-color: var(--color-error-500); }
 .select__container--disabled { pointer-events: none; }
-.select__container--lg.select__container--disabled { background-color: var(--color-neutral-50); }
-.select__container--sm.select__container--disabled { background-color: var(--color-neutral-50); }
+.select__container--lg.select__container--disabled { background-color: var(--color-paper-50); }
+.select__container--sm.select__container--disabled { background-color: var(--color-paper-50); }
 
 /* --------------------------------
    Card — Metric
@@ -470,7 +470,7 @@
   gap: 16px;
   padding: 16px 20px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-neutral-200);
+  border: 1px solid var(--color-paper-200);
   background-color: var(--color-neutral-white);
   width: 100%;
   overflow: hidden;
@@ -793,11 +793,11 @@
 .pill--lg { padding: 8px 12px; }
 
 /* Default */
-.pill--default { background-color: var(--color-neutral-100); border-color: var(--color-neutral-200); color: var(--color-neutral-700); }
-.pill--default:hover, .pill--default.pill--hover { background-color: var(--color-neutral-200); border-color: var(--color-neutral-200); }
+.pill--default { background-color: var(--color-paper-100); border-color: var(--color-paper-200); color: var(--color-neutral-700); }
+.pill--default:hover, .pill--default.pill--hover { background-color: var(--color-paper-200); border-color: var(--color-paper-200); }
 .pill--default:active, .pill--default.pill--active { background-color: var(--color-neutral-300); }
-.pill--default:focus-visible, .pill--default.pill--focus { background-color: var(--color-neutral-200); border-width: 2px; border-color: var(--color-neutral-700); outline: none; }
-.pill--default:disabled, .pill--default.pill--disabled { background-color: var(--color-neutral-100); border-color: var(--color-neutral-200); color: var(--color-neutral-400); cursor: not-allowed; }
+.pill--default:focus-visible, .pill--default.pill--focus { background-color: var(--color-paper-200); border-width: 2px; border-color: var(--color-neutral-700); outline: none; }
+.pill--default:disabled, .pill--default.pill--disabled { background-color: var(--color-paper-100); border-color: var(--color-paper-200); color: var(--color-neutral-400); cursor: not-allowed; }
 
 /* Rojo */
 .pill--rojo { background-color: var(--color-error-50); border-color: var(--color-error-200); color: var(--color-error-800); }
@@ -873,7 +873,7 @@
 
 /* Empty */
 .avatar--empty {
-  background-color: var(--color-neutral-100);
+  background-color: var(--color-paper-100);
 }
 .avatar--empty::before {
   font-family: 'Material Icons Outlined';
@@ -907,7 +907,7 @@
 
 /* Photo */
 .avatar--photo {
-  background-color: var(--color-neutral-100);
+  background-color: var(--color-paper-100);
 }
 .avatar__img {
   width: 100%;
@@ -1081,7 +1081,7 @@
   align-items: center;
   gap: 32px;
   padding: 16px 24px;
-  background-color: var(--color-neutral-50);
+  background-color: var(--color-paper-50);
   border-radius: var(--radius-md) var(--radius-md) 0 0;
   flex-shrink: 0;
 }
@@ -1123,7 +1123,7 @@
   flex-shrink: 0;
   transition: background-color 0.15s ease;
 }
-.modal__close:hover { background-color: var(--color-neutral-100); }
+.modal__close:hover { background-color: var(--color-paper-100); }
 .modal__close .material-icons-outlined { font-size: 20px; line-height: 1; width: 20px; display: inline-flex; justify-content: center; overflow: hidden; }
 
 .modal__body {
@@ -1137,7 +1137,7 @@
   align-items: center;
   padding: 24px;
   background-color: var(--color-neutral-white);
-  border-top: 1px solid var(--color-neutral-200);
+  border-top: 1px solid var(--color-paper-200);
   border-radius: 0 0 var(--radius-md) var(--radius-md);
   flex-shrink: 0;
 }
@@ -1296,7 +1296,7 @@
 /* Pill inside disabled item */
 .dropdown-item--disabled .pill {
   background-color: var(--color-neutral-white);
-  border-color: var(--color-neutral-200);
+  border-color: var(--color-paper-200);
   color: var(--color-neutral-400);
 }
 
@@ -1317,8 +1317,8 @@
   display: inline-flex;
   gap: 10px;
   align-items: center;
-  background-color: var(--color-neutral-50);
-  border: 1px solid var(--color-neutral-200);
+  background-color: var(--color-paper-50);
+  border: 1px solid var(--color-paper-200);
   border-radius: var(--radius-sm);
   padding: 4px;
   position: relative;

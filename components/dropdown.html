@@ -180,7 +180,7 @@
       <div class="ds-section" id="dropdown-completo">
         <h2 class="ds-section__title">Dropdown completo</h2>
         <p class="ds-section__desc">
-          Base del componente. Copiá el CSS, HTML y JS. Luego reemplazá los ítems del <code style="font-size:12px; background:var(--color-neutral-100); padding:1px 5px; border-radius:4px;">.dropdown__list</code> con la variante que necesitás — ver <a href="#list-options" style="color:var(--color-primary-500); text-decoration:none; font-weight:600;">List options ↓</a>
+          Base del componente. Copiá el CSS, HTML y JS. Luego reemplazá los ítems del <code style="font-size:12px; background:var(--color-paper-100); padding:1px 5px; border-radius:4px;">.dropdown__list</code> con la variante que necesitás — ver <a href="#list-options" style="color:var(--color-primary-500); text-decoration:none; font-weight:600;">List options ↓</a>
         </p>
 
         <div class="ds-preview" style="border-radius:8px 8px 0 0; padding:40px 32px;">
@@ -280,7 +280,7 @@
 .dropdown-item__status { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: var(--color-neutral-700); }
 
 /* Pill en ítem deshabilitado */
-.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-neutral-200); color: var(--color-neutral-400); }
+.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-paper-200); color: var(--color-neutral-400); }
 
 /* Footer */
 .dropdown__footer { display: flex; align-items: center; justify-content: flex-end; gap: 16px; padding: 12px 12px 8px; flex-shrink: 0; }</code></pre>
@@ -358,7 +358,7 @@ document.addEventListener('click', e => {
       <div class="ds-section" id="list-options">
         <h2 class="ds-section__title">List options</h2>
         <p class="ds-section__desc">
-          Cada variante es independiente. Copiá el snippet que necesitás y pegalo dentro del <code style="font-size:12px; background:var(--color-neutral-100); padding:1px 5px; border-radius:4px;">.dropdown__list</code>. Podés mezclar variantes en el mismo dropdown.
+          Cada variante es independiente. Copiá el snippet que necesitás y pegalo dentro del <code style="font-size:12px; background:var(--color-paper-100); padding:1px 5px; border-radius:4px;">.dropdown__list</code>. Podés mezclar variantes en el mismo dropdown.
         </p>
 
         <div style="display:flex; flex-direction:column; gap:40px;">
@@ -559,10 +559,10 @@ document.addEventListener('click', e => {
 /* Pill anidado (base + tamaño sm + color default — ver componente Pill para el resto de colores) */
 .pill { display: inline-flex; align-items: center; gap: 8px; border-radius: var(--radius-full); border: 1px solid transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); white-space: nowrap; cursor: pointer; transition: background-color 0.15s ease, border-color 0.15s ease; }
 .pill--sm { padding: 4px 8px; }
-.pill--default { background-color: var(--color-neutral-100); border-color: var(--color-neutral-200); color: var(--color-neutral-700); }
+.pill--default { background-color: var(--color-paper-100); border-color: var(--color-paper-200); color: var(--color-neutral-700); }
 
 /* Pill en ítem deshabilitado */
-.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-neutral-200); color: var(--color-neutral-400); }</code></pre>
+.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-paper-200); color: var(--color-neutral-400); }</code></pre>
               <pre class="ds-code__panel" data-tab="html-lo-pill"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
   &lt;div class="dropdown-item__content"&gt;
     &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
@@ -745,10 +745,10 @@ document.addEventListener('click', e => {
 /* Pill anidado (base + tamaño sm + color default — ver componente Pill para el resto de colores) */
 .pill { display: inline-flex; align-items: center; gap: 8px; border-radius: var(--radius-full); border: 1px solid transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); white-space: nowrap; cursor: pointer; transition: background-color 0.15s ease, border-color 0.15s ease; }
 .pill--sm { padding: 4px 8px; }
-.pill--default { background-color: var(--color-neutral-100); border-color: var(--color-neutral-200); color: var(--color-neutral-700); }
+.pill--default { background-color: var(--color-paper-100); border-color: var(--color-paper-200); color: var(--color-neutral-700); }
 
 /* Pill en ítem deshabilitado */
-.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-neutral-200); color: var(--color-neutral-400); }</code></pre>
+.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-paper-200); color: var(--color-neutral-400); }</code></pre>
               <pre class="ds-code__panel" data-tab="html-lo-check-pill"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
   &lt;span class="dropdown-item__checkbox"&gt;
     &lt;span class="material-icons-outlined"&gt;check_box_outline_blank&lt;/span&gt;
