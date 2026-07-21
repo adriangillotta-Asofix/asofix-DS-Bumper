@@ -57,7 +57,7 @@ body {
 .ds-sidebar__logo {
   font-size: 15px;
   font-weight: 600;
-  color: var(--color-neutral-white);
+  color: #FFFFFF;
 }
 
 .ds-sidebar__version {
@@ -109,12 +109,12 @@ body {
 
 .ds-nav__link:hover {
   background-color: rgba(255, 255, 255, 0.08);
-  color: var(--color-neutral-white);
+  color: #FFFFFF;
 }
 
 .ds-nav__link.active {
   background-color: rgba(255, 255, 255, 0.12);
-  color: var(--color-neutral-white);
+  color: #FFFFFF;
   font-weight: var(--font-weight-caption-emphasized);
 }
 
@@ -132,7 +132,7 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  background-color: var(--color-neutral-white);
+  background-color: var(--color-paper-50);
   border-radius: var(--radius-md);
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -292,7 +292,7 @@ body {
   border: 1px solid #E8E3DA;
   border-radius: var(--radius-sm) var(--radius-sm) 0 0;
   padding: 80px 16px;
-  background-color: var(--color-neutral-white);
+  background-color: var(--color-paper-50);
   display: flex;
   flex-wrap: nowrap;
   gap: 12px;
@@ -346,7 +346,7 @@ body {
   top: 12px;
   right: 12px;
   color: var(--color-neutral-500);
-  background: var(--color-neutral-white);
+  background: var(--color-paper-50);
   border: none;
   border-radius: var(--radius-xs);
   padding: 6px;
@@ -382,7 +382,7 @@ body {
 .ds-swatch {
   flex: 1;
   min-width: 84px;
-  background: var(--color-neutral-white);
+  background: var(--color-paper-50);
   border: 1px solid #E8E3DA;
   border-radius: 10px;
   overflow: hidden;

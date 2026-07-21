@@ -245,14 +245,14 @@
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
 
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css-dd"><code>/* Contenedor */
-.dropdown { display: inline-flex; flex-direction: column; background-color: var(--color-neutral-white); border-radius: var(--radius-sm); box-shadow: 0px 4px 8px 0px rgba(51,51,51,0.22); width: 380px; overflow: hidden; animation: dropdown-in 0.15s ease forwards; }
+.dropdown { display: inline-flex; flex-direction: column; background-color: var(--color-paper-50); border-radius: var(--radius-sm); box-shadow: 0px 4px 8px 0px rgba(51,51,51,0.22); width: 380px; overflow: hidden; animation: dropdown-in 0.15s ease forwards; }
 .dropdown[hidden] { display: none; }
 @keyframes dropdown-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 
 /* Lista */
 .dropdown__list { flex: 1; min-width: 0; display: flex; flex-direction: column; padding: 8px 4px; overflow-y: auto; max-height: 408px; }
 .dropdown__list::-webkit-scrollbar { width: 6px; }
-.dropdown__list::-webkit-scrollbar-track { background: var(--color-neutral-white); }
+.dropdown__list::-webkit-scrollbar-track { background: var(--color-paper-50); }
 .dropdown__list::-webkit-scrollbar-thumb { background-color: var(--color-neutral-300); border-radius: 50px; }
 
 /* Ítem base */
@@ -280,7 +280,7 @@
 .dropdown-item__status { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: var(--color-neutral-700); }
 
 /* Pill en ítem deshabilitado */
-.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-paper-200); color: var(--color-neutral-400); }
+.dropdown-item--disabled .pill { background-color: var(--color-paper-50); border-color: var(--color-paper-200); color: var(--color-neutral-400); }
 
 /* Footer */
 .dropdown__footer { display: flex; align-items: center; justify-content: flex-end; gap: 16px; padding: 12px 12px 8px; flex-shrink: 0; }</code></pre>
@@ -562,7 +562,7 @@ document.addEventListener('click', e => {
 .pill--default { background-color: var(--color-paper-100); border-color: var(--color-paper-200); color: var(--color-neutral-700); }
 
 /* Pill en ítem deshabilitado */
-.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-paper-200); color: var(--color-neutral-400); }</code></pre>
+.dropdown-item--disabled .pill { background-color: var(--color-paper-50); border-color: var(--color-paper-200); color: var(--color-neutral-400); }</code></pre>
               <pre class="ds-code__panel" data-tab="html-lo-pill"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
   &lt;div class="dropdown-item__content"&gt;
     &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
@@ -748,7 +748,7 @@ document.addEventListener('click', e => {
 .pill--default { background-color: var(--color-paper-100); border-color: var(--color-paper-200); color: var(--color-neutral-700); }
 
 /* Pill en ítem deshabilitado */
-.dropdown-item--disabled .pill { background-color: var(--color-neutral-white); border-color: var(--color-paper-200); color: var(--color-neutral-400); }</code></pre>
+.dropdown-item--disabled .pill { background-color: var(--color-paper-50); border-color: var(--color-paper-200); color: var(--color-neutral-400); }</code></pre>
               <pre class="ds-code__panel" data-tab="html-lo-check-pill"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
   &lt;span class="dropdown-item__checkbox"&gt;
     &lt;span class="material-icons-outlined"&gt;check_box_outline_blank&lt;/span&gt;
