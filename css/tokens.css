@@ -1,6 +1,6 @@
 /* ================================
    Asofix Design System — Tokens
-   V2.1
+   v2.0
    ================================ */
 :root {
   /* --------------------------------
@@ -110,7 +110,7 @@
   --color-warning-900: #804C00;
 
   /* --------------------------------
-     Copper — acento (Manual de Marca Mayo 2026 V2.1)
+     Copper — acento (Manual de Marca V3)
      Uso: KPIs de alto peso. No tiene escala completa definida.
   -------------------------------- */
   --color-copper-500: #C97B4A;
@@ -122,7 +122,7 @@
   --font-family-base: 'Inter', sans-serif;
 
   /* --------------------------------
-     Tipografía — Display (Manual de Marca Mayo 2026 V2.1)
+     Tipografía — Display (Manual de Marca V3)
      Uso puntual en headlines grandes (ej. login, hero de Inicio).
      No reemplaza la escala de headings de componentes (h1-h6 siguen en Inter).
      La página que la use debe cargar la fuente (Google Fonts: IBM+Plex+Sans).
