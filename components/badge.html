@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Badge — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <img src="../assets/Logo Asofix Blanco.svg" alt="Asofix" class="ds-sidebar__logo-img">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Bumper</span>
+      </a>
+      <span class="ds-sidebar__version">v2.0</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="../foundations/colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="../foundations/typography.html" class="ds-nav__link">Typography</a></li>
+        <li><a href="../foundations/radius.html" class="ds-nav__link">Radius</a></li>
+        <li><a href="../foundations/elevation.html" class="ds-nav__link">Elevation</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="avatar.html" class="ds-nav__link">Avatar</a></li>
+        <li><a href="badge.html" class="ds-nav__link active">Badge</a></li>
+        <li><a href="buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="checkbox-radio.html" class="ds-nav__link">Checkbox & Radio</a></li>
+        <li><a href="dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Globals</p>
+      <ul class="ds-nav__list">
+        <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
+      </ul>
+      <p class="ds-nav__label">Adoption</p>
+      <ul class="ds-nav__list">
+        <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
+      </ul>
+    </nav>
+  </aside>
+
+   <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Badge</h1>
+        <div class="tabs" role="tablist" style="margin-top: 16px;"><div class="tabs__indicator"></div>
+          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setPageTab(this, 'component')">Componente</button>
+          <button class="tab" role="tab" aria-selected="false" onclick="setPageTab(this, 'documentation')">Documentación</button>
+        </div>
+      </div>
+
+      <div data-page-panel="component">
+
+      <p class="ds-preview__label">Preview</p>
+      <div class="ds-preview" style="gap: 24px;">
+        <span class="badge badge--fix badge--warning">9</span>
+        <span class="badge badge--hug badge--error">9+</span>
+        <span class="badge badge--dot badge--warning badge--stroke"></span>
+      </div>
+
+      <!-- FIX -->
+      <div class="ds-section" id="fix">
+        <h2 class="ds-section__title">Fix</h2>
+        <p class="ds-section__desc">Tamaño fijo 20×20, para un solo dígito. Ideal sobre un ícono o avatar.</p>
+        <p class="ds-preview__label">Sin borde / con borde</p>
+        <div class="ds-preview">
+          <span class="badge badge--fix badge--warning">9</span>
+          <span class="badge badge--fix badge--warning badge--stroke">9</span>
+          <span class="badge badge--fix badge--error">9</span>
+          <span class="badge badge--fix badge--error badge--stroke">9</span>
+          <span class="badge badge--fix badge--neutral">9</span>
+          <span class="badge badge--fix badge--neutral badge--stroke">9</span>
+          <span class="badge badge--fix badge--white">9</span>
+          <span class="badge badge--fix badge--white badge--stroke">9</span>
+        </div>
+        <div class="ds-code ds-code--standalone">
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>&lt;span class="badge badge--fix badge--warning"&gt;9&lt;/span&gt;
+&lt;span class="badge badge--fix badge--warning badge--stroke"&gt;9&lt;/span&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- HUG -->
+      <div class="ds-section" id="hug">
+        <h2 class="ds-section__title">Hug</h2>
+        <p class="ds-section__desc">Ancho variable según contenido. Uso típico: "9+" cuando el conteo supera un dígito.</p>
+        <p class="ds-preview__label">Sin borde / con borde</p>
+        <div class="ds-preview">
+          <span class="badge badge--hug badge--warning">9+</span>
+          <span class="badge badge--hug badge--warning badge--stroke">9+</span>
+          <span class="badge badge--hug badge--error">9+</span>
+          <span class="badge badge--hug badge--error badge--stroke">9+</span>
+          <span class="badge badge--hug badge--neutral">9+</span>
+          <span class="badge badge--hug badge--neutral badge--stroke">9+</span>
+          <span class="badge badge--hug badge--white">9+</span>
+          <span class="badge badge--hug badge--white badge--stroke">9+</span>
+        </div>
+        <div class="ds-code ds-code--standalone">
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>&lt;span class="badge badge--hug badge--warning"&gt;9+&lt;/span&gt;
+&lt;span class="badge badge--hug badge--warning badge--stroke"&gt;9+&lt;/span&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- DOT -->
+      <div class="ds-section" id="dot">
+        <h2 class="ds-section__title">Dot</h2>
+        <p class="ds-section__desc">Solo señal de presencia, sin conteo. Únicamente en warning-dark y error — no aplica a neutral ni white.</p>
+        <p class="ds-preview__label">Sin borde / con borde</p>
+        <div class="ds-preview">
+          <span class="badge badge--dot badge--warning"></span>
+          <span class="badge badge--dot badge--warning badge--stroke"></span>
+          <span class="badge badge--dot badge--error"></span>
+          <span class="badge badge--dot badge--error badge--stroke"></span>
+        </div>
+        <div class="ds-code ds-code--standalone">
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>&lt;span class="badge badge--dot badge--warning"&gt;&lt;/span&gt;
+&lt;span class="badge badge--dot badge--warning badge--stroke"&gt;&lt;/span&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- SOBRE OTRO ELEMENTO -->
+      <div class="ds-section" id="sobre-avatar">
+        <h2 class="ds-section__title">Sobre otro elemento</h2>
+        <p class="ds-section__desc">El Badge no define su propia posición: se ubica con <code>position: absolute</code> sobre un contenedor <code>position: relative</code> (ej. una esquina de Avatar). El borde (<code>badge--stroke</code>) es el que lo separa visualmente de lo que tiene detrás.</p>
+        <div class="ds-preview">
+          <div style="position: relative; display: inline-flex;">
+            <div class="avatar avatar--initial avatar--40"><span class="avatar__initial">AG</span></div>
+            <span class="badge badge--fix badge--error badge--stroke" style="position: absolute; top: -2px; right: -2px;">3</span>
+          </div>
+          <div style="position: relative; display: inline-flex;">
+            <div class="avatar avatar--initial avatar--40"><span class="avatar__initial">AG</span></div>
+            <span class="badge badge--dot badge--warning badge--stroke" style="position: absolute; top: 0px; right: 0px;"></span>
+          </div>
+        </div>
+        <div class="ds-code ds-code--standalone">
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>&lt;div style="position: relative; display: inline-flex;"&gt;
+  &lt;div class="avatar avatar--initial avatar--40"&gt;&lt;span class="avatar__initial"&gt;AG&lt;/span&gt;&lt;/div&gt;
+  &lt;span class="badge badge--fix badge--error badge--stroke" style="position: absolute; top: -2px; right: -2px;"&gt;3&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+        </div>
+      </div>
+
+      <!-- CSS BASE -->
+      <div class="ds-section" id="css-base">
+        <h2 class="ds-section__title">CSS base</h2>
+        <div class="ds-code ds-code--standalone">
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: var(--radius-full);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  white-space: nowrap;
+}
+
+.badge--fix { width: 20px; height: 20px; padding: 0; }
+.badge--hug { height: 20px; padding: 0 6px; }
+.badge--dot { width: 8px; height: 8px; padding: 0; }
+
+.badge--warning { background-color: var(--color-warning-700); color: #FFFFFF; }
+.badge--error   { background-color: var(--color-error-500);   color: #FFFFFF; }
+.badge--neutral { background-color: var(--color-neutral-500); color: #FFFFFF; }
+.badge--white   { background-color: #FFFFFF; color: var(--color-neutral-600); }
+
+.badge--stroke.badge--fix,
+.badge--stroke.badge--hug { border: 1px solid var(--color-paper-50); }
+
+.badge--white.badge--stroke.badge--fix,
+.badge--white.badge--stroke.badge--hug { border-color: var(--color-paper-200); }
+
+.badge--stroke.badge--dot { box-shadow: 0 0 0 2px var(--color-paper-50); }</code></pre>
+        </div>
+      </div>
+
+      </div>
+
+      <div data-page-panel="documentation" hidden>
+        <div class="ds-section">
+          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para esta sección.</p>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
