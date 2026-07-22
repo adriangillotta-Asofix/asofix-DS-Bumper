@@ -225,6 +225,217 @@
 }
 
 /* --------------------------------
+   Checkbox
+-------------------------------- */
+.checkbox {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.checkbox__input {
+  position: absolute;
+  opacity: 0;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.checkbox__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  font-size: 20px;
+  color: var(--color-neutral-300);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.checkbox__label {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  color: var(--color-neutral-600);
+}
+
+/* Hover */
+.checkbox:hover .checkbox__icon {
+  background-color: var(--color-primary-50);
+}
+
+/* Checked / indeterminate */
+.checkbox__input:checked ~ .checkbox__icon,
+.checkbox--indeterminate .checkbox__icon {
+  color: var(--color-primary-500);
+}
+
+/* Focus */
+.checkbox__input:focus-visible ~ .checkbox__icon,
+.checkbox--focus .checkbox__icon {
+  outline: 2px solid var(--color-primary-300);
+  outline-offset: 2px;
+}
+
+/* Disabled */
+.checkbox__input:disabled {
+  cursor: not-allowed;
+}
+
+.checkbox__input:disabled ~ .checkbox__icon {
+  color: var(--color-neutral-200);
+}
+
+.checkbox__input:disabled:checked ~ .checkbox__icon,
+.checkbox--indeterminate.checkbox--disabled .checkbox__icon {
+  color: var(--color-neutral-400);
+}
+
+.checkbox--disabled,
+.checkbox:has(.checkbox__input:disabled) {
+  cursor: not-allowed;
+}
+
+.checkbox:has(.checkbox__input:disabled) .checkbox__label,
+.checkbox--disabled .checkbox__label {
+  color: var(--color-neutral-400);
+}
+
+/* --------------------------------
+   Radio button
+-------------------------------- */
+.radio {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.radio__input {
+  position: absolute;
+  opacity: 0;
+  width: 32px;
+  height: 32px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.radio__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  font-size: 20px;
+  color: var(--color-neutral-300);
+  transition: background-color 0.15s ease, color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.radio__label {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  color: var(--color-neutral-600);
+}
+
+/* Hover */
+.radio:hover .radio__icon {
+  background-color: var(--color-primary-50);
+}
+
+/* Selected */
+.radio__input:checked ~ .radio__icon {
+  color: var(--color-primary-500);
+}
+
+/* Focus */
+.radio__input:focus-visible ~ .radio__icon,
+.radio--focus .radio__icon {
+  outline: 2px solid var(--color-primary-300);
+  outline-offset: 2px;
+}
+
+/* Disabled */
+.radio__input:disabled {
+  cursor: not-allowed;
+}
+
+.radio__input:disabled ~ .radio__icon {
+  color: var(--color-neutral-200);
+}
+
+.radio__input:disabled:checked ~ .radio__icon {
+  color: var(--color-neutral-400);
+}
+
+.radio:has(.radio__input:disabled) {
+  cursor: not-allowed;
+}
+
+.radio:has(.radio__input:disabled) .radio__label {
+  color: var(--color-neutral-400);
+}
+
+/* --------------------------------
+   Checkbox / Radio group
+-------------------------------- */
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.field-group__label {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-caption-emphasized);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--color-neutral-600);
+}
+
+.field-group__label-optional {
+  font-weight: var(--font-weight-caption);
+  color: var(--color-neutral-500);
+}
+
+.field-group__options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  width: 100%;
+}
+
+.field-group__options--vertical {
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 8px;
+}
+
+.field-group__assistive {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--color-neutral-600);
+}
+
+/* --------------------------------
    Input / Text Field
 -------------------------------- */
 .input {

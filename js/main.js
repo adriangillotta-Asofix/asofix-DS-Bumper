@@ -239,6 +239,30 @@ function setPageTab(el, tab) {
 }
 
 // --------------------------------
+// Checkbox / Radio
+// --------------------------------
+
+function syncCheckboxIcon(input) {
+  const icon = input.nextElementSibling;
+  if (!icon) return;
+  icon.textContent = input.checked ? 'check_box' : 'check_box_outline_blank';
+}
+
+function setCheckboxIndeterminate(input, isIndeterminate) {
+  input.indeterminate = isIndeterminate;
+  const icon = input.nextElementSibling;
+  if (!icon) return;
+  icon.textContent = isIndeterminate ? 'indeterminate_check_box' : (input.checked ? 'check_box' : 'check_box_outline_blank');
+}
+
+function syncRadioIcon(input) {
+  document.querySelectorAll(`input.radio__input[name="${input.name}"]`).forEach(r => {
+    const icon = r.nextElementSibling;
+    if (icon) icon.textContent = r.checked ? 'radio_button_checked' : 'radio_button_unchecked';
+  });
+}
+
+// --------------------------------
 // Dropdown
 // --------------------------------
 
@@ -328,6 +352,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const activeTab = container.querySelector('.tab--active');
     if (activeTab) moveTabIndicator(container, activeTab, true);
   });
+
+  // Inicializar iconos de Checkbox / Radio segun estado inicial del markup
+  document.querySelectorAll('.checkbox__input').forEach(input => {
+    if (input.dataset.indeterminate === 'true') setCheckboxIndeterminate(input, true);
+    else syncCheckboxIcon(input);
+  });
+  document.querySelectorAll('.radio__input').forEach(syncRadioIcon);
 
   buildTOC();
   initScrollSpy();
