@@ -1183,7 +1183,7 @@
 }
 .avatar--24  .avatar__initial { font-size: 12px; letter-spacing: 0em; }
 .avatar--32  .avatar__initial { font-size: 16px; letter-spacing: 0em; }
-.avatar--40  .avatar__initial { font-size: 24px; letter-spacing: -0.02em; }
+.avatar--40  .avatar__initial { font-size: 20px; letter-spacing: -0.02em; }
 .avatar--56  .avatar__initial { font-size: 32px; letter-spacing: -0.02em; }
 .avatar--112 .avatar__initial { font-size: 64px; letter-spacing: -0.02em; }
 
