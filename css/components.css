@@ -1512,7 +1512,7 @@
 }
 .dropdown__list::-webkit-scrollbar       { width: 6px; }
 .dropdown__list::-webkit-scrollbar-track { background: var(--bg-surface); }
-.dropdown__list::-webkit-scrollbar-thumb { background-color: var(--color-neutral-300); border-radius: 50px; }
+.dropdown__list::-webkit-scrollbar-thumb { background-color: var(--color-neutral-300); border-radius: var(--radius-full); }
 
 /* Item base */
 .dropdown-item {
