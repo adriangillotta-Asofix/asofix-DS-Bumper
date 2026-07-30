@@ -174,11 +174,11 @@
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
 
-/* Variantes */
-.toast--success { background-color: var(--color-success-100); border-color: var(--color-success-400); }
-.toast--error   { background-color: var(--color-error-100);   border-color: var(--color-error-400); }
-.toast--info    { background-color: var(--color-info-100);    border-color: var(--color-info-400); }
-.toast--alert   { background-color: var(--color-warning-100); border-color: var(--color-warning-400); }
+/* Variantes — borde en -400: más contraste que --feedback-*-border (200), a propósito para que el toast se destaque como overlay flotante */
+.toast--success { background-color: var(--feedback-success-bg-hover); border-color: var(--color-success-400); }
+.toast--error   { background-color: var(--feedback-error-bg-hover);   border-color: var(--color-error-400); }
+.toast--info    { background-color: var(--feedback-info-bg-hover);    border-color: var(--color-info-400); }
+.toast--alert   { background-color: var(--feedback-warning-bg-hover); border-color: var(--color-warning-400); }
 
 /* Layout interno */
 .toast__content { display: flex; align-items: flex-start; gap: 8px; padding-bottom: 8px; width: 100%; }
@@ -190,18 +190,18 @@
 .toast__close { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: flex-start; flex-shrink: 0; }
 .toast__close .material-icons-outlined { font-size: 16px; line-height: 1; }
 
-/* Colores por variante */
-.toast--success .toast__icon, .toast--success .toast__title, .toast--success .toast__desc, .toast--success .toast__close { color: var(--color-success-700); }
-.toast--error   .toast__icon, .toast--error   .toast__title, .toast--error   .toast__desc, .toast--error   .toast__close { color: var(--color-error-700); }
-.toast--info    .toast__icon, .toast--info    .toast__title, .toast--info    .toast__desc, .toast--info    .toast__close { color: var(--color-info-700); }
+/* Colores por variante — warning-900 en vez de --feedback-warning-text (700): 700 no distingue lo suficiente sobre el fondo warning-100, mismo criterio que card-tile--warning */
+.toast--success .toast__icon, .toast--success .toast__title, .toast--success .toast__desc, .toast--success .toast__close { color: var(--feedback-success-text); }
+.toast--error   .toast__icon, .toast--error   .toast__title, .toast--error   .toast__desc, .toast--error   .toast__close { color: var(--feedback-error-text); }
+.toast--info    .toast__icon, .toast--info    .toast__title, .toast--info    .toast__desc, .toast--info    .toast__close { color: var(--feedback-info-text); }
 .toast--alert   .toast__icon, .toast--alert   .toast__title, .toast--alert   .toast__desc, .toast--alert   .toast__close { color: var(--color-warning-900); }
 
 /* Track time */
 .toast__track { position: absolute; bottom: 0; left: 0; height: 5px; border-radius: 0 0 0 var(--radius-xs); width: 75%; }
-.toast--success .toast__track { background-color: var(--color-success-500); }
-.toast--error   .toast__track { background-color: var(--color-error-500); }
-.toast--info    .toast__track { background-color: var(--color-info-500); }
-.toast--alert   .toast__track { background-color: var(--color-warning-500); }</code></pre>
+.toast--success .toast__track { background-color: var(--feedback-success-icon); }
+.toast--error   .toast__track { background-color: var(--feedback-error-icon); }
+.toast--info    .toast__track { background-color: var(--feedback-info-icon); }
+.toast--alert   .toast__track { background-color: var(--feedback-warning-icon); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="toast toast--success"&gt;
   &lt;div class="toast__content"&gt;
     &lt;span class="toast__icon"&gt;&lt;span class="material-icons-outlined"&gt;check_circle&lt;/span&gt;&lt;/span&gt;
@@ -238,7 +238,7 @@
             <div class="toast__track"></div>
           </div>
         </div>
-        <div class="ds-code ds-code--tabbed ds-code--standalone" style="border-top: none; border-radius: 0 0 8px 8px;">
+        <div class="ds-code ds-code--tabbed">
           <div class="ds-code__tabs">
             <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-track')">CSS</button>
             <button class="ds-code__tab" onclick="switchTab(this, 'html-track')">HTML</button>
@@ -248,11 +248,11 @@
 
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css-track"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
 
-/* Variantes */
-.toast--success { background-color: var(--color-success-100); border-color: var(--color-success-400); }
-.toast--error   { background-color: var(--color-error-100);   border-color: var(--color-error-400); }
-.toast--info    { background-color: var(--color-info-100);    border-color: var(--color-info-400); }
-.toast--alert   { background-color: var(--color-warning-100); border-color: var(--color-warning-400); }
+/* Variantes — borde en -400: más contraste que --feedback-*-border (200), a propósito para que el toast se destaque como overlay flotante */
+.toast--success { background-color: var(--feedback-success-bg-hover); border-color: var(--color-success-400); }
+.toast--error   { background-color: var(--feedback-error-bg-hover);   border-color: var(--color-error-400); }
+.toast--info    { background-color: var(--feedback-info-bg-hover);    border-color: var(--color-info-400); }
+.toast--alert   { background-color: var(--feedback-warning-bg-hover); border-color: var(--color-warning-400); }
 
 /* Layout interno */
 .toast__content { display: flex; align-items: flex-start; gap: 8px; padding-bottom: 8px; width: 100%; }
@@ -264,10 +264,10 @@
 .toast__close { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: flex-start; flex-shrink: 0; }
 .toast__close .material-icons-outlined { font-size: 16px; line-height: 1; }
 
-/* Colores por variante */
-.toast--success .toast__icon, .toast--success .toast__title, .toast--success .toast__desc, .toast--success .toast__close { color: var(--color-success-700); }
-.toast--error   .toast__icon, .toast--error   .toast__title, .toast--error   .toast__desc, .toast--error   .toast__close { color: var(--color-error-700); }
-.toast--info    .toast__icon, .toast--info    .toast__title, .toast--info    .toast__desc, .toast--info    .toast__close { color: var(--color-info-700); }
+/* Colores por variante — warning-900 en vez de --feedback-warning-text (700): 700 no distingue lo suficiente sobre el fondo warning-100, mismo criterio que card-tile--warning */
+.toast--success .toast__icon, .toast--success .toast__title, .toast--success .toast__desc, .toast--success .toast__close { color: var(--feedback-success-text); }
+.toast--error   .toast__icon, .toast--error   .toast__title, .toast--error   .toast__desc, .toast--error   .toast__close { color: var(--feedback-error-text); }
+.toast--info    .toast__icon, .toast--info    .toast__title, .toast--info    .toast__desc, .toast--info    .toast__close { color: var(--feedback-info-text); }
 .toast--alert   .toast__icon, .toast--alert   .toast__title, .toast--alert   .toast__desc, .toast--alert   .toast__close { color: var(--color-warning-900); }
 
 /* Animaciones de entrada (desde la derecha) y salida (hacia la derecha) */
@@ -278,10 +278,10 @@
 
 /* Track time estático (posición fija, sin animación) */
 .toast__track { position: absolute; bottom: 0; left: 0; height: 5px; border-radius: 0 0 0 var(--radius-xs); width: 75%; }
-.toast--success .toast__track { background-color: var(--color-success-500); }
-.toast--error   .toast__track { background-color: var(--color-error-500); }
-.toast--info    .toast__track { background-color: var(--color-info-500); }
-.toast--alert   .toast__track { background-color: var(--color-warning-500); }
+.toast--success .toast__track { background-color: var(--feedback-success-icon); }
+.toast--error   .toast__track { background-color: var(--feedback-error-icon); }
+.toast--info    .toast__track { background-color: var(--feedback-info-icon); }
+.toast--alert   .toast__track { background-color: var(--feedback-warning-icon); }
 
 /* Track time animado (auto-dismiss) */
 .toast__track--anim { width: 100%; animation: toast-progress var(--toast-duration, 4000ms) linear forwards; }
@@ -364,7 +364,7 @@ function dismissToast(toast) {
             </div>
           </div>
         </div>
-        <div class="ds-code ds-code--tabbed ds-code--standalone" style="border-top: none; border-radius: 0 0 8px 8px;">
+        <div class="ds-code ds-code--tabbed">
           <div class="ds-code__tabs">
             <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-notrack')">CSS</button>
             <button class="ds-code__tab" onclick="switchTab(this, 'html-notrack')">HTML</button>
@@ -373,11 +373,11 @@ function dismissToast(toast) {
 
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css-notrack"><code>.toast { position: relative; display: flex; flex-direction: column; width: 350px; min-height: 70px; padding: 8px; border: 1px solid; border-radius: var(--radius-sm); overflow: hidden; box-shadow: var(--shadow-mid); box-sizing: border-box; }
 
-/* Variantes */
-.toast--success { background-color: var(--color-success-100); border-color: var(--color-success-400); }
-.toast--error   { background-color: var(--color-error-100);   border-color: var(--color-error-400); }
-.toast--info    { background-color: var(--color-info-100);    border-color: var(--color-info-400); }
-.toast--alert   { background-color: var(--color-warning-100); border-color: var(--color-warning-400); }
+/* Variantes — borde en -400: más contraste que --feedback-*-border (200), a propósito para que el toast se destaque como overlay flotante */
+.toast--success { background-color: var(--feedback-success-bg-hover); border-color: var(--color-success-400); }
+.toast--error   { background-color: var(--feedback-error-bg-hover);   border-color: var(--color-error-400); }
+.toast--info    { background-color: var(--feedback-info-bg-hover);    border-color: var(--color-info-400); }
+.toast--alert   { background-color: var(--feedback-warning-bg-hover); border-color: var(--color-warning-400); }
 
 /* Layout interno */
 .toast__content { display: flex; align-items: flex-start; gap: 8px; padding-bottom: 8px; width: 100%; }
@@ -389,10 +389,10 @@ function dismissToast(toast) {
 .toast__close { background: none; border: none; cursor: pointer; padding: 0; display: flex; align-items: flex-start; flex-shrink: 0; }
 .toast__close .material-icons-outlined { font-size: 16px; line-height: 1; }
 
-/* Colores por variante */
-.toast--success .toast__icon, .toast--success .toast__title, .toast--success .toast__desc, .toast--success .toast__close { color: var(--color-success-700); }
-.toast--error   .toast__icon, .toast--error   .toast__title, .toast--error   .toast__desc, .toast--error   .toast__close { color: var(--color-error-700); }
-.toast--info    .toast__icon, .toast--info    .toast__title, .toast--info    .toast__desc, .toast--info    .toast__close { color: var(--color-info-700); }
+/* Colores por variante — warning-900 en vez de --feedback-warning-text (700): 700 no distingue lo suficiente sobre el fondo warning-100, mismo criterio que card-tile--warning */
+.toast--success .toast__icon, .toast--success .toast__title, .toast--success .toast__desc, .toast--success .toast__close { color: var(--feedback-success-text); }
+.toast--error   .toast__icon, .toast--error   .toast__title, .toast--error   .toast__desc, .toast--error   .toast__close { color: var(--feedback-error-text); }
+.toast--info    .toast__icon, .toast--info    .toast__title, .toast--info    .toast__desc, .toast--info    .toast__close { color: var(--feedback-info-text); }
 .toast--alert   .toast__icon, .toast--alert   .toast__title, .toast--alert   .toast__desc, .toast--alert   .toast__close { color: var(--color-warning-900); }
 
 /* Animaciones de entrada (desde la derecha) y salida (hacia la derecha) */
