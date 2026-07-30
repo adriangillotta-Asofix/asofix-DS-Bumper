@@ -46,7 +46,7 @@
         <li><a href="../components/toast.html" class="ds-nav__link">Toast</a></li>
         <li><a href="../components/tooltip.html" class="ds-nav__link">Tooltip</a></li>
       </ul>
-      <p class="ds-nav__label">Globals</p>
+      <p class="ds-nav__label">Patterns</p>
       <ul class="ds-nav__list">
         <li><a href="../components/modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
@@ -55,6 +55,7 @@
         <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
       </ul>
     </nav>
+    <div class="ds-sidebar__fade"></div>
   </aside>
 
   <!-- MAIN CONTENT -->
@@ -80,9 +81,7 @@
             </div>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--shadow-high</span>
             <span class="ds-type-meta__value">0px 16px 48px -4px rgba(0,0,0,0.15)</span>
-            <span class="ds-type-meta__usage">Elevación máxima para componentes de alta jerarquía que requieren atención inmediata. Uso principal: modales, diálogos de confirmación, date pickers y bottom sheets. Generalmente se acompaña de un overlay (capa oscura) de fondo.</span>
           </div>
         </div>
 
@@ -93,9 +92,7 @@
             </div>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--shadow-mid</span>
             <span class="ds-type-meta__value">0px 4px 12px -2px rgba(0,0,0,0.12)</span>
-            <span class="ds-type-meta__usage">Elevación intermedia para elementos interactivos temporales o destacados. Uso principal: toasts, cards flotantes, dropdowns y estados de hover que requieren énfasis visual.</span>
           </div>
         </div>
 
@@ -106,9 +103,7 @@
             </div>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--shadow-low</span>
             <span class="ds-type-meta__value">0px 1px 3px 0px rgba(0,0,0,0.08)</span>
-            <span class="ds-type-meta__usage">Elevación mínima para separar elementos del fondo sin crear profundidad excesiva. Uso principal: navegación fija (header/navbar), tab bars y elementos sticky que deben permanecer visibles al hacer scroll.</span>
           </div>
         </div>
 
@@ -125,7 +120,16 @@
 
       <div data-page-panel="documentation" hidden>
         <div class="ds-section">
-          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para esta sección.</p>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--shadow-high</code></td><td>0px 16px 48px -4px rgba(0,0,0,0.15)</td><td class="ds-doc-table__desc">Es la elevación máxima, para componentes de alta jerarquía que requieren atención inmediata. Se usa principalmente en modales, diálogos de confirmación, date pickers y bottom sheets, casi siempre acompañada de un overlay (capa oscura) de fondo.</td></tr>
+              <tr><td><code>--shadow-mid</code></td><td>0px 4px 12px -2px rgba(0,0,0,0.12)</td><td class="ds-doc-table__desc">Es una elevación intermedia, para elementos interactivos temporales o destacados. Se usa principalmente en toasts, cards flotantes, dropdowns y estados de hover que requieren énfasis visual.</td></tr>
+              <tr><td><code>--shadow-low</code></td><td>0px 1px 3px 0px rgba(0,0,0,0.08)</td><td class="ds-doc-table__desc">Es la elevación mínima, para separar elementos del fondo sin crear profundidad excesiva. Se usa principalmente en navegación fija (header/navbar), tab bars y elementos sticky que deben permanecer visibles al hacer scroll.</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
 

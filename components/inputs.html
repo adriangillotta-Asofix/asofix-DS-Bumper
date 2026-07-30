@@ -46,7 +46,7 @@
         <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
         <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
       </ul>
-      <p class="ds-nav__label">Globals</p>
+      <p class="ds-nav__label">Patterns</p>
       <ul class="ds-nav__list">
         <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
@@ -55,6 +55,7 @@
         <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
       </ul>
     </nav>
+    <div class="ds-sidebar__fade"></div>
   </aside>
 
   <!-- MAIN CONTENT -->
@@ -148,24 +149,24 @@
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.input { display: flex; flex-direction: column; gap: 4px; width: 100%; }
 .input__label { display: flex; align-items: center; gap: 4px; }
-.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
+.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--text-field); }
 .input__label-text--lg { font-size: var(--font-size-body); line-height: var(--line-height-body); }
-.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; user-select: none; }
-.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
-.input__container { display: flex; align-items: center; width: 100%; background: var(--color-paper-50); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--text-secondary); display: flex; align-items: center; line-height: 1; user-select: none; }
+.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
+.input__container { display: flex; align-items: center; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
 .input__container--lg { height: 50px; padding: 0 12px; }
-.input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--color-neutral-600); }
-.input__field::placeholder { color: var(--color-neutral-400); }
-.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--text-field); }
+.input__field::placeholder { color: var(--text-placeholder); }
+.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
 
 /* States */
-.input__container:hover { border-color: var(--color-neutral-600); }
-.input__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.input__container--hover { border-color: var(--color-neutral-600); }
-.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.input__container--error { border-color: var(--color-error-500); }
-.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
-.input__container--disabled { background-color: var(--color-paper-50); pointer-events: none; }</code></pre>
+.input__container:hover { border-color: var(--border-hover); }
+.input__container:focus-within { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
+.input__container--hover { border-color: var(--border-hover); }
+.input__container--focus { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
+.input__container--error { border-color: var(--border-error); }
+.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--border-error); }
+.input__container--disabled { background-color: var(--bg-disabled); pointer-events: none; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="input"&gt;
   &lt;div class="input__label"&gt;
     &lt;span class="input__label-text input__label-text--lg"&gt;Label&lt;/span&gt;
@@ -268,25 +269,25 @@
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.input { display: flex; flex-direction: column; gap: 4px; width: 100%; }
 .input__label { display: flex; align-items: center; gap: 4px; }
-.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
+.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--text-field); }
 .input__label-text--sm { font-size: var(--font-size-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); }
-.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; user-select: none; }
-.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
-.input__container { display: flex; align-items: center; width: 100%; background: var(--color-paper-50); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--text-secondary); display: flex; align-items: center; line-height: 1; user-select: none; }
+.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
+.input__container { display: flex; align-items: center; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
 .input__container--sm { height: 38px; padding: 0 13px; }
-.input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--color-neutral-600); }
+.input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--text-field); }
 .input__field--sm { font-size: var(--font-size-caption); }
-.input__field::placeholder { color: var(--color-neutral-400); }
-.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
+.input__field::placeholder { color: var(--text-placeholder); }
+.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
 
 /* States */
-.input__container:hover { border-color: var(--color-neutral-600); }
-.input__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.input__container--hover { border-color: var(--color-neutral-600); }
-.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.input__container--error { border-color: var(--color-error-500); }
-.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
-.input__container--disabled { background-color: var(--color-paper-50); pointer-events: none; }</code></pre>
+.input__container:hover { border-color: var(--border-hover); }
+.input__container:focus-within { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
+.input__container--hover { border-color: var(--border-hover); }
+.input__container--focus { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
+.input__container--error { border-color: var(--border-error); }
+.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--border-error); }
+.input__container--disabled { background-color: var(--bg-disabled); pointer-events: none; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="input"&gt;
   &lt;div class="input__label"&gt;
     &lt;span class="input__label-text input__label-text--sm"&gt;Label&lt;/span&gt;
@@ -375,24 +376,24 @@
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.input { display: flex; flex-direction: column; gap: 4px; width: 100%; }
 .input__label { display: flex; align-items: center; gap: 4px; }
-.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
+.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--text-field); }
 .input__label-text--lg { font-size: var(--font-size-body); line-height: var(--line-height-body); }
-.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; user-select: none; }
-.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
-.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
-.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--text-secondary); display: flex; align-items: center; line-height: 1; user-select: none; }
+.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
+.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
+.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--border-error); }
 
-.textarea__container { display: flex; align-items: flex-start; width: 100%; background: var(--color-paper-50); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; }
-.textarea__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--color-neutral-600); padding: 9px 12px; resize: none; height: 120px; overflow-y: auto; }
-.textarea__field::placeholder { color: var(--color-neutral-400); }
+.textarea__container { display: flex; align-items: flex-start; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; }
+.textarea__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--text-field); padding: 9px 12px; resize: none; height: 120px; overflow-y: auto; }
+.textarea__field::placeholder { color: var(--text-placeholder); }
 
 /* States */
-.input__container--hover { border-color: var(--color-neutral-600); }
-.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.textarea__container:hover { border-color: var(--color-neutral-600); }
-.textarea__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.textarea__container.input__container--error { border-color: var(--color-error-500); }
-.textarea__container.input__container--disabled { background-color: var(--color-paper-50); pointer-events: none; }</code></pre>
+.input__container--hover { border-color: var(--border-hover); }
+.input__container--focus { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
+.textarea__container:hover { border-color: var(--border-hover); }
+.textarea__container:focus-within { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
+.textarea__container.input__container--error { border-color: var(--border-error); }
+.textarea__container.input__container--disabled { background-color: var(--bg-disabled); pointer-events: none; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="input"&gt;
   &lt;div class="input__label"&gt;
     &lt;span class="input__label-text input__label-text--lg"&gt;Label&lt;/span&gt;
@@ -515,40 +516,40 @@
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.input__label { display: flex; align-items: center; gap: 4px; }
-.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
+.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--text-field); }
 .input__label-text--lg { font-size: var(--font-size-body); line-height: var(--line-height-body); }
-.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; user-select: none; }
-.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
-.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
-.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--text-secondary); display: flex; align-items: center; line-height: 1; user-select: none; }
+.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
+.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
+.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--border-error); }
 
 .select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
-.select__container { display: flex; align-items: center; width: 100%; background: var(--color-paper-50); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
+.select__container { display: flex; align-items: center; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
 .select__container--lg { height: 50px; padding: 0 12px; }
-.select__text { flex: 1; min-width: 0; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-neutral-400); }
-.select__text--filled { color: var(--color-neutral-600); }
+.select__text { flex: 1; min-width: 0; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-placeholder); }
+.select__text--filled { color: var(--text-field); }
 .select__icons { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
-.select__divider { width: 1px; background-color: var(--color-neutral-300); flex-shrink: 0; }
+.select__divider { width: 1px; background-color: var(--border-strong); flex-shrink: 0; }
 .select__container--lg .select__divider { height: 30px; }
-.select__icon { color: var(--color-neutral-500); display: flex; align-items: center; font-size: 16px; }
+.select__icon { color: var(--text-secondary); display: flex; align-items: center; font-size: 16px; }
 .select__container--lg .select__icon { font-size: 20px; }
 
 /* States */
-.input__container--hover { border-color: var(--color-neutral-600); }
-.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.select__container:hover { border-color: var(--color-neutral-600); }
-.select__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.select__container.input__container--error { border-color: var(--color-error-500); }
+.input__container--hover { border-color: var(--border-hover); }
+.input__container--focus { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
+.select__container:hover { border-color: var(--border-hover); }
+.select__container:focus-within { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
+.select__container.input__container--error { border-color: var(--border-error); }
 .select__container--disabled { pointer-events: none; }
-.select__container--lg.select__container--disabled { background-color: var(--color-paper-50); }
+.select__container--lg.select__container--disabled { background-color: var(--bg-disabled); }
 
 /* Dropdown del menú (componente Dropdown — ver esa página para más variantes de ítem) */
-.dropdown { display: inline-flex; flex-direction: column; background-color: var(--color-paper-50); border-radius: var(--radius-sm); box-shadow: 0px 4px 8px 0px rgba(51,51,51,0.22); overflow: hidden; animation: dropdown-in 0.15s ease forwards; }
+.dropdown { display: inline-flex; flex-direction: column; background-color: var(--bg-surface); border-radius: var(--radius-sm); box-shadow: 0px 4px 8px 0px rgba(51,51,51,0.22); overflow: hidden; animation: dropdown-in 0.15s ease forwards; }
 .dropdown[hidden] { display: none; }
 @keyframes dropdown-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 .dropdown__list { flex: 1; min-width: 0; display: flex; flex-direction: column; padding: 8px 4px; overflow-y: auto; max-height: 408px; }
 .dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
-.dropdown-item:hover, .dropdown-item--active { background-color: var(--color-primary-50); }
+.dropdown-item:hover, .dropdown-item--active { background-color: var(--action-primary-subtle); }
 .dropdown-item__content { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
 .dropdown-item__title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="select"&gt;
@@ -726,40 +727,40 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.input__label { display: flex; align-items: center; gap: 4px; }
-.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--color-neutral-600); }
+.input__label-text { font-family: var(--font-family-base); font-weight: var(--font-weight-body-emphasized); color: var(--text-field); }
 .input__label-text--sm { font-size: var(--font-size-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); }
-.input__label-icon { font-size: var(--font-size-caption); color: var(--color-neutral-500); display: flex; align-items: center; line-height: 1; user-select: none; }
-.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
-.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--color-neutral-500); }
-.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--color-error-500); }
+.input__label-icon { font-size: var(--font-size-caption); color: var(--text-secondary); display: flex; align-items: center; line-height: 1; user-select: none; }
+.input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
+.input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
+.input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--border-error); }
 
 .select { display: flex; flex-direction: column; gap: 4px; width: 100%; }
-.select__container { display: flex; align-items: center; width: 100%; background: var(--color-paper-50); border: 1px solid var(--color-neutral-300); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
+.select__container { display: flex; align-items: center; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; cursor: pointer; box-sizing: border-box; }
 .select__container--sm { height: 38px; padding: 0 13px; }
-.select__text { flex: 1; min-width: 0; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-neutral-400); }
-.select__text--filled { color: var(--color-neutral-600); }
+.select__text { flex: 1; min-width: 0; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--text-placeholder); }
+.select__text--filled { color: var(--text-field); }
 .select__icons { display: flex; align-items: center; gap: 4px; flex-shrink: 0; }
-.select__divider { width: 1px; background-color: var(--color-neutral-300); flex-shrink: 0; }
+.select__divider { width: 1px; background-color: var(--border-strong); flex-shrink: 0; }
 .select__container--sm .select__divider { height: 20px; }
-.select__icon { color: var(--color-neutral-500); display: flex; align-items: center; font-size: 16px; }
+.select__icon { color: var(--text-secondary); display: flex; align-items: center; font-size: 16px; }
 .select__icon--sm { font-size: 16px; }
 
 /* States */
-.input__container--hover { border-color: var(--color-neutral-600); }
-.input__container--focus { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.select__container:hover { border-color: var(--color-neutral-600); }
-.select__container:focus-within { border-color: var(--color-primary-500); box-shadow: 0 0 0 2px var(--color-primary-300); }
-.select__container.input__container--error { border-color: var(--color-error-500); }
+.input__container--hover { border-color: var(--border-hover); }
+.input__container--focus { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
+.select__container:hover { border-color: var(--border-hover); }
+.select__container:focus-within { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
+.select__container.input__container--error { border-color: var(--border-error); }
 .select__container--disabled { pointer-events: none; }
-.select__container--sm.select__container--disabled { background-color: var(--color-paper-50); }
+.select__container--sm.select__container--disabled { background-color: var(--bg-disabled); }
 
 /* Dropdown del menú (componente Dropdown — ver esa página para más variantes de ítem) */
-.dropdown { display: inline-flex; flex-direction: column; background-color: var(--color-paper-50); border-radius: var(--radius-sm); box-shadow: 0px 4px 8px 0px rgba(51,51,51,0.22); overflow: hidden; animation: dropdown-in 0.15s ease forwards; }
+.dropdown { display: inline-flex; flex-direction: column; background-color: var(--bg-surface); border-radius: var(--radius-sm); box-shadow: 0px 4px 8px 0px rgba(51,51,51,0.22); overflow: hidden; animation: dropdown-in 0.15s ease forwards; }
 .dropdown[hidden] { display: none; }
 @keyframes dropdown-in { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
 .dropdown__list { flex: 1; min-width: 0; display: flex; flex-direction: column; padding: 8px 4px; overflow-y: auto; max-height: 408px; }
 .dropdown-item { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 0; background-color: transparent; border: none; cursor: pointer; font-family: var(--font-family-base); text-align: left; transition: background-color 0.15s ease; width: 100%; }
-.dropdown-item:hover, .dropdown-item--active { background-color: var(--color-primary-50); }
+.dropdown-item:hover, .dropdown-item--active { background-color: var(--action-primary-subtle); }
 .dropdown-item__content { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; color: var(--color-neutral-700); }
 .dropdown-item__title { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="select"&gt;
@@ -807,9 +808,57 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
       </div>
 
       <div data-page-panel="documentation" hidden>
+
         <div class="ds-section">
-          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para este componente.</p>
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Campos</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Campo</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Text Field</td><td><code>.input</code></td><td class="ds-doc-table__desc">Campo de una sola línea. Es el campo de texto por defecto para la mayoría de los formularios.</td></tr>
+              <tr><td>Text Area</td><td><code>.textarea</code></td><td class="ds-doc-table__desc">Campo de texto multilínea. Se usa cuando la respuesta esperada es más larga, como comentarios o descripciones.</td></tr>
+              <tr><td>Select</td><td><code>.select</code></td><td class="ds-doc-table__desc">Campo de selección. Abre un <code>.dropdown</code> con las opciones disponibles.</td></tr>
+            </tbody>
+          </table>
         </div>
+
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Tamaños</h2>
+            <p class="ds-section__subtitle">Aplican a Text Field y Select</p>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Variante</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Large</td><td><code>--lg</code></td><td class="ds-doc-table__desc">Es el tamaño por defecto, para la mayoría de los formularios.</td></tr>
+              <tr><td>Small</td><td><code>--sm</code></td><td class="ds-doc-table__desc">Se usa en contextos más compactos, como filtros dentro de una tabla o una toolbar.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Estados</h2>
+            <p class="ds-section__subtitle">Mismo patrón para Text Field, Text Area y Select</p>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Estado</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Hover</td><td><code>--hover</code></td><td class="ds-doc-table__desc">Se aplica al pasar el mouse sobre el campo.</td></tr>
+              <tr><td>Focus</td><td><code>--focus</code></td><td class="ds-doc-table__desc">Se aplica cuando el campo recibe foco (por click o navegación con teclado).</td></tr>
+              <tr><td>Error</td><td><code>--error</code></td><td class="ds-doc-table__desc">Se usa cuando el valor no pasa una validación. Va acompañado de un texto asistivo (<code>.input__assistive--error</code>) explicando el error.</td></tr>
+              <tr><td>Disabled</td><td><code>--disabled</code></td><td class="ds-doc-table__desc">Se usa cuando el campo no está disponible en ese momento. Deja de ser interactivo.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
 
     </div>

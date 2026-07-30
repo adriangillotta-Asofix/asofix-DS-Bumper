@@ -49,6 +49,7 @@
   --color-neutral-800: #3F3A4C;
   --color-neutral-900: #161628;
   --color-neutral-line: #EDE8E1;
+  --color-neutral-white: #FFFFFF;
 
   /* Fondo dark — modo oscuro, evitar negro puro (Manual de Marca V3) */
   --color-surface-dark: #0E073D;
@@ -114,6 +115,145 @@
      Uso: KPIs de alto peso. No tiene escala completa definida.
   -------------------------------- */
   --color-copper-500: #C97B4A;
+
+  /* ================================
+     Capa semántica
+     Principio de dos capas (Andrés): la paleta cruda (--color-*) de arriba
+     es de uso exclusivo del mantenimiento del DS. Componentes y prototipos
+     consumen SOLO estos semánticos — así un cambio de paleta no rompe nada
+     río abajo. Ver documentación completa en foundations/colors.html.
+  ================================ */
+
+  /* Background */
+  --bg-canvas: var(--color-paper-50);
+  --bg-surface: var(--color-neutral-white);
+  --bg-surface-hover: var(--color-neutral-50);
+  --bg-subtle: var(--color-neutral-100);
+  --bg-disabled: var(--color-paper-100);
+  --bg-sunken: var(--color-paper-100);
+  --bg-inverse: var(--color-surface-dark);
+
+  /* Border */
+  --border-default: var(--color-paper-200);
+  --border-strong: var(--color-neutral-300);
+  --border-hover: var(--color-neutral-600);
+  --border-focus: var(--color-primary-500);
+  --border-error: var(--color-error-500);
+  --ring-focus: var(--color-primary-300);
+
+  /* Text */
+  --text-primary: var(--color-neutral-900);
+  --text-body: var(--color-neutral-800);
+  --text-field: var(--color-neutral-600);
+  --text-secondary: var(--color-neutral-500);
+  --text-placeholder: var(--color-neutral-400);
+  --text-disabled: var(--color-neutral-400);
+  --text-on-primary: var(--color-neutral-white);
+  --text-inverse: var(--color-neutral-white);
+  --text-on-solid: var(--color-neutral-white);
+
+  /* Solid — fondos saturados de alto contraste (badges, contadores) */
+  --solid-warning: var(--color-warning-700);
+  --solid-error: var(--color-error-500);
+  --solid-neutral: var(--color-neutral-500);
+
+  /* Acción */
+  --action-primary: var(--color-primary-500);
+  --action-primary-hover: var(--color-primary-600);
+  --action-primary-active: var(--color-primary-700);
+  --action-primary-subtle: var(--color-primary-50);
+  --action-primary-subtle-active: var(--color-primary-100);
+  --action-primary-hover-subtle: var(--color-primary-400);
+  --action-secondary: var(--color-secondary-500);
+  --action-secondary-hover: var(--color-secondary-600);
+  --action-danger: var(--color-error-500);
+  --action-danger-hover: var(--color-error-600);
+  --action-danger-active: var(--color-error-700);
+  --ring-danger: var(--color-error-300);
+  --accent: var(--color-copper-500);
+
+  /* Feedback — Error */
+  --feedback-error-bg: var(--color-error-50);
+  --feedback-error-bg-hover: var(--color-error-100);
+  --feedback-error-border: var(--color-error-200);
+  --feedback-error-text: var(--color-error-700);
+  --feedback-error-icon: var(--color-error-500);
+
+  /* Feedback — Success */
+  --feedback-success-bg: var(--color-success-50);
+  --feedback-success-bg-hover: var(--color-success-100);
+  --feedback-success-border: var(--color-success-200);
+  --feedback-success-text: var(--color-success-700);
+  --feedback-success-icon: var(--color-success-500);
+
+  /* Feedback — Info */
+  --feedback-info-bg: var(--color-info-50);
+  --feedback-info-bg-hover: var(--color-info-100);
+  --feedback-info-border: var(--color-info-200);
+  --feedback-info-text: var(--color-info-700);
+  --feedback-info-icon: var(--color-info-500);
+
+  /* Feedback — Warning */
+  --feedback-warning-bg: var(--color-warning-50);
+  --feedback-warning-bg-hover: var(--color-warning-100);
+  --feedback-warning-border: var(--color-warning-200);
+  --feedback-warning-text: var(--color-warning-700);
+  --feedback-warning-icon: var(--color-warning-500);
+
+  /* --------------------------------
+     Pill — escala propia, más contraste que Feedback
+     (pensada para leerse sola, sin el apoyo de un banner)
+  -------------------------------- */
+  --pill-default-bg: var(--color-paper-100);
+  --pill-default-border: var(--color-paper-200);
+  --pill-default-text: var(--color-neutral-700);
+  --pill-default-bg-hover: var(--color-paper-200);
+  --pill-default-bg-active: var(--color-neutral-300);
+  --pill-default-focus-border: var(--color-neutral-700);
+
+  --pill-error-bg: var(--color-error-50);
+  --pill-error-border: var(--color-error-200);
+  --pill-error-text: var(--color-error-800);
+  --pill-error-bg-hover: var(--color-error-100);
+  --pill-error-bg-active: var(--color-error-200);
+  --pill-error-focus-border: var(--color-error-600);
+  --pill-error-disabled-text: var(--color-error-300);
+
+  --pill-success-bg: var(--color-success-50);
+  --pill-success-border: var(--color-success-200);
+  --pill-success-text: var(--color-success-800);
+  --pill-success-bg-hover: var(--color-success-100);
+  --pill-success-bg-active: var(--color-success-200);
+  --pill-success-focus-border: var(--color-success-600);
+  --pill-success-disabled-border: var(--color-success-400);
+  --pill-success-disabled-text: var(--color-success-400);
+
+  --pill-warning-bg: var(--color-warning-50);
+  --pill-warning-border: var(--color-warning-300);
+  --pill-warning-text: var(--color-warning-900);
+  --pill-warning-bg-hover: var(--color-warning-100);
+  --pill-warning-bg-active: var(--color-warning-200);
+  --pill-warning-focus-border: var(--color-warning-700);
+  --pill-warning-disabled-text: var(--color-warning-500);
+
+  --pill-info-bg: var(--color-info-50);
+  --pill-info-border: var(--color-info-200);
+  --pill-info-text: var(--color-info-800);
+  --pill-info-bg-hover: var(--color-info-100);
+  --pill-info-bg-active: var(--color-info-200);
+  --pill-info-focus-border: var(--color-info-600);
+  --pill-info-disabled-text: var(--color-info-400);
+
+  /* Pill — Highlight (variante puntual, paleta propia) */
+  --pill-highlight-warning-bg: var(--color-warning-200);
+  --pill-highlight-warning-border: var(--color-warning-700);
+  --pill-highlight-warning-text: var(--color-warning-900);
+  --pill-highlight-secondary-bg: var(--color-secondary-50);
+  --pill-highlight-secondary-border: var(--color-secondary-600);
+  --pill-highlight-secondary-text: var(--color-secondary-600);
+  --pill-highlight-primary-bg: var(--color-primary-50);
+  --pill-highlight-primary-border: var(--color-primary-500);
+  --pill-highlight-primary-text: var(--color-primary-500);
 
   /* --------------------------------
      Tipografía — Inter

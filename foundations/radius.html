@@ -46,7 +46,7 @@
         <li><a href="../components/toast.html" class="ds-nav__link">Toast</a></li>
         <li><a href="../components/tooltip.html" class="ds-nav__link">Tooltip</a></li>
       </ul>
-      <p class="ds-nav__label">Globals</p>
+      <p class="ds-nav__label">Patterns</p>
       <ul class="ds-nav__list">
         <li><a href="../components/modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
@@ -55,6 +55,7 @@
         <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
       </ul>
     </nav>
+    <div class="ds-sidebar__fade"></div>
   </aside>
 
   <!-- MAIN CONTENT -->
@@ -78,9 +79,7 @@
             <div style="width:96px;height:96px;background-color:var(--color-paper-200);border-radius:var(--radius-xs);"></div>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--radius-xs</span>
             <span class="ds-type-meta__value">4px</span>
-            <span class="ds-type-meta__usage">Checkboxes, tooltips y elementos muy pequeños donde el detalle importa.</span>
           </div>
         </div>
 
@@ -89,9 +88,7 @@
             <div style="width:96px;height:96px;background-color:var(--color-paper-200);border-radius:var(--radius-sm);"></div>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--radius-sm</span>
             <span class="ds-type-meta__value">8px</span>
-            <span class="ds-type-meta__usage">Botones estándar, inputs de texto, alertas y etiquetas (badges).</span>
           </div>
         </div>
 
@@ -100,9 +97,7 @@
             <div style="width:96px;height:96px;background-color:var(--color-paper-200);border-radius:var(--radius-md);"></div>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--radius-md</span>
             <span class="ds-type-meta__value">12px</span>
-            <span class="ds-type-meta__usage">Cards pequeñas, modales secundarios, menús desplegables (dropdowns).</span>
           </div>
         </div>
 
@@ -111,9 +106,7 @@
             <div style="width:96px;height:96px;background-color:var(--color-paper-200);border-radius:var(--radius-lg);"></div>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--radius-lg</span>
             <span class="ds-type-meta__value">16px</span>
-            <span class="ds-type-meta__usage">Cards principales, secciones de contenido, banners.</span>
           </div>
         </div>
 
@@ -122,9 +115,7 @@
             <div style="width:96px;height:96px;background-color:var(--color-paper-200);border-radius:var(--radius-xl);"></div>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--radius-xl</span>
             <span class="ds-type-meta__value">28px</span>
-            <span class="ds-type-meta__usage">Diálogos principales, hojas de fondo (bottom sheets) según MD3.</span>
           </div>
         </div>
 
@@ -133,9 +124,7 @@
             <div style="width:96px;height:96px;background-color:var(--color-paper-200);border-radius:var(--radius-full);"></div>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--radius-full</span>
             <span class="ds-type-meta__value">999px</span>
-            <span class="ds-type-meta__usage">Pills (botones redondeados), avatares circulares, chips.</span>
           </div>
         </div>
 
@@ -155,7 +144,19 @@
 
       <div data-page-panel="documentation" hidden>
         <div class="ds-section">
-          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para esta sección.</p>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--radius-xs</code></td><td>4px</td><td class="ds-doc-table__desc">Se usa en checkboxes, tooltips y elementos muy pequeños, donde el detalle importa.</td></tr>
+              <tr><td><code>--radius-sm</code></td><td>8px</td><td class="ds-doc-table__desc">Se usa en botones estándar, inputs de texto, alertas y badges.</td></tr>
+              <tr><td><code>--radius-md</code></td><td>12px</td><td class="ds-doc-table__desc">Se usa en cards pequeñas, modales secundarios y menús desplegables (dropdowns).</td></tr>
+              <tr><td><code>--radius-lg</code></td><td>16px</td><td class="ds-doc-table__desc">Se usa en cards principales, secciones de contenido y banners.</td></tr>
+              <tr><td><code>--radius-xl</code></td><td>28px</td><td class="ds-doc-table__desc">Se usa en diálogos principales y en hojas de fondo (bottom sheets), siguiendo el criterio de MD3.</td></tr>
+              <tr><td><code>--radius-full</code></td><td>999px</td><td class="ds-doc-table__desc">Se usa en pills, avatares circulares y chips.</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
 

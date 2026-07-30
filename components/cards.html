@@ -46,7 +46,7 @@
         <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
         <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
       </ul>
-      <p class="ds-nav__label">Globals</p>
+      <p class="ds-nav__label">Patterns</p>
       <ul class="ds-nav__list">
         <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
@@ -55,6 +55,7 @@
         <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
       </ul>
     </nav>
+    <div class="ds-sidebar__fade"></div>
   </aside>
 
   <!-- MAIN CONTENT -->
@@ -78,7 +79,7 @@
 
           <!-- Default -->
           <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
-            <span style="font-size:12px; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Default</span>
+            <span style="font-size:12px; color:var(--text-secondary); font-family:'Inter',sans-serif;">Default</span>
             <div class="card-metric" style="width:356px;">
               <div class="card-metric__header">
                 <span class="card-metric__title">Title header</span>
@@ -97,7 +98,7 @@
 
           <!-- Sin comparador -->
           <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
-            <span style="font-size:12px; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Sin comparador</span>
+            <span style="font-size:12px; color:var(--text-secondary); font-family:'Inter',sans-serif;">Sin comparador</span>
             <div class="card-metric" style="width:356px;">
               <div class="card-metric__header">
                 <span class="card-metric__title">Title header</span>
@@ -122,8 +123,8 @@
   gap: 16px;
   padding: 16px 20px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-paper-200);
-  background-color: var(--color-paper-50);
+  border: 1px solid var(--border-default);
+  background-color: var(--bg-canvas);
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
@@ -162,7 +163,7 @@
   font-weight: var(--font-weight-heading);
   line-height: var(--line-height-h2);
   letter-spacing: var(--letter-spacing-h2);
-  color: var(--color-neutral-800);
+  color: var(--text-body);
 }
 
 .card-metric__comparator {
@@ -176,14 +177,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--color-error-100);
+  background-color: var(--feedback-error-bg-hover);
   border-radius: var(--radius-full);
   padding: 4px;
 }
 
 .card-metric__icon-box .material-icons-outlined {
   font-size: 20px;
-  color: var(--color-error-700);
+  color: var(--feedback-error-text);
   line-height: 1;
 }
 
@@ -193,7 +194,7 @@
   font-weight: var(--font-weight-caption-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: var(--color-error-700);
+  color: var(--feedback-error-text);
   white-space: nowrap;
 }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="card-metric"&gt;
@@ -219,9 +220,9 @@
       <div class="ds-section" id="tile">
         <h2 class="ds-section__title">Tile Card</h2>
         <div class="ds-preview ds-preview--interactive">
-          <div class="card-tile" style="width:252px;">
+          <div class="card-tile card-tile--error" style="width:252px;">
             <div class="card-tile__header">
-              <span class="card-tile__title">Leads activos</span>
+              <span class="card-tile__title">Leads vencidos</span>
               <span class="card-tile__icon material-icons-outlined">open_in_new</span>
             </div>
             <div class="card-tile__body">
@@ -235,7 +236,7 @@
 
           <!-- Default -->
           <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
-            <span style="font-size:12px; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Default</span>
+            <span style="font-size:12px; color:var(--text-secondary); font-family:'Inter',sans-serif;">Default</span>
             <div class="card-tile" style="width:252px;">
               <div class="card-tile__header">
                 <span class="card-tile__title">Title header</span>
@@ -250,7 +251,7 @@
 
           <!-- Hover -->
           <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
-            <span style="font-size:12px; color:var(--color-neutral-500); font-family:'Inter',sans-serif;">Hover</span>
+            <span style="font-size:12px; color:var(--text-secondary); font-family:'Inter',sans-serif;">Hover</span>
             <div class="card-tile card-tile--hover" style="width:252px;">
               <div class="card-tile__header">
                 <span class="card-tile__title">Title header</span>
@@ -265,6 +266,59 @@
 
         </div>
 
+        <p class="ds-preview__label">Variantes de color</p>
+        <div class="ds-preview" style="gap: 16px;">
+
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+            <span style="font-size:12px; color:var(--text-secondary); font-family:'Inter',sans-serif;">Error</span>
+            <div class="card-tile card-tile--error" style="width:200px;">
+              <div class="card-tile__header">
+                <span class="card-tile__title">Leads vencidos</span>
+              </div>
+              <div class="card-tile__body">
+                <span class="card-tile__value">8</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+            <span style="font-size:12px; color:var(--text-secondary); font-family:'Inter',sans-serif;">Success</span>
+            <div class="card-tile card-tile--success" style="width:200px;">
+              <div class="card-tile__header">
+                <span class="card-tile__title">Leads convertidos</span>
+              </div>
+              <div class="card-tile__body">
+                <span class="card-tile__value">8</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+            <span style="font-size:12px; color:var(--text-secondary); font-family:'Inter',sans-serif;">Info</span>
+            <div class="card-tile card-tile--info" style="width:200px;">
+              <div class="card-tile__header">
+                <span class="card-tile__title">Leads en curso</span>
+              </div>
+              <div class="card-tile__body">
+                <span class="card-tile__value">8</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+            <span style="font-size:12px; color:var(--text-secondary); font-family:'Inter',sans-serif;">Warning</span>
+            <div class="card-tile card-tile--warning" style="width:200px;">
+              <div class="card-tile__header">
+                <span class="card-tile__title">Leads por vencer</span>
+              </div>
+              <div class="card-tile__body">
+                <span class="card-tile__value">8</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
         <div class="ds-code ds-code--tabbed">
           <div class="ds-code__tabs">
             <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
@@ -272,13 +326,18 @@
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.card-tile {
+  --tile-border: var(--border-default);
+  --tile-bg: var(--bg-surface);
+  --tile-bg-hover: var(--bg-surface-hover);
+  --tile-text: var(--text-primary);
+
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 8px 12px;
   border-radius: var(--radius-sm);
-  border: 1px solid var(--color-error-300);
-  background-color: var(--color-error-50);
+  border: 1px solid var(--tile-border);
+  background-color: var(--tile-bg);
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
@@ -287,7 +346,34 @@
 }
 
 .card-tile:hover,
-.card-tile--hover { background-color: var(--color-error-100); transform: translateY(-4px); }
+.card-tile--hover { background-color: var(--tile-bg-hover); transform: translateY(-4px); }
+
+/* Variantes de color */
+.card-tile--error {
+  --tile-border: var(--feedback-error-border);
+  --tile-bg: var(--feedback-error-bg);
+  --tile-bg-hover: var(--feedback-error-bg-hover);
+  --tile-text: var(--feedback-error-text);
+}
+.card-tile--success {
+  --tile-border: var(--feedback-success-border);
+  --tile-bg: var(--feedback-success-bg);
+  --tile-bg-hover: var(--feedback-success-bg-hover);
+  --tile-text: var(--feedback-success-text);
+}
+.card-tile--info {
+  --tile-border: var(--feedback-info-border);
+  --tile-bg: var(--feedback-info-bg);
+  --tile-bg-hover: var(--feedback-info-bg-hover);
+  --tile-text: var(--feedback-info-text);
+}
+.card-tile--warning {
+  /* warning-200 casi no se distingue de warning-50; se sube a warning-300 solo acá */
+  --tile-border: var(--color-warning-300);
+  --tile-bg: var(--feedback-warning-bg);
+  --tile-bg-hover: var(--feedback-warning-bg-hover);
+  --tile-text: var(--feedback-warning-text);
+}
 
 .card-tile__header {
   display: flex;
@@ -305,7 +391,7 @@
   font-weight: var(--font-weight-caption-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: var(--color-error-700);
+  color: var(--tile-text);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -315,7 +401,7 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  color: var(--color-error-700);
+  color: var(--tile-text);
   font-size: 16px;
 }
 
@@ -332,7 +418,7 @@
   font-weight: var(--font-weight-heading);
   line-height: var(--line-height-h1);
   letter-spacing: var(--letter-spacing-h1);
-  color: var(--color-error-700);
+  color: var(--tile-text);
   flex-shrink: 0;
 }
 
@@ -342,12 +428,12 @@
   font-weight: var(--font-weight-caption);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: var(--color-error-700);
+  color: var(--tile-text);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }</code></pre>
-          <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Default --&gt;
+          <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Default (neutro) --&gt;
 &lt;div class="card-tile"&gt;
   &lt;div class="card-tile__header"&gt;
     &lt;span class="card-tile__title"&gt;Title header&lt;/span&gt;
@@ -362,7 +448,10 @@
 &lt;/div&gt;
 
 &lt;!-- Hover --&gt;
-&lt;div class="card-tile card-tile--hover"&gt; ... &lt;/div&gt;</code></pre>
+&lt;div class="card-tile card-tile--hover"&gt; ... &lt;/div&gt;
+
+&lt;!-- Variante de color --&gt;
+&lt;div class="card-tile card-tile--error"&gt; ... &lt;/div&gt;</code></pre>
         </div>
 
       </div><!-- /ds-section tile -->
@@ -370,9 +459,39 @@
       </div>
 
       <div data-page-panel="documentation" hidden>
+
         <div class="ds-section">
-          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para este componente.</p>
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Tipos de card</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Variante</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Metric Card</td><td><code>.card-metric</code></td><td class="ds-doc-table__desc">Muestra un valor numérico junto con un comparador de tendencia (ej. "+10%"). Se usa en dashboards para KPIs que necesitan contexto de variación en el tiempo.</td></tr>
+              <tr><td>Tile Card</td><td><code>.card-tile</code></td><td class="ds-doc-table__desc">Muestra un valor numérico compacto, sin comparador. Es neutra por defecto, y admite variantes de color para comunicar un estado (ver más abajo).</td></tr>
+            </tbody>
+          </table>
         </div>
+
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Variantes de color de Tile Card</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Variante</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Error</td><td><code>.card-tile--error</code></td><td class="ds-doc-table__desc">Se usa cuando el valor representa algo que requiere atención, como leads vencidos o pagos rechazados.</td></tr>
+              <tr><td>Success</td><td><code>.card-tile--success</code></td><td class="ds-doc-table__desc">Se usa cuando el valor representa un resultado positivo, como leads convertidos.</td></tr>
+              <tr><td>Info</td><td><code>.card-tile--info</code></td><td class="ds-doc-table__desc">Se usa cuando el valor es informativo, sin una connotación positiva o negativa, como leads en curso.</td></tr>
+              <tr><td>Warning</td><td><code>.card-tile--warning</code></td><td class="ds-doc-table__desc">Se usa cuando el valor representa algo que va a necesitar atención pronto, como leads por vencer. El borde usa <code>warning-300</code> en vez del <code>warning-200</code> del resto de los componentes Warning, porque contra <code>warning-50</code> casi no se distinguía.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
 
     </div>

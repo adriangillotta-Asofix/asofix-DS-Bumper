@@ -46,7 +46,7 @@
         <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
         <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
       </ul>
-      <p class="ds-nav__label">Globals</p>
+      <p class="ds-nav__label">Patterns</p>
       <ul class="ds-nav__list">
         <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
@@ -55,6 +55,7 @@
         <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
       </ul>
     </nav>
+    <div class="ds-sidebar__fade"></div>
   </aside>
 
    <!-- MAIN CONTENT -->
@@ -71,19 +72,10 @@
 
       <div data-page-panel="component">
 
-      <p class="ds-preview__label">Preview</p>
-      <div class="ds-preview" style="gap: 24px;">
-        <span class="badge badge--fix badge--warning">9</span>
-        <span class="badge badge--hug badge--error">9+</span>
-        <span class="badge badge--dot badge--warning badge--stroke"></span>
-      </div>
-
       <!-- FIX -->
       <div class="ds-section" id="fix">
         <h2 class="ds-section__title">Fix</h2>
-        <p class="ds-section__desc">Tamaño fijo 20×20, para un solo dígito. Ideal sobre un ícono o avatar.</p>
-        <p class="ds-preview__label">Sin borde / con borde</p>
-        <div class="ds-preview">
+        <div class="ds-preview" style="gap: 24px;">
           <span class="badge badge--fix badge--warning">9</span>
           <span class="badge badge--fix badge--warning badge--stroke">9</span>
           <span class="badge badge--fix badge--error">9</span>
@@ -115,13 +107,13 @@
 
 .badge--fix { width: 20px; height: 20px; padding: 0; }
 
-.badge--warning { background-color: var(--color-warning-700); color: #FFFFFF; }
-.badge--error   { background-color: var(--color-error-500);   color: #FFFFFF; }
-.badge--neutral { background-color: var(--color-neutral-500); color: #FFFFFF; }
-.badge--white   { background-color: #FFFFFF; color: var(--color-neutral-600); }
+.badge--warning { background-color: var(--solid-warning); color: var(--text-on-solid); }
+.badge--error   { background-color: var(--solid-error);   color: var(--text-on-solid); }
+.badge--neutral { background-color: var(--solid-neutral); color: var(--text-on-solid); }
+.badge--white   { background-color: var(--bg-surface); color: var(--color-neutral-600); }
 
-.badge--stroke.badge--fix { border: 1px solid var(--color-paper-50); }
-.badge--white.badge--stroke.badge--fix { border-color: var(--color-paper-200); }</code></pre>
+.badge--stroke.badge--fix { border: 1px solid var(--bg-surface); }
+.badge--white.badge--stroke.badge--fix { border-color: var(--border-default); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;span class="badge badge--fix badge--warning"&gt;9&lt;/span&gt;
 &lt;span class="badge badge--fix badge--warning badge--stroke"&gt;9&lt;/span&gt;
 &lt;span class="badge badge--fix badge--error"&gt;9&lt;/span&gt;
@@ -136,9 +128,7 @@
       <!-- HUG -->
       <div class="ds-section" id="hug">
         <h2 class="ds-section__title">Hug</h2>
-        <p class="ds-section__desc">Ancho variable según contenido. Uso típico: "9+" cuando el conteo supera un dígito.</p>
-        <p class="ds-preview__label">Sin borde / con borde</p>
-        <div class="ds-preview">
+        <div class="ds-preview" style="gap: 24px;">
           <span class="badge badge--hug badge--warning">9+</span>
           <span class="badge badge--hug badge--warning badge--stroke">9+</span>
           <span class="badge badge--hug badge--error">9+</span>
@@ -170,13 +160,13 @@
 
 .badge--hug { height: 20px; padding: 0 6px; }
 
-.badge--warning { background-color: var(--color-warning-700); color: #FFFFFF; }
-.badge--error   { background-color: var(--color-error-500);   color: #FFFFFF; }
-.badge--neutral { background-color: var(--color-neutral-500); color: #FFFFFF; }
-.badge--white   { background-color: #FFFFFF; color: var(--color-neutral-600); }
+.badge--warning { background-color: var(--solid-warning); color: var(--text-on-solid); }
+.badge--error   { background-color: var(--solid-error);   color: var(--text-on-solid); }
+.badge--neutral { background-color: var(--solid-neutral); color: var(--text-on-solid); }
+.badge--white   { background-color: var(--bg-surface); color: var(--color-neutral-600); }
 
-.badge--stroke.badge--hug { border: 1px solid var(--color-paper-50); }
-.badge--white.badge--stroke.badge--hug { border-color: var(--color-paper-200); }</code></pre>
+.badge--stroke.badge--hug { border: 1px solid var(--bg-surface); }
+.badge--white.badge--stroke.badge--hug { border-color: var(--border-default); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;span class="badge badge--hug badge--warning"&gt;9+&lt;/span&gt;
 &lt;span class="badge badge--hug badge--warning badge--stroke"&gt;9+&lt;/span&gt;
 &lt;span class="badge badge--hug badge--error"&gt;9+&lt;/span&gt;
@@ -191,9 +181,7 @@
       <!-- DOT -->
       <div class="ds-section" id="dot">
         <h2 class="ds-section__title">Dot</h2>
-        <p class="ds-section__desc">Solo señal de presencia, sin conteo. Únicamente en warning-dark y error — no aplica a neutral ni white.</p>
-        <p class="ds-preview__label">Sin borde / con borde</p>
-        <div class="ds-preview">
+        <div class="ds-preview" style="gap: 24px;">
           <span class="badge badge--dot badge--warning"></span>
           <span class="badge badge--dot badge--warning badge--stroke"></span>
           <span class="badge badge--dot badge--error"></span>
@@ -215,10 +203,10 @@
 
 .badge--dot { width: 8px; height: 8px; padding: 0; }
 
-.badge--warning { background-color: var(--color-warning-700); }
-.badge--error   { background-color: var(--color-error-500); }
+.badge--warning { background-color: var(--solid-warning); }
+.badge--error   { background-color: var(--solid-error); }
 
-.badge--stroke.badge--dot { box-shadow: 0 0 0 2px var(--color-paper-50); }</code></pre>
+.badge--stroke.badge--dot { box-shadow: 0 0 0 2px var(--bg-surface); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;span class="badge badge--dot badge--warning"&gt;&lt;/span&gt;
 &lt;span class="badge badge--dot badge--warning badge--stroke"&gt;&lt;/span&gt;
 &lt;span class="badge badge--dot badge--error"&gt;&lt;/span&gt;
@@ -229,8 +217,7 @@
       <!-- SOBRE OTRO ELEMENTO -->
       <div class="ds-section" id="sobre-elemento">
         <h2 class="ds-section__title">Sobre otro elemento</h2>
-        <p class="ds-section__desc">El Badge no define su propia posición: se ubica con <code>position: absolute</code> sobre un contenedor <code>position: relative</code> (ej. un botón de notificaciones). El borde (<code>badge--stroke</code>) es el que lo separa visualmente de lo que tiene detrás.</p>
-        <div class="ds-preview">
+        <div class="ds-preview" style="gap: 24px;">
           <div style="position: relative; display: inline-flex;">
             <button class="btn btn--tertiary btn--icon btn--md" aria-label="Notificaciones"><span class="material-icons-outlined">notifications</span></button>
             <span class="badge badge--fix badge--error badge--stroke" style="position: absolute; top: -2px; right: -2px;">3</span>
@@ -240,7 +227,7 @@
             <span class="badge badge--dot badge--warning badge--stroke" style="position: absolute; top: 2px; right: 2px;"></span>
           </div>
         </div>
-        <div class="ds-code ds-code--standalone">
+        <div class="ds-code">
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
           <pre><code>&lt;div style="position: relative; display: inline-flex;"&gt;
   &lt;button class="btn btn--tertiary btn--icon btn--md" aria-label="Notificaciones"&gt;&lt;span class="material-icons-outlined"&gt;notifications&lt;/span&gt;&lt;/button&gt;
@@ -253,7 +240,20 @@
 
       <div data-page-panel="documentation" hidden>
         <div class="ds-section">
-          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para esta sección.</p>
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Variantes</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Variante</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Fix</td><td><code>.badge--fix</code></td><td class="ds-doc-table__desc">Tiene un tamaño fijo de 20×20 px, pensado para mostrar un solo dígito. Es ideal para ubicar sobre un ícono o un avatar.</td></tr>
+              <tr><td>Hug</td><td><code>.badge--hug</code></td><td class="ds-doc-table__desc">Su ancho se ajusta al contenido. Se usa típicamente para mostrar "9+" cuando el conteo supera un dígito.</td></tr>
+              <tr><td>Dot</td><td><code>.badge--dot</code></td><td class="ds-doc-table__desc">Funciona solo como señal de presencia, sin mostrar un conteo. Está disponible únicamente en warning y error; no aplica a neutral ni white.</td></tr>
+              <tr><td>Sobre otro elemento</td><td><code>badge--stroke</code></td><td class="ds-doc-table__desc">El Badge no define su propia posición: se ubica con <code>position: absolute</code> sobre un contenedor con <code>position: relative</code>, como un botón de notificaciones. El borde (<code>badge--stroke</code>) es el que lo separa visualmente de lo que tiene detrás.</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
 

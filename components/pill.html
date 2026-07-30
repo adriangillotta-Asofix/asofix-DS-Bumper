@@ -46,7 +46,7 @@
         <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
         <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
       </ul>
-      <p class="ds-nav__label">Globals</p>
+      <p class="ds-nav__label">Patterns</p>
       <ul class="ds-nav__list">
         <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
@@ -55,6 +55,7 @@
         <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
       </ul>
     </nav>
+    <div class="ds-sidebar__fade"></div>
   </aside>
 
   <!-- MAIN CONTENT -->
@@ -74,7 +75,6 @@
       <!-- DEFAULT -->
       <div class="ds-section" id="default">
         <h2 class="ds-section__title">Default</h2>
-        <p class="ds-section__desc">Variante neutral. Usa íconos de Material Icons Outlined a 16 px.</p>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
           <button class="pill pill--md pill--default"><span class="material-icons-outlined">person</span>Default<span class="material-icons-outlined">expand_more</span></button>
@@ -110,11 +110,11 @@
 .pill .material-icons-outlined { font-size: 16px; line-height: 1; }
 .pill--md { padding: 6px 12px; }
 
-.pill--default { background-color: var(--color-paper-100); border-color: var(--color-paper-200); color: var(--color-neutral-700); }
-.pill--default:hover  { background-color: var(--color-paper-200); }
-.pill--default:active { background-color: var(--color-neutral-300); }
-.pill--default:focus-visible { background-color: var(--color-paper-200); border-width: 2px; border-color: var(--color-neutral-700); outline: none; }
-.pill--default:disabled { background-color: var(--color-paper-100); border-color: var(--color-paper-200); color: var(--color-neutral-400); cursor: not-allowed; }</code></pre>
+.pill--default { background-color: var(--pill-default-bg); border-color: var(--pill-default-border); color: var(--pill-default-text); }
+.pill--default:hover  { background-color: var(--pill-default-bg-hover); }
+.pill--default:active { background-color: var(--pill-default-bg-active); }
+.pill--default:focus-visible { background-color: var(--pill-default-bg-hover); border-width: 2px; border-color: var(--pill-default-focus-border); outline: none; }
+.pill--default:disabled { background-color: var(--pill-default-bg); border-color: var(--pill-default-border); color: var(--text-disabled); cursor: not-allowed; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--default"&gt;
   &lt;span class="material-icons-outlined"&gt;person&lt;/span&gt;
   Label
@@ -126,7 +126,6 @@
       <!-- ROJO -->
       <div class="ds-section" id="rojo">
         <h2 class="ds-section__title">Rojo</h2>
-        <p class="ds-section__desc">Usado para estados de error o alertas críticas.</p>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
           <button class="pill pill--md pill--rojo"><span class="material-icons-outlined">error_outline</span>Default<span class="material-icons-outlined">expand_more</span></button>
@@ -162,11 +161,11 @@
 .pill .material-icons-outlined { font-size: 16px; line-height: 1; }
 .pill--md { padding: 6px 12px; }
 
-.pill--rojo { background-color: var(--color-error-50); border-color: var(--color-error-200); color: var(--color-error-800); }
-.pill--rojo:hover  { background-color: var(--color-error-100); }
-.pill--rojo:active { background-color: var(--color-error-200); }
-.pill--rojo:focus-visible { background-color: var(--color-error-100); border-width: 2px; border-color: var(--color-error-600); outline: none; }
-.pill--rojo:disabled { background-color: var(--color-error-50); border-color: var(--color-error-200); color: var(--color-error-300); cursor: not-allowed; }</code></pre>
+.pill--rojo { background-color: var(--pill-error-bg); border-color: var(--pill-error-border); color: var(--pill-error-text); }
+.pill--rojo:hover  { background-color: var(--pill-error-bg-hover); }
+.pill--rojo:active { background-color: var(--pill-error-bg-active); }
+.pill--rojo:focus-visible { background-color: var(--pill-error-bg-hover); border-width: 2px; border-color: var(--pill-error-focus-border); outline: none; }
+.pill--rojo:disabled { background-color: var(--pill-error-bg); border-color: var(--pill-error-border); color: var(--pill-error-disabled-text); cursor: not-allowed; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--rojo"&gt;
   &lt;span class="material-icons-outlined"&gt;error_outline&lt;/span&gt;
   Label
@@ -178,7 +177,6 @@
       <!-- VERDE -->
       <div class="ds-section" id="verde">
         <h2 class="ds-section__title">Verde</h2>
-        <p class="ds-section__desc">Usado para estados de éxito o confirmación.</p>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
           <button class="pill pill--md pill--verde"><span class="material-icons-outlined">check_circle_outline</span>Default<span class="material-icons-outlined">expand_more</span></button>
@@ -214,11 +212,11 @@
 .pill .material-icons-outlined { font-size: 16px; line-height: 1; }
 .pill--md { padding: 6px 12px; }
 
-.pill--verde { background-color: var(--color-success-50); border-color: var(--color-success-200); color: var(--color-success-800); }
-.pill--verde:hover  { background-color: var(--color-success-100); }
-.pill--verde:active { background-color: var(--color-success-200); }
-.pill--verde:focus-visible { background-color: var(--color-success-100); border-width: 2px; border-color: var(--color-success-600); outline: none; }
-.pill--verde:disabled { background-color: var(--color-success-50); border-color: var(--color-success-400); color: var(--color-success-400); cursor: not-allowed; }</code></pre>
+.pill--verde { background-color: var(--pill-success-bg); border-color: var(--pill-success-border); color: var(--pill-success-text); }
+.pill--verde:hover  { background-color: var(--pill-success-bg-hover); }
+.pill--verde:active { background-color: var(--pill-success-bg-active); }
+.pill--verde:focus-visible { background-color: var(--pill-success-bg-hover); border-width: 2px; border-color: var(--pill-success-focus-border); outline: none; }
+.pill--verde:disabled { background-color: var(--pill-success-bg); border-color: var(--pill-success-disabled-border); color: var(--pill-success-disabled-text); cursor: not-allowed; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--verde"&gt;
   &lt;span class="material-icons-outlined"&gt;check_circle_outline&lt;/span&gt;
   Label
@@ -230,7 +228,6 @@
       <!-- AMARILLO -->
       <div class="ds-section" id="amarillo">
         <h2 class="ds-section__title">Amarillo</h2>
-        <p class="ds-section__desc">Usado para advertencias o estados pendientes.</p>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
           <button class="pill pill--md pill--amarillo"><span class="material-icons-outlined">warning_amber</span>Default<span class="material-icons-outlined">expand_more</span></button>
@@ -266,11 +263,11 @@
 .pill .material-icons-outlined { font-size: 16px; line-height: 1; }
 .pill--md { padding: 6px 12px; }
 
-.pill--amarillo { background-color: var(--color-warning-50); border-color: var(--color-warning-300); color: var(--color-warning-900); }
-.pill--amarillo:hover  { background-color: var(--color-warning-100); }
-.pill--amarillo:active { background-color: var(--color-warning-200); }
-.pill--amarillo:focus-visible { background-color: var(--color-warning-100); border-width: 2px; border-color: var(--color-warning-700); outline: none; }
-.pill--amarillo:disabled { background-color: var(--color-warning-50); border-color: var(--color-warning-300); color: var(--color-warning-500); cursor: not-allowed; }</code></pre>
+.pill--amarillo { background-color: var(--pill-warning-bg); border-color: var(--pill-warning-border); color: var(--pill-warning-text); }
+.pill--amarillo:hover  { background-color: var(--pill-warning-bg-hover); }
+.pill--amarillo:active { background-color: var(--pill-warning-bg-active); }
+.pill--amarillo:focus-visible { background-color: var(--pill-warning-bg-hover); border-width: 2px; border-color: var(--pill-warning-focus-border); outline: none; }
+.pill--amarillo:disabled { background-color: var(--pill-warning-bg); border-color: var(--pill-warning-border); color: var(--pill-warning-disabled-text); cursor: not-allowed; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--amarillo"&gt;
   &lt;span class="material-icons-outlined"&gt;warning_amber&lt;/span&gt;
   Label
@@ -282,7 +279,6 @@
       <!-- CELESTE -->
       <div class="ds-section" id="celeste">
         <h2 class="ds-section__title">Celeste</h2>
-        <p class="ds-section__desc">Usado para información o estados informativos.</p>
         <p class="ds-preview__label">Preview</p>
         <div class="ds-preview ds-preview--interactive">
           <button class="pill pill--md pill--celeste"><span class="material-icons-outlined">info</span>Default<span class="material-icons-outlined">expand_more</span></button>
@@ -318,11 +314,11 @@
 .pill .material-icons-outlined { font-size: 16px; line-height: 1; }
 .pill--md { padding: 6px 12px; }
 
-.pill--celeste { background-color: var(--color-info-50); border-color: var(--color-info-200); color: var(--color-info-800); }
-.pill--celeste:hover  { background-color: var(--color-info-100); }
-.pill--celeste:active { background-color: var(--color-info-200); }
-.pill--celeste:focus-visible { background-color: var(--color-info-100); border-width: 2px; border-color: var(--color-info-600); outline: none; }
-.pill--celeste:disabled { background-color: var(--color-info-50); border-color: var(--color-info-200); color: var(--color-info-400); cursor: not-allowed; }</code></pre>
+.pill--celeste { background-color: var(--pill-info-bg); border-color: var(--pill-info-border); color: var(--pill-info-text); }
+.pill--celeste:hover  { background-color: var(--pill-info-bg-hover); }
+.pill--celeste:active { background-color: var(--pill-info-bg-active); }
+.pill--celeste:focus-visible { background-color: var(--pill-info-bg-hover); border-width: 2px; border-color: var(--pill-info-focus-border); outline: none; }
+.pill--celeste:disabled { background-color: var(--pill-info-bg); border-color: var(--pill-info-border); color: var(--pill-info-disabled-text); cursor: not-allowed; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--celeste"&gt;
   &lt;span class="material-icons-outlined"&gt;info&lt;/span&gt;
   Label
@@ -334,7 +330,6 @@
       <!-- TAMAÑOS -->
       <div class="ds-section" id="tamanios">
         <h2 class="ds-section__title">Tamaños</h2>
-        <p class="ds-section__desc">Tres tamaños disponibles. Se combinan con cualquier variante de color.</p>
         <p class="ds-preview__label">Small / Medium / Large</p>
         <div class="ds-preview" style="gap: 16px; align-items: center;">
           <button class="pill pill--sm pill--default"><span class="material-icons-outlined">person</span>Small<span class="material-icons-outlined">expand_more</span></button>
@@ -359,7 +354,6 @@
       <!-- HIGHLIGHT -->
       <div class="ds-section" id="highlight">
         <h2 class="ds-section__title">Highlight</h2>
-        <p class="ds-section__desc">Versión estática con mayor énfasis visual. Tres colores disponibles: Amarillo, Menta y Violeta. Sin estados interactivos.</p>
         <p class="ds-preview__label">Colores</p>
         <div class="ds-preview" style="gap: 16px; align-items: center;">
           <span class="pill-highlight pill-highlight--amarillo"><span class="material-icons-outlined">star</span>Amarillo</span>
@@ -387,9 +381,9 @@
 }
 .pill-highlight .material-icons-outlined { font-size: 16px; line-height: 1; }
 
-.pill-highlight--amarillo { background-color: var(--color-warning-200); border-color: var(--color-warning-700); color: var(--color-warning-900); }
-.pill-highlight--menta    { background-color: var(--color-secondary-50); border-color: var(--color-secondary-600); color: var(--color-secondary-600); }
-.pill-highlight--violeta  { background-color: var(--color-primary-50);  border-color: var(--color-primary-500);  color: var(--color-primary-500); }</code></pre>
+.pill-highlight--amarillo { background-color: var(--pill-highlight-warning-bg); border-color: var(--pill-highlight-warning-border); color: var(--pill-highlight-warning-text); }
+.pill-highlight--menta    { background-color: var(--pill-highlight-secondary-bg); border-color: var(--pill-highlight-secondary-border); color: var(--pill-highlight-secondary-text); }
+.pill-highlight--violeta  { background-color: var(--pill-highlight-primary-bg);  border-color: var(--pill-highlight-primary-border);  color: var(--pill-highlight-primary-text); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;span class="pill-highlight pill-highlight--amarillo"&gt;
   &lt;span class="material-icons-outlined"&gt;star&lt;/span&gt;
   Label
@@ -410,9 +404,59 @@
       </div>
 
       <div data-page-panel="documentation" hidden>
+
         <div class="ds-section">
-          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para este componente.</p>
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Colores</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Variante</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Default</td><td><code>.pill--default</code></td><td class="ds-doc-table__desc">Es la variante neutral. Los íconos van siempre en Material Icons Outlined a 16px.</td></tr>
+              <tr><td>Rojo</td><td><code>.pill--rojo</code></td><td class="ds-doc-table__desc">Se usa para estados de error o alertas críticas.</td></tr>
+              <tr><td>Verde</td><td><code>.pill--verde</code></td><td class="ds-doc-table__desc">Se usa para estados de éxito o confirmación.</td></tr>
+              <tr><td>Amarillo</td><td><code>.pill--amarillo</code></td><td class="ds-doc-table__desc">Se usa para advertencias o estados pendientes.</td></tr>
+              <tr><td>Celeste</td><td><code>.pill--celeste</code></td><td class="ds-doc-table__desc">Se usa para información o estados informativos.</td></tr>
+            </tbody>
+          </table>
         </div>
+
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Tamaños</h2>
+            <p class="ds-section__subtitle">Se combinan con cualquier variante de color</p>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Variante</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Small</td><td><code>.pill--sm</code></td><td class="ds-doc-table__desc">Se usa en contextos compactos, como dentro de una tabla.</td></tr>
+              <tr><td>Medium</td><td><code>.pill--md</code></td><td class="ds-doc-table__desc">Es el tamaño por defecto.</td></tr>
+              <tr><td>Large</td><td><code>.pill--lg</code></td><td class="ds-doc-table__desc">Se usa cuando la pill necesita más presencia visual.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Highlight</h2>
+            <p class="ds-section__subtitle">Versión estática, sin estados interactivos</p>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Variante</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Amarillo</td><td><code>.pill-highlight--amarillo</code></td><td class="ds-doc-table__desc">Tiene mayor énfasis visual que una pill normal. Se usa para destacar algo puntual, sin necesidad de que responda a estados de hover, focus o disabled.</td></tr>
+              <tr><td>Menta</td><td><code>.pill-highlight--menta</code></td><td class="ds-doc-table__desc">Misma lógica que la variante Amarillo, con la paleta secundaria (teal).</td></tr>
+              <tr><td>Violeta</td><td><code>.pill-highlight--violeta</code></td><td class="ds-doc-table__desc">Misma lógica que la variante Amarillo, con la paleta primary.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
 
     </div>

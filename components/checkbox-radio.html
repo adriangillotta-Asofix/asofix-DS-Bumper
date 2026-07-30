@@ -46,7 +46,7 @@
         <li><a href="toast.html" class="ds-nav__link">Toast</a></li>
         <li><a href="tooltip.html" class="ds-nav__link">Tooltip</a></li>
       </ul>
-      <p class="ds-nav__label">Globals</p>
+      <p class="ds-nav__label">Patterns</p>
       <ul class="ds-nav__list">
         <li><a href="modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
@@ -55,6 +55,7 @@
         <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
       </ul>
     </nav>
+    <div class="ds-sidebar__fade"></div>
   </aside>
 
    <!-- MAIN CONTENT -->
@@ -88,7 +89,6 @@
       <!-- CHECKBOX -->
       <div class="ds-section" id="checkbox">
         <h2 class="ds-section__title">Checkbox</h2>
-        <p class="ds-section__desc">Permite seleccionar una o varias opciones dentro de un grupo.</p>
 
         <p class="ds-preview__label">Unchecked</p>
         <div class="ds-preview">
@@ -98,7 +98,7 @@
           </label>
           <label class="checkbox">
             <input class="checkbox__input" type="checkbox" onchange="syncCheckboxIcon(this)" />
-            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--color-primary-50);">check_box_outline_blank</span>
+            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--action-primary-subtle);">check_box_outline_blank</span>
           </label>
           <label class="checkbox checkbox--focus">
             <input class="checkbox__input" type="checkbox" onchange="syncCheckboxIcon(this)" />
@@ -118,7 +118,7 @@
           </label>
           <label class="checkbox checkbox--indeterminate">
             <input class="checkbox__input" type="checkbox" data-indeterminate="true" onchange="setCheckboxIndeterminate(this, false)" />
-            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--color-primary-50);">indeterminate_check_box</span>
+            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--action-primary-subtle);">indeterminate_check_box</span>
           </label>
           <label class="checkbox checkbox--indeterminate checkbox--focus">
             <input class="checkbox__input" type="checkbox" data-indeterminate="true" onchange="setCheckboxIndeterminate(this, false)" />
@@ -138,7 +138,7 @@
           </label>
           <label class="checkbox">
             <input class="checkbox__input" type="checkbox" checked onchange="syncCheckboxIcon(this)" />
-            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--color-primary-50);">check_box</span>
+            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--action-primary-subtle);">check_box</span>
           </label>
           <label class="checkbox checkbox--focus">
             <input class="checkbox__input" type="checkbox" checked onchange="syncCheckboxIcon(this)" />
@@ -191,19 +191,19 @@
   color: var(--color-neutral-600);
 }
 
-.checkbox:hover .checkbox__icon { background-color: var(--color-primary-50); }
+.checkbox:hover .checkbox__icon { background-color: var(--action-primary-subtle); }
 
 .checkbox__input:checked ~ .checkbox__icon,
-.checkbox--indeterminate .checkbox__icon { color: var(--color-primary-500); }
+.checkbox--indeterminate .checkbox__icon { color: var(--action-primary); }
 
 .checkbox__input:focus-visible ~ .checkbox__icon {
-  outline: 2px solid var(--color-primary-300);
+  outline: 2px solid var(--ring-focus);
   outline-offset: 2px;
 }
 
 .checkbox__input:disabled ~ .checkbox__icon { color: var(--color-neutral-200); }
 .checkbox__input:disabled:checked ~ .checkbox__icon,
-.checkbox--indeterminate.checkbox--disabled .checkbox__icon { color: var(--color-neutral-400); }</code></pre>
+.checkbox--indeterminate.checkbox--disabled .checkbox__icon { color: var(--text-disabled); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Unchecked / Checked: el input real controla el estado --&gt;
 &lt;label class="checkbox"&gt;
   &lt;input class="checkbox__input" type="checkbox" onchange="syncCheckboxIcon(this)" /&gt;
@@ -223,7 +223,6 @@
       <!-- RADIO -->
       <div class="ds-section" id="radio">
         <h2 class="ds-section__title">Radio button</h2>
-        <p class="ds-section__desc">Permite seleccionar una sola opción dentro de un grupo.</p>
 
         <p class="ds-preview__label">Unselected</p>
         <div class="ds-preview">
@@ -233,7 +232,7 @@
           </label>
           <label class="radio">
             <input class="radio__input" type="radio" name="radio-unselected-2" onchange="syncRadioIcon(this)" />
-            <span class="radio__icon material-icons-outlined" style="background-color: var(--color-primary-50);">radio_button_unchecked</span>
+            <span class="radio__icon material-icons-outlined" style="background-color: var(--action-primary-subtle);">radio_button_unchecked</span>
           </label>
           <label class="radio radio--focus">
             <input class="radio__input" type="radio" name="radio-unselected-3" onchange="syncRadioIcon(this)" />
@@ -253,7 +252,7 @@
           </label>
           <label class="radio">
             <input class="radio__input" type="radio" name="radio-selected-2" checked onchange="syncRadioIcon(this)" />
-            <span class="radio__icon material-icons-outlined" style="background-color: var(--color-primary-50);">radio_button_checked</span>
+            <span class="radio__icon material-icons-outlined" style="background-color: var(--action-primary-subtle);">radio_button_checked</span>
           </label>
           <label class="radio radio--focus">
             <input class="radio__input" type="radio" name="radio-selected-3" checked onchange="syncRadioIcon(this)" />
@@ -306,17 +305,17 @@
   color: var(--color-neutral-600);
 }
 
-.radio:hover .radio__icon { background-color: var(--color-primary-50); }
+.radio:hover .radio__icon { background-color: var(--action-primary-subtle); }
 
-.radio__input:checked ~ .radio__icon { color: var(--color-primary-500); }
+.radio__input:checked ~ .radio__icon { color: var(--action-primary); }
 
 .radio__input:focus-visible ~ .radio__icon {
-  outline: 2px solid var(--color-primary-300);
+  outline: 2px solid var(--ring-focus);
   outline-offset: 2px;
 }
 
 .radio__input:disabled ~ .radio__icon { color: var(--color-neutral-200); }
-.radio__input:disabled:checked ~ .radio__icon { color: var(--color-neutral-400); }</code></pre>
+.radio__input:disabled:checked ~ .radio__icon { color: var(--text-disabled); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Los radios del mismo grupo comparten "name" --&gt;
 &lt;label class="radio"&gt;
   &lt;input class="radio__input" type="radio" name="grupo" onchange="syncRadioIcon(this)" /&gt;
@@ -329,11 +328,10 @@
       <!-- GRUPOS -->
       <div class="ds-section" id="grupos">
         <h2 class="ds-section__title">Grupo — Horizontal / Vertical</h2>
-        <p class="ds-section__desc">Label opcional, texto asistivo opcional. Mismo patrón para Checkbox y Radio.</p>
 
         <p class="ds-preview__label">Checkbox — grupo horizontal</p>
-        <div class="ds-preview" style="justify-content: flex-start;">
-          <div class="field-group" style="width: 100%;">
+        <div class="ds-preview">
+          <div class="field-group">
             <span class="field-group__label">Label <span class="field-group__label-optional">(opcional)</span></span>
             <div class="field-group__options">
               <label class="checkbox"><input class="checkbox__input" type="checkbox" checked onchange="syncCheckboxIcon(this)" /><span class="checkbox__icon material-icons-outlined">check_box</span><span class="checkbox__label">Checkbox text</span></label>
@@ -345,8 +343,8 @@
         </div>
 
         <p class="ds-preview__label">Radio — grupo vertical</p>
-        <div class="ds-preview" style="justify-content: flex-start;">
-          <div class="field-group" style="width: 328px;">
+        <div class="ds-preview">
+          <div class="field-group">
             <span class="field-group__label">Label <span class="field-group__label-optional">(opcional)</span></span>
             <div class="field-group__options field-group__options--vertical">
               <label class="radio"><input class="radio__input" type="radio" name="grupo-vertical" checked onchange="syncRadioIcon(this)" /><span class="radio__icon material-icons-outlined">radio_button_checked</span><span class="radio__label">Label text</span></label>
@@ -357,11 +355,11 @@
           </div>
         </div>
 
-        <div class="ds-code ds-code--standalone">
+        <div class="ds-code">
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
           <pre><code>.field-group { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
 .field-group__label { display: inline-flex; align-items: baseline; gap: 4px; font-size: var(--font-size-caption); font-weight: var(--font-weight-caption-emphasized); color: var(--color-neutral-600); }
-.field-group__label-optional { font-weight: var(--font-weight-caption); color: var(--color-neutral-500); }
+.field-group__label-optional { font-weight: var(--font-weight-caption); color: var(--text-secondary); }
 .field-group__options { display: flex; flex-wrap: wrap; gap: 8px 24px; width: 100%; }
 .field-group__options--vertical { flex-direction: column; flex-wrap: nowrap; gap: 8px; }
 .field-group__assistive { font-size: var(--font-size-caption); color: var(--color-neutral-600); }</code></pre>
@@ -372,7 +370,19 @@
 
       <div data-page-panel="documentation" hidden>
         <div class="ds-section">
-          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para esta sección.</p>
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Variantes</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Variante</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Checkbox</td><td><code>.checkbox</code></td><td class="ds-doc-table__desc">Permite seleccionar una o varias opciones dentro de un grupo, de forma independiente entre sí.</td></tr>
+              <tr><td>Radio button</td><td><code>.radio</code></td><td class="ds-doc-table__desc">Permite seleccionar una sola opción dentro de un grupo. Los radios del mismo grupo comparten el atributo <code>name</code>.</td></tr>
+              <tr><td>Grupo</td><td><code>.field-group</code></td><td class="ds-doc-table__desc">Agrupa varios checkbox o radio bajo un label y un texto asistivo opcionales. Admite disposición horizontal o vertical (<code>.field-group__options--vertical</code>).</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
 

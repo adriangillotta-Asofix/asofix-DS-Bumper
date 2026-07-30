@@ -116,6 +116,14 @@ let scrollTimer = null;
 function setActiveLink(link) {
   document.querySelectorAll('.ds-toc__link').forEach(l => l.classList.remove('active'));
   link.classList.add('active');
+  moveTocIndicator(link);
+}
+
+function moveTocIndicator(link) {
+  const indicator = document.querySelector('.ds-toc__indicator');
+  if (!indicator) return;
+  indicator.style.top = link.offsetTop + 'px';
+  indicator.style.height = link.offsetHeight + 'px';
 }
 
 function makeTocLink(section, label, isFirst) {
@@ -147,6 +155,10 @@ function buildTOC() {
 
   const list = document.createElement('ul');
   list.className = 'ds-toc__list';
+
+  const indicator = document.createElement('div');
+  indicator.className = 'ds-toc__indicator';
+  list.appendChild(indicator);
 
   // Pre-group sections preserving intra-group DOM order
   const groupOrder = ['Medium', 'Small'];
@@ -201,6 +213,15 @@ function buildTOC() {
 
   toc.appendChild(list);
   document.querySelector('.ds-main').appendChild(toc);
+
+  // Posicionar el indicador en el activo inicial sin animar el primer render
+  const initialActive = list.querySelector('.ds-toc__link.active');
+  if (initialActive) {
+    indicator.style.transition = 'none';
+    moveTocIndicator(initialActive);
+    indicator.offsetHeight; // fuerza reflow antes de restaurar la transición
+    indicator.style.transition = '';
+  }
 }
 
 function initScrollSpy() {
@@ -327,6 +348,25 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
 }
 
 // --------------------------------
+// Sidebar — fade de scroll
+// --------------------------------
+
+function initSidebarFade() {
+  const sidebar = document.querySelector('.ds-sidebar');
+  const fade = document.querySelector('.ds-sidebar__fade');
+  if (!sidebar || !fade) return;
+
+  const update = () => {
+    const hasHiddenContent = sidebar.scrollHeight - sidebar.scrollTop - sidebar.clientHeight > 4;
+    fade.classList.toggle('ds-sidebar__fade--visible', hasHiddenContent);
+  };
+
+  sidebar.addEventListener('scroll', update);
+  window.addEventListener('resize', update);
+  update();
+}
+
+// --------------------------------
 // Init
 // --------------------------------
 document.addEventListener('DOMContentLoaded', () => {
@@ -362,5 +402,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   buildTOC();
   initScrollSpy();
+  initSidebarFade();
 
 });

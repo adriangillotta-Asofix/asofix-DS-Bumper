@@ -46,7 +46,7 @@
         <li><a href="../components/toast.html" class="ds-nav__link">Toast</a></li>
         <li><a href="../components/tooltip.html" class="ds-nav__link">Tooltip</a></li>
       </ul>
-      <p class="ds-nav__label">Globals</p>
+      <p class="ds-nav__label">Patterns</p>
       <ul class="ds-nav__list">
         <li><a href="../components/modal.html" class="ds-nav__link">Modal</a></li>
       </ul>
@@ -55,6 +55,7 @@
         <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
       </ul>
     </nav>
+    <div class="ds-sidebar__fade"></div>
   </aside>
 
   <!-- MAIN CONTENT -->
@@ -81,16 +82,13 @@
       <!-- DISPLAY -->
       <div class="ds-section">
         <h2 class="ds-section__title">Display</h2>
-        <p class="ds-section__desc">IBM Plex Sans. Uso puntual en headlines grandes (login, hero de Inicio). No reemplaza la escala de Headings: los componentes (modal, card, tooltip) siguen en Inter.</p>
 
         <div class="ds-type-row">
           <div class="ds-type-sample">
             <span class="ds-type-display">Toda tu gestión</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-family-display</span>
             <span class="ds-type-meta__value">32px sugerido · Light · IBM Plex Sans</span>
-            <span class="ds-type-meta__usage">Headlines grandes de marca. La página que lo use debe cargar la fuente (Google Fonts: IBM+Plex+Sans, pesos 300/400/500).</span>
           </div>
         </div>
       </div>
@@ -104,9 +102,7 @@
             <span class="ds-type-h1">Headline 1</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-h1</span>
             <span class="ds-type-meta__value"><span data-mode="desktop">36px · SemiBold · LH 1.55 · LS -0.02em</span><span data-mode="mobile">35px · SemiBold · LH 1.60 · LS -0.01em</span></span>
-            <span class="ds-type-meta__usage">Números de dashboard.</span>
           </div>
         </div>
 
@@ -115,9 +111,7 @@
             <span class="ds-type-h2">Headline 2</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-h2</span>
             <span class="ds-type-meta__value"><span data-mode="desktop">28px · SemiBold · LH 1.58 · LS -0.02em</span><span data-mode="mobile">24px · SemiBold · LH 1.65 · LS 0em</span></span>
-            <span class="ds-type-meta__usage">Título principal (usar 1 vez por página).</span>
           </div>
         </div>
 
@@ -126,9 +120,7 @@
             <span class="ds-type-h3">Headline 3</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-h3</span>
             <span class="ds-type-meta__value"><span data-mode="desktop">25px · SemiBold · LH 1.60 · LS -0.02em</span><span data-mode="mobile">22px · SemiBold · LH 1.45 · LS 0em</span></span>
-            <span class="ds-type-meta__usage">Precios destacados. Cards de catálogo.</span>
           </div>
         </div>
 
@@ -137,9 +129,7 @@
             <span class="ds-type-h4">Headline 4</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-h4</span>
             <span class="ds-type-meta__value"><span data-mode="desktop">22px · SemiBold · LH 1.46 · LS -0.01em</span><span data-mode="mobile">20px · SemiBold · LH 1.42 · LS 0em</span></span>
-            <span class="ds-type-meta__usage">Títulos de bloques que agrupan otros títulos.</span>
           </div>
         </div>
 
@@ -148,9 +138,7 @@
             <span class="ds-type-h5">Headline 5</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-h5</span>
             <span class="ds-type-meta__value"><span data-mode="desktop">20px · SemiBold · LH 1.40 · LS -0.01em</span><span data-mode="mobile">18px · SemiBold · LH 1.35 · LS 0em</span></span>
-            <span class="ds-type-meta__usage">Títulos de empty states. Nombre de cliente.</span>
           </div>
         </div>
 
@@ -159,9 +147,7 @@
             <span class="ds-type-h6">Headline 6</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-h6</span>
             <span class="ds-type-meta__value"><span data-mode="desktop">18px · SemiBold · LH 1.36 · LS 0em</span><span data-mode="mobile">17px · SemiBold · LH 1.44 · LS 0.01em</span></span>
-            <span class="ds-type-meta__usage">Títulos de modales. Títulos de bloques.</span>
           </div>
         </div>
 
@@ -176,9 +162,7 @@
             <span class="ds-type-subtitle-1">Subtitle 1</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-subtitle-1</span>
             <span class="ds-type-meta__value"><span data-mode="desktop">16px · SemiBold · LH 1.5 · LS 0em</span><span data-mode="mobile">15px · SemiBold · LH 1.60 · LS 0em</span></span>
-            <span class="ds-type-meta__usage">Subtítulos bajo un H6. Encabezados de acordeones.</span>
           </div>
         </div>
 
@@ -187,9 +171,7 @@
             <span class="ds-type-subtitle-1-em">Subtitle 1 emphasized</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-weight-subtitle-1-emphasized</span>
             <span class="ds-type-meta__value"><span data-mode="desktop">16px · Bold · LH 1.5 · LS 0.01em</span><span data-mode="mobile">15px · Bold · LH 1.60 · LS 0.01em</span></span>
-            <span class="ds-type-meta__usage">Marca y modelo de un auto. Usar con moderación.</span>
           </div>
         </div>
 
@@ -198,9 +180,7 @@
             <span class="ds-type-subtitle-2">Subtitle 2</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-subtitle-2</span>
             <span class="ds-type-meta__value">14px · Bold · LH 1.45 · LS 0.01em</span>
-            <span class="ds-type-meta__usage">Subtítulos bajo un H6. Títulos de notificaciones.</span>
           </div>
         </div>
 
@@ -215,9 +195,7 @@
             <span class="ds-type-body">Body</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-body</span>
             <span class="ds-type-meta__value">14px · Regular · LH 1.45 · LS 0em</span>
-            <span class="ds-type-meta__usage">Texto base. Versión de un auto.</span>
           </div>
         </div>
 
@@ -226,9 +204,7 @@
             <span class="ds-type-body-em">Body emphasized</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-weight-body-emphasized</span>
             <span class="ds-type-meta__value">14px · SemiBold · LH 1.45 · LS 0em</span>
-            <span class="ds-type-meta__usage">Texto base destacado. Encabezados de tabla.</span>
           </div>
         </div>
 
@@ -237,9 +213,7 @@
             <span class="ds-type-body-strike">Body strikethrough</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-body</span>
             <span class="ds-type-meta__value">14px · SemiBold · LH 1.45 · Strikethrough</span>
-            <span class="ds-type-meta__usage">Precios con descuento.</span>
           </div>
         </div>
 
@@ -254,9 +228,7 @@
             <span class="ds-type-caption">Caption</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-caption</span>
             <span class="ds-type-meta__value">12px · Regular · LH 1.36 · LS 0.02em</span>
-            <span class="ds-type-meta__usage">Texto auxiliar.</span>
           </div>
         </div>
 
@@ -265,9 +237,7 @@
             <span class="ds-type-caption-em">Caption emphasized</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-weight-caption-emphasized</span>
             <span class="ds-type-meta__value">12px · SemiBold · LH 1.36 · LS 0.02em</span>
-            <span class="ds-type-meta__usage">Texto auxiliar destacado.</span>
           </div>
         </div>
 
@@ -282,9 +252,7 @@
             <span class="ds-type-button-1">Button</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-button-1</span>
             <span class="ds-type-meta__value">14px · SemiBold · LH 1.45 · LS 0em</span>
-            <span class="ds-type-meta__usage">Botones primario, secundario y terciario.</span>
           </div>
         </div>
 
@@ -293,9 +261,7 @@
             <span class="ds-type-button-1-underline">Button 1 underline</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-button-1</span>
             <span class="ds-type-meta__value">14px · SemiBold · LH 1.45 · LS 0em · Underline</span>
-            <span class="ds-type-meta__usage">Botones link. Links que acompañan texto con estilo body.</span>
           </div>
         </div>
 
@@ -304,9 +270,7 @@
             <span class="ds-type-button-2-underline">Button 2 underline</span>
           </div>
           <div class="ds-type-meta">
-            <span class="ds-type-meta__token">--font-size-button-2</span>
             <span class="ds-type-meta__value">12px · SemiBold · LH 1.36 · LS 0.02em · Underline</span>
-            <span class="ds-type-meta__usage">Botones link con menor jerarquía. Links que acompañan texto con estilo caption.</span>
           </div>
         </div>
 
@@ -392,9 +356,109 @@
       </div>
 
       <div data-page-panel="documentation" hidden>
+
+        <!-- DISPLAY -->
         <div class="ds-section">
-          <p class="ds-section__desc">Documentación en construcción. Próximamente: descripciones de uso, guías de accesibilidad y recomendaciones de implementación para esta sección.</p>
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Display</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--font-family-display</code></td><td>32px sugerido · Light · IBM Plex Sans</td><td class="ds-doc-table__desc">Se usa en headlines grandes de marca. La página que lo use debe cargar la fuente desde Google Fonts (IBM+Plex+Sans, pesos 300/400/500).</td></tr>
+            </tbody>
+          </table>
         </div>
+
+        <!-- HEADINGS -->
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Headings</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--font-size-h1</code></td><td>36px · SemiBold · LH 1.55 · LS -0.02em</td><td class="ds-doc-table__desc">Se usa en los números de un dashboard.</td></tr>
+              <tr><td><code>--font-size-h2</code></td><td>28px · SemiBold · LH 1.58 · LS -0.02em</td><td class="ds-doc-table__desc">Es el título principal de la página; se usa una sola vez por página.</td></tr>
+              <tr><td><code>--font-size-h3</code></td><td>25px · SemiBold · LH 1.60 · LS -0.02em</td><td class="ds-doc-table__desc">Se usa en precios destacados y en las cards del catálogo.</td></tr>
+              <tr><td><code>--font-size-h4</code></td><td>22px · SemiBold · LH 1.46 · LS -0.01em</td><td class="ds-doc-table__desc">Se usa en títulos de bloques que agrupan a otros títulos.</td></tr>
+              <tr><td><code>--font-size-h5</code></td><td>20px · SemiBold · LH 1.40 · LS -0.01em</td><td class="ds-doc-table__desc">Se usa en títulos de empty states y en el nombre del cliente.</td></tr>
+              <tr><td><code>--font-size-h6</code></td><td>18px · SemiBold · LH 1.36 · LS 0em</td><td class="ds-doc-table__desc">Se usa en títulos de modales y de bloques.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- SUBTITLE -->
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Subtitle</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--font-size-subtitle-1</code></td><td>16px · SemiBold · LH 1.5 · LS 0em</td><td class="ds-doc-table__desc">Se usa en subtítulos que van debajo de un H6, y en encabezados de acordeones.</td></tr>
+              <tr><td><code>--font-weight-subtitle-1-emphasized</code></td><td>16px · Bold · LH 1.5 · LS 0.01em</td><td class="ds-doc-table__desc">Se usa en la marca y el modelo de un auto. Conviene usarlo con moderación.</td></tr>
+              <tr><td><code>--font-size-subtitle-2</code></td><td>14px · Bold · LH 1.45 · LS 0.01em</td><td class="ds-doc-table__desc">Se usa en subtítulos que van debajo de un H6, y en títulos de notificaciones.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- BODY -->
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Body</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--font-size-body</code></td><td>14px · Regular · LH 1.45 · LS 0em</td><td class="ds-doc-table__desc">Es el texto base del sistema. Se usa, por ejemplo, en la versión de un auto.</td></tr>
+              <tr><td><code>--font-weight-body-emphasized</code></td><td>14px · SemiBold · LH 1.45 · LS 0em</td><td class="ds-doc-table__desc">Es el texto base destacado. Se usa en encabezados de tabla.</td></tr>
+              <tr><td><code>--font-size-body</code></td><td>14px · SemiBold · LH 1.45 · Strikethrough</td><td class="ds-doc-table__desc">Se usa en precios con descuento.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- CAPTION -->
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Caption</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--font-size-caption</code></td><td>12px · Regular · LH 1.36 · LS 0.02em</td><td class="ds-doc-table__desc">Se usa en texto auxiliar.</td></tr>
+              <tr><td><code>--font-weight-caption-emphasized</code></td><td>12px · SemiBold · LH 1.36 · LS 0.02em</td><td class="ds-doc-table__desc">Se usa en texto auxiliar destacado.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- BUTTON -->
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Button</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--font-size-button-1</code></td><td>14px · SemiBold · LH 1.45 · LS 0em</td><td class="ds-doc-table__desc">Se usa en los botones primario, secundario y terciario.</td></tr>
+              <tr><td><code>--font-size-button-1</code></td><td>14px · SemiBold · LH 1.45 · LS 0em · Underline</td><td class="ds-doc-table__desc">Se usa en botones tipo link, y en links que acompañan texto con estilo body.</td></tr>
+              <tr><td><code>--font-size-button-2</code></td><td>12px · SemiBold · LH 1.36 · LS 0.02em · Underline</td><td class="ds-doc-table__desc">Se usa en botones link de menor jerarquía, y en links que acompañan texto con estilo caption.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
       </div>
 
     </div>
