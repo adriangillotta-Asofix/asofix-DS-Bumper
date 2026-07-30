@@ -897,6 +897,7 @@
 }
 
 .tooltip__box {
+  /* neutral-700 no tiene semántico que calce: --bg-inverse es surface-dark (violeta), un valor distinto */
   background-color: var(--color-neutral-700);
   border-radius: var(--radius-sm);
   padding: 10px 12px;
@@ -927,7 +928,7 @@
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-body-emphasized);
   line-height: var(--line-height-body);
-  color: #FFFFFF;
+  color: var(--text-on-solid);
   display: block;
 }
 
@@ -937,7 +938,7 @@
   font-weight: var(--font-weight-body);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: #FFFFFF;
+  color: var(--text-on-solid);
   display: block;
 }
 
@@ -946,7 +947,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  color: #FFFFFF;
+  color: var(--text-on-solid);
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -970,12 +971,12 @@
   font-weight: var(--font-weight-body-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: #FFFFFF;
+  color: var(--text-on-solid);
 }
 
 .tooltip__action {
   font-size: var(--font-size-caption) !important;
-  color: #FFFFFF !important;
+  color: var(--text-on-solid) !important;
   letter-spacing: var(--letter-spacing-caption);
 }
 
