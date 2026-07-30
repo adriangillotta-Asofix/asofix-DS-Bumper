@@ -163,7 +163,7 @@
 .switch__track {
   position: absolute;
   inset: 0;
-  background-color: var(--color-neutral-400);
+  background-color: var(--border-strong);
   border-radius: var(--radius-full);
   transition: background-color 0.2s ease;
 }
@@ -182,7 +182,7 @@
 
 /* Activo */
 .switch__input:checked ~ .switch__track {
-  background-color: var(--color-primary-500);
+  background-color: var(--action-primary);
 }
 
 .switch__input:checked ~ .switch__thumb {
@@ -191,17 +191,17 @@
 
 /* Hover */
 .switch:hover .switch__track {
-  background-color: var(--color-neutral-500);
+  background-color: var(--border-hover);
 }
 
 .switch:hover .switch__input:checked ~ .switch__track {
-  background-color: var(--color-primary-600);
+  background-color: var(--action-primary-hover);
 }
 
 /* Focus */
 .switch__input:focus-visible ~ .switch__track,
 .switch--focus .switch__track {
-  outline: 3px solid var(--color-primary-100);
+  outline: 2px solid var(--ring-focus);
   outline-offset: 2px;
 }
 
@@ -213,11 +213,11 @@
 }
 
 .switch--disabled .switch__track {
-  background-color: var(--color-paper-200);
+  background-color: var(--border-default);
 }
 
 .switch--disabled .switch__input:checked ~ .switch__track {
-  background-color: var(--color-neutral-300);
+  background-color: var(--border-strong);
 }
 
 .switch--disabled .switch__thumb {
