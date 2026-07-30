@@ -1634,8 +1634,8 @@
   display: inline-flex;
   gap: 10px;
   align-items: center;
-  background-color: var(--color-paper-100);
-  border: 1px solid var(--color-paper-200);
+  background-color: var(--bg-sunken);
+  border: 1px solid var(--border-default);
   border-radius: var(--radius-sm);
   padding: 4px;
   position: relative;
@@ -1645,7 +1645,7 @@
   position: absolute;
   top: 4px;
   left: 0;
-  background-color: var(--color-paper-50);
+  background-color: var(--bg-canvas);
   box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.08);
   border-radius: var(--radius-xs);
   pointer-events: none;
@@ -1676,7 +1676,7 @@
 }
 
 .tab--active {
-  color: var(--color-primary-500);
+  color: var(--action-primary);
 }
 
 .tab .material-icons-outlined {
