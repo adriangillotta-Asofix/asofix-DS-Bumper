@@ -97,12 +97,10 @@
 
 .btn--link .material-icons-outlined {
   text-decoration: none !important;
-  text-underline-position: under;
   display: inline-block;
   vertical-align: middle;
 }
 
-/* Link — el texto va siempre subrayado, en todos los estados */
 .btn--link {
   background-color: transparent;
   color: var(--action-primary);
@@ -113,10 +111,6 @@
   line-height: var(--line-height-button-2);
   letter-spacing: var(--letter-spacing-button-2);
   gap: 6px;
-}
-
-.btn--link span:not(.material-icons-outlined) {
-  text-decoration: underline;
 }
 
 .btn--link:hover, .btn--link.btn--hover {
