@@ -262,7 +262,7 @@
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-body);
   line-height: var(--line-height-body);
-  color: var(--color-neutral-600);
+  color: var(--text-field);
 }
 
 /* Hover */
@@ -345,7 +345,7 @@
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-body);
   line-height: var(--line-height-body);
-  color: var(--color-neutral-600);
+  color: var(--text-field);
 }
 
 /* Hover */
@@ -405,7 +405,7 @@
   font-weight: var(--font-weight-caption-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: var(--color-neutral-600);
+  color: var(--text-field);
 }
 
 .field-group__label-optional {
@@ -432,7 +432,7 @@
   font-weight: var(--font-weight-body);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: var(--color-neutral-600);
+  color: var(--text-field);
 }
 
 /* --------------------------------
