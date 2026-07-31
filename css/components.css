@@ -677,7 +677,7 @@
   padding: 16px 20px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-default);
-  background-color: var(--bg-canvas);
+  background-color: var(--bg-surface);
   width: 100%;
   overflow: hidden;
   box-sizing: border-box;
