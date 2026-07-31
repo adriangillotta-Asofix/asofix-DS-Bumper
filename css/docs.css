@@ -519,7 +519,7 @@ body {
 
 .ds-type-body { font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--text-body); }
 .ds-type-body-em { font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: var(--text-body); }
-.ds-type-body-strike { font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: var(--text-secondary); text-decoration: line-through; }
+.ds-type-body-strike { font-size: var(--font-size-body); font-weight: var(--font-weight-body-strikethrough); line-height: var(--line-height-body); color: var(--text-secondary); text-decoration: line-through; }
 
 .ds-type-caption { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
 .ds-type-caption-em { font-size: var(--font-size-caption); font-weight: var(--font-weight-caption-emphasized); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }

@@ -312,6 +312,7 @@
   --font-size-body: 0.875rem;       /* 14px */
   --font-weight-body: 400;
   --font-weight-body-emphasized: 600;
+  --font-weight-body-strikethrough: 600;
   --line-height-body: 1.45;
   --letter-spacing-body: 0em;
 
