@@ -720,24 +720,32 @@
 }
 
 .card-metric__comparator {
+  --comparator-bg: var(--feedback-error-bg-hover);
+  --comparator-text: var(--feedback-error-text);
+
   display: flex;
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
 }
 
+.card-metric__comparator--positive {
+  --comparator-bg: var(--feedback-success-bg-hover);
+  --comparator-text: var(--feedback-success-text);
+}
+
 .card-metric__icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--feedback-error-bg-hover);
+  background-color: var(--comparator-bg);
   border-radius: var(--radius-full);
   padding: 4px;
 }
 
 .card-metric__icon-box .material-icons-outlined {
   font-size: 20px;
-  color: var(--feedback-error-text);
+  color: var(--comparator-text);
   line-height: 1;
 }
 
@@ -747,7 +755,7 @@
   font-weight: var(--font-weight-caption-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: var(--feedback-error-text);
+  color: var(--comparator-text);
   white-space: nowrap;
 }
 

@@ -96,6 +96,25 @@
             </div>
           </div>
 
+          <!-- Positivo -->
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
+            <span style="font-size:12px; color:var(--text-secondary); font-family:'Inter',sans-serif;">Positivo</span>
+            <div class="card-metric" style="width:356px;">
+              <div class="card-metric__header">
+                <span class="card-metric__title">Title header</span>
+              </div>
+              <div class="card-metric__body">
+                <span class="card-metric__value">18</span>
+                <div class="card-metric__comparator card-metric__comparator--positive">
+                  <div class="card-metric__icon-box">
+                    <span class="material-icons-outlined">arrow_upward</span>
+                  </div>
+                  <span class="card-metric__comparator-text">10%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Sin comparador -->
           <div style="display:flex; flex-direction:column; gap:8px; align-items:center;">
             <span style="font-size:12px; color:var(--text-secondary); font-family:'Inter',sans-serif;">Sin comparador</span>
@@ -167,24 +186,32 @@
 }
 
 .card-metric__comparator {
+  --comparator-bg: var(--feedback-error-bg-hover);
+  --comparator-text: var(--feedback-error-text);
+
   display: flex;
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
 }
 
+.card-metric__comparator--positive {
+  --comparator-bg: var(--feedback-success-bg-hover);
+  --comparator-text: var(--feedback-success-text);
+}
+
 .card-metric__icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--feedback-error-bg-hover);
+  background-color: var(--comparator-bg);
   border-radius: var(--radius-full);
   padding: 4px;
 }
 
 .card-metric__icon-box .material-icons-outlined {
   font-size: 20px;
-  color: var(--feedback-error-text);
+  color: var(--comparator-text);
   line-height: 1;
 }
 
@@ -194,7 +221,7 @@
   font-weight: var(--font-weight-caption-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: var(--feedback-error-text);
+  color: var(--comparator-text);
   white-space: nowrap;
 }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="card-metric"&gt;
@@ -203,7 +230,7 @@
   &lt;/div&gt;
   &lt;div class="card-metric__body"&gt;
     &lt;span class="card-metric__value"&gt;18&lt;/span&gt;
-    &lt;!-- Comparador opcional --&gt;
+    &lt;!-- Comparador opcional. Por defecto es negativo (rojo); sumar --positive para verde --&gt;
     &lt;div class="card-metric__comparator"&gt;
       &lt;div class="card-metric__icon-box"&gt;
         &lt;span class="material-icons-outlined"&gt;arrow_upward&lt;/span&gt;
@@ -471,6 +498,21 @@
             <tbody>
               <tr><td>Metric Card</td><td><code>.card-metric</code></td><td class="ds-doc-table__desc">Muestra un valor numérico junto con un comparador de tendencia (ej. "+10%"). Se usa en dashboards para KPIs que necesitan contexto de variación en el tiempo.</td></tr>
               <tr><td>Tile Card</td><td><code>.card-tile</code></td><td class="ds-doc-table__desc">Muestra un valor numérico compacto, sin comparador. Es neutra por defecto, y admite variantes de color para comunicar un estado (ver más abajo).</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Variantes del comparador de Metric Card</h2>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Variante</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Negativo</td><td><code>.card-metric__comparator</code></td><td class="ds-doc-table__desc">Es el default, sin necesidad de clase modificadora. Se usa cuando la variación es negativa o requiere atención.</td></tr>
+              <tr><td>Positivo</td><td><code>.card-metric__comparator--positive</code></td><td class="ds-doc-table__desc">Se usa cuando la variación es positiva.</td></tr>
             </tbody>
           </table>
         </div>
