@@ -140,7 +140,42 @@
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
+          <div class="ds-state-item">
+            <span class="ds-state-label">Read only</span>
+            <div class="input input--readonly">
+              <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span></div>
+              <div class="input__container input__container--lg input__container--readonly"><input class="input__field" type="text" value="Texto ingresado" readonly /></div>
+            </div>
+          </div>
         </div>
+
+        <p class="ds-preview__label">Prefix, suffix y contador de caracteres</p>
+        <div class="ds-preview ds-preview--inputs">
+          <div class="ds-state-item">
+            <span class="ds-state-label">Prefix + Suffix</span>
+            <div class="input">
+              <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span></div>
+              <div class="input__container input__container--lg">
+                <span class="input__prefix">$</span>
+                <input class="input__field" type="text" placeholder="Placeholder" />
+                <span class="input__suffix">$</span>
+              </div>
+              <span class="input__assistive">Texto de ayuda</span>
+            </div>
+          </div>
+          <div class="ds-state-item">
+            <span class="ds-state-label">Con contador</span>
+            <div class="input">
+              <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span></div>
+              <div class="input__container input__container--lg"><input class="input__field" type="text" value="Texto ingresado" /></div>
+              <div class="input__assistive-row">
+                <span class="input__assistive">Texto de ayuda</span>
+                <span class="input__count">0/X</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="ds-code ds-code--tabbed">
           <div class="ds-code__tabs">
             <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
@@ -153,11 +188,16 @@
 .input__label-text--lg { font-size: var(--font-size-body); line-height: var(--line-height-body); }
 .input__label-icon { font-size: var(--font-size-caption); color: var(--text-secondary); display: flex; align-items: center; line-height: 1; user-select: none; }
 .input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
-.input__container { display: flex; align-items: center; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
+.input--readonly .input__label-text { color: var(--text-secondary); }
+.input__container { display: flex; align-items: center; gap: 4px; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
 .input__container--lg { height: 50px; padding: 0 12px; }
 .input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--text-field); }
 .input__field::placeholder { color: var(--text-placeholder); }
+.input__field:disabled { color: var(--text-placeholder); }
+.input__prefix, .input__suffix { flex-shrink: 0; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--text-placeholder); }
 .input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
+.input__assistive-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 4px; width: 100%; }
+.input__count { flex-shrink: 0; font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); white-space: nowrap; }
 
 /* States */
 .input__container:hover { border-color: var(--border-hover); }
@@ -166,7 +206,8 @@
 .input__container--focus { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
 .input__container--error { border-color: var(--border-error); }
 .input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--border-error); }
-.input__container--disabled { background-color: var(--bg-disabled); pointer-events: none; }</code></pre>
+.input__container--disabled { background-color: var(--bg-disabled); pointer-events: none; }
+.input__container--readonly { border-color: transparent; pointer-events: none; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="input"&gt;
   &lt;div class="input__label"&gt;
     &lt;span class="input__label-text input__label-text--lg"&gt;Label&lt;/span&gt;
@@ -188,6 +229,27 @@
 &lt;!-- Disabled --&gt;
 &lt;div class="input__container input__container--lg input__container--disabled"&gt;
   &lt;input class="input__field" type="text" placeholder="Placeholder" disabled /&gt;
+&lt;/div&gt;
+
+&lt;!-- Read only: sin borde, sin texto asistivo, label en --text-secondary --&gt;
+&lt;div class="input input--readonly"&gt;
+  &lt;div class="input__label"&gt;&lt;span class="input__label-text input__label-text--lg"&gt;Label&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="input__container input__container--lg input__container--readonly"&gt;
+    &lt;input class="input__field" type="text" value="Texto ingresado" readonly /&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Prefix / Suffix --&gt;
+&lt;div class="input__container input__container--lg"&gt;
+  &lt;span class="input__prefix"&gt;$&lt;/span&gt;
+  &lt;input class="input__field" type="text" placeholder="Placeholder" /&gt;
+  &lt;span class="input__suffix"&gt;$&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Contador de caracteres --&gt;
+&lt;div class="input__assistive-row"&gt;
+  &lt;span class="input__assistive"&gt;Texto de ayuda&lt;/span&gt;
+  &lt;span class="input__count"&gt;0/X&lt;/span&gt;
 &lt;/div&gt;</code></pre>
         </div>
       </div>
@@ -260,6 +322,13 @@
               <span class="input__assistive">Texto de ayuda</span>
             </div>
           </div>
+          <div class="ds-state-item">
+            <span class="ds-state-label">Read only</span>
+            <div class="input input--readonly">
+              <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span><span class="material-icons-outlined input__label-icon">info</span></div>
+              <div class="input__container input__container--sm input__container--readonly"><input class="input__field input__field--sm" type="text" value="Texto ingresado" readonly /></div>
+            </div>
+          </div>
         </div>
         <div class="ds-code ds-code--tabbed">
           <div class="ds-code__tabs">
@@ -273,11 +342,16 @@
 .input__label-text--sm { font-size: var(--font-size-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); }
 .input__label-icon { font-size: var(--font-size-caption); color: var(--text-secondary); display: flex; align-items: center; line-height: 1; user-select: none; }
 .input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
-.input__container { display: flex; align-items: center; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
+.input--readonly .input__label-text { color: var(--text-secondary); }
+.input__container { display: flex; align-items: center; gap: 4px; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; box-sizing: border-box; }
 .input__container--sm { height: 38px; padding: 0 13px; }
 .input__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--text-field); }
 .input__field--sm { font-size: var(--font-size-caption); }
 .input__field::placeholder { color: var(--text-placeholder); }
+.input__field:disabled { color: var(--text-placeholder); }
+.input__container--readonly { border-color: transparent; pointer-events: none; }
+.input__prefix, .input__suffix { flex-shrink: 0; font-family: var(--font-family-base); font-weight: var(--font-weight-body); color: var(--text-placeholder); }
+.input__container--sm .input__prefix, .input__container--sm .input__suffix { font-size: var(--font-size-caption); }
 .input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
 
 /* States */
@@ -855,6 +929,24 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
               <tr><td>Focus</td><td><code>--focus</code></td><td class="ds-doc-table__desc">Se aplica cuando el campo recibe foco (por click o navegación con teclado).</td></tr>
               <tr><td>Error</td><td><code>--error</code></td><td class="ds-doc-table__desc">Se usa cuando el valor no pasa una validación. Va acompañado de un texto asistivo (<code>.input__assistive--error</code>) explicando el error.</td></tr>
               <tr><td>Disabled</td><td><code>--disabled</code></td><td class="ds-doc-table__desc">Se usa cuando el campo no está disponible en ese momento. Deja de ser interactivo.</td></tr>
+              <tr><td>Read only</td><td><code>--readonly</code></td><td class="ds-doc-table__desc">Se usa para mostrar un valor que no se puede editar, a diferencia de disabled no comunica que el campo esté "apagado" — sin borde, sin texto asistivo, label en <code>--text-secondary</code>.</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <h2 class="ds-section__title">Prefix, suffix y contador</h2>
+            <p class="ds-section__subtitle">Solo Text Field</p>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Elemento</th><th>Clase</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Prefix</td><td><code>.input__prefix</code></td><td class="ds-doc-table__desc">Texto o símbolo fijo antes del valor, como <code>$</code> en un campo de monto.</td></tr>
+              <tr><td>Suffix</td><td><code>.input__suffix</code></td><td class="ds-doc-table__desc">Texto o símbolo fijo después del valor.</td></tr>
+              <tr><td>Contador</td><td><code>.input__count</code></td><td class="ds-doc-table__desc">Muestra la cantidad de caracteres usados sobre el máximo, alineado a la derecha del texto asistivo dentro de <code>.input__assistive-row</code>.</td></tr>
             </tbody>
           </table>
         </div>

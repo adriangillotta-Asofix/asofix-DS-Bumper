@@ -469,6 +469,7 @@
 .input__container {
   display: flex;
   align-items: center;
+  gap: 4px;
   width: 100%;
   background: var(--bg-surface);
   border: 1px solid var(--border-strong);
@@ -509,6 +510,26 @@
   color: var(--text-placeholder);
 }
 
+.input__field:disabled {
+  color: var(--text-placeholder);
+}
+
+/* Prefix / Suffix */
+.input__prefix,
+.input__suffix {
+  flex-shrink: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  color: var(--text-placeholder);
+}
+
+.input__container--sm .input__prefix,
+.input__container--sm .input__suffix {
+  font-size: var(--font-size-caption);
+}
+
 .input__assistive {
   font-family: var(--font-family-base);
   font-size: var(--font-size-caption);
@@ -525,6 +546,26 @@
   color: var(--border-error);
 }
 
+/* Fila de texto asistivo + contador de caracteres, opcional */
+.input__assistive-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 4px;
+  width: 100%;
+}
+
+.input__count {
+  flex-shrink: 0;
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
 /* States */
 .input__container:hover { border-color: var(--border-hover); }
 .input__container:focus-within { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
@@ -532,6 +573,10 @@
 .input__container--focus { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
 .input__container--error { border-color: var(--border-error); }
 .input__container--disabled { background-color: var(--bg-disabled); pointer-events: none; }
+
+/* Read-only: sin borde, no editable pero no "apagado" como disabled */
+.input__container--readonly { border-color: transparent; pointer-events: none; }
+.input--readonly .input__label-text { color: var(--text-secondary); }
 
 .input__label-icon {
   font-size: var(--font-size-caption);
