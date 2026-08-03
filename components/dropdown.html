@@ -251,6 +251,7 @@
 
 /* Lista */
 .dropdown__list { flex: 1; min-width: 0; display: flex; flex-direction: column; padding: 8px 4px; overflow-y: auto; max-height: 408px; }
+.dropdown__list:has(+ .dropdown__footer) { padding-bottom: 0; }
 .dropdown__list::-webkit-scrollbar { width: 6px; }
 .dropdown__list::-webkit-scrollbar-track { background: var(--bg-surface); }
 .dropdown__list::-webkit-scrollbar-thumb { background-color: var(--color-neutral-300); border-radius: var(--radius-full); }
@@ -282,7 +283,7 @@
 .dropdown-item--disabled .pill { background-color: var(--bg-canvas); border-color: var(--border-default); color: var(--text-disabled); }
 
 /* Footer */
-.dropdown__footer { display: flex; align-items: center; justify-content: flex-end; gap: 16px; padding: 12px 12px 8px; flex-shrink: 0; }</code></pre>
+.dropdown__footer { display: flex; align-items: center; justify-content: flex-end; gap: 16px; padding: 12px 4px 8px; flex-shrink: 0; }</code></pre>
 
           <pre class="ds-code__panel" data-tab="html-dd"><code>&lt;!-- Trigger --&gt;
 &lt;button

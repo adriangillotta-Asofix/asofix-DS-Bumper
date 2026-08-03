@@ -1507,6 +1507,10 @@
   overflow-y: auto;
   max-height: 408px;
 }
+/* Si hay footer, el padding-bottom se traslada a él: en Figma la lista y los botones comparten un solo contenedor con un padding, no dos paddings apilados */
+.dropdown__list:has(+ .dropdown__footer) {
+  padding-bottom: 0;
+}
 .dropdown__list::-webkit-scrollbar       { width: 6px; }
 .dropdown__list::-webkit-scrollbar-track { background: var(--bg-surface); }
 .dropdown__list::-webkit-scrollbar-thumb { background-color: var(--color-neutral-300); border-radius: var(--radius-full); }
@@ -1622,7 +1626,7 @@
   align-items: center;
   justify-content: flex-end;
   gap: 16px;
-  padding: 12px 12px 8px;
+  padding: 12px 4px 8px;
   flex-shrink: 0;
 }
 
