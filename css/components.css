@@ -247,7 +247,7 @@
   height: 32px;
   border-radius: var(--radius-full);
   font-size: 20px;
-  color: var(--color-neutral-300);
+  color: var(--action-primary);
   transition: background-color 0.15s ease, color 0.15s ease;
   flex-shrink: 0;
 }
@@ -260,36 +260,33 @@
   color: var(--text-field);
 }
 
-/* Hover */
-.checkbox:hover .checkbox__icon {
-  background-color: var(--action-primary-subtle);
-}
-
-/* Checked / indeterminate */
+/* Checked / indeterminate — mismo color que el default; la regla sigue haciendo falta para el estado indeterminate */
 .checkbox__input:checked ~ .checkbox__icon,
 .checkbox--indeterminate .checkbox__icon {
   color: var(--action-primary);
 }
 
-/* Focus */
-.checkbox__input:focus-visible ~ .checkbox__icon,
-.checkbox--focus .checkbox__icon {
-  outline: 2px solid var(--ring-focus);
-  outline-offset: 2px;
+/* Hover — va después de Checked para ganarle en especificidad empatada */
+.checkbox:hover .checkbox__icon {
+  background-color: var(--color-paper-100);
+  color: var(--action-primary-hover-subtle);
 }
 
-/* Disabled */
+/* Focus — halo relleno en vez de anillo */
+.checkbox__input:focus-visible ~ .checkbox__icon,
+.checkbox--focus .checkbox__icon {
+  background-color: var(--color-paper-200);
+  outline: none;
+}
+
+/* Disabled — mismo gris para unchecked, checked e indeterminate */
 .checkbox__input:disabled {
   cursor: not-allowed;
 }
 
-.checkbox__input:disabled ~ .checkbox__icon {
-  color: var(--color-neutral-200);
-}
-
-.checkbox__input:disabled:checked ~ .checkbox__icon,
+.checkbox__input:disabled ~ .checkbox__icon,
 .checkbox--indeterminate.checkbox--disabled .checkbox__icon {
-  color: var(--text-disabled);
+  color: var(--color-neutral-300);
 }
 
 .checkbox--disabled,
@@ -330,7 +327,7 @@
   height: 32px;
   border-radius: var(--radius-full);
   font-size: 20px;
-  color: var(--color-neutral-300);
+  color: var(--action-primary);
   transition: background-color 0.15s ease, color 0.15s ease;
   flex-shrink: 0;
 }
@@ -343,34 +340,31 @@
   color: var(--text-field);
 }
 
-/* Hover */
-.radio:hover .radio__icon {
-  background-color: var(--action-primary-subtle);
-}
-
-/* Selected */
+/* Selected — mismo color que el default; la regla sigue haciendo falta por especificidad frente a Hover */
 .radio__input:checked ~ .radio__icon {
   color: var(--action-primary);
 }
 
-/* Focus */
-.radio__input:focus-visible ~ .radio__icon,
-.radio--focus .radio__icon {
-  outline: 2px solid var(--ring-focus);
-  outline-offset: 2px;
+/* Hover — va después de Selected para ganarle en especificidad empatada */
+.radio:hover .radio__icon {
+  background-color: var(--color-paper-100);
+  color: var(--action-primary-hover-subtle);
 }
 
-/* Disabled */
+/* Focus — halo relleno en vez de anillo */
+.radio__input:focus-visible ~ .radio__icon,
+.radio--focus .radio__icon {
+  background-color: var(--color-paper-200);
+  outline: none;
+}
+
+/* Disabled — mismo gris para unselected y selected */
 .radio__input:disabled {
   cursor: not-allowed;
 }
 
 .radio__input:disabled ~ .radio__icon {
-  color: var(--color-neutral-200);
-}
-
-.radio__input:disabled:checked ~ .radio__icon {
-  color: var(--text-disabled);
+  color: var(--color-neutral-300);
 }
 
 .radio:has(.radio__input:disabled) {

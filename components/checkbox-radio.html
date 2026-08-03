@@ -98,7 +98,7 @@
           </label>
           <label class="checkbox">
             <input class="checkbox__input" type="checkbox" onchange="syncCheckboxIcon(this)" />
-            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--action-primary-subtle);">check_box_outline_blank</span>
+            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--color-paper-100); color: var(--action-primary-hover-subtle);">check_box_outline_blank</span>
           </label>
           <label class="checkbox checkbox--focus">
             <input class="checkbox__input" type="checkbox" onchange="syncCheckboxIcon(this)" />
@@ -118,7 +118,7 @@
           </label>
           <label class="checkbox checkbox--indeterminate">
             <input class="checkbox__input" type="checkbox" data-indeterminate="true" onchange="setCheckboxIndeterminate(this, false)" />
-            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--action-primary-subtle);">indeterminate_check_box</span>
+            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--color-paper-100); color: var(--action-primary-hover-subtle);">indeterminate_check_box</span>
           </label>
           <label class="checkbox checkbox--indeterminate checkbox--focus">
             <input class="checkbox__input" type="checkbox" data-indeterminate="true" onchange="setCheckboxIndeterminate(this, false)" />
@@ -138,7 +138,7 @@
           </label>
           <label class="checkbox">
             <input class="checkbox__input" type="checkbox" checked onchange="syncCheckboxIcon(this)" />
-            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--action-primary-subtle);">check_box</span>
+            <span class="checkbox__icon material-icons-outlined" style="background-color: var(--color-paper-100); color: var(--action-primary-hover-subtle);">check_box</span>
           </label>
           <label class="checkbox checkbox--focus">
             <input class="checkbox__input" type="checkbox" checked onchange="syncCheckboxIcon(this)" />
@@ -181,7 +181,7 @@
   height: 32px;
   border-radius: var(--radius-full);
   font-size: 20px;
-  color: var(--color-neutral-300);
+  color: var(--action-primary);
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -191,19 +191,22 @@
   color: var(--text-field);
 }
 
-.checkbox:hover .checkbox__icon { background-color: var(--action-primary-subtle); }
-
 .checkbox__input:checked ~ .checkbox__icon,
 .checkbox--indeterminate .checkbox__icon { color: var(--action-primary); }
 
-.checkbox__input:focus-visible ~ .checkbox__icon {
-  outline: 2px solid var(--ring-focus);
-  outline-offset: 2px;
+/* Hover: va después de Checked para ganarle en especificidad empatada */
+.checkbox:hover .checkbox__icon {
+  background-color: var(--color-paper-100);
+  color: var(--action-primary-hover-subtle);
 }
 
-.checkbox__input:disabled ~ .checkbox__icon { color: var(--color-neutral-200); }
-.checkbox__input:disabled:checked ~ .checkbox__icon,
-.checkbox--indeterminate.checkbox--disabled .checkbox__icon { color: var(--text-disabled); }</code></pre>
+.checkbox__input:focus-visible ~ .checkbox__icon {
+  background-color: var(--color-paper-200);
+  outline: none;
+}
+
+.checkbox__input:disabled ~ .checkbox__icon,
+.checkbox--indeterminate.checkbox--disabled .checkbox__icon { color: var(--color-neutral-300); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Unchecked / Checked: el input real controla el estado --&gt;
 &lt;label class="checkbox"&gt;
   &lt;input class="checkbox__input" type="checkbox" onchange="syncCheckboxIcon(this)" /&gt;
@@ -232,7 +235,7 @@
           </label>
           <label class="radio">
             <input class="radio__input" type="radio" name="radio-unselected-2" onchange="syncRadioIcon(this)" />
-            <span class="radio__icon material-icons-outlined" style="background-color: var(--action-primary-subtle);">radio_button_unchecked</span>
+            <span class="radio__icon material-icons-outlined" style="background-color: var(--color-paper-100); color: var(--action-primary-hover-subtle);">radio_button_unchecked</span>
           </label>
           <label class="radio radio--focus">
             <input class="radio__input" type="radio" name="radio-unselected-3" onchange="syncRadioIcon(this)" />
@@ -252,7 +255,7 @@
           </label>
           <label class="radio">
             <input class="radio__input" type="radio" name="radio-selected-2" checked onchange="syncRadioIcon(this)" />
-            <span class="radio__icon material-icons-outlined" style="background-color: var(--action-primary-subtle);">radio_button_checked</span>
+            <span class="radio__icon material-icons-outlined" style="background-color: var(--color-paper-100); color: var(--action-primary-hover-subtle);">radio_button_checked</span>
           </label>
           <label class="radio radio--focus">
             <input class="radio__input" type="radio" name="radio-selected-3" checked onchange="syncRadioIcon(this)" />
@@ -295,7 +298,7 @@
   height: 32px;
   border-radius: var(--radius-full);
   font-size: 20px;
-  color: var(--color-neutral-300);
+  color: var(--action-primary);
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
@@ -305,17 +308,20 @@
   color: var(--text-field);
 }
 
-.radio:hover .radio__icon { background-color: var(--action-primary-subtle); }
-
 .radio__input:checked ~ .radio__icon { color: var(--action-primary); }
 
-.radio__input:focus-visible ~ .radio__icon {
-  outline: 2px solid var(--ring-focus);
-  outline-offset: 2px;
+/* Hover: va después de Selected para ganarle en especificidad empatada */
+.radio:hover .radio__icon {
+  background-color: var(--color-paper-100);
+  color: var(--action-primary-hover-subtle);
 }
 
-.radio__input:disabled ~ .radio__icon { color: var(--color-neutral-200); }
-.radio__input:disabled:checked ~ .radio__icon { color: var(--text-disabled); }</code></pre>
+.radio__input:focus-visible ~ .radio__icon {
+  background-color: var(--color-paper-200);
+  outline: none;
+}
+
+.radio__input:disabled ~ .radio__icon { color: var(--color-neutral-300); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Los radios del mismo grupo comparten "name" --&gt;
 &lt;label class="radio"&gt;
   &lt;input class="radio__input" type="radio" name="grupo" onchange="syncRadioIcon(this)" /&gt;
