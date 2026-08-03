@@ -417,7 +417,10 @@
             <div class="textarea__container">
               <textarea class="textarea__field" placeholder="Placeholder"></textarea>
             </div>
-            <span class="input__assistive">Texto de ayuda</span>
+            <div class="input__assistive-row">
+              <span class="input__assistive">Texto de ayuda</span>
+              <span class="input__count">0/X</span>
+            </div>
           </div>
         </div>
         <div class="ds-preview ds-preview--inputs">
@@ -426,7 +429,7 @@
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
               <div class="textarea__container"><textarea class="textarea__field" placeholder="Placeholder"></textarea></div>
-              <span class="input__assistive">Texto de ayuda</span>
+              <div class="input__assistive-row"><span class="input__assistive">Texto de ayuda</span><span class="input__count">0/X</span></div>
             </div>
           </div>
           <div class="ds-state-item">
@@ -434,7 +437,7 @@
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
               <div class="textarea__container input__container--hover"><textarea class="textarea__field" placeholder="Placeholder"></textarea></div>
-              <span class="input__assistive">Texto de ayuda</span>
+              <div class="input__assistive-row"><span class="input__assistive">Texto de ayuda</span><span class="input__count">0/X</span></div>
             </div>
           </div>
           <div class="ds-state-item">
@@ -442,7 +445,7 @@
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
               <div class="textarea__container input__container--focus"><textarea class="textarea__field" placeholder="Placeholder"></textarea></div>
-              <span class="input__assistive">Texto de ayuda</span>
+              <div class="input__assistive-row"><span class="input__assistive">Texto de ayuda</span><span class="input__count">0/X</span></div>
             </div>
           </div>
           <div class="ds-state-item">
@@ -450,7 +453,7 @@
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
               <div class="textarea__container"><textarea class="textarea__field">Texto ingresado en el área de texto con varias líneas de contenido.</textarea></div>
-              <span class="input__assistive">Texto de ayuda</span>
+              <div class="input__assistive-row"><span class="input__assistive">Texto de ayuda</span><span class="input__count">0/X</span></div>
             </div>
           </div>
           <div class="ds-state-item">
@@ -458,7 +461,10 @@
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
               <div class="textarea__container input__container--error"><textarea class="textarea__field">Texto ingresado</textarea></div>
-              <span class="input__assistive input__assistive--error"><span class="material-icons-outlined" style="font-size:14px;">error_outline</span>Mensaje de error</span>
+              <div class="input__assistive-row">
+                <span class="input__assistive input__assistive--error"><span class="material-icons-outlined" style="font-size:14px;">error_outline</span>Mensaje de error</span>
+                <span class="input__count">0/X</span>
+              </div>
             </div>
           </div>
           <div class="ds-state-item">
@@ -466,7 +472,14 @@
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
               <div class="textarea__container input__container--disabled"><textarea class="textarea__field" placeholder="Placeholder" disabled></textarea></div>
-              <span class="input__assistive">Texto de ayuda</span>
+              <div class="input__assistive-row"><span class="input__assistive">Texto de ayuda</span><span class="input__count">0/X</span></div>
+            </div>
+          </div>
+          <div class="ds-state-item">
+            <span class="ds-state-label">Read only</span>
+            <div class="input input--readonly">
+              <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span></div>
+              <div class="textarea__container input__container--readonly"><textarea class="textarea__field" readonly>Texto ingresado en el área de texto con varias líneas de contenido.</textarea></div>
             </div>
           </div>
         </div>
@@ -484,10 +497,14 @@
 .input__label-optional { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
 .input__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); }
 .input__assistive--error { display: flex; align-items: center; gap: 4px; color: var(--border-error); }
+.input__assistive-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 4px; width: 100%; }
+.input__count { flex-shrink: 0; font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-body); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-secondary); white-space: nowrap; }
+.input--readonly .input__label-text { color: var(--text-secondary); }
 
 .textarea__container { display: flex; align-items: flex-start; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; }
 .textarea__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--text-field); padding: 9px 12px; resize: none; height: 120px; overflow-y: auto; }
 .textarea__field::placeholder { color: var(--text-placeholder); }
+.textarea__field:disabled { color: var(--text-placeholder); }
 
 /* States */
 .input__container--hover { border-color: var(--border-hover); }
@@ -495,7 +512,8 @@
 .textarea__container:hover { border-color: var(--border-hover); }
 .textarea__container:focus-within { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
 .textarea__container.input__container--error { border-color: var(--border-error); }
-.textarea__container.input__container--disabled { background-color: var(--bg-disabled); pointer-events: none; }</code></pre>
+.textarea__container.input__container--disabled { background-color: var(--bg-disabled); pointer-events: none; }
+.textarea__container.input__container--readonly { border-color: transparent; pointer-events: none; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;div class="input"&gt;
   &lt;div class="input__label"&gt;
     &lt;span class="input__label-text input__label-text--lg"&gt;Label&lt;/span&gt;
@@ -505,7 +523,18 @@
   &lt;div class="textarea__container"&gt;
     &lt;textarea class="textarea__field" placeholder="Placeholder"&gt;&lt;/textarea&gt;
   &lt;/div&gt;
-  &lt;span class="input__assistive"&gt;Texto de ayuda&lt;/span&gt;
+  &lt;div class="input__assistive-row"&gt;
+    &lt;span class="input__assistive"&gt;Texto de ayuda&lt;/span&gt;
+    &lt;span class="input__count"&gt;0/X&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Read only: sin borde, sin texto asistivo, label en --text-secondary --&gt;
+&lt;div class="input input--readonly"&gt;
+  &lt;div class="input__label"&gt;&lt;span class="input__label-text input__label-text--lg"&gt;Label&lt;/span&gt;&lt;/div&gt;
+  &lt;div class="textarea__container input__container--readonly"&gt;
+    &lt;textarea class="textarea__field" readonly&gt;Texto ingresado&lt;/textarea&gt;
+  &lt;/div&gt;
 &lt;/div&gt;</code></pre>
         </div>
       </div>
@@ -965,16 +994,16 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
         <div class="ds-section">
           <div class="ds-section__heading">
             <h2 class="ds-section__title">Prefix, suffix y contador</h2>
-            <p class="ds-section__subtitle">Solo Text Field</p>
+            <p class="ds-section__subtitle">Prefix/Suffix solo en Text Field. El contador aplica a Text Field y Text Area.</p>
           </div>
           <table class="ds-doc-table ds-doc-table--typo">
             <thead>
               <tr><th>Elemento</th><th>Clase</th><th>Uso</th></tr>
             </thead>
             <tbody>
-              <tr><td>Prefix</td><td><code>.input__prefix</code></td><td class="ds-doc-table__desc">Texto o símbolo fijo antes del valor, como <code>$</code> en un campo de monto.</td></tr>
-              <tr><td>Suffix</td><td><code>.input__suffix</code></td><td class="ds-doc-table__desc">Texto o símbolo fijo después del valor.</td></tr>
-              <tr><td>Contador</td><td><code>.input__count</code></td><td class="ds-doc-table__desc">Muestra la cantidad de caracteres usados sobre el máximo, alineado a la derecha del texto asistivo dentro de <code>.input__assistive-row</code>.</td></tr>
+              <tr><td>Prefix</td><td><code>.input__prefix</code></td><td class="ds-doc-table__desc">Texto o símbolo fijo antes del valor, como <code>$</code> en un campo de monto. Solo Text Field.</td></tr>
+              <tr><td>Suffix</td><td><code>.input__suffix</code></td><td class="ds-doc-table__desc">Texto o símbolo fijo después del valor. Solo Text Field.</td></tr>
+              <tr><td>Contador</td><td><code>.input__count</code></td><td class="ds-doc-table__desc">Muestra la cantidad de caracteres usados sobre el máximo, alineado a la derecha del texto asistivo dentro de <code>.input__assistive-row</code>. En Text Area se muestra siempre; en Text Field es opcional.</td></tr>
             </tbody>
           </table>
         </div>

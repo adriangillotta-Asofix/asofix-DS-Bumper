@@ -619,11 +619,13 @@
 }
 
 .textarea__field::placeholder { color: var(--text-placeholder); }
+.textarea__field:disabled { color: var(--text-placeholder); }
 
 .textarea__container:hover { border-color: var(--border-hover); }
 .textarea__container:focus-within { border-color: var(--border-focus); box-shadow: 0 0 0 2px var(--ring-focus); }
 .textarea__container.input__container--error { border-color: var(--border-error); }
 .textarea__container.input__container--disabled { background-color: var(--bg-disabled); pointer-events: none; }
+.textarea__container.input__container--readonly { border-color: transparent; pointer-events: none; }
 
 /* --------------------------------
    Select
