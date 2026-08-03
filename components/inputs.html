@@ -330,6 +330,34 @@
             </div>
           </div>
         </div>
+
+        <p class="ds-preview__label">Prefix, suffix y contador de caracteres</p>
+        <div class="ds-preview ds-preview--inputs">
+          <div class="ds-state-item">
+            <span class="ds-state-label">Prefix + Suffix</span>
+            <div class="input">
+              <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span></div>
+              <div class="input__container input__container--sm">
+                <span class="input__prefix">$</span>
+                <input class="input__field input__field--sm" type="text" placeholder="Placeholder" />
+                <span class="input__suffix">$</span>
+              </div>
+              <span class="input__assistive">Texto de ayuda</span>
+            </div>
+          </div>
+          <div class="ds-state-item">
+            <span class="ds-state-label">Con contador</span>
+            <div class="input">
+              <div class="input__label"><span class="input__label-text input__label-text--sm">Label</span></div>
+              <div class="input__container input__container--sm"><input class="input__field input__field--sm" type="text" value="Texto ingresado" /></div>
+              <div class="input__assistive-row">
+                <span class="input__assistive">Texto de ayuda</span>
+                <span class="input__count">0/X</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="ds-code ds-code--tabbed">
           <div class="ds-code__tabs">
             <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css')">CSS</button>
