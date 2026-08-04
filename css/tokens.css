@@ -204,12 +204,12 @@
      Pill — escala propia, más contraste que Feedback
      (pensada para leerse sola, sin el apoyo de un banner)
   -------------------------------- */
-  --pill-default-bg: var(--color-paper-100);
-  --pill-default-border: var(--color-paper-200);
+  --pill-default-bg: var(--color-neutral-50);
+  --pill-default-border: var(--color-neutral-200);
   --pill-default-text: var(--color-neutral-700);
-  --pill-default-bg-hover: var(--color-paper-200);
-  --pill-default-bg-active: var(--color-neutral-300);
-  --pill-default-focus-border: var(--color-neutral-700);
+  --pill-default-bg-hover: var(--color-neutral-100);
+  --pill-default-bg-active: var(--color-neutral-200);
+  --pill-default-focus-border: var(--color-neutral-600);
 
   --pill-error-bg: var(--color-error-50);
   --pill-error-border: var(--color-error-200);
