@@ -574,8 +574,8 @@
 .input__container--error { border-color: var(--border-error); }
 .input__container--disabled { background-color: var(--bg-disabled); pointer-events: none; }
 
-/* Read-only: sin borde, no editable pero no "apagado" como disabled */
-.input__container--readonly { border-color: transparent; pointer-events: none; }
+/* Read-only: sin borde ni padding horizontal (el texto queda alineado con el label), no editable pero no "apagado" como disabled */
+.input__container--readonly { border-color: transparent; padding: 0; pointer-events: none; }
 .input--readonly .input__label-text { color: var(--text-secondary); }
 
 .input__label-icon {
@@ -707,6 +707,10 @@
 .select__container--disabled { pointer-events: none; }
 .select__container--lg.select__container--disabled { background-color: var(--bg-disabled); }
 .select__container--sm.select__container--disabled { background-color: var(--bg-disabled); }
+.select__container--disabled .select__text--filled { color: var(--text-placeholder); }
+
+/* Read-only: sin borde ni padding horizontal, sin íconos. A diferencia de Text Field/Text Area, el label NO se atenúa acá */
+.select__container--readonly { border-color: transparent; padding: 0; pointer-events: none; }
 
 /* --------------------------------
    Card — Metric
