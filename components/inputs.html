@@ -1004,7 +1004,7 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
               <tr><td>Focus</td><td><code>--focus</code></td><td class="ds-doc-table__desc">Se aplica cuando el campo recibe foco (por click o navegación con teclado).</td></tr>
               <tr><td>Error</td><td><code>--error</code></td><td class="ds-doc-table__desc">Se usa cuando el valor no pasa una validación. Va acompañado de un texto asistivo (<code>.input__assistive--error</code>) explicando el error.</td></tr>
               <tr><td>Disabled</td><td><code>--disabled</code></td><td class="ds-doc-table__desc">Se usa cuando el campo no está disponible en ese momento. Deja de ser interactivo.</td></tr>
-              <tr><td>Read only</td><td><code>--readonly</code></td><td class="ds-doc-table__desc">Se usa para mostrar un valor que no se puede editar, a diferencia de disabled no comunica que el campo esté "apagado" — sin borde, sin texto asistivo, label en <code>--text-secondary</code>.</td></tr>
+              <tr><td>Read only</td><td><code>--readonly</code></td><td class="ds-doc-table__desc">Se usa para mostrar un valor que no se puede editar, a diferencia de disabled no comunica que el campo esté "apagado" — sin borde, sin padding horizontal (queda alineado con el label), sin texto asistivo. En Text Field/Text Area el label se atenúa a <code>--text-secondary</code>; en Select se queda en <code>--text-field</code> y además pierde los íconos de clear/chevron.</td></tr>
             </tbody>
           </table>
         </div>
