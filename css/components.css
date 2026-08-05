@@ -158,9 +158,9 @@
 .switch__track {
   position: absolute;
   inset: 0;
-  background-color: var(--border-strong);
+  background-color: var(--color-neutral-400);
   border-radius: var(--radius-full);
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .switch__thumb {
@@ -186,7 +186,7 @@
 
 /* Hover */
 .switch:hover .switch__track {
-  background-color: var(--border-hover);
+  background-color: var(--color-neutral-500);
 }
 
 .switch:hover .switch__input:checked ~ .switch__track {
@@ -196,8 +196,7 @@
 /* Focus */
 .switch__input:focus-visible ~ .switch__track,
 .switch--focus .switch__track {
-  outline: 2px solid var(--ring-focus);
-  outline-offset: 2px;
+  border: 2px solid var(--color-primary-100);
 }
 
 /* Disabled */
@@ -212,7 +211,7 @@
 }
 
 .switch--disabled .switch__input:checked ~ .switch__track {
-  background-color: var(--border-strong);
+  background-color: var(--border-default);
 }
 
 .switch--disabled .switch__thumb {
