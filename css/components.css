@@ -1698,8 +1698,8 @@
   position: absolute;
   top: 4px;
   left: 0;
-  background-color: var(--bg-canvas);
-  box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.08);
+  background-color: var(--bg-surface);
+  box-shadow: var(--shadow-low);
   border-radius: var(--radius-xs);
   pointer-events: none;
   z-index: 0;
@@ -1717,7 +1717,7 @@
   background-color: transparent;
   font-family: var(--font-family-base);
   font-size: var(--font-size-body);
-  font-weight: var(--font-weight-body-emphasized);
+  font-weight: var(--font-weight-body);
   line-height: var(--line-height-body);
   letter-spacing: var(--letter-spacing-body);
   color: var(--color-neutral-400);
@@ -1730,6 +1730,7 @@
 
 .tab--active {
   color: var(--action-primary);
+  font-weight: var(--font-weight-body-emphasized);
 }
 
 .tab .material-icons-outlined {
