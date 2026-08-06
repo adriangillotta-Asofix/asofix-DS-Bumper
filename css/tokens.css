@@ -151,6 +151,10 @@
   --text-on-primary: var(--color-neutral-white);
   --text-inverse: var(--color-neutral-white);
   --text-on-solid: var(--color-neutral-white);
+  /* Texto de error sobre fondo claro (ej. mensaje de error de un input). Distinto de
+     --feedback-error-text (error-700): ese es para texto dentro de un banner de feedback,
+     sobre fondo teñido, y necesita más contraste. Este es error-500, el mismo tono del borde. */
+  --text-error: var(--color-error-500);
 
   /* Solid — fondos saturados de alto contraste (badges, contadores) */
   --solid-warning: var(--color-warning-700);
