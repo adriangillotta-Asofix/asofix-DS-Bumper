@@ -350,6 +350,22 @@
   --radius-full: 999px;
 
   /* --------------------------------
+     Spacing
+     Base 4px. --space-N = N × 4px. Uso: gap, padding, margin — no para
+     dimensiones de componente (width/height/font-size), aunque compartan
+     el mismo número.
+  -------------------------------- */
+  --space-1:  4px;
+  --space-2:  8px;
+  --space-3:  12px;
+  --space-4:  16px;
+  --space-6:  24px;
+  --space-8:  32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* --------------------------------
      Elevation (shadow)
   -------------------------------- */
   --shadow-low: 0px 1px 3px 0px rgba(0, 0, 0, 0.08);

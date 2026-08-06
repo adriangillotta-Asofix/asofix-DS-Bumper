@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spacing — Asofix Bumper DS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/docs.css" />
+  <link rel="stylesheet" href="../css/components.css" />
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="ds-sidebar">
+    <img src="../assets/Logo Asofix Blanco.svg" alt="Asofix" class="ds-sidebar__logo-img">
+    <div class="ds-sidebar__brand">
+      <a href="../index.html" style="text-decoration:none;">
+        <span class="ds-sidebar__logo">Bumper</span>
+      </a>
+      <span class="ds-sidebar__version">v2.0</span>
+    </div>
+    <nav class="ds-nav">
+      <p class="ds-nav__label">Foundations</p>
+      <ul class="ds-nav__list">
+        <li><a href="colors.html" class="ds-nav__link">Colors</a></li>
+        <li><a href="typography.html" class="ds-nav__link">Typography</a></li>
+        <li><a href="spacing.html" class="ds-nav__link active">Spacing</a></li>
+        <li><a href="radius.html" class="ds-nav__link">Radius</a></li>
+        <li><a href="elevation.html" class="ds-nav__link">Elevation</a></li>
+      </ul>
+      <p class="ds-nav__label">Components</p>
+      <ul class="ds-nav__list">
+        <li><a href="../components/avatar.html" class="ds-nav__link">Avatar</a></li>
+        <li><a href="../components/badge.html" class="ds-nav__link">Badge</a></li>
+        <li><a href="../components/buttons.html" class="ds-nav__link">Buttons</a></li>
+        <li><a href="../components/cards.html" class="ds-nav__link">Cards</a></li>
+        <li><a href="../components/checkbox-radio.html" class="ds-nav__link">Checkbox & Radio</a></li>
+        <li><a href="../components/dropdown.html" class="ds-nav__link">Dropdown</a></li>
+        <li><a href="../components/inputs.html" class="ds-nav__link">Inputs</a></li>
+        <li><a href="../components/pill.html" class="ds-nav__link">Pill</a></li>
+        <li><a href="../components/switch.html" class="ds-nav__link">Switch</a></li>
+        <li><a href="../components/tabs.html" class="ds-nav__link">Tabs</a></li>
+        <li><a href="../components/toast.html" class="ds-nav__link">Toast</a></li>
+        <li><a href="../components/tooltip.html" class="ds-nav__link">Tooltip</a></li>
+      </ul>
+      <p class="ds-nav__label">Patterns</p>
+      <ul class="ds-nav__list">
+        <li><a href="../components/modal.html" class="ds-nav__link">Modal</a></li>
+      </ul>
+      <p class="ds-nav__label">Adoption</p>
+      <ul class="ds-nav__list">
+        <li><a href="../adoption.html" class="ds-nav__link">Adoption Dashboard</a></li>
+      </ul>
+    </nav>
+    <div class="ds-sidebar__fade"></div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="ds-main">
+    <div class="ds-content">
+
+      <div class="ds-page-header">
+        <h1 class="ds-page-header__title">Spacing</h1>
+        <div class="tabs" role="tablist" style="margin-top: 16px;"><div class="tabs__indicator"></div>
+          <button class="tab tab--active" role="tab" aria-selected="true" onclick="setPageTab(this, 'component')">Componente</button>
+          <button class="tab" role="tab" aria-selected="false" onclick="setPageTab(this, 'documentation')">Documentación</button>
+        </div>
+      </div>
+
+      <div data-page-panel="component">
+
+      <div class="ds-section">
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample ds-type-sample--compact" style="display:flex; align-items:center;">
+            <div style="height:24px;width:var(--space-1);background-color:var(--action-primary);border-radius:var(--radius-xs);"></div>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--space-1</span>
+            <span class="ds-type-meta__value">4px</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample ds-type-sample--compact" style="display:flex; align-items:center;">
+            <div style="height:24px;width:var(--space-2);background-color:var(--action-primary);border-radius:var(--radius-xs);"></div>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--space-2</span>
+            <span class="ds-type-meta__value">8px</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample ds-type-sample--compact" style="display:flex; align-items:center;">
+            <div style="height:24px;width:var(--space-3);background-color:var(--action-primary);border-radius:var(--radius-xs);"></div>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--space-3</span>
+            <span class="ds-type-meta__value">12px</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample ds-type-sample--compact" style="display:flex; align-items:center;">
+            <div style="height:24px;width:var(--space-4);background-color:var(--action-primary);border-radius:var(--radius-xs);"></div>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--space-4</span>
+            <span class="ds-type-meta__value">16px</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample ds-type-sample--compact" style="display:flex; align-items:center;">
+            <div style="height:24px;width:var(--space-6);background-color:var(--action-primary);border-radius:var(--radius-xs);"></div>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--space-6</span>
+            <span class="ds-type-meta__value">24px</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample ds-type-sample--compact" style="display:flex; align-items:center;">
+            <div style="height:24px;width:var(--space-8);background-color:var(--action-primary);border-radius:var(--radius-xs);"></div>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--space-8</span>
+            <span class="ds-type-meta__value">32px</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample ds-type-sample--compact" style="display:flex; align-items:center;">
+            <div style="height:24px;width:var(--space-10);background-color:var(--action-primary);border-radius:var(--radius-xs);"></div>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--space-10</span>
+            <span class="ds-type-meta__value">40px</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample ds-type-sample--compact" style="display:flex; align-items:center;">
+            <div style="height:24px;width:var(--space-12);background-color:var(--action-primary);border-radius:var(--radius-xs);"></div>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--space-12</span>
+            <span class="ds-type-meta__value">48px</span>
+          </div>
+        </div>
+
+        <div class="ds-type-row">
+          <div class="ds-type-sample ds-type-sample--compact" style="display:flex; align-items:center;">
+            <div style="height:24px;width:var(--space-16);background-color:var(--action-primary);border-radius:var(--radius-xs);"></div>
+          </div>
+          <div class="ds-type-meta">
+            <span class="ds-type-meta__token">--space-16</span>
+            <span class="ds-type-meta__value">64px</span>
+          </div>
+        </div>
+
+        <div class="ds-code ds-code--standalone">
+          <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
+          <pre><code>--space-1: 4px;
+--space-2: 8px;
+--space-3: 12px;
+--space-4: 16px;
+--space-6: 24px;
+--space-8: 32px;
+--space-10: 40px;
+--space-12: 48px;
+--space-16: 64px;</code></pre>
+        </div>
+
+      </div>
+
+      </div>
+
+      <div data-page-panel="documentation" hidden>
+        <div class="ds-section">
+          <div class="ds-section__heading">
+            <p class="ds-section__subtitle">Base 4px. El nombre del token es el multiplicador: <code>--space-N</code> = N × 4px. Se usa en <code>gap</code>, <code>padding</code> y <code>margin</code> — no para dimensiones propias de un componente (ancho, alto, tamaño de ícono) aunque compartan el mismo número en px.</p>
+          </div>
+          <table class="ds-doc-table ds-doc-table--typo">
+            <thead>
+              <tr><th>Token</th><th>Valor</th><th>Uso</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>--space-1</code></td><td>4px</td><td class="ds-doc-table__desc">El paso más chico. Se usa entre un ícono y su texto, o entre elementos muy pegados dentro de un mismo control (ej. label + ícono de ayuda).</td></tr>
+              <tr><td><code>--space-2</code></td><td>8px</td><td class="ds-doc-table__desc">El gap más frecuente del sistema. Se usa entre ítems de una lista, entre botones agrupados y como padding vertical de controles chicos.</td></tr>
+              <tr><td><code>--space-3</code></td><td>12px</td><td class="ds-doc-table__desc">Padding estándar de controles (inputs, items de dropdown, botones). Da más aire que <code>--space-2</code> sin llegar a separar secciones.</td></tr>
+              <tr><td><code>--space-4</code></td><td>16px</td><td class="ds-doc-table__desc">Padding de cards y contenedores, y gap entre bloques de contenido relacionado.</td></tr>
+              <tr><td><code>--space-6</code></td><td>24px</td><td class="ds-doc-table__desc">Separación entre secciones dentro de una misma pantalla, y padding de contenedores grandes (headers de modal, footers).</td></tr>
+              <tr><td><code>--space-8</code></td><td>32px</td><td class="ds-doc-table__desc">Separación entre bloques grandes de layout (ej. header de una página y su contenido).</td></tr>
+              <tr><td><code>--space-10</code></td><td>40px</td><td class="ds-doc-table__desc">Márgenes de página y separaciones amplias. Redondea la escala; todavía sin un consumidor confirmado en Bumper.</td></tr>
+              <tr><td><code>--space-12</code></td><td>48px</td><td class="ds-doc-table__desc">Separación de secciones grandes o hero. Redondea la escala; todavía sin un consumidor confirmado en Bumper.</td></tr>
+              <tr><td><code>--space-16</code></td><td>64px</td><td class="ds-doc-table__desc">El paso más grande, para separaciones de layout muy amplias. Redondea la escala; todavía sin un consumidor confirmado en Bumper.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
