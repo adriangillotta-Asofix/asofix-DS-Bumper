@@ -1549,6 +1549,9 @@
   flex-direction: column;
   background-color: var(--bg-surface);
   border-radius: var(--radius-sm);
+  /* Sombra cruda a propósito: es el valor exacto que define Figma para el dropdown y no
+     corresponde a ningún escalón de Elevation (--shadow-mid es 0 4 12 -2 rgba(0,0,0,.12),
+     más difusa y más suave). El dropdown usa una sombra propia, más marcada */
   box-shadow: 0px 4px 8px 0px rgba(51, 51, 51, 0.22);
   width: 380px;
   overflow: hidden;
@@ -1576,6 +1579,9 @@
 }
 .dropdown__list::-webkit-scrollbar       { width: 6px; }
 .dropdown__list::-webkit-scrollbar-track { background: var(--bg-surface); }
+/* neutral-300 crudo: es el pulgar de un scrollbar, no un borde ni un texto — ningún semántico
+   cubre ese rol. En Figma este color todavía referencia el token viejo V2.0/Gray/300 (#C7C7C7),
+   de antes del rediseño de paleta; Bumper ya está en la escala nueva */
 .dropdown__list::-webkit-scrollbar-thumb { background-color: var(--color-neutral-300); border-radius: var(--radius-full); }
 
 /* Item base */
@@ -1612,9 +1618,13 @@
   line-height: 1;
 }
 .dropdown-item__checkbox .material-icons-outlined { font-size: 20px; line-height: 1; }
+/* neutral-300 crudo: mismo criterio que el disabled del Checkbox real — es el color del ícono
+   en sí, y --text-disabled (neutral-400) es más claro que el contraste que define Figma */
 .dropdown-item--disabled .dropdown-item__checkbox { color: var(--color-neutral-300); }
 
 /* Content */
+/* neutral-700 crudo: cae entre --text-body (800) y --text-field (600), no hay semántico en ese
+   escalón. Mismo caso que el gris del Tooltip */
 .dropdown-item__content {
   flex: 1;
   min-width: 0;
@@ -1673,14 +1683,8 @@
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-body-emphasized);
   line-height: var(--line-height-body);
+  /* neutral-700 crudo, mismo motivo que .dropdown-item__content */
   color: var(--color-neutral-700);
-}
-
-/* Pill inside disabled item */
-.dropdown-item--disabled .pill {
-  background-color: var(--bg-canvas);
-  border-color: var(--border-default);
-  color: var(--text-disabled);
 }
 
 /* Footer */

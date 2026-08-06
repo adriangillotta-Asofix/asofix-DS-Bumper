@@ -280,7 +280,6 @@
 .dropdown-item__status { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: var(--color-neutral-700); }
 
 /* Pill en ítem deshabilitado */
-.dropdown-item--disabled .pill { background-color: var(--bg-canvas); border-color: var(--border-default); color: var(--text-disabled); }
 
 /* Footer */
 .dropdown__footer { display: flex; align-items: center; justify-content: flex-end; gap: 16px; padding: 16px; flex-shrink: 0; }</code></pre>
@@ -529,7 +528,7 @@ document.addEventListener('click', e => {
                 <div class="dropdown-item__content">
                   <span class="dropdown-item__title">Título del ítem</span>
                 </div>
-                <span class="pill pill--sm pill--default">Activo</span>
+                <span class="pill pill--sm pill--default pill--disabled">Activo</span>
               </button>
             </div>
             <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
@@ -552,10 +551,9 @@ document.addEventListener('click', e => {
 /* Pill anidado (base + tamaño sm + color default — ver componente Pill para el resto de colores) */
 .pill { display: inline-flex; align-items: center; gap: 8px; border-radius: var(--radius-full); border: 1px solid transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); white-space: nowrap; cursor: pointer; transition: background-color 0.15s ease, border-color 0.15s ease; }
 .pill--sm { padding: 4px 8px; }
-.pill--default { background-color: var(--color-paper-100); border-color: var(--color-paper-200); color: var(--color-neutral-700); }
-
-/* Pill en ítem deshabilitado */
-.dropdown-item--disabled .pill { background-color: var(--bg-canvas); border-color: var(--border-default); color: var(--text-disabled); }</code></pre>
+.pill--default { background-color: var(--pill-default-bg); border-color: var(--pill-default-border); color: var(--pill-default-text); }
+/* El ítem deshabilitado no necesita override: la Pill ya resuelve su propio disabled */
+.pill--default:disabled, .pill--default.pill--disabled { background-color: var(--pill-default-bg); border-color: var(--pill-default-border); color: var(--text-secondary); }</code></pre>
               <pre class="ds-code__panel" data-tab="html-lo-pill"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
   &lt;div class="dropdown-item__content"&gt;
     &lt;span class="dropdown-item__title"&gt;Título del ítem&lt;/span&gt;
@@ -704,7 +702,7 @@ document.addEventListener('click', e => {
                 <div class="dropdown-item__content">
                   <span class="dropdown-item__title">Título del ítem</span>
                 </div>
-                <span class="pill pill--sm pill--default">Activo</span>
+                <span class="pill pill--sm pill--default pill--disabled">Activo</span>
               </button>
             </div>
             <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
@@ -732,10 +730,9 @@ document.addEventListener('click', e => {
 /* Pill anidado (base + tamaño sm + color default — ver componente Pill para el resto de colores) */
 .pill { display: inline-flex; align-items: center; gap: 8px; border-radius: var(--radius-full); border: 1px solid transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); white-space: nowrap; cursor: pointer; transition: background-color 0.15s ease, border-color 0.15s ease; }
 .pill--sm { padding: 4px 8px; }
-.pill--default { background-color: var(--color-paper-100); border-color: var(--color-paper-200); color: var(--color-neutral-700); }
-
-/* Pill en ítem deshabilitado */
-.dropdown-item--disabled .pill { background-color: var(--bg-canvas); border-color: var(--border-default); color: var(--text-disabled); }</code></pre>
+.pill--default { background-color: var(--pill-default-bg); border-color: var(--pill-default-border); color: var(--pill-default-text); }
+/* El ítem deshabilitado no necesita override: la Pill ya resuelve su propio disabled */
+.pill--default:disabled, .pill--default.pill--disabled { background-color: var(--pill-default-bg); border-color: var(--pill-default-border); color: var(--text-secondary); }</code></pre>
               <pre class="ds-code__panel" data-tab="html-lo-check-pill"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
   &lt;span class="dropdown-item__checkbox"&gt;
     &lt;span class="material-icons-outlined"&gt;check_box_outline_blank&lt;/span&gt;
