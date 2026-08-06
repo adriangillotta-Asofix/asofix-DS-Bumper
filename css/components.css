@@ -263,20 +263,26 @@
   color: var(--action-primary);
 }
 
-/* Hover — va después de Checked para ganarle en especificidad empatada */
+/* Hover — va después de Checked para ganarle en especificidad empatada.
+   paper-100 crudo: el halo de hover es un rol propio del control (fondo de un área
+   circular sobre el ícono), no una superficie de layout — ningún --bg-* lo captura */
 .checkbox:hover .checkbox__icon {
   background-color: var(--color-paper-100);
   color: var(--action-primary-hover-subtle);
 }
 
-/* Focus — halo relleno en vez de anillo */
+/* Focus — halo relleno en vez de anillo, igual que Figma.
+   paper-200 crudo por el mismo motivo que el hover; --ring-focus no aplica porque acá
+   no hay anillo, es el mismo halo un escalón más oscuro */
 .checkbox__input:focus-visible ~ .checkbox__icon,
 .checkbox--focus .checkbox__icon {
   background-color: var(--color-paper-200);
   outline: none;
 }
 
-/* Disabled — mismo gris para unchecked, checked e indeterminate */
+/* Disabled — mismo gris para unchecked, checked e indeterminate.
+   neutral-300 crudo: es el color del ícono en sí, no un borde ni un texto; --text-disabled
+   (neutral-400) es más claro y no da el contraste que define Figma para este control */
 .checkbox__input:disabled {
   cursor: not-allowed;
 }
@@ -342,20 +348,26 @@
   color: var(--action-primary);
 }
 
-/* Hover — va después de Selected para ganarle en especificidad empatada */
+/* Hover — va después de Selected para ganarle en especificidad empatada.
+   paper-100 crudo: el halo de hover es un rol propio del control (fondo de un área
+   circular sobre el ícono), no una superficie de layout — ningún --bg-* lo captura */
 .radio:hover .radio__icon {
   background-color: var(--color-paper-100);
   color: var(--action-primary-hover-subtle);
 }
 
-/* Focus — halo relleno en vez de anillo */
+/* Focus — halo relleno en vez de anillo, igual que Figma.
+   paper-200 crudo por el mismo motivo que el hover; --ring-focus no aplica porque acá
+   no hay anillo, es el mismo halo un escalón más oscuro */
 .radio__input:focus-visible ~ .radio__icon,
 .radio--focus .radio__icon {
   background-color: var(--color-paper-200);
   outline: none;
 }
 
-/* Disabled — mismo gris para unselected y selected */
+/* Disabled — mismo gris para unselected y selected.
+   neutral-300 crudo: es el color del ícono en sí, no un borde ni un texto; --text-disabled
+   (neutral-400) es más claro y no da el contraste que define Figma para este control */
 .radio__input:disabled {
   cursor: not-allowed;
 }
@@ -415,7 +427,7 @@
 .field-group__assistive {
   font-family: var(--font-family-base);
   font-size: var(--font-size-caption);
-  font-weight: var(--font-weight-body);
+  font-weight: var(--font-weight-caption);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
   color: var(--text-field);

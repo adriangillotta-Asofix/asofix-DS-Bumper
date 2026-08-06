@@ -194,17 +194,23 @@
 .checkbox__input:checked ~ .checkbox__icon,
 .checkbox--indeterminate .checkbox__icon { color: var(--action-primary); }
 
-/* Hover: va después de Checked para ganarle en especificidad empatada */
+/* Hover: va después de Checked para ganarle en especificidad empatada.
+   paper-100 crudo: el halo de hover es un rol propio del control, no una superficie
+   de layout — ningún --bg-* lo captura */
 .checkbox:hover .checkbox__icon {
   background-color: var(--color-paper-100);
   color: var(--action-primary-hover-subtle);
 }
 
+/* Focus: halo relleno en vez de anillo, igual que Figma. paper-200 crudo por el mismo
+   motivo que el hover; --ring-focus no aplica porque acá no hay anillo */
 .checkbox__input:focus-visible ~ .checkbox__icon {
   background-color: var(--color-paper-200);
   outline: none;
 }
 
+/* Disabled: neutral-300 crudo, es el color del ícono en sí, no un borde ni un texto;
+   --text-disabled (neutral-400) es más claro y no da el contraste que define Figma */
 .checkbox__input:disabled ~ .checkbox__icon,
 .checkbox--indeterminate.checkbox--disabled .checkbox__icon { color: var(--color-neutral-300); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Unchecked / Checked: el input real controla el estado --&gt;
@@ -310,17 +316,23 @@
 
 .radio__input:checked ~ .radio__icon { color: var(--action-primary); }
 
-/* Hover: va después de Selected para ganarle en especificidad empatada */
+/* Hover: va después de Selected para ganarle en especificidad empatada.
+   paper-100 crudo: el halo de hover es un rol propio del control, no una superficie
+   de layout — ningún --bg-* lo captura */
 .radio:hover .radio__icon {
   background-color: var(--color-paper-100);
   color: var(--action-primary-hover-subtle);
 }
 
+/* Focus: halo relleno en vez de anillo, igual que Figma. paper-200 crudo por el mismo
+   motivo que el hover; --ring-focus no aplica porque acá no hay anillo */
 .radio__input:focus-visible ~ .radio__icon {
   background-color: var(--color-paper-200);
   outline: none;
 }
 
+/* Disabled: neutral-300 crudo, es el color del ícono en sí, no un borde ni un texto;
+   --text-disabled (neutral-400) es más claro y no da el contraste que define Figma */
 .radio__input:disabled ~ .radio__icon { color: var(--color-neutral-300); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;!-- Los radios del mismo grupo comparten "name" --&gt;
 &lt;label class="radio"&gt;
