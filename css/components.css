@@ -76,20 +76,18 @@
   to { transform: rotate(360deg); }
 }
 
-/* Sizes */
+/* Sizes — el sm comparte el tamaño de texto del md (typography/button = 14px) */
 .btn--md { height: 44px; padding: 12px 16px; }
-.btn--sm { height: 36px; padding: 8px; font-size: 13px; }
+.btn--sm { height: 36px; padding: 8px; }
 
 /* Icon-only */
 .btn--icon { padding: 0; }
 .btn--icon.btn--md { width: 44px; }
 .btn--icon.btn--sm { width: 36px; }
-.btn--icon .material-icons-outlined { font-size: 20px; }
-.btn--icon.btn--sm .material-icons-outlined { font-size: 16px; }
 
-/* Íconos en botones */
+/* Íconos en botones — 20px en todas las jerarquías, tamaños y tipos (incluido link) */
 .btn .material-icons-outlined {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1;
   flex-shrink: 0;
   text-decoration: none !important;
