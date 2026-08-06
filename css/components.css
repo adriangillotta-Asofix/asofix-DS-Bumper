@@ -1196,6 +1196,7 @@
 
 .badge--white {
   background-color: var(--bg-surface);
+  /* neutral-600 crudo: --text-field tiene el mismo valor pero su rol es "texto de label de formulario". El rol genérico de texto secundario en este escalón todavía no tiene semántico — mismo caso que .card-metric__title, se decide para ambos al repasar Cards */
   color: var(--color-neutral-600);
 }
 
