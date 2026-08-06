@@ -119,6 +119,7 @@
 .btn--primary:hover { background-color: var(--action-primary-hover); }
 .btn--primary:active { background-color: var(--action-primary-active); }
 .btn--primary:focus-visible { background-color: var(--action-primary-hover); outline: 2px solid var(--ring-focus); outline-offset: 0; }
+/* Disabled más fuerte que --bg-disabled/--text-disabled a propósito: botón relleno necesita más contraste que un input para seguir siendo legible */
 .btn--primary:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 .btn--primary.btn--loading { background-color: var(--action-primary-active); }
 
@@ -130,7 +131,7 @@
   flex-shrink: 0;
   border: 2px solid currentColor;
   border-top-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   animation: btn-spin 0.6s linear infinite;
 }
 @keyframes btn-spin { to { transform: rotate(360deg); } }
@@ -197,6 +198,7 @@
 .btn--danger:hover { background-color: var(--action-danger-hover); }
 .btn--danger:active { background-color: var(--action-danger-active); }
 .btn--danger:focus-visible { background-color: var(--action-danger-hover); outline: 2px solid var(--ring-danger); outline-offset: 0; }
+/* Disabled más fuerte que --bg-disabled/--text-disabled a propósito: botón relleno necesita más contraste que un input para seguir siendo legible */
 .btn--danger:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 .btn--danger.btn--loading { background-color: var(--action-danger-active); }
 
@@ -208,7 +210,7 @@
   flex-shrink: 0;
   border: 2px solid currentColor;
   border-top-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   animation: btn-spin 0.6s linear infinite;
 }
 @keyframes btn-spin { to { transform: rotate(360deg); } }
@@ -286,7 +288,7 @@
   flex-shrink: 0;
   border: 2px solid currentColor;
   border-top-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   animation: btn-spin 0.6s linear infinite;
 }
 @keyframes btn-spin { to { transform: rotate(360deg); } }
@@ -364,7 +366,7 @@
   flex-shrink: 0;
   border: 2px solid currentColor;
   border-top-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   animation: btn-spin 0.6s linear infinite;
 }
 @keyframes btn-spin { to { transform: rotate(360deg); } }
@@ -430,6 +432,7 @@
 .btn--primary:hover { background-color: var(--action-primary-hover); }
 .btn--primary:active { background-color: var(--action-primary-active); }
 .btn--primary:focus-visible { background-color: var(--action-primary-hover); outline: 2px solid var(--ring-focus); outline-offset: 0; }
+/* Disabled más fuerte que --bg-disabled/--text-disabled a propósito: botón relleno necesita más contraste que un input para seguir siendo legible */
 .btn--primary:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--md { height: 44px; padding: 12px 16px; }
@@ -488,6 +491,7 @@
 .btn--danger:hover { background-color: var(--action-danger-hover); }
 .btn--danger:active { background-color: var(--action-danger-active); }
 .btn--danger:focus-visible { background-color: var(--action-danger-hover); outline: 2px solid var(--ring-danger); outline-offset: 0; }
+/* Disabled más fuerte que --bg-disabled/--text-disabled a propósito: botón relleno necesita más contraste que un input para seguir siendo legible */
 .btn--danger:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--md { height: 44px; padding: 12px 16px; }
@@ -663,6 +667,7 @@
 .btn--primary:hover { background-color: var(--action-primary-hover); }
 .btn--primary:active { background-color: var(--action-primary-active); }
 .btn--primary:focus-visible { background-color: var(--action-primary-hover); outline: 2px solid var(--ring-focus); outline-offset: 0; }
+/* Disabled más fuerte que --bg-disabled/--text-disabled a propósito: botón relleno necesita más contraste que un input para seguir siendo legible */
 .btn--primary:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 .btn--primary.btn--loading { background-color: var(--action-primary-active); }
 
@@ -674,7 +679,7 @@
   flex-shrink: 0;
   border: 2px solid currentColor;
   border-top-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   animation: btn-spin 0.6s linear infinite;
 }
 @keyframes btn-spin { to { transform: rotate(360deg); } }
@@ -741,6 +746,7 @@
 .btn--danger:hover { background-color: var(--action-danger-hover); }
 .btn--danger:active { background-color: var(--action-danger-active); }
 .btn--danger:focus-visible { background-color: var(--action-danger-hover); outline: 2px solid var(--ring-danger); outline-offset: 0; }
+/* Disabled más fuerte que --bg-disabled/--text-disabled a propósito: botón relleno necesita más contraste que un input para seguir siendo legible */
 .btn--danger:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 .btn--danger.btn--loading { background-color: var(--action-danger-active); }
 
@@ -752,7 +758,7 @@
   flex-shrink: 0;
   border: 2px solid currentColor;
   border-top-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   animation: btn-spin 0.6s linear infinite;
 }
 @keyframes btn-spin { to { transform: rotate(360deg); } }
@@ -830,7 +836,7 @@
   flex-shrink: 0;
   border: 2px solid currentColor;
   border-top-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   animation: btn-spin 0.6s linear infinite;
 }
 @keyframes btn-spin { to { transform: rotate(360deg); } }
@@ -908,7 +914,7 @@
   flex-shrink: 0;
   border: 2px solid currentColor;
   border-top-color: transparent;
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   animation: btn-spin 0.6s linear infinite;
 }
 @keyframes btn-spin { to { transform: rotate(360deg); } }
@@ -974,6 +980,7 @@
 .btn--primary:hover { background-color: var(--action-primary-hover); }
 .btn--primary:active { background-color: var(--action-primary-active); }
 .btn--primary:focus-visible { background-color: var(--action-primary-hover); outline: 2px solid var(--ring-focus); outline-offset: 0; }
+/* Disabled más fuerte que --bg-disabled/--text-disabled a propósito: botón relleno necesita más contraste que un input para seguir siendo legible */
 .btn--primary:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--sm { height: 36px; padding: 8px; font-size: 13px; }
@@ -1033,6 +1040,7 @@
 .btn--danger:hover { background-color: var(--action-danger-hover); }
 .btn--danger:active { background-color: var(--action-danger-active); }
 .btn--danger:focus-visible { background-color: var(--action-danger-hover); outline: 2px solid var(--ring-danger); outline-offset: 0; }
+/* Disabled más fuerte que --bg-disabled/--text-disabled a propósito: botón relleno necesita más contraste que un input para seguir siendo legible */
 .btn--danger:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 .btn--sm { height: 36px; padding: 8px; font-size: 13px; }
