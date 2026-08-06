@@ -161,6 +161,7 @@
   font-weight: var(--font-weight-caption-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
+  /* neutral-600 crudo: --text-field tiene el mismo valor y el rol es casi el mismo (este título es el label del valor de abajo), pero su nombre lo ata a formularios. No se crea --text-tertiary porque quedaría más oscuro que --text-secondary (500) y el nombre induciría a usarlo mal. Mismo caso que .badge--white — se resuelve el día que se renombre --text-field a --text-label */
   color: var(--color-neutral-600);
   overflow: hidden;
   text-overflow: ellipsis;
