@@ -25,7 +25,7 @@
 }
 
 /* Primary */
-.btn--primary { background-color: var(--action-primary); color: var(--text-on-primary); }
+.btn--primary { background-color: var(--action-primary); color: var(--text-inverse); }
 .btn--primary:hover, .btn--primary.btn--hover { background-color: var(--action-primary-hover); }
 .btn--primary:active, .btn--primary.btn--active { background-color: var(--action-primary-active); }
 .btn--primary:focus-visible, .btn--primary.btn--focus { background-color: var(--action-primary-hover); outline: 2px solid var(--ring-focus); outline-offset: 0; }
@@ -33,7 +33,7 @@
 .btn--primary:disabled { background-color: var(--color-paper-200); color: var(--color-neutral-500); cursor: not-allowed; }
 
 /* Danger */
-.btn--danger { background-color: var(--action-danger); color: var(--text-on-primary); }
+.btn--danger { background-color: var(--action-danger); color: var(--text-inverse); }
 .btn--danger:hover, .btn--danger.btn--hover { background-color: var(--action-danger-hover); }
 .btn--danger:active, .btn--danger.btn--active { background-color: var(--action-danger-active); }
 .btn--danger:focus-visible, .btn--danger.btn--focus { background-color: var(--action-danger-hover); outline: 2px solid var(--ring-danger); outline-offset: 0; }
@@ -990,7 +990,7 @@
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-body-emphasized);
   line-height: var(--line-height-body);
-  color: var(--text-on-solid);
+  color: var(--text-inverse);
   display: block;
 }
 
@@ -1000,7 +1000,7 @@
   font-weight: var(--font-weight-caption);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: var(--text-on-solid);
+  color: var(--text-inverse);
   display: block;
 }
 
@@ -1009,7 +1009,7 @@
   border: none;
   cursor: pointer;
   padding: 0;
-  color: var(--text-on-solid);
+  color: var(--text-inverse);
   display: flex;
   align-items: center;
   flex-shrink: 0;
@@ -1033,12 +1033,12 @@
   font-weight: var(--font-weight-body-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  color: var(--text-on-solid);
+  color: var(--text-inverse);
 }
 
 .tooltip__action {
   font-size: var(--font-size-caption) !important;
-  color: var(--text-on-solid) !important;
+  color: var(--text-inverse) !important;
   letter-spacing: var(--letter-spacing-caption);
 }
 
@@ -1196,17 +1196,17 @@
 /* Color */
 .badge--warning {
   background-color: var(--solid-warning);
-  color: var(--text-on-solid);
+  color: var(--text-inverse);
 }
 
 .badge--error {
   background-color: var(--solid-error);
-  color: var(--text-on-solid);
+  color: var(--text-inverse);
 }
 
 .badge--neutral {
   background-color: var(--solid-neutral);
-  color: var(--text-on-solid);
+  color: var(--text-inverse);
 }
 
 .badge--white {
@@ -1260,7 +1260,7 @@
   font-family: 'Material Icons Outlined';
   font-style: normal;
   font-weight: normal;
-  color: var(--text-on-solid);
+  color: var(--text-inverse);
   line-height: 1;
 }
 .avatar--24.avatar--empty::before  { content: 'person'; font-size: 14px; }
@@ -1277,7 +1277,7 @@
   font-family: var(--font-family-base);
   /* 500 (Inter Medium) es el valor de Figma; la escala tipográfica no tiene peso medio (400/600) y la inicial no consume ningún text style compartido — es escala propia del componente */
   font-weight: 500;
-  color: var(--text-on-primary);
+  color: var(--text-inverse);
   line-height: 1;
   user-select: none;
 }

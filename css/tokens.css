@@ -148,9 +148,10 @@
   --text-secondary: var(--color-neutral-500);
   --text-placeholder: var(--color-neutral-400);
   --text-disabled: var(--color-neutral-400);
-  --text-on-primary: var(--color-neutral-white);
+  /* Texto blanco sobre cualquier fondo saturado/oscuro: botones sólidos, badges, tooltip, avatar.
+     Antes eran 3 tokens (--text-on-primary/--text-on-solid/--text-inverse) para el mismo valor,
+     diferenciados solo por qué componente los usaba, no por un valor distinto. Consolidados acá. */
   --text-inverse: var(--color-neutral-white);
-  --text-on-solid: var(--color-neutral-white);
   /* Texto de error sobre fondo claro (ej. mensaje de error de un input). Distinto de
      --feedback-error-text (error-700): ese es para texto dentro de un banner de feedback,
      sobre fondo teñido, y necesita más contraste. Este es error-500, el mismo tono del borde. */
