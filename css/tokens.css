@@ -157,7 +157,8 @@
      sobre fondo teñido, y necesita más contraste. Este es error-500, el mismo tono del borde. */
   --text-error: var(--color-error-500);
 
-  /* Solid — fondos saturados de alto contraste (badges, contadores) */
+  /* Solid — fondos saturados de alto contraste, sin versión tenue de fondo (a diferencia de
+     Feedback). Lo comparten Badge y el estado Empty de Avatar. */
   --solid-warning: var(--color-warning-700);
   --solid-error: var(--color-error-500);
   --solid-neutral: var(--color-neutral-500);
