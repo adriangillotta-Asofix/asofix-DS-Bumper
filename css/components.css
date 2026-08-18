@@ -163,10 +163,10 @@
 
 .switch__thumb {
   position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 18px;
-  height: 18px;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
   background-color: var(--color-paper-50);
   border-radius: var(--radius-full);
   transition: transform 0.2s ease;
@@ -254,7 +254,7 @@
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-body);
   line-height: var(--line-height-body);
-  color: var(--text-field);
+  color: var(--text-emphasis);
 }
 
 /* Checked / indeterminate — mismo color que el default; la regla sigue haciendo falta para el estado indeterminate */
@@ -340,7 +340,7 @@
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-body);
   line-height: var(--line-height-body);
-  color: var(--text-field);
+  color: var(--text-emphasis);
 }
 
 /* Selected — mismo color que el default; la regla sigue haciendo falta por especificidad frente a Hover */
@@ -452,7 +452,7 @@
 .input__label-text {
   font-family: var(--font-family-base);
   font-weight: var(--font-weight-body-emphasized);
-  color: var(--text-field);
+  color: var(--text-emphasis);
 }
 
 .input__label-text--lg {
@@ -753,8 +753,7 @@
   font-weight: var(--font-weight-caption-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  /* neutral-600 crudo: --text-field tiene el mismo valor y el rol es casi el mismo (este título es el label del valor de abajo), pero su nombre lo ata a formularios. No se crea --text-tertiary porque quedaría más oscuro que --text-secondary (500) y el nombre induciría a usarlo mal. Mismo caso que .badge--white — se resuelve el día que se renombre --text-field a --text-label */
-  color: var(--color-neutral-600);
+  color: var(--text-emphasis);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -791,6 +790,14 @@
 .card-metric__comparator--positive {
   --comparator-bg: var(--feedback-success-bg-hover);
   --comparator-text: var(--feedback-success-text);
+}
+
+/* Neutral (sin tendencia) — paper-100 y neutral-700 crudos: ningún semántico de bg o
+   texto resuelve a estos valores exactos (bg-subtle es neutral-100, no paper-100;
+   no hay texto semántico en el escalón 700), mismo criterio que el resto de excepciones documentadas */
+.card-metric__comparator--neutral {
+  --comparator-bg: var(--color-paper-100);
+  --comparator-text: var(--color-neutral-700);
 }
 
 .card-metric__icon-box {
@@ -1211,8 +1218,7 @@
 
 .badge--white {
   background-color: var(--bg-surface);
-  /* neutral-600 crudo: --text-field tiene el mismo valor pero su rol es "texto de label de formulario". El rol genérico de texto secundario en este escalón todavía no tiene semántico — mismo caso que .card-metric__title, se decide para ambos al repasar Cards */
-  color: var(--color-neutral-600);
+  color: var(--text-emphasis);
 }
 
 /* Borde — separa el badge de lo que tiene detrás (ej. sobre un Avatar) */
@@ -1239,7 +1245,7 @@
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-full);
-  border: 2px solid var(--bg-surface);
+  border: 2px solid var(--bg-canvas);
   box-shadow: var(--shadow-low);
   overflow: hidden;
   flex-shrink: 0;
@@ -1455,7 +1461,7 @@
   width: 600px;
   max-width: 100%;
   max-height: calc(100vh - 48px);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   background-color: var(--bg-surface);
   box-shadow: var(--shadow-high);
 }
@@ -1466,7 +1472,7 @@
   gap: 32px;
   padding: 16px 24px;
   background-color: var(--bg-canvas);
-  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   flex-shrink: 0;
 }
 
@@ -1524,7 +1530,7 @@
   padding: 24px;
   background-color: var(--bg-surface);
   border-top: 1px solid var(--border-default);
-  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
   flex-shrink: 0;
 }
 
@@ -1555,10 +1561,7 @@
   flex-direction: column;
   background-color: var(--bg-surface);
   border-radius: var(--radius-sm);
-  /* Sombra cruda a propósito: es el valor exacto que define Figma para el dropdown y no
-     corresponde a ningún escalón de Elevation (--shadow-mid es 0 4 12 -2 rgba(0,0,0,.12),
-     más difusa y más suave). El dropdown usa una sombra propia, más marcada */
-  box-shadow: 0px 4px 8px 0px rgba(51, 51, 51, 0.22);
+  box-shadow: var(--shadow-mid);
   width: 380px;
   overflow: hidden;
   animation: dropdown-in 0.15s ease forwards;
