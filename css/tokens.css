@@ -145,6 +145,11 @@
   --text-primary: var(--color-neutral-900);
   --text-body: var(--color-neutral-800);
   --text-field: var(--color-neutral-600);
+  /* Faltaba: .input__label-text (components.css) ya lo referenciaba sin que existiera,
+     así que las labels de Input/Select renderizaban con el color heredado en vez del propio.
+     Mismo valor que --text-field (neutral-600) pero como rol semántico aparte: texto con
+     énfasis leve (labels), no el texto de contenido de un campo. */
+  --text-emphasis: var(--color-neutral-600);
   --text-secondary: var(--color-neutral-500);
   --text-placeholder: var(--color-neutral-400);
   --text-disabled: var(--color-neutral-400);
