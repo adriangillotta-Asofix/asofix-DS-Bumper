@@ -1036,7 +1036,7 @@
 .tooltip__paginator {
   font-family: var(--font-family-base);
   font-size: var(--font-size-caption);
-  font-weight: var(--font-weight-body-emphasized);
+  font-weight: var(--font-weight-caption-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
   color: var(--text-inverse);
