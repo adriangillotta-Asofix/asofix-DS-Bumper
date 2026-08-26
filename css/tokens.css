@@ -50,6 +50,7 @@
   --color-neutral-900: #0B0B14;
   --color-neutral-line: #EDE8E1;
   --color-neutral-white: #FFFFFF;
+  --color-neutral-black: #000000;
 
   /* Fondo dark — modo oscuro, evitar negro puro (Manual de Marca V3) */
   --color-surface-dark: #0E073D;
