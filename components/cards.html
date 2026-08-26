@@ -140,8 +140,8 @@
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.card-metric {
   display: flex;
   flex-direction: column;
-  gap: 16px;
-  padding: 16px 20px;
+  gap: var(--space-4);
+  padding: var(--space-4) 20px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-default);
   background-color: var(--bg-surface);
@@ -162,8 +162,7 @@
   font-weight: var(--font-weight-caption-emphasized);
   line-height: var(--line-height-caption);
   letter-spacing: var(--letter-spacing-caption);
-  /* neutral-600 crudo: --text-field tiene el mismo valor y el rol es casi el mismo (este título es el label del valor de abajo), pero su nombre lo ata a formularios. No se crea --text-tertiary porque quedaría más oscuro que --text-secondary (500) y el nombre induciría a usarlo mal. Mismo caso que .badge--white — se resuelve el día que se renombre --text-field a --text-label */
-  color: var(--color-neutral-600);
+  color: var(--text-emphasis);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -172,7 +171,7 @@
 .card-metric__body {
   display: flex;
   align-items: baseline;
-  gap: 16px;
+  gap: var(--space-4);
   width: 100%;
 }
 
@@ -193,7 +192,7 @@
 
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   flex-shrink: 0;
 }
 
@@ -202,13 +201,21 @@
   --comparator-text: var(--feedback-success-text);
 }
 
+/* Neutral (sin tendencia) — paper-100 y neutral-700 crudos: ningún semántico de bg o
+   texto resuelve a estos valores exactos (bg-subtle es neutral-100, no paper-100;
+   no hay texto semántico en el escalón 700), mismo criterio que el resto de excepciones documentadas */
+.card-metric__comparator--neutral {
+  --comparator-bg: var(--color-paper-100);
+  --comparator-text: var(--color-neutral-700);
+}
+
 .card-metric__icon-box {
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--comparator-bg);
   border-radius: var(--radius-full);
-  padding: 4px;
+  padding: var(--space-1);
 }
 
 .card-metric__icon-box .material-icons-outlined {
@@ -362,8 +369,8 @@
 
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 8px 12px;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-3);
   border-radius: var(--radius-sm);
   border: 1px solid var(--tile-border);
   background-color: var(--tile-bg);
@@ -407,7 +414,7 @@
 .card-tile__header {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   width: 100%;
   min-height: 31px;
 }
@@ -437,7 +444,7 @@
 .card-tile__body {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   width: 100%;
 }
 
