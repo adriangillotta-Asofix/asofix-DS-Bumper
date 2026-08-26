@@ -36,18 +36,18 @@
   --color-paper-200: #E8E2DC;
 
   /* --------------------------------
-     Neutros — escala violeta (Manual de Marca V3)
+     Neutros — escala Ink (reemplaza escala violeta V2.1, definida 2026-08-20)
   -------------------------------- */
-  --color-neutral-50:  #F7F7FA;
-  --color-neutral-100: #EDEFF4;
-  --color-neutral-200: #D4D4DD;
-  --color-neutral-300: #BBB9C6;
-  --color-neutral-400: #A29DAF;
-  --color-neutral-500: #898298;
-  --color-neutral-600: #706A7F;
-  --color-neutral-700: #585265;
-  --color-neutral-800: #3F3A4C;
-  --color-neutral-900: #161628;
+  --color-neutral-50:  #F7F6FA;
+  --color-neutral-100: #EEECF2;
+  --color-neutral-200: #DAD7E1;
+  --color-neutral-300: #B4AEC2;
+  --color-neutral-400: #898298;
+  --color-neutral-500: #605B70;
+  --color-neutral-600: #33334D;
+  --color-neutral-700: #22223A;
+  --color-neutral-800: #161628;
+  --color-neutral-900: #0B0B14;
   --color-neutral-line: #EDE8E1;
   --color-neutral-white: #FFFFFF;
 
