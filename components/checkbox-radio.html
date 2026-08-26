@@ -161,7 +161,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-1);
   cursor: pointer;
 }
 
@@ -189,7 +189,9 @@
 .checkbox__label {
   font-family: var(--font-family-base);
   font-size: var(--font-size-body);
-  color: var(--text-field);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  color: var(--text-emphasis);
 }
 
 .checkbox__input:checked ~ .checkbox__icon,
@@ -284,7 +286,7 @@
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-1);
   cursor: pointer;
 }
 
@@ -312,7 +314,9 @@
 .radio__label {
   font-family: var(--font-family-base);
   font-size: var(--font-size-body);
-  color: var(--text-field);
+  font-weight: var(--font-weight-body);
+  line-height: var(--line-height-body);
+  color: var(--text-emphasis);
 }
 
 .radio__input:checked ~ .radio__icon { color: var(--action-primary); }
@@ -376,12 +380,12 @@
 
         <div class="ds-code">
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre><code>.field-group { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-.field-group__label { display: inline-flex; align-items: baseline; gap: 4px; font-size: var(--font-size-caption); font-weight: var(--font-weight-caption-emphasized); color: var(--text-field); }
+          <pre><code>.field-group { display: flex; flex-direction: column; gap: var(--space-2); align-items: flex-start; }
+.field-group__label { display: inline-flex; align-items: baseline; gap: var(--space-1); font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-caption-emphasized); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-field); }
 .field-group__label-optional { font-weight: var(--font-weight-caption); color: var(--text-secondary); }
-.field-group__options { display: flex; flex-wrap: wrap; gap: 8px 24px; width: 100%; }
-.field-group__options--vertical { flex-direction: column; flex-wrap: nowrap; gap: 8px; }
-.field-group__assistive { font-size: var(--font-size-caption); color: var(--text-field); }</code></pre>
+.field-group__options { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-6); width: 100%; }
+.field-group__options--vertical { flex-direction: column; flex-wrap: nowrap; gap: var(--space-2); }
+.field-group__assistive { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: var(--text-field); }</code></pre>
         </div>
       </div>
 
