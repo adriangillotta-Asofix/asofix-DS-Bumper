@@ -244,7 +244,7 @@
           </label>
           <label class="radio">
             <input class="radio__input" type="radio" name="radio-unselected-2" onchange="syncRadioIcon(this)" />
-            <span class="radio__icon material-icons-outlined" style="background-color: var(--color-paper-100); color: var(--action-primary-hover-subtle);">radio_button_unchecked</span>
+            <span class="radio__icon material-icons-outlined" style="background-color: var(--color-paper-100);">radio_button_unchecked</span>
           </label>
           <label class="radio radio--focus">
             <input class="radio__input" type="radio" name="radio-unselected-3" onchange="syncRadioIcon(this)" />
@@ -264,7 +264,7 @@
           </label>
           <label class="radio">
             <input class="radio__input" type="radio" name="radio-selected-2" checked onchange="syncRadioIcon(this)" />
-            <span class="radio__icon material-icons-outlined" style="background-color: var(--color-paper-100); color: var(--action-primary-hover-subtle);">radio_button_checked</span>
+            <span class="radio__icon material-icons-outlined" style="background-color: var(--color-paper-100);">radio_button_checked</span>
           </label>
           <label class="radio radio--focus">
             <input class="radio__input" type="radio" name="radio-selected-3" checked onchange="syncRadioIcon(this)" />
@@ -323,10 +323,11 @@
 
 /* Hover: va después de Selected para ganarle en especificidad empatada.
    paper-100 crudo: el halo de hover es un rol propio del control, no una superficie
-   de layout — ningún --bg-* lo captura */
+   de layout — ningún --bg-* lo captura. A diferencia del Checkbox, Figma no atenúa
+   el ícono en el hover de Radio — el color se queda en --action-primary, solo
+   cambia el fondo. */
 .radio:hover .radio__icon {
   background-color: var(--color-paper-100);
-  color: var(--action-primary-hover-subtle);
 }
 
 /* Focus: halo relleno en vez de anillo, igual que Figma. paper-200 crudo por el mismo
