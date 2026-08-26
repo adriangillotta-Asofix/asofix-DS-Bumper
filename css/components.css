@@ -1112,7 +1112,7 @@
 .pill--default:hover, .pill--default.pill--hover { background-color: var(--pill-default-bg-hover); border-color: var(--pill-default-border); }
 .pill--default:active, .pill--default.pill--active { background-color: var(--pill-default-bg-active); }
 .pill--default:focus-visible, .pill--default.pill--focus { background-color: var(--pill-default-bg-hover); border-width: 2px; border-color: var(--pill-default-focus-border); outline: none; }
-.pill--default:disabled, .pill--default.pill--disabled { background-color: var(--pill-default-bg); border-color: var(--pill-default-border); color: var(--text-secondary); cursor: not-allowed; }
+.pill--default:disabled, .pill--default.pill--disabled { background-color: var(--pill-default-bg); border-color: var(--pill-default-border); color: var(--text-disabled); cursor: not-allowed; }
 
 /* Rojo */
 .pill--rojo { background-color: var(--pill-error-bg); border-color: var(--pill-error-border); color: var(--pill-error-text); }

@@ -97,7 +97,7 @@
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   border-radius: var(--radius-full);
   border: 1px solid transparent;
   font-family: var(--font-family-base);
@@ -115,7 +115,7 @@
 .pill--default:hover  { background-color: var(--pill-default-bg-hover); }
 .pill--default:active { background-color: var(--pill-default-bg-active); }
 .pill--default:focus-visible { background-color: var(--pill-default-bg-hover); border-width: 2px; border-color: var(--pill-default-focus-border); outline: none; }
-.pill--default:disabled { background-color: var(--pill-default-bg); border-color: var(--pill-default-border); color: var(--text-secondary); cursor: not-allowed; }</code></pre>
+.pill--default:disabled { background-color: var(--pill-default-bg); border-color: var(--pill-default-border); color: var(--text-disabled); cursor: not-allowed; }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--md pill--default"&gt;
   &lt;span class="material-icons-outlined"&gt;person&lt;/span&gt;
   Label
@@ -148,7 +148,7 @@
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   border-radius: var(--radius-full);
   border: 1px solid transparent;
   font-family: var(--font-family-base);
@@ -199,7 +199,7 @@
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   border-radius: var(--radius-full);
   border: 1px solid transparent;
   font-family: var(--font-family-base);
@@ -250,7 +250,7 @@
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   border-radius: var(--radius-full);
   border: 1px solid transparent;
   font-family: var(--font-family-base);
@@ -301,7 +301,7 @@
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-2);
   border-radius: var(--radius-full);
   border: 1px solid transparent;
   font-family: var(--font-family-base);
@@ -343,9 +343,9 @@
             <button class="ds-code__tab" onclick="switchTab(this, 'html')">HTML</button>
           </div>
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
-          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--sm { padding: 4px 8px; }
-.pill--md { padding: 6px 12px; }
-.pill--lg { padding: 8px 12px; }</code></pre>
+          <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill--sm { padding: var(--space-1) var(--space-2); }
+.pill--md { padding: 6px var(--space-3); }
+.pill--lg { padding: var(--space-2) var(--space-3); }</code></pre>
           <pre class="ds-code__panel" data-tab="html"><code>&lt;button class="pill pill--sm pill--default"&gt;Small&lt;/button&gt;
 &lt;button class="pill pill--md pill--default"&gt;Medium&lt;/button&gt;
 &lt;button class="pill pill--lg pill--default"&gt;Large&lt;/button&gt;</code></pre>
@@ -370,10 +370,10 @@
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css"><code>.pill-highlight {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: var(--space-1);
   border-radius: var(--radius-full);
   border: 1px solid transparent;
-  padding: 4px 6px;
+  padding: var(--space-1) 6px;
   font-family: var(--font-family-base);
   font-size: var(--font-size-body);
   font-weight: var(--font-weight-body-emphasized);
