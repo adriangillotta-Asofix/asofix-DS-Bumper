@@ -1669,6 +1669,9 @@
   text-align: right;
   color: inherit;
 }
+/* En Figma el número baja a peso regular cuando el ítem está disabled (el título se
+   mantiene semibold) — único lugar del componente donde el peso cambia por estado */
+.dropdown-item--disabled .dropdown-item__number { font-weight: var(--font-weight-body); }
 .dropdown-item__desc {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1694,6 +1697,77 @@
   line-height: var(--line-height-body);
   /* neutral-700 crudo, mismo motivo que .dropdown-item__content */
   color: var(--color-neutral-700);
+}
+
+/* Group title (Title h2) — encabezado de grupo, no interactivo, sin checkbox */
+.dropdown-item__group-title {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4) var(--space-6) var(--space-4);
+  width: 100%;
+  box-sizing: border-box;
+  /* neutral-700 crudo, mismo motivo que .dropdown-item__content */
+  color: var(--color-neutral-700);
+}
+.dropdown-item__group-title-text {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-subtitle-1);
+  font-weight: var(--font-weight-subtitle-1-emphasized);
+  line-height: var(--line-height-subtitle-1);
+  letter-spacing: var(--letter-spacing-subtitle-1-emphasized);
+  color: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Section title (Title h5) — subencabezado. Variante base: fila con checkbox opcional
+   (ej. "Seleccionar todos"). Variante --desc: columna con descripción, sin checkbox. */
+.dropdown-item__section-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4) var(--space-4) var(--space-4);
+  width: 100%;
+  box-sizing: border-box;
+  background: none;
+  border: none;
+  font-family: var(--font-family-base);
+  text-align: left;
+  /* neutral-700 crudo, mismo motivo que .dropdown-item__content */
+  color: var(--color-neutral-700);
+}
+.dropdown-item__section-title--desc {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+}
+.dropdown-item__section-title-text {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--font-size-subtitle-2);
+  font-weight: var(--font-weight-subtitle-2);
+  line-height: var(--line-height-subtitle-2);
+  letter-spacing: var(--letter-spacing-subtitle-2);
+  color: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/* Compartida por Group title y Section title--desc */
+.dropdown-item__group-desc,
+.dropdown-item__section-desc {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
 /* Footer */

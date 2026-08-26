@@ -274,6 +274,7 @@
 .dropdown-item__title-row { display: flex; align-items: flex-start; gap: var(--space-3); width: 100%; }
 .dropdown-item__title  { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
 .dropdown-item__number { flex-shrink: 0; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); text-align: right; color: inherit; }
+.dropdown-item--disabled .dropdown-item__number { font-weight: var(--font-weight-body); }
 .dropdown-item__desc   { overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: inherit; }
 
 .dropdown-item--loading:hover, .dropdown-item--no-matches:hover { background-color: transparent; }
@@ -448,7 +449,8 @@ document.addEventListener('click', e => {
 .dropdown-item--disabled .dropdown-item__content { color: var(--text-disabled); }
 .dropdown-item__title-row { display: flex; align-items: flex-start; gap: var(--space-3); width: 100%; }
 .dropdown-item__title     { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
-.dropdown-item__number    { flex-shrink: 0; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); text-align: right; color: inherit; }</code></pre>
+.dropdown-item__number    { flex-shrink: 0; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); text-align: right; color: inherit; }
+.dropdown-item--disabled .dropdown-item__number { font-weight: var(--font-weight-body); }</code></pre>
               <pre class="ds-code__panel" data-tab="html-lo-number"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
   &lt;div class="dropdown-item__content"&gt;
     &lt;div class="dropdown-item__title-row"&gt;
@@ -665,7 +667,8 @@ document.addEventListener('click', e => {
 .dropdown-item--disabled .dropdown-item__content { color: var(--text-disabled); }
 .dropdown-item__title-row { display: flex; align-items: flex-start; gap: var(--space-3); width: 100%; }
 .dropdown-item__title     { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); color: inherit; }
-.dropdown-item__number    { flex-shrink: 0; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); text-align: right; color: inherit; }</code></pre>
+.dropdown-item__number    { flex-shrink: 0; font-size: var(--font-size-body); font-weight: var(--font-weight-body-emphasized); line-height: var(--line-height-body); text-align: right; color: inherit; }
+.dropdown-item--disabled .dropdown-item__number { font-weight: var(--font-weight-body); }</code></pre>
               <pre class="ds-code__panel" data-tab="html-lo-check-num"><code>&lt;button class="dropdown-item" onclick="selectDropdownItem(this)"&gt;
   &lt;span class="dropdown-item__checkbox"&gt;
     &lt;span class="material-icons-outlined"&gt;check_box_outline_blank&lt;/span&gt;
@@ -798,6 +801,73 @@ document.addEventListener('click', e => {
             </div>
           </div>
 
+          <!-- Group title (Title h2) -->
+          <div id="lo-group-title">
+            <h3 class="ds-section__title">Group title (Title h2)</h3>
+            <p class="ds-preview__label">Encabezado de grupo, no interactivo — separa secciones dentro de la misma lista</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <div class="dropdown-item__group-title">
+                <span class="dropdown-item__group-title-text">Title h2</span>
+                <span class="dropdown-item__group-desc">Descripción 1 línea</span>
+              </div>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-group-title')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-group-title')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-group-title"><code>.dropdown-item__group-title { display: flex; flex-direction: column; gap: var(--space-2); padding: var(--space-2) var(--space-4) var(--space-6) var(--space-4); width: 100%; box-sizing: border-box; color: var(--color-neutral-700); }
+.dropdown-item__group-title-text { font-family: var(--font-family-base); font-size: var(--font-size-subtitle-1); font-weight: var(--font-weight-subtitle-1-emphasized); line-height: var(--line-height-subtitle-1); letter-spacing: var(--letter-spacing-subtitle-1-emphasized); color: inherit; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dropdown-item__group-desc { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: inherit; overflow: hidden; text-overflow: ellipsis; width: 100%; }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-group-title"><code>&lt;div class="dropdown-item__group-title"&gt;
+  &lt;span class="dropdown-item__group-title-text"&gt;Title h2&lt;/span&gt;
+  &lt;!-- Descripción opcional --&gt;
+  &lt;span class="dropdown-item__group-desc"&gt;Descripción 1 línea&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
+          <!-- Section title (Title h5) -->
+          <div id="lo-section-title">
+            <h3 class="ds-section__title">Section title (Title h5)</h3>
+            <p class="ds-preview__label">Subencabezado dentro de un grupo — el checkbox es opcional (ej. "Seleccionar todos")</p>
+            <div class="ds-preview" style="padding:0; justify-content:flex-start; align-items:stretch; min-height:auto; border-radius:8px 8px 0 0;">
+              <div class="dropdown-item__section-title">
+                <span class="dropdown-item__checkbox"><span class="material-icons-outlined">check_box_outline_blank</span></span>
+                <span class="dropdown-item__section-title-text">Title h5</span>
+              </div>
+              <div class="dropdown-item__section-title dropdown-item__section-title--desc">
+                <span class="dropdown-item__section-title-text">Title h5</span>
+                <span class="dropdown-item__section-desc">Descripción 1 línea</span>
+              </div>
+            </div>
+            <div class="ds-code ds-code--tabbed" style="border-radius:0 0 8px 8px; border-top:none;">
+              <div class="ds-code__tabs">
+                <button class="ds-code__tab ds-code__tab--active" onclick="switchTab(this, 'css-lo-section-title')">CSS</button>
+                <button class="ds-code__tab" onclick="switchTab(this, 'html-lo-section-title')">HTML</button>
+              </div>
+              <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"></button>
+              <pre class="ds-code__panel ds-code__panel--active" data-tab="css-lo-section-title"><code>.dropdown-item__section-title { display: flex; align-items: center; gap: var(--space-3); padding: var(--space-3) var(--space-4) var(--space-4) var(--space-4); width: 100%; box-sizing: border-box; background: none; border: none; font-family: var(--font-family-base); text-align: left; color: var(--color-neutral-700); }
+/* Variante con descripción: columna, sin checkbox */
+.dropdown-item__section-title--desc { flex-direction: column; align-items: flex-start; gap: var(--space-2); padding: var(--space-3) var(--space-4); }
+.dropdown-item__section-title-text { flex: 1; min-width: 0; font-size: var(--font-size-subtitle-2); font-weight: var(--font-weight-subtitle-2); line-height: var(--line-height-subtitle-2); letter-spacing: var(--letter-spacing-subtitle-2); color: inherit; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* .dropdown-item__section-desc comparte estilos con .dropdown-item__group-desc */
+.dropdown-item__section-desc { font-family: var(--font-family-base); font-size: var(--font-size-caption); font-weight: var(--font-weight-caption); line-height: var(--line-height-caption); letter-spacing: var(--letter-spacing-caption); color: inherit; overflow: hidden; text-overflow: ellipsis; width: 100%; }</code></pre>
+              <pre class="ds-code__panel" data-tab="html-lo-section-title"><code>&lt;!-- Con checkbox opcional (ej. "Seleccionar todos") --&gt;
+&lt;div class="dropdown-item__section-title"&gt;
+  &lt;span class="dropdown-item__checkbox"&gt;&lt;span class="material-icons-outlined"&gt;check_box_outline_blank&lt;/span&gt;&lt;/span&gt;
+  &lt;span class="dropdown-item__section-title-text"&gt;Title h5&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- Con descripción, sin checkbox --&gt;
+&lt;div class="dropdown-item__section-title dropdown-item__section-title--desc"&gt;
+  &lt;span class="dropdown-item__section-title-text"&gt;Title h5&lt;/span&gt;
+  &lt;span class="dropdown-item__section-desc"&gt;Descripción 1 línea&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -838,6 +908,8 @@ document.addEventListener('click', e => {
               <tr><td>Checkbox + Pill</td><td><code>.dropdown-item__checkbox</code></td><td class="ds-doc-table__desc">Combina el checkbox de selección múltiple con una pill de estado a la derecha.</td></tr>
               <tr><td>Loading</td><td><code>.dropdown-item--loading</code></td><td class="ds-doc-table__desc">Reemplaza todos los ítems mientras se cargan los resultados.</td></tr>
               <tr><td>No matches</td><td><code>.dropdown-item--no-matches</code></td><td class="ds-doc-table__desc">Reemplaza todos los ítems cuando la búsqueda no tiene resultados.</td></tr>
+              <tr><td>Group title</td><td><code>.dropdown-item__group-title</code></td><td class="ds-doc-table__desc">Encabezado de grupo, no interactivo. Separa secciones dentro de la misma lista, con descripción opcional.</td></tr>
+              <tr><td>Section title</td><td><code>.dropdown-item__section-title</code></td><td class="ds-doc-table__desc">Subencabezado dentro de un grupo. Admite un checkbox opcional (ej. "Seleccionar todos") o, con el modificador <code>--desc</code>, una descripción en su lugar.</td></tr>
             </tbody>
           </table>
         </div>
