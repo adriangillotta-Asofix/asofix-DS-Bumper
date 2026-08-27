@@ -1536,6 +1536,7 @@
 .modal__footer {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: var(--space-6);
   background-color: var(--bg-surface);
   border-top: 1px solid var(--border-default);

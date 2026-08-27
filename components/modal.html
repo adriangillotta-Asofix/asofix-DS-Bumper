@@ -144,27 +144,27 @@
           <button class="ds-copy-btn" onclick="copyCode(this)" title="Copiar código"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button>
 
           <pre class="ds-code__panel ds-code__panel--active" data-tab="css-modal"><code>/* Overlay */
-.modal-overlay { position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 10000; padding: 24px; }
+.modal-overlay { position: fixed; inset: 0; background-color: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 10000; padding: var(--space-6); }
 
 /* Modal */
-.modal { display: flex; flex-direction: column; width: 600px; max-width: 100%; max-height: calc(100vh - 48px); border-radius: var(--radius-md); background-color: var(--bg-surface); box-shadow: var(--shadow-high); }
+.modal { display: flex; flex-direction: column; width: 600px; max-width: 100%; max-height: calc(100vh - 48px); border-radius: var(--radius-lg); background-color: var(--bg-surface); box-shadow: var(--shadow-high); }
 
 /* Header */
-.modal__header { display: flex; align-items: center; gap: 32px; padding: 16px 24px; background-color: var(--bg-canvas); border-radius: var(--radius-md) var(--radius-md) 0 0; flex-shrink: 0; }
+.modal__header { display: flex; align-items: center; gap: var(--space-8); padding: var(--space-4) var(--space-6); background-color: var(--bg-canvas); border-radius: var(--radius-lg) var(--radius-lg) 0 0; flex-shrink: 0; }
 .modal__titles { display: flex; flex-direction: column; flex: 1; min-width: 0; }
 /* neutral-700 crudo en título/desc/close: cae entre --text-body (800) y --text-field (600), no hay semántico en ese escalón */
 .modal__title { font-family: var(--font-family-base); font-size: var(--font-size-h4); font-weight: var(--font-weight-heading); line-height: var(--line-height-h4); letter-spacing: var(--letter-spacing-h4); color: var(--color-neutral-700); }
 .modal__desc  { font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--color-neutral-700); }
-.modal__close { display: flex; align-items: center; justify-content: center; padding: 12px; background: none; border: none; border-radius: var(--radius-sm); cursor: pointer; color: var(--color-neutral-700); flex-shrink: 0; transition: background-color 0.15s ease; }
+.modal__close { display: flex; align-items: center; justify-content: center; padding: var(--space-3); background: none; border: none; border-radius: var(--radius-sm); cursor: pointer; color: var(--color-neutral-700); flex-shrink: 0; transition: background-color 0.15s ease; }
 .modal__close:hover { background-color: var(--bg-surface-hover); }
 .modal__close .material-icons-outlined { font-size: 20px; line-height: 1; width: 20px; display: inline-flex; justify-content: center; overflow: hidden; }
 
 /* Body (slot libre) */
-.modal__body { padding: 24px; background-color: var(--bg-surface); overflow-y: auto; }
+.modal__body { padding: var(--space-6); background-color: var(--bg-surface); overflow-y: auto; }
 
 /* Footer */
-.modal__footer { display: flex; align-items: center; padding: 24px; background-color: var(--bg-surface); border-top: 1px solid var(--border-default); border-radius: 0 0 var(--radius-md) var(--radius-md); flex-shrink: 0; }
-.modal__footer-actions { display: flex; align-items: center; gap: 16px; margin-left: auto; }
+.modal__footer { display: flex; align-items: center; justify-content: space-between; padding: var(--space-6); background-color: var(--bg-surface); border-top: 1px solid var(--border-default); border-radius: 0 0 var(--radius-lg) var(--radius-lg); flex-shrink: 0; }
+.modal__footer-actions { display: flex; align-items: center; gap: var(--space-4); margin-left: auto; }
 
 /* Animaciones */
 .modal-overlay--in  { animation: modal-overlay-in  0.2s ease forwards; }
