@@ -1829,9 +1829,7 @@
   font-weight: var(--font-weight-body);
   line-height: var(--line-height-body);
   letter-spacing: var(--letter-spacing-body);
-  /* neutral-400 crudo a propósito: --text-placeholder y --text-disabled resuelven al mismo
-     valor pero ninguno de esos dos roles describe "tab no seleccionado" — ambiguo forzarlo */
-  color: var(--color-neutral-400);
+  color: var(--text-body);
   cursor: pointer;
   white-space: nowrap;
   position: relative;

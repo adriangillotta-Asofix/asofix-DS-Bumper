@@ -99,7 +99,7 @@
   background-color: var(--bg-sunken);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-sm);
-  padding: 4px;
+  padding: var(--space-1);
   position: relative;
 }
 
@@ -119,8 +119,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 4px 16px;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-4);
   border-radius: var(--radius-xs);
   border: none;
   background-color: transparent;
@@ -129,9 +129,7 @@
   font-weight: var(--font-weight-body);
   line-height: var(--line-height-body);
   letter-spacing: var(--letter-spacing-body);
-  /* neutral-400 crudo a propósito: --text-placeholder y --text-disabled resuelven al mismo
-     valor pero ninguno de esos dos roles describe "tab no seleccionado" — ambiguo forzarlo */
-  color: var(--color-neutral-400);
+  color: var(--text-body);
   cursor: pointer;
   white-space: nowrap;
   position: relative;
@@ -209,7 +207,7 @@ document.addEventListener('DOMContentLoaded', () => {
   background-color: var(--bg-sunken);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-sm);
-  padding: 4px;
+  padding: var(--space-1);
   position: relative;
 }
 
@@ -229,8 +227,8 @@ document.addEventListener('DOMContentLoaded', () => {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 4px 16px;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-4);
   border-radius: var(--radius-xs);
   border: none;
   background-color: transparent;
@@ -239,9 +237,7 @@ document.addEventListener('DOMContentLoaded', () => {
   font-weight: var(--font-weight-body);
   line-height: var(--line-height-body);
   letter-spacing: var(--letter-spacing-body);
-  /* neutral-400 crudo a propósito: --text-placeholder y --text-disabled resuelven al mismo
-     valor pero ninguno de esos dos roles describe "tab no seleccionado" — ambiguo forzarlo */
-  color: var(--color-neutral-400);
+  color: var(--text-body);
   cursor: pointer;
   white-space: nowrap;
   position: relative;
