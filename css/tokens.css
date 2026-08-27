@@ -130,7 +130,7 @@
   --bg-surface: var(--color-neutral-white);
   --bg-surface-hover: var(--color-neutral-50);
   --bg-subtle: var(--color-neutral-100);
-  --bg-disabled: var(--color-paper-100);
+  --bg-disabled: var(--color-paper-50);
   --bg-sunken: var(--color-paper-100);
   --bg-inverse: var(--color-surface-dark);
 
