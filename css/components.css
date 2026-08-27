@@ -614,9 +614,12 @@
   overflow: hidden;
 }
 
+/* Crece con el contenido (JS: autoGrowTextarea) hasta un tope de ~5 líneas (max-height),
+   a partir de ahí scrollea internamente. Modificador --dynamic saca el tope: crece sin límite. */
 .textarea__field {
   flex: 1;
   min-width: 0;
+  box-sizing: border-box;
   border: none;
   outline: none;
   background: transparent;
@@ -627,8 +630,14 @@
   color: var(--text-field);
   padding: 9px var(--space-3);
   resize: none;
-  height: 120px;
+  min-height: 75px;
+  max-height: 113px;
   overflow-y: auto;
+}
+
+.textarea__field--dynamic {
+  max-height: none;
+  overflow-y: hidden;
 }
 
 .textarea__field::placeholder { color: var(--text-placeholder); }

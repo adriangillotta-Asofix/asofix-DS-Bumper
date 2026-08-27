@@ -418,7 +418,7 @@
               <span class="input__label-optional">(opcional)</span>
             </div>
             <div class="textarea__container">
-              <textarea class="textarea__field" placeholder="Placeholder"></textarea>
+              <textarea class="textarea__field" placeholder="Placeholder" oninput="autoGrowTextarea(this)"></textarea>
             </div>
             <div class="input__assistive-row">
               <span class="input__assistive">Texto de ayuda</span>
@@ -431,7 +431,7 @@
             <span class="ds-state-label">Default</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container"><textarea class="textarea__field" placeholder="Placeholder"></textarea></div>
+              <div class="textarea__container"><textarea class="textarea__field" placeholder="Placeholder" oninput="autoGrowTextarea(this)"></textarea></div>
               <div class="input__assistive-row"><span class="input__assistive">Texto de ayuda</span><span class="input__count">0/X</span></div>
             </div>
           </div>
@@ -439,7 +439,7 @@
             <span class="ds-state-label">Hover</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container input__container--hover"><textarea class="textarea__field" placeholder="Placeholder"></textarea></div>
+              <div class="textarea__container input__container--hover"><textarea class="textarea__field" placeholder="Placeholder" oninput="autoGrowTextarea(this)"></textarea></div>
               <div class="input__assistive-row"><span class="input__assistive">Texto de ayuda</span><span class="input__count">0/X</span></div>
             </div>
           </div>
@@ -447,7 +447,7 @@
             <span class="ds-state-label">Focus</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container input__container--focus"><textarea class="textarea__field" placeholder="Placeholder"></textarea></div>
+              <div class="textarea__container input__container--focus"><textarea class="textarea__field" placeholder="Placeholder" oninput="autoGrowTextarea(this)"></textarea></div>
               <div class="input__assistive-row"><span class="input__assistive">Texto de ayuda</span><span class="input__count">0/X</span></div>
             </div>
           </div>
@@ -455,7 +455,15 @@
             <span class="ds-state-label">Filled</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container"><textarea class="textarea__field">Texto ingresado en el área de texto con varias líneas de contenido.</textarea></div>
+              <div class="textarea__container"><textarea class="textarea__field" oninput="autoGrowTextarea(this)">Texto ingresado en el área de texto con varias líneas de contenido.</textarea></div>
+              <div class="input__assistive-row"><span class="input__assistive">Texto de ayuda</span><span class="input__count">0/X</span></div>
+            </div>
+          </div>
+          <div class="ds-state-item">
+            <span class="ds-state-label">Dynamic (sin tope)</span>
+            <div class="input">
+              <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
+              <div class="textarea__container"><textarea class="textarea__field textarea__field--dynamic" placeholder="Placeholder" oninput="autoGrowTextarea(this)"></textarea></div>
               <div class="input__assistive-row"><span class="input__assistive">Texto de ayuda</span><span class="input__count">0/X</span></div>
             </div>
           </div>
@@ -463,7 +471,7 @@
             <span class="ds-state-label">Error</span>
             <div class="input">
               <div class="input__label"><span class="input__label-text input__label-text--lg">Label</span><span class="material-icons-outlined input__label-icon">info</span><span class="input__label-optional">(opcional)</span></div>
-              <div class="textarea__container input__container--error"><textarea class="textarea__field">Texto ingresado</textarea></div>
+              <div class="textarea__container input__container--error"><textarea class="textarea__field" oninput="autoGrowTextarea(this)">Texto ingresado</textarea></div>
               <div class="input__assistive-row">
                 <span class="input__assistive input__assistive--error"><span class="material-icons-outlined">error_outline</span>Mensaje de error</span>
                 <span class="input__count">0/X</span>
@@ -506,7 +514,9 @@
 .input--readonly .input__label-text { color: var(--text-secondary); }
 
 .textarea__container { display: flex; align-items: flex-start; width: 100%; background: var(--bg-surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xs); transition: border-color 0.15s ease, box-shadow 0.15s ease; overflow: hidden; }
-.textarea__field { flex: 1; min-width: 0; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--text-field); padding: 9px 12px; resize: none; height: 120px; overflow-y: auto; }
+/* Crece con el contenido (JS: autoGrowTextarea) hasta un tope de ~5 líneas (max-height), a partir de ahí scrollea internamente. Modificador --dynamic saca el tope: crece sin límite. */
+.textarea__field { flex: 1; min-width: 0; box-sizing: border-box; border: none; outline: none; background: transparent; font-family: var(--font-family-base); font-size: var(--font-size-body); font-weight: var(--font-weight-body); line-height: var(--line-height-body); color: var(--text-field); padding: 9px 12px; resize: none; min-height: 75px; max-height: 113px; overflow-y: auto; }
+.textarea__field--dynamic { max-height: none; overflow-y: hidden; }
 .textarea__field::placeholder { color: var(--text-placeholder); }
 .textarea__field:disabled { color: var(--text-placeholder); }
 
@@ -525,12 +535,17 @@
     &lt;span class="input__label-optional"&gt;(opcional)&lt;/span&gt;
   &lt;/div&gt;
   &lt;div class="textarea__container"&gt;
-    &lt;textarea class="textarea__field" placeholder="Placeholder"&gt;&lt;/textarea&gt;
+    &lt;textarea class="textarea__field" placeholder="Placeholder" oninput="autoGrowTextarea(this)"&gt;&lt;/textarea&gt;
   &lt;/div&gt;
   &lt;div class="input__assistive-row"&gt;
     &lt;span class="input__assistive"&gt;Texto de ayuda&lt;/span&gt;
     &lt;span class="input__count"&gt;0/X&lt;/span&gt;
   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Dynamic: sin tope de altura, crece sin límite --&gt;
+&lt;div class="textarea__container"&gt;
+  &lt;textarea class="textarea__field textarea__field--dynamic" placeholder="Placeholder" oninput="autoGrowTextarea(this)"&gt;&lt;/textarea&gt;
 &lt;/div&gt;
 
 &lt;!-- Read only: sin borde, sin texto asistivo, label en --text-secondary --&gt;
@@ -974,7 +989,7 @@ function clearSelectDemo(event, triggerId, textId, dropdownId, clearId) {
             </thead>
             <tbody>
               <tr><td>Text Field</td><td><code>.input</code></td><td class="ds-doc-table__desc">Campo de una sola línea. Es el campo de texto por defecto para la mayoría de los formularios.</td></tr>
-              <tr><td>Text Area</td><td><code>.textarea</code></td><td class="ds-doc-table__desc">Campo de texto multilínea. Se usa cuando la respuesta esperada es más larga, como comentarios o descripciones.</td></tr>
+              <tr><td>Text Area</td><td><code>.textarea</code></td><td class="ds-doc-table__desc">Campo de texto multilínea. Se usa cuando la respuesta esperada es más larga, como comentarios o descripciones. Crece con el contenido (JS: <code>autoGrowTextarea</code>, disparada por <code>oninput</code>) hasta un tope de ~5 líneas y a partir de ahí scrollea internamente; el modificador <code>.textarea__field--dynamic</code> saca ese tope y deja que crezca sin límite.</td></tr>
               <tr><td>Select</td><td><code>.select</code></td><td class="ds-doc-table__desc">Campo de selección. Abre un <code>.dropdown</code> con las opciones disponibles.</td></tr>
             </tbody>
           </table>

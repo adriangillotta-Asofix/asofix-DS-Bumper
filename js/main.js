@@ -284,6 +284,17 @@ function syncRadioIcon(input) {
 }
 
 // --------------------------------
+// Textarea
+// --------------------------------
+
+// Crece con el contenido midiendo scrollHeight. El tope de altura (5 líneas vs
+// dinámico sin límite) lo define el CSS (--dynamic saca max-height), no esta función.
+function autoGrowTextarea(el) {
+  el.style.height = 'auto';
+  el.style.height = el.scrollHeight + 'px';
+}
+
+// --------------------------------
 // Dropdown
 // --------------------------------
 
@@ -399,6 +410,9 @@ document.addEventListener('DOMContentLoaded', () => {
     else syncCheckboxIcon(input);
   });
   document.querySelectorAll('.radio__input').forEach(syncRadioIcon);
+
+  // Ajustar altura inicial de textareas con contenido pre-cargado
+  document.querySelectorAll('.textarea__field').forEach(autoGrowTextarea);
 
   buildTOC();
   initScrollSpy();
