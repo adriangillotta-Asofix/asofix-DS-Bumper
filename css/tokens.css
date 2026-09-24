@@ -48,9 +48,7 @@
   --color-neutral-700: #22223A;
   --color-neutral-800: #161628;
   --color-neutral-900: #0B0B14;
-  --color-neutral-line: #EDE8E1;
   --color-neutral-white: #FFFFFF;
-  --color-neutral-black: #000000;
 
   /* Fondo dark — modo oscuro, evitar negro puro (Manual de Marca V3) */
   --color-surface-dark: #0E073D;
@@ -130,7 +128,7 @@
   --bg-surface: var(--color-neutral-white);
   --bg-surface-hover: var(--color-neutral-50);
   --bg-subtle: var(--color-neutral-100);
-  --bg-disabled: var(--color-paper-50);
+  --bg-disabled: var(--color-paper-100);
   --bg-sunken: var(--color-paper-100);
   --bg-inverse: var(--color-surface-dark);
 
@@ -314,6 +312,11 @@
 
   --font-weight-subtitle-1-emphasized: 700;
   --letter-spacing-subtitle-1-emphasized: 0.01em;
+  /* Alias: en Figma esta escala comparte tamaño y alto con subtitle-1 (solo cambian peso y
+     tracking). Se declaran igual para que exista el set completo y nadie tenga que adivinar
+     cuáles se comparten — al ser alias no pueden desincronizarse. */
+  --font-size-subtitle-1-emphasized: var(--font-size-subtitle-1);
+  --line-height-subtitle-1-emphasized: var(--line-height-subtitle-1);
 
   --font-size-subtitle-2: 0.875rem;       /* 14px */
   --font-weight-subtitle-2: 700;
@@ -327,6 +330,13 @@
   --font-weight-body-strikethrough: 600;
   --line-height-body: 1.45;
   --letter-spacing-body: 0em;
+  /* Alias: body-emphasized y body-strikethrough comparten métrica con body (solo cambia el peso) */
+  --font-size-body-emphasized: var(--font-size-body);
+  --line-height-body-emphasized: var(--line-height-body);
+  --letter-spacing-body-emphasized: var(--letter-spacing-body);
+  --font-size-body-strikethrough: var(--font-size-body);
+  --line-height-body-strikethrough: var(--line-height-body);
+  --letter-spacing-body-strikethrough: var(--letter-spacing-body);
 
   /* Caption */
   --font-size-caption: 0.75rem;     /* 12px */
@@ -334,6 +344,10 @@
   --font-weight-caption-emphasized: 600;
   --line-height-caption: 1.36;
   --letter-spacing-caption: 0.02em;
+  /* Alias: caption-emphasized comparte métrica con caption (solo cambia el peso) */
+  --font-size-caption-emphasized: var(--font-size-caption);
+  --line-height-caption-emphasized: var(--line-height-caption);
+  --letter-spacing-caption-emphasized: var(--letter-spacing-caption);
 
   /* Button (igual en Desktop y Mobile) */
   --font-size-button-1: 0.875rem;   /* 14px */
